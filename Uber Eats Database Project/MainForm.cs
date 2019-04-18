@@ -16,5 +16,10 @@ namespace Uber_Eats_Database_Project
         {
             InitializeComponent();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
