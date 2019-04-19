@@ -17,7 +17,7 @@ namespace Uber_Eats_Database_Project
             InitializeComponent();
         }
 
-        private void CustomerMenuBtn_Click(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
 
         }
