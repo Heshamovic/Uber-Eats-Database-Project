@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Uber_Eats_Database_Project
 {
-    public partial class MainForm : Form
+    public partial class MainForm : MetroFramework.Forms.MetroForm
     {
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void CustomerMenuBtn_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
