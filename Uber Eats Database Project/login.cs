@@ -220,7 +220,7 @@ namespace Uber_Eats_Database_Project
                 OracleCommand cmd = new OracleCommand("select count(USERNAME) from DELIVERY_PARTNER where USERNAME = :name and PASSWORD = :pass", con);
                 cmd.Parameters.Add("name", userNameSignIn.Text);
                 cmd.Parameters.Add("pass", passwordSignIn.Text);
-                int cnt = (int)cmd.ExecuteNonQuery();
+                int cnt = Convert.ToInt32(cmd.ExecuteScalar());
                 if (cnt > 0)
                 {
                     Helper.currentUserName = userNameSignIn.Text;
@@ -241,6 +241,53 @@ namespace Uber_Eats_Database_Project
             userNameSignIn.Text = "Username*";
             passwordSignIn.Text = "Password*";
             this.Show();
+        }
+
+        private void vehicleTB_Enter(object sender, EventArgs e)
+        {
+            Helper.RemovePlaceHolder((TextBox)sender, "Vehicle");
+        }
+
+        private void vehicleTB_Leave(object sender, EventArgs e)
+        {
+            Helper.AddPlaceHolder((TextBox)sender, "Vehicle");
+        }
+
+        private void partnerChkBx_CheckedChanged(object sender, EventArgs e)
+        {
+            if (customerChkBx.Checked)
+            {
+                fName.Enabled = lName.Enabled = creditCard.Enabled = locationTB.Enabled = true;
+                vehicleTB.Text = "Vehicle";
+                vehicleTB.ForeColor = Color.DarkGray;
+                vehicleTB.Enabled = false;
+            }
+            else
+            {
+                fName.Enabled = lName.Enabled = creditCard.Enabled = locationTB.Enabled = false;
+                fName.Text = "First Name";
+                lName.Text = "Last Name";
+                creditCard.Text = "Credit Card";
+                locationTB.Text = "Location";
+                fName.ForeColor = lName.ForeColor = creditCard.ForeColor = locationTB.ForeColor = Color.DarkGray;
+                vehicleTB.Enabled = true;
+            }
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void signInBtn_MouseHover(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void signInBtn_MouseLeave(object sender, EventArgs e)
+        {
+
+            Helper.onHover((Button)sender, Color.Black);
         }
     }
 }
