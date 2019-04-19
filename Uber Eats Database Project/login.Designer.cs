@@ -206,10 +206,12 @@
             // customerChkBxSignIn
             // 
             this.customerChkBxSignIn.AutoSize = true;
+            this.customerChkBxSignIn.Checked = true;
             this.customerChkBxSignIn.Location = new System.Drawing.Point(9, 5);
             this.customerChkBxSignIn.Name = "customerChkBxSignIn";
             this.customerChkBxSignIn.Size = new System.Drawing.Size(69, 17);
             this.customerChkBxSignIn.TabIndex = 12;
+            this.customerChkBxSignIn.TabStop = true;
             this.customerChkBxSignIn.Text = "Customer";
             this.customerChkBxSignIn.UseVisualStyleBackColor = true;
             // 

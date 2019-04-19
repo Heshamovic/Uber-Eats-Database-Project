@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Uber_Eats_Database_Project
 {
-    public partial class MainForm : MetroFramework.Forms.MetroForm
+    public partial class MainForm : Form
     {
         public MainForm()
         {
@@ -20,6 +20,11 @@ namespace Uber_Eats_Database_Project
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
