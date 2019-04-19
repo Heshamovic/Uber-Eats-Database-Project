@@ -45,9 +45,10 @@
             this.CustomerMenuBtn.ActiveControl = null;
             this.CustomerMenuBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CustomerMenuBtn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.CustomerMenuBtn.Location = new System.Drawing.Point(64, 51);
+            this.CustomerMenuBtn.Location = new System.Drawing.Point(85, 63);
+            this.CustomerMenuBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CustomerMenuBtn.Name = "CustomerMenuBtn";
-            this.CustomerMenuBtn.Size = new System.Drawing.Size(173, 65);
+            this.CustomerMenuBtn.Size = new System.Drawing.Size(231, 80);
             this.CustomerMenuBtn.TabIndex = 0;
             this.CustomerMenuBtn.Text = "Menus";
             this.CustomerMenuBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -59,9 +60,10 @@
             // 
             this.Cart.ActiveControl = null;
             this.Cart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Cart.Location = new System.Drawing.Point(64, 164);
+            this.Cart.Location = new System.Drawing.Point(85, 202);
+            this.Cart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Cart.Name = "Cart";
-            this.Cart.Size = new System.Drawing.Size(173, 65);
+            this.Cart.Size = new System.Drawing.Size(231, 80);
             this.Cart.TabIndex = 1;
             this.Cart.Text = "Cart";
             this.Cart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -73,9 +75,10 @@
             // 
             this.metroTile1.ActiveControl = null;
             this.metroTile1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroTile1.Location = new System.Drawing.Point(310, 51);
+            this.metroTile1.Location = new System.Drawing.Point(413, 63);
+            this.metroTile1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(173, 65);
+            this.metroTile1.Size = new System.Drawing.Size(231, 80);
             this.metroTile1.TabIndex = 3;
             this.metroTile1.Text = "Account";
             this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -87,9 +90,10 @@
             // 
             this.CustomerOrdersBtn.ActiveControl = null;
             this.CustomerOrdersBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CustomerOrdersBtn.Location = new System.Drawing.Point(310, 164);
+            this.CustomerOrdersBtn.Location = new System.Drawing.Point(413, 202);
+            this.CustomerOrdersBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CustomerOrdersBtn.Name = "CustomerOrdersBtn";
-            this.CustomerOrdersBtn.Size = new System.Drawing.Size(173, 65);
+            this.CustomerOrdersBtn.Size = new System.Drawing.Size(231, 80);
             this.CustomerOrdersBtn.TabIndex = 2;
             this.CustomerOrdersBtn.Text = "Orders";
             this.CustomerOrdersBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -105,25 +109,29 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(64, 262);
+            this.pictureBox1.Location = new System.Drawing.Point(85, 322);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(77, 73);
+            this.pictureBox1.Size = new System.Drawing.Size(103, 90);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 347);
+            this.ClientSize = new System.Drawing.Size(721, 427);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.CustomerOrdersBtn);
             this.Controls.Add(this.Cart);
             this.Controls.Add(this.CustomerMenuBtn);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
