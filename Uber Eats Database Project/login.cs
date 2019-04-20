@@ -289,5 +289,125 @@ namespace Uber_Eats_Database_Project
 
             Helper.onHover((Button)sender, Color.Black);
         }
+
+        private void userNameSignIn_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!customerChkBxSignIn.Checked && !partnerChkBxSignIn.Checked)
+                {
+                    MessageBox.Show("Please select your membership role!");
+                    return;
+                }
+                if (userNameSignIn.Text == "Username*" || userNameSignIn.Text == "")
+                {
+                    MessageBox.Show("Please fill the Username field");
+                    return;
+                }
+                if (passwordSignIn.Text == "Password*" || passwordSignIn.Text == "")
+                {
+                    MessageBox.Show("Please fill the Password field");
+                    return;
+                }
+                con.Open();
+                if (customerChkBxSignIn.Checked)
+                {
+                    OracleCommand cmd = new OracleCommand("select count(USERNAME) from customer where USERNAME = :name and PASSWORD = :pass", con);
+                    cmd.Parameters.Add("name", userNameSignIn.Text);
+                    cmd.Parameters.Add("pass", passwordSignIn.Text);
+                    int cnt = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (cnt > 0)
+                    {
+                        Helper.currentUserName = userNameSignIn.Text;
+                        Helper.currentUserRole = 1;
+                        mainform = new MainForm();
+                        mainform.Show();
+                        this.Hide();
+                        mainform.FormClosing += letsShow;
+                    }
+                    else
+                        MessageBox.Show("check your username and password!");
+                }
+                else
+                {
+                    OracleCommand cmd = new OracleCommand("select count(USERNAME) from DELIVERY_PARTNER where USERNAME = :name and PASSWORD = :pass", con);
+                    cmd.Parameters.Add("name", userNameSignIn.Text);
+                    cmd.Parameters.Add("pass", passwordSignIn.Text);
+                    int cnt = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (cnt > 0)
+                    {
+                        Helper.currentUserName = userNameSignIn.Text;
+                        Helper.currentUserRole = 2;
+                        mainform = new MainForm();
+                        mainform.Show();
+                        this.Hide();
+                        mainform.FormClosing += letsShow;
+                    }
+                    else
+                        MessageBox.Show("check your username and password!");
+                }
+                con.Close();
+            }
+        }
+
+        private void passwordSignIn_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!customerChkBxSignIn.Checked && !partnerChkBxSignIn.Checked)
+                {
+                    MessageBox.Show("Please select your membership role!");
+                    return;
+                }
+                if (userNameSignIn.Text == "Username*" || userNameSignIn.Text == "")
+                {
+                    MessageBox.Show("Please fill the Username field");
+                    return;
+                }
+                if (passwordSignIn.Text == "Password*" || passwordSignIn.Text == "")
+                {
+                    MessageBox.Show("Please fill the Password field");
+                    return;
+                }
+                con.Open();
+                if (customerChkBxSignIn.Checked)
+                {
+                    OracleCommand cmd = new OracleCommand("select count(USERNAME) from customer where USERNAME = :name and PASSWORD = :pass", con);
+                    cmd.Parameters.Add("name", userNameSignIn.Text);
+                    cmd.Parameters.Add("pass", passwordSignIn.Text);
+                    int cnt = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (cnt > 0)
+                    {
+                        Helper.currentUserName = userNameSignIn.Text;
+                        Helper.currentUserRole = 1;
+                        mainform = new MainForm();
+                        mainform.Show();
+                        this.Hide();
+                        mainform.FormClosing += letsShow;
+                    }
+                    else
+                        MessageBox.Show("check your username and password!");
+                }
+                else
+                {
+                    OracleCommand cmd = new OracleCommand("select count(USERNAME) from DELIVERY_PARTNER where USERNAME = :name and PASSWORD = :pass", con);
+                    cmd.Parameters.Add("name", userNameSignIn.Text);
+                    cmd.Parameters.Add("pass", passwordSignIn.Text);
+                    int cnt = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (cnt > 0)
+                    {
+                        Helper.currentUserName = userNameSignIn.Text;
+                        Helper.currentUserRole = 2;
+                        mainform = new MainForm();
+                        mainform.Show();
+                        this.Hide();
+                        mainform.FormClosing += letsShow;
+                    }
+                    else
+                        MessageBox.Show("check your username and password!");
+                }
+                con.Close();
+            }
+        }
     }
 }
