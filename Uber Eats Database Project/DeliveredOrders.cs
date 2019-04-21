@@ -16,14 +16,14 @@ namespace Uber_Eats_Database_Project {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class DeilveredOrders : ReportClass {
+    public class DeliveredOrders : ReportClass {
         
-        public DeilveredOrders() {
+        public DeliveredOrders() {
         }
         
         public override string ResourceName {
             get {
-                return "DeilveredOrders.rpt";
+                return "DeliveredOrders.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Uber_Eats_Database_Project {
         
         public override string FullResourceName {
             get {
-                return "Uber_Eats_Database_Project.DeilveredOrders.rpt";
+                return "Uber_Eats_Database_Project.DeliveredOrders.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace Uber_Eats_Database_Project {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace Uber_Eats_Database_Project {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,17 +82,41 @@ namespace Uber_Eats_Database_Project {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[4];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
+            get {
+                return this.ReportDefinition.Sections[5];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.CrystalReports.Engine.Section Section5 {
+            get {
+                return this.ReportDefinition.Sections[6];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_DeliveryPartnerUsername {
+            get {
+                return this.DataDefinition.ParameterFields[0];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedDeilveredOrders : Component, ICachedReport {
+    public class CachedDeliveredOrders : Component, ICachedReport {
         
-        public CachedDeilveredOrders() {
+        public CachedDeliveredOrders() {
         }
         
         [Browsable(false)]
@@ -129,7 +153,7 @@ namespace Uber_Eats_Database_Project {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            DeilveredOrders rpt = new DeilveredOrders();
+            DeliveredOrders rpt = new DeliveredOrders();
             rpt.Site = this.Site;
             return rpt;
         }

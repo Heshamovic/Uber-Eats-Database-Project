@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.Shared;
 
 namespace Uber_Eats_Database_Project
 {
@@ -110,6 +111,20 @@ namespace Uber_Eats_Database_Project
             //Orders o = new Orders();
             //o.Show();
             //this.Hide();
+        }
+
+        private void testBtn_Click(object sender, EventArgs e)
+        {
+            /*DeliveredOrders doe = new DeliveredOrders();
+            ReportsForm rf = new ReportsForm();
+            rf.Show();
+            this.Hide();
+            rf.FormClosing += letsShow;*/
+            
+        }
+        public void letsShow(object sender, FormClosingEventArgs e)
+        {
+           /* this.Show();*/
         }
     }
 }
