@@ -50,10 +50,7 @@ namespace Uber_Eats_Database_Project
                 OrdersGV[1, rind].Value = i.RESTAURANT_NAME;
                 OrdersGV[2, rind].Value = i.RESTAURANT_LOCATION;
                 OrdersGV[3, rind].Value = i.NO_OF_ITEMS_PER_FOOD.ToString();
-                OrdersGV[4, rind].Value = false;
-                if (i.BOUGHT == "y" || i.BOUGHT == "Y")
-                    OrdersGV[4, rind].Value = true;
-                rind++;
+                OrdersGV[4, rind++].Value = (i.BOUGHT == "y" || i.BOUGHT == "Y");
             }
         }
     }
