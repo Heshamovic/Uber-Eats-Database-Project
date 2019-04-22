@@ -125,6 +125,8 @@
             this.AccountBtn.Text = "Account";
             this.AccountBtn.UseVisualStyleBackColor = false;
             this.AccountBtn.Click += new System.EventHandler(this.AccountBtn_Click);
+            this.AccountBtn.MouseEnter += new System.EventHandler(this.AccountBtn_MouseEnter);
+            this.AccountBtn.MouseLeave += new System.EventHandler(this.AccountBtn_MouseLeave);
             // 
             // CartBtn
             // 
@@ -140,6 +142,8 @@
             this.CartBtn.Text = "View Cart";
             this.CartBtn.UseVisualStyleBackColor = false;
             this.CartBtn.Click += new System.EventHandler(this.CartBtn_Click);
+            this.CartBtn.MouseEnter += new System.EventHandler(this.CartBtn_MouseEnter);
+            this.CartBtn.MouseLeave += new System.EventHandler(this.CartBtn_MouseLeave);
             // 
             // MenusBtn
             // 
@@ -155,6 +159,8 @@
             this.MenusBtn.Text = "Menus";
             this.MenusBtn.UseVisualStyleBackColor = false;
             this.MenusBtn.Click += new System.EventHandler(this.MenusBtn_Click);
+            this.MenusBtn.MouseEnter += new System.EventHandler(this.MenusBtn_MouseEnter);
+            this.MenusBtn.MouseLeave += new System.EventHandler(this.MenusBtn_MouseLeave);
             // 
             // OrdersBtn
             // 
@@ -170,6 +176,8 @@
             this.OrdersBtn.Text = "My Orders";
             this.OrdersBtn.UseVisualStyleBackColor = false;
             this.OrdersBtn.Click += new System.EventHandler(this.OrdersBtn_Click);
+            this.OrdersBtn.MouseEnter += new System.EventHandler(this.OrdersBtn_MouseEnter);
+            this.OrdersBtn.MouseLeave += new System.EventHandler(this.OrdersBtn_MouseLeave);
             // 
             // bunifuDragControl1
             // 
@@ -194,6 +202,8 @@
             this.DAccountBtn.UseVisualStyleBackColor = false;
             this.DAccountBtn.Visible = false;
             this.DAccountBtn.Click += new System.EventHandler(this.DAccountBtn_Click);
+            this.DAccountBtn.MouseEnter += new System.EventHandler(this.DAccountBtn_MouseEnter);
+            this.DAccountBtn.MouseLeave += new System.EventHandler(this.DAccountBtn_MouseLeave);
             // 
             // DeliveredOrdersBtn
             // 
@@ -203,7 +213,7 @@
             this.DeliveredOrdersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeliveredOrdersBtn.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeliveredOrdersBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DeliveredOrdersBtn.Location = new System.Drawing.Point(310, 184);
+            this.DeliveredOrdersBtn.Location = new System.Drawing.Point(310, 191);
             this.DeliveredOrdersBtn.Name = "DeliveredOrdersBtn";
             this.DeliveredOrdersBtn.Size = new System.Drawing.Size(179, 55);
             this.DeliveredOrdersBtn.TabIndex = 24;
@@ -211,6 +221,8 @@
             this.DeliveredOrdersBtn.UseVisualStyleBackColor = false;
             this.DeliveredOrdersBtn.Visible = false;
             this.DeliveredOrdersBtn.Click += new System.EventHandler(this.DeliveredOrdersBtn_Click);
+            this.DeliveredOrdersBtn.MouseEnter += new System.EventHandler(this.DeliveredOrdersBtn_MouseEnter);
+            this.DeliveredOrdersBtn.MouseLeave += new System.EventHandler(this.DeliveredOrdersBtn_MouseLeave);
             // 
             // PendingOrdersBtn
             // 
@@ -220,7 +232,7 @@
             this.PendingOrdersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PendingOrdersBtn.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PendingOrdersBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.PendingOrdersBtn.Location = new System.Drawing.Point(53, 184);
+            this.PendingOrdersBtn.Location = new System.Drawing.Point(53, 192);
             this.PendingOrdersBtn.Name = "PendingOrdersBtn";
             this.PendingOrdersBtn.Size = new System.Drawing.Size(177, 55);
             this.PendingOrdersBtn.TabIndex = 23;
@@ -228,6 +240,8 @@
             this.PendingOrdersBtn.UseVisualStyleBackColor = false;
             this.PendingOrdersBtn.Visible = false;
             this.PendingOrdersBtn.Click += new System.EventHandler(this.PendingOrdersBtn_Click);
+            this.PendingOrdersBtn.MouseEnter += new System.EventHandler(this.PendingOrdersBtn_MouseEnter);
+            this.PendingOrdersBtn.MouseLeave += new System.EventHandler(this.PendingOrdersBtn_MouseLeave);
             // 
             // UsernameLabel
             // 
