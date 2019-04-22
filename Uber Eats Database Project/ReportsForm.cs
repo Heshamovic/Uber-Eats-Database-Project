@@ -28,6 +28,7 @@ namespace Uber_Eats_Database_Project
         {
             doe = new DeliveredOrders();
             doe.SetParameterValue(0, Helper.currentUserName);
+            crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             crystalReportViewer1.ReportSource = doe;
         }
 

@@ -38,6 +38,9 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -56,8 +59,12 @@
       <HintPath>E:\app\DELL\product\11.2.0\dbhome_1\ODP.NET\bin\2.x\Oracle.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -71,6 +78,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CUSTOMER.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
     <Compile Include="DeliveredOrders.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -82,6 +92,15 @@
     </Compile>
     <Compile Include="CustomerAccount.Designer.cs">
       <DependentUpon>CustomerAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DELIVERY_PARTNER.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FOOD.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FOOD_TYPE.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -96,6 +115,18 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
+    <Compile Include="ORDER.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_FOOD.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PendingDelivering.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PendingDelivering.Designer.cs">
+      <DependentUpon>PendingDelivering.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportsForm.cs">
@@ -103,6 +134,33 @@
     </Compile>
     <Compile Include="ReportsForm.Designer.cs">
       <DependentUpon>ReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RESTAURANT.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REST_NUMBERS.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TRIP.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UberEats.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UberEats.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UberEats.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UberEats.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UberEats.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="WORKING_TIME.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DeliveredOrders.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -116,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingDelivering.resx">
+      <DependentUpon>PendingDelivering.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -140,6 +201,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="UberEats.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UberEats.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="UberEats.edmx.diagram">
+      <DependentUpon>UberEats.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -148,7 +216,20 @@
     <None Include="resources\exit_delete_close_remove_door-512.png" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UberEats.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UberEats.Context.cs</LastGenOutput>
+      <DependentUpon>UberEats.edmx</DependentUpon>
+    </Content>
+    <Content Include="UberEats.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UberEats.edmx</DependentUpon>
+      <LastGenOutput>UberEats.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

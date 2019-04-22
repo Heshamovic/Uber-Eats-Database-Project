@@ -118,16 +118,86 @@ namespace Uber_Eats_Database_Project
 
         private void testBtn_Click(object sender, EventArgs e)
         {
-            /*DeliveredOrders doe = new DeliveredOrders();
-            ReportsForm rf = new ReportsForm();
-            rf.Show();
+            PendingDelivering pd = new PendingDelivering();
+            pd.Show();
             this.Hide();
-            rf.FormClosing += letsShow;*/
+            pd.FormClosing += letsShow;
             
         }
         public void letsShow(object sender, FormClosingEventArgs e)
         {
-           /* this.Show();*/
+            this.Show();
         }
+        #region Buttons Hovers
+        private void DAccountBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void DAccountBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
+        private void MenusBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void AccountBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void DeliveredOrdersBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void PendingOrdersBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void CartBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void OrdersBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void AccountBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
+        private void MenusBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
+        private void PendingOrdersBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
+        private void CartBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
+        private void OrdersBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
+        private void DeliveredOrdersBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+        #endregion
     }
 }
