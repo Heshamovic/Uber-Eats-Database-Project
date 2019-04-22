@@ -115,11 +115,10 @@ namespace Uber_Eats_Database_Project
 
         private void testBtn_Click(object sender, EventArgs e)
         {
-            DeliveredOrders doe = new DeliveredOrders();
-            ReportsForm rf = new ReportsForm();
-            rf.Show();
+            PendingDelivering pd = new PendingDelivering();
+            pd.Show();
             this.Hide();
-            rf.FormClosing += letsShow;
+            pd.FormClosing += letsShow;
             
         }
         public void letsShow(object sender, FormClosingEventArgs e)

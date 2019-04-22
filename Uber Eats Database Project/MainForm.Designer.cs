@@ -213,7 +213,7 @@
             this.DeliveredOrdersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeliveredOrdersBtn.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeliveredOrdersBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DeliveredOrdersBtn.Location = new System.Drawing.Point(310, 191);
+            this.DeliveredOrdersBtn.Location = new System.Drawing.Point(310, 185);
             this.DeliveredOrdersBtn.Name = "DeliveredOrdersBtn";
             this.DeliveredOrdersBtn.Size = new System.Drawing.Size(179, 55);
             this.DeliveredOrdersBtn.TabIndex = 24;
@@ -232,7 +232,7 @@
             this.PendingOrdersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PendingOrdersBtn.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PendingOrdersBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.PendingOrdersBtn.Location = new System.Drawing.Point(53, 192);
+            this.PendingOrdersBtn.Location = new System.Drawing.Point(53, 186);
             this.PendingOrdersBtn.Name = "PendingOrdersBtn";
             this.PendingOrdersBtn.Size = new System.Drawing.Size(177, 55);
             this.PendingOrdersBtn.TabIndex = 23;
