@@ -33,6 +33,7 @@
             this.LogoutBtn = new System.Windows.Forms.PictureBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.header = new System.Windows.Forms.Panel();
+            this.CloseBtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.exit = new Bunifu.Framework.UI.BunifuImageButton();
             this.AccountBtn = new System.Windows.Forms.Button();
             this.CartBtn = new System.Windows.Forms.Button();
@@ -43,11 +44,11 @@
             this.DeliveredOrdersBtn = new System.Windows.Forms.Button();
             this.PendingOrdersBtn = new System.Windows.Forms.Button();
             this.UsernameLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.CloseBtn = new Bunifu.Framework.UI.BunifuImageButton();
+            this.testBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LogoutBtn)).BeginInit();
             this.header.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.SuspendLayout();
             // 
             // LogoutBtn
@@ -78,6 +79,22 @@
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(541, 29);
             this.header.TabIndex = 17;
+            // 
+            // CloseBtn
+            // 
+            this.CloseBtn.BackColor = System.Drawing.Color.Transparent;
+            this.CloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CloseBtn.Image = ((System.Drawing.Image)(resources.GetObject("CloseBtn.Image")));
+            this.CloseBtn.ImageActive = null;
+            this.CloseBtn.Location = new System.Drawing.Point(504, 2);
+            this.CloseBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.CloseBtn.Name = "CloseBtn";
+            this.CloseBtn.Size = new System.Drawing.Size(26, 27);
+            this.CloseBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CloseBtn.TabIndex = 26;
+            this.CloseBtn.TabStop = false;
+            this.CloseBtn.Zoom = 20;
+            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
             // 
             // exit
             // 
@@ -221,21 +238,20 @@
             this.UsernameLabel.TabIndex = 25;
             this.UsernameLabel.Text = "Welcome, ";
             // 
-            // CloseBtn
+            // testBtn
             // 
-            this.CloseBtn.BackColor = System.Drawing.Color.Transparent;
-            this.CloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CloseBtn.Image = ((System.Drawing.Image)(resources.GetObject("CloseBtn.Image")));
-            this.CloseBtn.ImageActive = null;
-            this.CloseBtn.Location = new System.Drawing.Point(504, 2);
-            this.CloseBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(26, 27);
-            this.CloseBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CloseBtn.TabIndex = 26;
-            this.CloseBtn.TabStop = false;
-            this.CloseBtn.Zoom = 20;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            this.testBtn.BackColor = System.Drawing.Color.Black;
+            this.testBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.testBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.testBtn.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.testBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.testBtn.Location = new System.Drawing.Point(365, 262);
+            this.testBtn.Name = "testBtn";
+            this.testBtn.Size = new System.Drawing.Size(124, 55);
+            this.testBtn.TabIndex = 26;
+            this.testBtn.Text = "Test Report";
+            this.testBtn.UseVisualStyleBackColor = false;
+            this.testBtn.Click += new System.EventHandler(this.testBtn_Click);
             // 
             // MainForm
             // 
@@ -243,6 +259,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 347);
             this.ControlBox = false;
+            this.Controls.Add(this.testBtn);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.DeliveredOrdersBtn);
             this.Controls.Add(this.PendingOrdersBtn);
@@ -258,8 +275,8 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.LogoutBtn)).EndInit();
             this.header.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +297,6 @@
         private System.Windows.Forms.Button DAccountBtn;
         private Bunifu.Framework.UI.BunifuCustomLabel UsernameLabel;
         private Bunifu.Framework.UI.BunifuImageButton CloseBtn;
+        private System.Windows.Forms.Button testBtn;
     }
 }
