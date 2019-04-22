@@ -78,6 +78,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cart.cs" />
+    <Compile Include="Cart.Designer.cs">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cartItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="cartItem.Designer.cs">
+      <DependentUpon>cartItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="CUSTOMER.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
@@ -115,6 +125,9 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="ORDER.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
@@ -162,6 +175,12 @@
     <Compile Include="WORKING_TIME.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Cart.resx">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cartItem.resx">
+      <DependentUpon>cartItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeliveredOrders.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DeliveredOrders.cs</LastGenOutput>
@@ -186,6 +205,8 @@
     <EmbeddedResource Include="ReportsForm.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\Uber Eats Database Project.exe.config" />
+    <None Include="obj\Release\Uber Eats Database Project.csproj.CoreCompileInputs.cache" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -220,6 +241,34 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Bunifu_UI_v1.5.3.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.ReportSource.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Shared.dll" />
+    <Content Include="bin\Debug\CrystalDecisions.Windows.Forms.dll" />
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\FlashControlV71.dll" />
+    <Content Include="bin\Debug\MetroFramework.Design.dll" />
+    <Content Include="bin\Debug\MetroFramework.dll" />
+    <Content Include="bin\Debug\MetroFramework.Fonts.dll" />
+    <Content Include="bin\Debug\Oracle.DataAccess.dll" />
+    <Content Include="bin\Debug\ShockwaveFlashObjects.dll" />
+    <Content Include="bin\Debug\stdole.dll" />
+    <Content Include="bin\Debug\Uber Eats Database Project.exe" />
+    <Content Include="bin\Debug\Uber Eats Database Project.pdb" />
     <Content Include="UberEats.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UberEats.Context.cs</LastGenOutput>
@@ -230,6 +279,9 @@
       <DependentUpon>UberEats.edmx</DependentUpon>
       <LastGenOutput>UberEats.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

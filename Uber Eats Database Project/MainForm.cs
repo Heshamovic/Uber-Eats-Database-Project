@@ -73,19 +73,17 @@ namespace Uber_Eats_Database_Project
 
         private void DAccountBtn_Click(object sender, EventArgs e)
         {
-            //Account acc = new Account();
-            //acc.Show();
-            //this.Hide();
+            CustomerAccount acc = new CustomerAccount();
+            acc.Show();
+            this.Hide();
         }
 
         private void AccountBtn_Click(object sender, EventArgs e)
         {
-            //Account acc = new Account();
-            //acc.Show();
-            //this.Hide();
             CustomerAccount ac = new CustomerAccount();
             ac.Show();
             this.Hide();
+            ac.FormClosing += letsShow;
         }
 
         private void DeliveredOrdersBtn_Click(object sender, EventArgs e)
