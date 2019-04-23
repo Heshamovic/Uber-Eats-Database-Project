@@ -30,13 +30,13 @@ namespace Uber_Eats_Database_Project
             OrdersGV.ColumnHeadersVisible = true;
             Entities ent = new Entities();
             var oid = from ord in ent.ORDERS
-                      where ord.STATUS == "pd"
+                      join t in ent.TRIPs on ord.ORDER_ID equals t.ORDER_ID
+                      where ord.STATUS == "pd" && t.DELIVERYPARTNER_USERNAME == Helper.currentUserName
                       select ord.ORDER_ID;
             ordID = int.Parse(oid.FirstOrDefault().ToString());
             var v = from of in ent.ORDER_FOOD
                     join t in ent.TRIPs on of.ORDER_ID equals t.ORDER_ID
                     where t.ORDER_ID == oid.FirstOrDefault()
-                    && t.DELIVERYPARTNER_USERNAME == Helper.currentUserName
                     select new
                     {
                         of.FOOD_NAME,
@@ -62,31 +62,6 @@ namespace Uber_Eats_Database_Project
         {
             Entities ent = new Entities();
             return ent.ORDER_FOOD.Count(x => x.ORDER_ID == ordID && (x.BOUGHT == "y" || x.BOUGHT == "Y")) == ent.ORDER_FOOD.Count(x => x.ORDER_ID == ordID);
-        }
-
-        private void OrdersGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 4)
-            {
-                string s = OrdersGV[0, e.RowIndex].Value.ToString(),
-                       t = OrdersGV[1, e.RowIndex].Value.ToString(),
-                       u = OrdersGV[2, e.RowIndex].Value.ToString();
-                Entities ent = new Entities();
-                ORDER_FOOD fo = (from x in ent.ORDER_FOOD
-                                 where x.FOOD_NAME == s
-                                 && x.RESTAURANT_NAME == t
-                                 && x.RESTAURANT_LOCATION == u
-                                 select x).FirstOrDefault();
-                if ((bool)OrdersGV[4, e.RowIndex].Value == true)
-                {
-                    fo.BOUGHT = "y";
-                    MessageBox.Show("heeeeh");
-                }
-                else
-                    fo.BOUGHT = "n";
-                ent.SaveChanges();
-                enableConfirmBtn();
-            }
         }
 
         private void OrderDeliveredBtn_Click(object sender, EventArgs e)
@@ -115,6 +90,32 @@ namespace Uber_Eats_Database_Project
             deliverycost = totalprice;
             MessageBox.Show("Order total cost = " + totalprice.ToString());
             this.Close();
+        }
+
+        private void OrdersGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                this.OrdersGV.CommitEdit(DataGridViewDataErrorContexts.Commit);
+                string s = OrdersGV[0, e.RowIndex].Value.ToString(),
+                       t = OrdersGV[1, e.RowIndex].Value.ToString(),
+                       u = OrdersGV[2, e.RowIndex].Value.ToString();
+                Entities ent = new Entities();
+                ORDER_FOOD fo = (from x in ent.ORDER_FOOD
+                                 where x.FOOD_NAME == s
+                                 && x.RESTAURANT_NAME == t
+                                 && x.RESTAURANT_LOCATION == u
+                                 select x).FirstOrDefault();
+                if (OrdersGV[4, e.RowIndex].Value.ToString() == "true")
+                {
+                    fo.BOUGHT = "y";
+                    MessageBox.Show("heeeeh");
+                }
+                else
+                    fo.BOUGHT = "n";
+                ent.SaveChanges();
+                enableConfirmBtn();
+            }
         }
     }
 }
