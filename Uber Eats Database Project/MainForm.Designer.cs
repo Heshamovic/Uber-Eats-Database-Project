@@ -45,6 +45,7 @@
             this.PendingOrdersBtn = new System.Windows.Forms.Button();
             this.UsernameLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.testBtn = new System.Windows.Forms.Button();
+            this.CurrentOrderBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LogoutBtn)).BeginInit();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
@@ -194,9 +195,9 @@
             this.DAccountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DAccountBtn.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DAccountBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.DAccountBtn.Location = new System.Drawing.Point(210, 73);
+            this.DAccountBtn.Location = new System.Drawing.Point(310, 73);
             this.DAccountBtn.Name = "DAccountBtn";
-            this.DAccountBtn.Size = new System.Drawing.Size(124, 55);
+            this.DAccountBtn.Size = new System.Drawing.Size(179, 55);
             this.DAccountBtn.TabIndex = 22;
             this.DAccountBtn.Text = "Account";
             this.DAccountBtn.UseVisualStyleBackColor = false;
@@ -267,12 +268,32 @@
             this.testBtn.UseVisualStyleBackColor = false;
             this.testBtn.Click += new System.EventHandler(this.testBtn_Click);
             // 
+            // CurrentOrderBtn
+            // 
+            this.CurrentOrderBtn.BackColor = System.Drawing.Color.Black;
+            this.CurrentOrderBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CurrentOrderBtn.Enabled = false;
+            this.CurrentOrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CurrentOrderBtn.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentOrderBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.CurrentOrderBtn.Location = new System.Drawing.Point(53, 73);
+            this.CurrentOrderBtn.Name = "CurrentOrderBtn";
+            this.CurrentOrderBtn.Size = new System.Drawing.Size(177, 55);
+            this.CurrentOrderBtn.TabIndex = 27;
+            this.CurrentOrderBtn.Text = "Current Order";
+            this.CurrentOrderBtn.UseVisualStyleBackColor = false;
+            this.CurrentOrderBtn.Visible = false;
+            this.CurrentOrderBtn.Click += new System.EventHandler(this.CurrentOrderBtn_Click);
+            this.CurrentOrderBtn.MouseEnter += new System.EventHandler(this.CurrentOrderBtn_MouseEnter);
+            this.CurrentOrderBtn.MouseLeave += new System.EventHandler(this.CurrentOrderBtn_MouseLeave);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(541, 347);
             this.ControlBox = false;
+            this.Controls.Add(this.CurrentOrderBtn);
             this.Controls.Add(this.testBtn);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.DeliveredOrdersBtn);
@@ -312,5 +333,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel UsernameLabel;
         private Bunifu.Framework.UI.BunifuImageButton CloseBtn;
         private System.Windows.Forms.Button testBtn;
+        private System.Windows.Forms.Button CurrentOrderBtn;
     }
 }

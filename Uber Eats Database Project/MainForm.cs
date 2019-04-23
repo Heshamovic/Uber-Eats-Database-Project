@@ -27,13 +27,9 @@ namespace Uber_Eats_Database_Project
         {
             UsernameLabel.Text += Helper.currentUserName;
             if (Helper.currentUserRole == 1) //Customer
-            {
                 ToggleUser(true);
-            }
             else if (Helper.currentUserRole == 2) //Delivery Partner
-            {
                 ToggleUser(false);
-            }
             else //Admin
             {
 
@@ -48,6 +44,20 @@ namespace Uber_Eats_Database_Project
             DeliveredOrdersBtn.Visible = !UserEnable;
             DAccountBtn.Enabled = !UserEnable;
             DAccountBtn.Visible = !UserEnable;
+            CurrentOrderBtn.Enabled = !UserEnable;
+            CurrentOrderBtn.Visible = !UserEnable;
+            if (!UserEnable)
+            {
+                Entities ent = new Entities();
+                var oid = from ord in ent.ORDERS
+                          where ord.STATUS == "pd"
+                          select ord.ORDER_ID;
+                if (oid != null)
+                {
+                    if (ent.TRIPs.Where(x => x.DELIVERYPARTNER_USERNAME == Helper.currentUserName && x.ORDER_ID == oid.FirstOrDefault()).Count() < 1)
+                        CurrentOrderBtn.Enabled = false;
+                }
+            }
             //Disable Customer Controls
             OrdersBtn.Enabled = UserEnable;
             OrdersBtn.Visible = UserEnable;
@@ -73,9 +83,10 @@ namespace Uber_Eats_Database_Project
 
         private void DAccountBtn_Click(object sender, EventArgs e)
         {
-            CustomerAccount acc = new CustomerAccount();
+            /*CustomerAccount acc = new CustomerAccount();
             acc.Show();
             this.Hide();
+            acc.FormClosing += letsShow;*/
         }
 
         private void AccountBtn_Click(object sender, EventArgs e)
@@ -116,12 +127,13 @@ namespace Uber_Eats_Database_Project
 
         private void testBtn_Click(object sender, EventArgs e)
         {
-            PendingDelivering pd = new PendingDelivering();
-            pd.Show();
-            this.Hide();
-            pd.FormClosing += letsShow;
-            
+            /* PendingDelivering pd = new PendingDelivering();
+             pd.Show();
+             this.Hide();
+             pd.FormClosing += letsShow;*/
+
         }
+
         public void letsShow(object sender, FormClosingEventArgs e)
         {
             this.Show();
@@ -196,6 +208,24 @@ namespace Uber_Eats_Database_Project
         {
             Helper.onHover((Button)sender, Color.Black);
         }
+        private void CurrentOrderBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void CurrentOrderBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
         #endregion
+
+        private void CurrentOrderBtn_Click(object sender, EventArgs e)
+        {
+            PendingDelivering pd = new PendingDelivering();
+            pd.Show();
+            this.Hide();
+            pd.FormClosing += letsShow;
+        }
     }
 }
