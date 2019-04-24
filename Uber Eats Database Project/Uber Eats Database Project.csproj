@@ -1,9 +1,179 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectGuid>{D3100062-1C58-4664-8843-764AF2B3DD44}</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
     <ReferencePath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\</ReferencePath>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Cart.cs" />
+    <Compile Include="Cart.Designer.cs">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cartItem.cs" />
+    <Compile Include="cartItem.Designer.cs">
+      <DependentUpon>cartItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CUSTOMER.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerAccount.cs" />
+    <Compile Include="CustomerAccount.Designer.cs">
+      <DependentUpon>CustomerAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveredOrders.cs" />
+    <Compile Include="DELIVERY_PARTNER.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FOOD.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FOOD_TYPE.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Helper.cs" />
+    <Compile Include="login.cs" />
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="ORDER.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER_FOOD.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PendingDelivering.cs" />
+    <Compile Include="PendingDelivering.Designer.cs">
+      <DependentUpon>PendingDelivering.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="ReportsForm.cs" />
+    <Compile Include="ReportsForm.Designer.cs">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RESTAURANT.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantFood.cs" />
+    <Compile Include="restaurants.cs" />
+    <Compile Include="restaurants.Designer.cs">
+      <DependentUpon>restaurants.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REST_NUMBERS.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TRIP.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UberEats.Context.cs" />
+    <Compile Include="UberEats.Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UberEats.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UberEats.cs" />
+    <Compile Include="UberEats.Designer.cs">
+      <DependentUpon>UberEats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UberEats1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UberEats1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UberEats.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="WORKING_TIME.cs">
+      <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Bunifu_UI_v1.5.3" />
+    <None Include="obj\Debug\Uber Eats Database Project.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\Uber Eats Database Project.csprojAssemblyReference.cache" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings" />
+    <EntityDeploy Include="UberEats.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UberEats1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="UberEats.edmx.diagram">
+      <DependentUpon>UberEats.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Cart.resx">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cartItem.resx">
+      <DependentUpon>cartItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerAccount.resx">
+      <DependentUpon>CustomerAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeliveredOrders.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingDelivering.resx">
+      <DependentUpon>PendingDelivering.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="ReportsForm.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestaurantFood.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="restaurants.resx">
+      <DependentUpon>restaurants.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bunifu_UI_v1.5.3.dll" />
+    <Content Include="resources\cancel_24px.png" />
+    <Content Include="resources\Checkout_32px.png" />
+    <Content Include="resources\exit_delete_close_remove_door-512.png" />
+    <Content Include="resources\logo.jpg" />
+    <Content Include="resources\logo.png" />
+    <Content Include="UberEats.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UberEats.Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="UberEats.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>UberEats1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="bin\x86\Debug\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Release\" />
+    <Folder Include="obj\x86\Debug\TempPE\" />
+  </ItemGroup>
 </Project>
