@@ -14,6 +14,16 @@ namespace Uber_Eats_Database_Project
 {
     public partial class login : Form
     {
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
         public OracleConnection con;
         public login()
         {
@@ -82,7 +92,6 @@ namespace Uber_Eats_Database_Project
 
         private void signUpBtn_Click(object sender, EventArgs e)
         {
-            con.Close();
             if (!customerChkBx.Checked && !partnerChkBx.Checked)
             {
                 MessageBox.Show("Please select your membership role!");
@@ -133,7 +142,6 @@ namespace Uber_Eats_Database_Project
                 MessageBox.Show("This user has been added!");
                 customerChkBx.Checked = partnerChkBx.Checked = false;
                 vehicleTB.Enabled = false;
-                userNameSignUp.Text = "Username*";
                 passwordSignUp.Text = "Password*";
                 fName.Text = "First Name";
                 lName.Text = "Last Name";
@@ -142,6 +150,16 @@ namespace Uber_Eats_Database_Project
                 vehicleTB.Text = "Vehicle";
                 vehicleTB.ForeColor = Color.DarkGray;
                 fName.ForeColor = lName.ForeColor = creditCard.ForeColor = locationTB.ForeColor = userNameSignUp.ForeColor = passwordSignUp.ForeColor = Color.DarkGray;
+                userNameSignIn.Text = userNameSignUp.Text;
+                Helper.currentUserName = userNameSignIn.Text;
+                Helper.currentUserRole = nrole;
+                userNameSignUp.Text = "Username*";
+                userNameSignIn.ForeColor = Color.Black;
+                mainform = new MainForm();
+                mainform.Show();
+                this.Hide();
+                mainform.FormClosing += letsShow;
+
             }
             else
                 MessageBox.Show("This username is already taken!");
@@ -150,7 +168,7 @@ namespace Uber_Eats_Database_Project
 
         private void login_Load(object sender, EventArgs e)
         {
-            con = new OracleConnection("data source = orcl; user id = scott; password = tiger;");
+            con = new OracleConnection(Helper.conStr);
         }
 
         private void creditCard_TextChanged(object sender, EventArgs e)
@@ -237,8 +255,7 @@ namespace Uber_Eats_Database_Project
         }
         public void letsShow(object sender, FormClosingEventArgs e)
         {
-            userNameSignIn.ForeColor = passwordSignIn.ForeColor = Color.DarkGray;
-            userNameSignIn.Text = "Username*";
+            passwordSignIn.ForeColor = Color.DarkGray;
             passwordSignIn.Text = "Password*";
             this.Show();
         }

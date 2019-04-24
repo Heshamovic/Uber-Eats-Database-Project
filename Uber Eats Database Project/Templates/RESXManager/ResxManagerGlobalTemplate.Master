@@ -1,0 +1,26 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="resxManager">
+<head runat="server">
+    <link href="~/css/RESXManager/ResourceEditor.css" rel="Stylesheet" type="text/css" runat="server" />
+    <link href="~/css/RESXManager/spellchecker.css" rel="Stylesheet" type="text/css" runat="server" />
+    <link href="~/css/RESXManager/dd.css" rel="Stylesheet" type="text/css" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" EnablePartialRendering="true" runat="server">
+            <Scripts>
+                <asp:ScriptReference Path="~/scripts/resxmanager/jquery-1.7.1.min.js" />
+                <asp:ScriptReference Path="~/scripts/resxmanager/jquery.data.js" />
+                <asp:ScriptReference Path="~/scripts/resxmanager/jquery.watermark.min.js" />
+                <asp:ScriptReference Path="~/scripts/resxmanager/jquery.textarea-expander.js" />
+                <asp:ScriptReference Path="~/scripts/resxmanager/jquery.spellchecker.js" />
+                <asp:ScriptReference Path="~/scripts/resxmanager/jquery.dd.js" />
+                <asp:ScriptReference Assembly="RESXManager.Presentation.PureNet" Name="RESXManager.Presentation.EmbeddedScript.presentation.js" />
+            </Scripts>
+        </asp:ScriptManager>        
+        <asp:ContentPlaceHolder ID="cphContent" runat="server" />
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,190 @@
+/************** Skin 1 *********************/
+#resxManager .dd {
+	/*display:inline-block !important;*/
+	text-align:left;
+	background-color:#fff;
+    color: inherit;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	position:relative;
+}
+#resxManager .resxManager-regional-setting-page .dd
+{
+    float: left;
+}
+#resxManager .dd a
+{
+    font-weight: normal;
+}
+#resxManager .dd .ddTitle {
+	background:#f2f2f2;
+    color: inherit;
+	border:1px solid #c3c3c3;
+	padding:3px;
+	text-indent:0;
+	cursor:default;
+	overflow:hidden;
+	height:16px;
+}
+#resxManager .dd .ddTitle span.arrow {
+	background:url(../../images/RESXManager/dd_arrow.gif) no-repeat 0 0; float:right; display:inline-block;width:16px; height:16px; cursor:pointer; 
+}
+
+#resxManager .dd .ddTitle span.ddTitleText {text-indent:1px; overflow:hidden; line-height:16px;}
+#resxManager .dd .ddTitle span.ddTitleText img{text-align:left; padding:0 2px 0 0}
+#resxManager .dd .ddTitle img.selected {
+	padding:0 3px 0 0;
+	vertical-align:top;
+}
+#resxManager .dd .ddChild {
+	position:absolute;
+	border:1px solid #c3c3c3;
+	border-top:none;
+	display:none;
+	margin:0;
+	width:auto;
+	overflow:auto;
+	overflow-x:hidden !important;
+	background-color:#ffffff;
+    color: inherit;
+}
+#resxManager .dd .ddChild .opta a, #resxManager .dd .ddChild .opta a:visited {padding-left:10px}
+#resxManager .dd .ddChild a {
+	display:block;
+	padding:2px 0 2px 3px;
+	text-decoration:none;
+    background-color: inherit;
+	color:#000;
+	overflow:hidden;
+	white-space:nowrap;
+	cursor:pointer;
+}
+#resxManager .dd .ddChild a:hover {
+	background-color:#C6D3DB;
+    color: inherit;
+}
+#resxManager .dd .ddChild a img {
+	border:0;
+	padding:0 2px 0 0;
+	vertical-align:middle;
+}
+#resxManager .dd .ddChild a.selected {
+	background-color:#C6D3DB;
+	color: inherit;
+}
+#resxManager .hidden {display:none;}
+
+#resxManager .dd .borderTop{border-top:1px solid #c3c3c3 !important;}
+#resxManager .dd .noBorderTop{border-top:none 0  !important}
+
+/************** Skin 2 *********************/
+#resxManager .dd2 {
+	/*display:inline-block !important;*/
+	text-align:left;
+	background-color:#fff;
+    color: inherit;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	position:relative;
+}
+#resxManager .dd2 .ddTitle {
+	background:transparent url(../images/msDropDown.gif) no-repeat;
+	padding:0 3px;
+	text-indent:0;
+	cursor:default;
+	overflow:hidden;
+	height:36px;
+}
+#resxManager .dd2 .ddTitle span.arrow {
+	background:transparent url(../images/icon-arrow.gif) no-repeat 0 0; float:right; display:inline-block;width:27px; height:27px; cursor:pointer; top:5px; position:relative; right:2px;
+}
+
+#resxManager .dd2 .ddTitle span.ddTitleText {text-indent:1px; overflow:hidden; line-height:33px; font-family:Georgia, "Times New Roman", Times, serif; font-size:16px; background-color: inherit; color:#fff;}
+#resxManager .dd2 .ddTitle span.ddTitleText img{text-align:left; padding:0 2px 0 0;}
+#resxManager .dd2 .ddTitle img.selected {
+	padding:0 2px 0 0;
+	vertical-align:top;
+}
+#resxManager .dd2 .ddChild {
+	position:absolute;
+	border:1px solid #c3c3c3;
+	border-top:none;
+	display:none;
+	margin:0;
+	width:auto;
+	overflow:auto;
+	overflow-x:hidden !important;
+	background-color:#ffffff;
+    color: inherit;
+	font-size:14px;
+}
+#resxManager .dd2 .ddChild .opta a, #resxManager .dd2 .ddChild .opta a:visited {padding-left:10px}
+#resxManager .dd2 .ddChild a {
+	display:block;
+	padding:3px 0 3px 3px;
+	text-decoration:none;
+    background-color: inherit;
+	color:#000;
+	overflow:hidden;
+	white-space:nowrap;
+	cursor:pointer;
+}
+#resxManager .dd2 .ddChild a:hover {
+	background-color:#C6D3DB;
+    color: inherit;
+}
+#resxManager .dd2 .ddChild a img {
+	border:0;
+	padding:0 2px 0 0;
+	vertical-align:middle;
+}
+#resxManager .dd2 .ddChild a.selected {
+	background-color:#C6D3DB;
+    color: inherit;	
+}
+
+#resxManager .dd2 .borderTop{border-top:1px solid #c3c3c3  !important;}
+#resxManager .dd2 .noBorderTop{border-top:none 0  !important}
+
+/************* use sprite *****************/
+#resxManager .dd .ddChild a.sprite, #resxManager .dd .ddChild a.sprite:visited {
+	background-image:url(../icons/sprite.gif);
+	background-repeat:no-repeat;
+	padding-left:24px;
+}
+
+#resxManager .dd .ddChild a.calendar, #resxManager .dd .ddChild a.calendar:visited {
+	background-position:0 -404px;
+}
+#resxManager .dd .ddChild a.shoppingcart, #resxManager .dd .ddChild a.shoppingcart:visited {
+	background-position:0 -330px;
+}
+#resxManager .dd .ddChild a.cd, #resxManager .dd .ddChild a.cd:visited {
+	background-position:0 -439px;
+}
+#resxManager .dd .ddChild a.email, #resxManager .dd .ddChild a.email:visited {
+	background-position:0 -256px;
+}
+#resxManager .dd .ddChild a.faq, #resxManager .dd .ddChild a.faq:visited {
+	background-position:0 -183px;
+}
+#resxManager .dd .ddChild a.games,
+#resxManager .dd .ddChild a.games:visited {
+	background-position:0 -365px;
+}
+#resxManager .dd .ddChild a.music, #resxManager .dd .ddChild a.music:visited {
+	background-position:0 -146px;
+}
+#resxManager .dd .ddChild a.phone, #resxManager .dd .ddChild a.phone:visited {
+	background-position:0 -109px;
+}
+#resxManager .dd .ddChild a.graph, #resxManager .dd .ddChild a.graph:visited {
+	background-position:0 -73px;
+}
+#resxManager .dd .ddChild a.secured, #resxManager .dd .ddChild a.secured:visited {
+	background-position:0 -37px;
+}
+#resxManager .dd .ddChild a.video, #resxManager .dd .ddChild a.video:visited {
+	background-position:0 0;
+}
+/*******************************/

@@ -1,0 +1,1510 @@
+﻿#resxManager * {
+    margin: 0;
+    padding: 0;
+}
+
+#resxManager body {
+    margin: 0;
+    background: #fff;
+    color: #000;
+    font:12px Arial, Helvetica, sans-serif;
+    min-width: 800px;
+}
+#resxManager h1{ font-size:36px; background-color: inherit; color:#292929; text-transform:none; line-height:40px; padding:35px 0 35px 0; font-weight:normal; letter-spacing:-1px;}
+
+#resxManager img {
+    border-style: none;
+}
+
+#resxManager a {
+    color: #0074bc;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: inherit;
+}
+
+#resxManager .resxManager-header ul li.resxManager-tabOn a:hover,#resxManager .resxManager-header ul li.resxManager-tabOff a:hover
+{
+    text-decoration: none !important;    
+}
+
+#resxManager input,#resxManager textarea,#resxManager select {
+    font-family: Arial, Sans-Serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: normal;
+    vertical-align: middle;
+    background-color:#fff;
+    color: #000;    
+}
+
+#resxManager .resxManager-left
+{
+	float: left;
+	width: auto;
+}
+#resxManager .resxManager-right
+{
+	float: right;
+	width: auto;
+}
+#resxManager .resxManager-clear
+{
+	clear: both;
+	height: 0px;
+	line-height: 0;
+	overflow: hidden;
+	font-size: 0;
+}
+
+#resxManager textarea.resxManager-txtValue
+{
+    line-height: 20px;
+    width: 100%;
+}
+
+#resxManager textarea.resxManager-txtValue:focus{
+    background-color: #FFFFCC;
+    color: inherit;
+}
+
+
+#resxManager form, #resxManager fieldset {
+    margin: 0;
+    padding: 0;
+    border-style: none;
+}
+
+#resxManager #resxManager-wrapper {
+    padding: 15px 11px;
+    /*height: 1%;
+    overflow: hidden;*/
+}
+
+#resxManager #resxManager-wrapper h1 {
+    margin: 0 0 30px;
+    font-size: 24px;
+}
+
+#resxManager .resxManager-tab-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    position:relative;
+    z-index:2;    
+}
+
+#resxManager .resxManager-tab-nav:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#resxManager .resxManager-tab-nav li {
+    float: left;
+    margin: 0 2px 0 0;
+}
+
+#resxManager .resxManager-tab-nav li a span
+{
+    background: url(../../images/RESXManager/bg-tab-nav.gif) no-repeat 0 0;
+    padding-left: 10px;
+    height: 24px;      
+    float: left;  
+}
+
+#resxManager .resxManager-tab-nav li a {
+    display: block;
+    min-width: 90px;
+    height: 24px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: bold;
+    color: #fff !important;    
+    background-color: inherit;
+    background: url(../../images/RESXManager/bg-tab-nav.gif) no-repeat 100% 0;
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+#resxManager .resxManager-tab-nav li a:hover, #resxManager .resxManager-tab-nav li a.resxManager-active {
+    background-position: 100% -25px;
+    color: #000 !important;
+    background-color: inherit;
+    height: 25px;
+    margin: 0 0 -1px;
+}
+
+#resxManager .resxManager-tab-nav li a:hover span, #resxManager .resxManager-tab-nav li a.resxManager-active span
+{
+    background-position: 0 -25px;
+}
+
+#resxManager .resxManager-main {
+    /*height:1%;*/
+    
+}
+
+#resxManager .resxManager-main .resxManager-lb {
+    padding: 23px 20px 23px;
+}
+
+#resxManager .resxManager-main-colored {
+    background: #ced7db;
+    position: relative;
+    color: inherit;
+}
+
+#resxManager .resxManager-main-colored .resxManager-rt {
+    background: #ced7db url(../../images/RESXManager/main-colored-rt.gif) no-repeat;
+    background-position: 100% 0;
+    color: inherit;
+}
+
+#resxManager .resxManager-main-colored .resxManager-rb {
+    background: url(../../images/RESXManager/main-colored-rb.gif) no-repeat;
+    background-position: 100% 100%;
+}
+
+#resxManager .resxManager-main-colored .resxManager-lb {
+    background: url(../../images/RESXManager/main-colored-lb.gif) no-repeat;
+    background-position: 0 100%;
+}
+
+#resxManager .resxManager-main-bordered{
+    border:1px solid #a6b7be;
+}
+#resxManager .resxManager-main-bordered:after{
+    content:"";
+    clear:both;
+    display:block;
+}
+
+#resxManager .resxManager-main-bordered .resxManager-rt {
+    background: url(../../images/RESXManager/main-bordered-rt.gif) no-repeat;
+    background-position: 100% 0;
+    margin:-1px;
+    position:relative;
+    /*overflow:hidden;    */
+}
+
+#resxManager .resxManager-main-bordered .resxManager-rb {
+    background: url(../../images/RESXManager/main-bordered-rb.gif) no-repeat;
+    background-position: 100% 100%;
+    position:relative;
+    width:100%;
+}
+
+#resxManager .resxManager-main-bordered .resxManager-lb {
+    background: url(../../images/RESXManager/main-bordered-lb.gif) no-repeat;
+    background-position: 0 100%;
+    position:relative;
+}
+
+
+#resxManager .resxManager-columns-row {
+    width: 100%;
+    /*overflow: hidden;*/
+}
+
+#resxManager .resxManager-columns-row:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+#resxManager .resxManager-upperLabelsMenu, #resxManager .resxManager-upperFileManagementMenu
+{
+    overflow: hidden;
+}
+#resxManager body .resxManager-columns-row .resxManager-column {
+    float: left;
+    padding: 0 20px 150px;
+    margin-bottom: -150px;
+    width: 176px;
+    border-right: 1px solid #fff;
+}
+
+#resxManager .resxManager-column .resxManager-more
+{
+    padding-bottom: 5px;
+    padding-left: 4px;
+}
+
+#resxManager .resxManager-columns-row .resxManager-one-column{
+    width: auto;
+    height: 1%;
+    float:none;
+}
+
+#resxManager .resxManager-columns-row .resxManager-column:first-child {
+    padding-left:0;
+}
+
+#resxManager .resxManager-columns-row .resxManager-column h2 {
+    margin: 0;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+#resxManager .resxManager-columns-row .resxManager-column .resxManager-visual {
+    height: 94px;
+    position: relative;
+}
+
+#resxManager .resxManager-columns-row .resxManager-column .resxManager-visual span
+{
+    width: 80px;
+    margin: 0 auto;
+    display: block;
+}
+
+#resxManager .resxManager-columns-row .resxManager-column .resxManager-visual span.resxManager-big-ico
+{
+    width: auto;
+}
+
+#resxManager .resxManager-columns-row .resxManager-column .resxManager-visual img{
+    margin-top: 15px;
+}
+
+#resxManager .resxManager-columns-row .resxManager-column .resxManager-text-content {        
+    margin-bottom: 35px;
+}
+
+#resxManager .resxManager-upload-ico
+{
+    padding-top: 10px;
+}
+
+#resxManager .resxManager-columns-row .resxManager-column .resxManager-text {        
+    font-weight: normal;
+    font-size:  11px;   
+    font-family: Arial, sans-serif;
+    line-height: 13px;
+    padding-left: 3px;
+}
+
+#resxManager .resxManager-more {
+    width: 100%;
+}
+
+#resxManager .resxManager-more:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#resxManager .resxManager-more a {
+    float: left;
+    font-size: 13px;
+    font-weight: bold;
+    color: #0074bc;
+    background-color: inherit;
+    text-decoration: none;
+    margin: 12px 0 -2px;
+    position: relative;
+}
+
+#resxManager .resxManager-more a span {
+    font-size: 19px;
+    padding-right: 5px;
+}
+
+#resxManager .resxManager-more a:hover {
+    text-decoration: underline;
+}
+
+#resxManager .resxManager-cufon-active .resxManager-columns-row h2, #resxManager .resxManager-cufon-active #resxManager-wrapper h1 {
+    visibility: hidden;
+}
+
+#resxManager .resxManager-cufon-active .resxManager-columns-row h2 cufon, #resxManager .resxManager-cufon-active #resxManager-wrapper h1 cufon {
+    visibility: visible;
+}
+
+#resxManager .resxManager-column-right {
+    margin-left: 217px;
+   /* border-left: solid 1px #e0dfd9; */
+    padding-left: 21px;
+}
+
+#resxManager .resxManager-box-gray .resxManager-top, #resxManager .resxManager-box-gray .resxManager-bottom {
+    height: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
+    background-color: #ced7db;
+    color: inherit;
+    overflow:hidden;
+    font-size:1px;
+    line-height:1px;
+}
+
+#resxManager .resxManager-box-gray .resxManager-box-content {    
+    /*overflow: hidden;*/    
+    float: left;
+    width: 100%;
+    background: #ced7db;
+    color: inherit;    
+}
+#resxManager .resxManager-box-gray .resxManager-inner-padding
+{
+    padding: 24px 20px;
+    float: left;
+}
+#resxManager .resxManager-advanced-search 
+{
+    margin-top:10px;
+}
+#resxManager .resxManager-advanced-search td label 
+{
+    font-size: 11px;
+}
+#resxManager .resxManager-inner-title
+{
+    font-size: 12px;
+    padding-bottom: 5px;
+}
+#resxManager .resxManager-column-right .resxManager-box-gray .resxManager-txt input {
+    width: 375px;
+    height: 14px;
+}
+
+#resxManager .resxManager-select-row{
+    width:100%;
+    /*overflow:hidden;*/
+}
+#resxManager .resxManager-row-wrapper:after
+{
+    clear: both;
+    content: "";
+    display: block;
+}
+#resxManager .resxManager-add-space-left
+{
+    margin-left: 5px;
+}
+#resxManager .resxManager-regional-setting-page
+{
+    padding-top: 10px;
+}
+#resxManager .resxManager-select-row .resxManager-dd
+{
+    float: left;
+}
+#resxManager .resxManager-select-row select{
+    float:left;
+    margin:3px 5px 0 0;
+}
+#resxManager .resxManager-btn {
+    background: url(../../images/RESXManager/btn-right.png) no-repeat right top;
+    background-color: inherit;
+    float: left;
+    padding-right: 2px;
+    color: #0074bc;
+}
+
+#resxManager .resxManager-btn input {
+    background-color: inherit;
+    background: url(../../images/RESXManager/btn.png) no-repeat 0 0;    
+    float: left;
+    cursor: pointer;
+    border: 0;
+    color: #0074bc;
+    height:24px;
+    line-height:19px;
+    padding: 3px 13px 5px 30px;
+    overflow: visible;
+    font-size: 13px;
+}
+#resxManager .resxManager-btn input[type="submit"][disabled]:active,
+#resxManager .resxManager-btn input[type="submit"][disabled]
+{
+    color: #ccc;
+    background-color: inherit;
+    background: url(/images/resxmanager/btn.png) no-repeat 0 100%; 
+}
+#resxManager .resxManager-txt {
+    background: url(../../images/RESXManager/txt-left.png) no-repeat;
+    float: left;
+    padding-left: 2px;
+}
+
+#resxManager .resxManager-box-search .resxManager-txt{
+    margin-right: 10px;
+}
+
+#resxManager .resxManager-box-search .resxManager-small-margin-right{
+    margin-right: 10px;
+}
+
+#resxManager .resxManager-txt span {
+    background: url(../../images/RESXManager/txt-right.png) no-repeat right top;
+    float: left;
+    padding-right: 2px;
+}
+
+#resxManager .resxManager-txt span.resxManager-watermark {
+    background: none;
+    float:none;
+    padding-right: 0;
+}
+
+#resxManager body .resxManager-txt input {
+    border-top: solid 1px #bfc0bc;
+    border-bottom: solid 1px #bfc0bc;
+    float: left;
+    border-left: 0;
+    border-right: 0;
+    padding: 3px 2px 4px;
+}
+
+#resxManager .resxManager-table-common {
+    width: 100%;
+    margin-bottom: 10px;    
+    line-height:16px; 
+    border: 0;   
+}
+#resxManager .resxManager-table-common *
+{
+    font-size: 11px;
+}
+#resxManager .resxManager-table-common th.resxManager-first,
+#resxManager .resxManager-table-common th.resxManager-last,
+#resxManager .resxManager-table-common th {
+    background-color: #e0ded8;
+    color: #000;
+    padding: 3px 10px;
+    text-align: left;
+    vertical-align: top;
+    border-left: solid 1px #e0dfd9;    
+    border-bottom: solid 1px #e0dfd9;
+    border-right: solid 1px #E0DFD9;
+    border-top: 0;
+}
+#resxManager .resxManager-table-common td {
+    padding: 3px 10px;
+    border-left: solid 1px #e0dfd9;
+    border-right: 0;    
+    border-bottom: solid 1px #e0dfd9;
+    border-top: 0;
+    vertical-align: top;
+    vertical-align: middle;
+}
+
+#resxManager .resxManager-table-common td.resxManager-non-border{
+    border-left: none;
+}
+
+#resxManager .resxManager-table-common td input{
+    margin:0;
+    padding:0;
+}
+#resxManager .resxManager-table-common td label{
+    padding-left:7px;
+}
+#resxManager .resxManager-table-common td span{
+    padding-right:5px;
+}
+#resxManager .resxManager-table-common td label,
+#resxManager .resxManager-table-common td input,
+#resxManager .resxManager-table-common td img,
+#resxManager .resxManager-table-common td span,
+#resxManager .resxManager-table-common td a {
+    vertical-align: middle;
+}
+#resxManager .resxManager-table-common td input[type=image]
+{
+    background: none;
+}
+#resxManager .resxManager-table-common td img.resxManager-icon-flag{    
+    
+}
+#resxManager .resxManager-table-common td img.resxManager-icon-file{
+    padding-right:12px;
+}
+#resxManager .resxManager-table-common td img.resxManager-icon-label-min{
+    padding-right: 5px;
+}
+
+#resxManager .resxManager-table-common td.resxManager-level-2{
+    padding-left:22px;
+}
+
+#resxManager .resxManager-table-common .resxManager-styled td {
+    background-color: #ecece8;
+    color: inherit;
+}
+
+#resxManager .resxManager-table-common .resxManager-first {
+    border-left: 0;
+    padding: 0;
+}
+#resxManager .resxManager-table-common .resxManager-img-cell {
+    width: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+#resxManager .resxManager-table-common .resxManager-last 
+{    
+    padding: 0;
+}
+
+#resxManager .resxManager-table-common .resxManager-top {
+    background: url(../../images/RESXManager/table-corner.png) no-repeat;
+    /*padding: 3px 10px;*/
+    height:1%;
+}
+
+#resxManager .resxManager-table-common .resxManager-first,
+#resxManager .resxManager-table-common .resxManager-last {
+    background: url(../../images/RESXManager/table-corner.png) no-repeat;
+}
+
+#resxManager .resxManager-table-common .resxManager-first{
+    background-position: left bottom;
+}
+
+#resxManager .resxManager-table-common .resxManager-last{
+    background-position: right bottom;
+}
+
+#resxManager .resxManager-table-common .resxManager-last .resxManager-top{
+    background-position: right top;
+}
+
+#resxManager .resxManager-table-common .resxManager-col-130{
+    width:130px;
+}
+#resxManager .resxManager-table-common .resxManager-col-100{
+    width:100px;
+}
+#resxManager .resxManager-table-common .resxManager-col-210{
+    width:210px;
+}
+#resxManager .resxManager-table-common .resxManager-col-80{
+    width:80px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#resxManager .resxManager-down{
+    padding-bottom:20px;
+}
+#resxManager .resxManager-down a {
+    background: url(../../images/RESXManager/arrow-down.png) no-repeat left 4px;
+    padding: 0 0 0 15px;
+}
+
+#resxManager .resxManager-separator {
+    height: 1px;
+    background: #e0dfd9;
+    color: inherit;
+    margin: 15px 0 15px;
+    overflow:hidden;
+    font-size:1px;
+    line-height:1px;
+}
+
+#resxManager .resxManager-saving-box .resxManager-lbl {
+    line-height: 22px;
+    padding-left: 10px;
+}
+
+#resxManager .resxManager-sub-tabs {
+    height: 1%;
+}
+
+#resxManager .resxManager-sub-tabs h3 {
+    padding: 2px 7px;
+    font-size: 12px;
+    margin:0;
+    width: 100%; 
+    overflow: hidden;
+}
+
+#resxManager .resxManager-sub-tabs .resxManager-top {
+    height: 1px;
+    background-color: #e2e2e0;
+    color: inherit;
+    margin: 0 1px;
+    font-size:1px;
+    line-height:1px;
+    overflow:hidden;
+    position:relative;
+}
+
+#resxManager .resxManager-sub-tabs .resxManager-layout1 {
+    background-color: #e2e2e0;
+    color: inherit;
+    padding: 0 1px 1px;
+}
+
+#resxManager .resxManager-sub-tabs .resxManager-layout1 .resxManager-top {
+    height: 1px;
+    background-color: #d3d3ce;
+    color: inherit;
+    margin: 0 1px;
+    overflow:hidden;
+    font-size:1px;
+    line-height:1px;
+    position:relative;
+}
+
+#resxManager .resxManager-sub-tabs .resxManager-layout2 {
+    padding: 0 1px;
+    background: #bbbbb8 url(../../images/RESXManager/sub-tabs-bg.png) repeat-x;
+    color: inherit;
+    height: 1%;
+}
+
+#resxManager .resxManager-sub-tabs ul {
+    width: 100%;
+    list-style: none;
+    padding-top: 4px;
+}
+
+#resxManager .resxManager-sub-tabs ul:after {
+    content:"";
+    clear:both;
+    display:block;
+}
+
+#resxManager .resxManager-sub-tabs li {
+    float: left;
+    margin-right: 2px;
+    margin-bottom: -1px;
+    position:relative;
+}
+
+#resxManager .resxManager-sub-tabs a {
+    background: #e0dfd9 url(../../images/RESXManager/tab-left.png) no-repeat;
+    float: left;
+    cursor:pointer;
+    color: inherit;
+    text-decoration:none;
+}
+
+#resxManager .resxManager-sub-tabs a span {
+    background: url(../../images/RESXManager/tab-right.png) no-repeat right top;
+    background-color: inherit;
+    float: left;
+    padding: 4px 30px 2px 26px;
+    color: #000;
+}
+
+#resxManager .resxManager-sub-tabs a.resxManager-active, #resxManager .resxManager-sub-tabs a:hover {
+    background: #fff url(../../images/RESXManager/tab-left-act.png) no-repeat;
+    color: inherit;
+    text-decoration:none;
+}
+
+#resxManager .resxManager-sub-tabs a.resxManager-active span, #resxManager .resxManager-sub-tabs a:hover span {
+    background: url(../../images/RESXManager/tab-right-act.png) no-repeat right top;
+    background-color: inherit;
+    padding-bottom: 3px;
+    color: #000;
+}
+
+#resxManager select.resxManager-size-middle {
+    width: 280px;
+}
+#resxManager .resxManager-saving-box{
+    width:100%;
+    float: left;
+    /*overflow:hidden;*/
+    padding-bottom:10px;
+}
+
+#resxManager .resxManager-content-text{
+    font-size:12px;
+    padding:16px 0 10px;
+    height:1%;
+    overflow: hidden;
+    width: 100%;
+}
+
+#resxManager .resxManager-img-loading
+{
+    padding:5px 0 0 10px;
+}
+
+#resxManager .resxManager-pnlSearchResult
+{
+    clear:none;
+}
+
+#resxManager .resxManager-pnlSearchResult ul
+{
+    padding: 15px 0 0 15px;
+}
+
+#resxManager .resxManager-pnlSearchResult .resxManager-close
+{
+    cursor:pointer;
+    float:right;
+}
+
+
+#resxManager .resxManager-watermark {
+    color:  #999 !important;
+}
+
+/* name of key in resx file*/
+#resxManager .resxManager-divInfo 
+{
+    display:none; 
+    background:#EEE; 
+    position:absolute; 
+    border:solid 1px black; 
+    padding:3px;
+    z-index: 5;
+}
+
+/*-------------- bubble popup ------------------------------------*/
+
+#resxManager .resxManager-bubbleInfo {
+	position: relative;
+}
+#resxManager .resxManager-trigger {
+	/*position: absolute;*/
+}
+
+#resxManager .resxManager-popup {
+	position: absolute;
+	display: none;
+	z-index: 50;
+	border-collapse: collapse;
+	font-size: .8em;
+}
+
+#resxManager .resxManager-popup td.resxManager-corner {
+	height: 10px;
+	width: 10px;	
+}
+
+#resxManager .resxManager-popup td#resxManager-topleft { 
+	background: url(../../images/RESXManager/corner_tooltip_lt.gif) no-repeat 0 0; 
+}
+
+#resxManager .resxManager-popup td#resxManager-topright { 
+	background: url(../../images/RESXManager/corner_tooltip_rt.gif) no-repeat 0 0; 
+}
+
+#resxManager .resxManager-popup td#resxManager-bottomleft { 
+	background: url(../../images/RESXManager/corner_tooltip_lb.gif) no-repeat 0 0; 
+}
+
+#resxManager .resxManager-popup td#resxManager-bottomright { 
+	background: url(../../images/RESXManager/corner_tooltip_rb.gif) no-repeat 0 0; 
+}
+
+#resxManager .resxManager-popup td.resxManager-toppopup, .resxManager-popup .resxManager-bg-popup { 
+	background-color: #404040;
+	color: #fff; 
+}
+
+#resxManager .resxManager-popup td.resxManager-left { 
+	background-color: #404040;
+	color: #fff; 
+}
+
+#resxManager .resxManager-popup td.resxManager-right { 
+	background-color: #404040;
+	color: #fff;
+}
+
+#resxManager .resxManager-table-common .resxManager-popup td.resxManager-bottom { 	
+	text-align: center;
+	background-color: #404040;
+	color: #fff;
+	vertical-align: top;
+}
+
+#resxManager .resxManager-popup td.resxManager-bottom img { 	
+	margin: 0 35px 0 0;
+	float: right;
+	border: none;
+	vertical-align: top; 	
+}
+
+#resxManager .resxManager-table-common .resxManager-popup tr td.resxManager-bottom
+{
+    background: none;
+    height: 10px;
+    font-size: 10px;
+    line-height: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+
+#resxManager .resxManager-popup table.resxManager-popup-contents {
+    background-color: #404040;
+    color: #fff;
+    font-family: "Lucida Grande","Lucida Sans Unicode","Lucida Sans",sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+#resxManager .resxManager-popup table.resxManager-popup-contents textarea
+{
+    background-color: #404040;
+    color: #fff;
+    border: none;
+    overflow: auto;
+    height: 45px;
+    width:  155px;
+}
+
+/* fix style inside .resxManager-table-common */
+#resxManager .resxManager-table-common .resxManager-popup td
+{
+    border-bottom: none 0 #FFFFFF;
+    border-left: none 0 #FFFFFF;
+    padding: 0px 0px 0px 0px;
+    background-color: #404040;
+	color: #fff;
+}
+
+#resxManager .resxManager-table-common .resxManager-popup td.resxManager-corner
+{
+    padding-left:10px;
+}
+
+
+/*----------------------------------------------------------------*/
+
+/************************** Loading icon on edit labels ******************/
+
+#resxManager .resxManager-loading {
+    /*position: fixed;
+    
+   */
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    margin: -25px 0 0 -50px;
+    display: none;
+    
+    padding: 2px;
+    /*border: 1px solid #CED7DB;
+    background-color: #CED7DB;
+    color: #ffffff;
+    opacity: 0.90;
+    filter:alpha(opacity=90);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;*/
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    z-index: 100000;
+}
+
+/*************************************************************************/
+
+/*******************/
+/* ToolTip style   */
+/*******************/
+#resxManager .resxManager-question-tooltip
+{    
+    font-size: 14px;
+    line-height: 14px;         
+    position: absolute;    
+    width: 100px;
+    z-index: 5;    
+}
+#resxManager .resxManager-question-tooltip div
+{
+    width: 10px;
+    height: 10px;
+}
+#resxManager .resxManager-question-tooltip .resxManager-tooltip-text
+{
+    background-color: #404040;
+    color: #FFFFFF;
+    width: auto;
+    height: auto;
+    padding: 20px 16px;
+    margin: 0 -10px;
+}
+#resxManager .resxManager-question-tooltip .resxManager-top-holder
+{
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    background-color: #404040;
+    color: #FFFFFF;
+}
+#resxManager .resxManager-question-tooltip .resxManager-bottom-holder
+{
+background-color: #404040;
+    color: #FFFFFF;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+}
+#resxManager .resxManager-question-tooltip .resxManager-top-holder .resxManager-left-corner
+{    
+    background: url(../../images/RESXManager/corner_tooltip_lt.gif) no-repeat 0 0; 
+    margin-left: -10px;   
+    float: left;
+}
+#resxManager .resxManager-question-tooltip .resxManager-top-holder .resxManager-right-corner
+{    
+    background: url(../../images/RESXManager/corner_tooltip_rt.gif) no-repeat 0 0;    
+    margin-right: -10px;
+    float: right;
+}
+#resxManager .resxManager-question-tooltip .resxManager-bottom-holder .resxManager-left-corner
+{    
+    background: url(../../images/RESXManager/corner_tooltip_lb.gif) no-repeat 0 0;  
+    margin-left: -10px;
+    float: left;
+}
+#resxManager .resxManager-question-tooltip .resxManager-bottom-holder .resxManager-right-corner
+{    
+    background: url(../../images/RESXManager/corner_tooltip_rb.gif) no-repeat 0 0;  
+    margin-right: -10px;
+    float: right;
+}
+#resxManager .resxManager-question-tooltip .resxManager-tooltip-arrow
+{
+    position: absolute;
+    bottom: -20px;
+    left: 25%;    
+    width: 20px;
+    background: url(../../images/RESXManager/tooltip-arrow.gif) no-repeat 0 0;  
+}
+/*********************/
+/* End ToolTip style */
+/*********************/
+
+/* Accordion */
+#resxManager .accordionHeader
+{    
+    color: white;    
+	font-family: Arial, Sans-Serif;
+	font-size: 12px;	
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #CED7DB;
+    cursor: pointer;
+}
+#resxManager .accordionHeader .resxManager-img
+{
+    background: url(../../images/resxmanager/arrow-hor2.gif) no-repeat scroll center;
+    float:right;    
+    width: 15px;
+    height:15px;
+}
+
+#resxManager .accordionHeaderSelected
+{    
+    color: white;
+    background: url("../../images/resxmanager/sub-tabs-bg.png") repeat-x scroll 0 0;
+	font-family: Arial, Sans-Serif;
+	font-size: 12px;	
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+#resxManager .accordionHeaderSelected .resxManager-img
+{
+    background: url(../../images/resxmanager/arrow-vert.gif) no-repeat scroll center;
+    float:right;    
+    width:15px;
+    height:15px; 
+}
+
+#resxManager a.resxManager-black-link
+{
+  color:Black !important;
+  text-decoration:none !important;
+  font-weight:normal;        
+}
+
+#resxManager .resxManager-accordionMainHeader
+{
+	font-family: Arial, Sans-Serif;
+	font-size: 12px;
+	font-weight: bold;
+	color:Black;
+    padding: 5px;
+    margin-top: 5px;
+    background-color:#E2E2E0;    
+}
+
+/* End Accordion */
+#resxManager .resxManager-main-tabs
+{
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    overflow:hidden;
+}
+#resxManager .resxManager-main-tabs h1
+{
+    float: left;
+    padding: 10px 0 0 15px;
+    font-size: 20px;
+    line-height: 20px;
+    text-transform:uppercase;
+}
+#resxManager .resxManager-main-tabs .resxManager-tabs
+{
+    float: right;
+    padding-top: 22px;
+}
+#resxManager .resxManager-main-tabs .resxManager-tabs a
+{
+    margin-left: 10px;
+    width: 290px;
+    text-decoration: none;
+    background-color: #808080;
+    color: #fff;    
+    height: 38px;
+    line-height: 38px;
+    padding-left: 30px;
+    float: left;
+    font-weight:normal;
+}
+#resxManager .resxManager-main-tabs .resxManager-tabs a.resxManager-active
+{    
+    text-decoration: none;
+    background-color: #808080;
+    color: #000;    
+}
+#resxManager .resxManager-main-tabs .resxManager-sub-tabs
+{
+    float:right;
+    height:auto;
+    margin:auto;
+    margin-top: 2px;
+}
+#resxManager .resxManager-main-tabs .resxManager-sub-tabs a
+{
+    line-height:30px;
+    padding:0px 5px;
+    margin-right:5px;
+    background-color:#CED7DB;
+    color:#FFF;
+    border:solid 1px #CED7DB;
+}
+#resxManager .resxManager-main-tabs .resxManager-sub-tabs a.resxManager-active,
+#resxManager .resxManager-main-tabs .resxManager-sub-tabs a:hover
+{
+    background-color:#FFF;    
+    color:#0074BC;
+}
+
+#resxManager .resxManager-file-manager td:first-child, #resxManager .resxManager-language-country td:first-child {width:160px; vertical-align:top;}
+/* Translation */
+#resxManager .resxManager-divInfo {display:none; background:#EEE; position:absolute; border:solid 1px black; padding:3px;}
+#resxManager .resxManager-pnlAddLang {float: right;}
+#resxManager h3 {margin:0 0 3px 0;}
+#resxManager .resxManager-clear {clear:both;}
+#resxManager .resxManager-lblMsg {padding-left: 10px; position: relative;top: -5px;}
+#resxManager .resxManager-pnlSearchResult {margin:3px 0 10px 0; padding:2px 2px 6px 2px; border:solid 1px #D3D3D3; width:99.3%;}
+#resxManager .resxManager-pnlSearchResult ul {margin:2px 0; padding-left:20px;}
+#resxManager .resxManager-close {float:right; cursor:pointer;}
+#resxManager .resxManager-nopadding {padding:0px;}
+#resxManager .resxManager-txtSearch {height:14px; width:210px;}
+#resxManager .resxManager-ddlFolderFile {width:375px; margin-bottom:8px;}
+
+/* File Management */
+#resxManager .resxManager-file-manager input.resxManager-disable {background-color:#CCCCCC;}
+#resxManager .resxManager-file-manager input.resxManager-field {width:400px;border:solid 1px #888;}
+
+#resxManager div.resxManager-log-by-file {overflow:auto; width:700px;}
+#resxManager div.resxManager-log-by-file ul {margin:0; padding-left:0;}
+#resxManager div.resxManager-log-by-file ul li {list-style:none;}
+#resxManager div.resxManager-log-by-file li span.resxManager-error {color:#F00;font-weight:bold;display:block;margin-right:40px;}
+
+#resxManager div.resxManager-log-details {overflow:auto; width:700px;}
+#resxManager div.resxManager-log-details ul {margin:0; padding-left:0;}
+#resxManager div.resxManager-log-details ul li {list-style:none;}
+#resxManager div.resxManager-log-details li span.resxManager-error {color:#F00;font-weight:bold;display:block; margin-right:40px;}
+
+/* Language & Country */
+#resxManager .resxManager-language-country select {width:250px;}
+#resxManager .resxManager-language-country .resxManager-description {display:block;margin:5px 0 20px 0;}
+
+
+/*********************/
+/* validation        */
+/*********************/
+#resxManager .resxManager-validation
+{
+	color: #ccc;
+	background: #1a1a1a url(../../images/RESXManager/validation-line.png) repeat-x 0 0;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+#resxManager .resxManager-validation ul
+{
+	margin-bottom: 13px;
+}
+#resxManager .resxManager-validation h1
+{
+	color: #fff;
+	background-color: inherit;
+	padding: 0 0 8px 34px;
+	margin: 0;
+	background: url(../../images/RESXManager/attention.png) no-repeat 10px 9px;
+	font-weight: bold;
+    font-size: 13px;
+    font-family: "Trebuchet MS", sans-serif;
+    line-height:32px;
+	float: none;
+}
+#resxManager .resxManager-validation li
+{
+	padding: 0 0 0 13px;
+	margin-left: 13px;
+	line-height: 17px;
+	color: #fff;
+	background-color: inherit;
+	background: url(../../images/RESXManager/hyphen.png) no-repeat left 9px;
+	border: 0;
+}
+#resxManager ul.resxManager-tool-tabs 
+{
+    list-style:none;    
+    display:inline;
+}
+#resxManager ul.resxManager-tool-tabs li
+{
+    display:inline;
+}
+
+#resxManager ul.resxManager-tool-tabs li .resxManager-left.resxManager-corner, 
+#resxManager ul.resxManager-tool-tabs li .resxManager-right.resxManager-corner
+{
+    width:8px;
+    height:22px;
+    float:left;
+}
+#resxManager ul.resxManager-tool-tabs li.resxManager-active .resxManager-left.resxManager-corner, 
+#resxManager ul.resxManager-tool-tabs li.resxManager-active .resxManager-right.resxManager-corner,
+#resxManager ul.resxManager-tool-tabs li.resxManager-active a
+{
+    padding-bottom:1px;
+    overflow:hidden;
+}
+
+#resxManager ul.resxManager-tool-tabs li .resxManager-left.resxManager-corner
+{
+    background:url(../../images/RESXManager/tooltab-left.png) no-repeat;
+}
+#resxManager ul.resxManager-tool-tabs li .resxManager-right.resxManager-corner
+{
+    background:url(../../images/RESXManager/tooltab-right.png) no-repeat;
+    margin-right:3px;
+}
+#resxManager ul.resxManager-tool-tabs li.resxManager-active .resxManager-left.resxManager-corner
+{
+    background:url(../../images/RESXManager/tooltab-left-act.png) no-repeat;
+}
+#resxManager ul.resxManager-tool-tabs li.resxManager-active .resxManager-right.resxManager-corner
+{
+    background:url(../../images/RESXManager/tooltab-right-act.png) no-repeat;
+}
+#resxManager ul.resxManager-tool-tabs li a
+{
+    color:#000;
+    line-height:22px;
+    height:22px;
+    overflow:hidden;
+    background:url(../../images/RESXManager/bg-tooltab.png) repeat-x;    
+    padding:0px 10px; 
+    float:left;
+}
+#resxManager ul.resxManager-tool-tabs li.resxManager-active a
+{
+    background:url(../../images/RESXManager/bg-tooltab-act.png) repeat-x;    
+}
+#resxManager div.resxManager-pnl-wrapper,
+#resxManager div.resxManager-tool-header
+{
+    padding:0px 10px;
+}
+#resxManager div.resxManager-tool-header
+{
+    padding-top:18px;    
+}
+#resxManager .resxManager-pnl-wrapper .resxManager-pnl-header
+{
+    clear:both;
+    float:left;
+    height:39px;
+    width:100%;
+}
+#resxManager .resxManager-pnl-wrapper .resxManager-pnl-header .resxManager-left
+{
+    background:url(../../images/RESXManager/bg-pnl-header.png) repeat-x;
+}
+#resxManager .resxManager-pnl-wrapper .resxManager-pnl-header .resxManager-right
+{
+    float:right;    
+}
+#resxManager .resxManager-pnl-wrapper .resxManager-pnl-header .resxManager-left.resxManager-corner,
+#resxManager .resxManager-pnl-wrapper .resxManager-pnl-header .resxManager-right.resxManager-corner,
+#resxManager .resxManager-pnl-wrapper .resxManager-pnl-header .resxManager-content
+{
+    height:39px;    
+}
+#resxManager .resxManager-pnl-wrapper .resxManager-pnl-header .resxManager-left.resxManager-corner
+{
+    width:1px;
+    background:url(../../images/RESXManager/pnl-header-left.png) no-repeat;
+}
+#resxManager .resxManager-pnl-wrapper .resxManager-pnl-header .resxManager-content
+{
+    background:url(../../images/RESXManager/bg-pnl-header.png) repeat-x;
+    margin-right:12px;
+}
+#resxManager .resxManager-pnl-wrapper .resxManager-pnl-header .resxManager-right.resxManager-corner
+{
+    width:12px;
+    background:url(../../images/RESXManager/pnl-header-right.png) no-repeat;    
+}
+
+#resxManager .resxManager-pnl-wrapper #resxManager-wrapper, 
+#resxManager .resxManager-pnl-wrapper .resxManager-right-border
+{
+    clear:both;
+    background:url(../../images/RESXManager/pnl-header-left.png) repeat-y;    
+}
+#resxManager .resxManager-pnl-wrapper .resxManager-right-border
+{
+    background-position:right top;    
+}
+#resxManager .resxManager-pnl-footer 
+{
+    clear:both;
+    width:100%;
+    height:10px;
+    background:url(../../images/RESXManager/bg-pnl-footer.png) repeat-x;
+}
+#resxManager .resxManager-pnl-footer .resxManager-left.resxManager-corner,
+#resxManager .resxManager-pnl-footer .resxManager-right.resxManager-corner
+{
+    width:9px;
+    height:10px;    
+}
+#resxManager .resxManager-pnl-footer .resxManager-right
+{
+    float:right;    
+}
+#resxManager .resxManager-pnl-footer .resxManager-left.resxManager-corner
+{
+    background:url(../../images/RESXManager/pnl-footer-left.png) no-repeat;    
+}
+#resxManager .resxManager-pnl-footer .resxManager-right.resxManager-corner
+{
+    background:url(../../images/RESXManager/pnl-footer-right.png) no-repeat;    
+}
+
+#resxManager .resxManager-unlicensed
+{
+    border-left: 1px solid #CAC9C9;
+    border-right: 1px solid #CAC9C9;
+    display: block;
+    padding-right: 11px;
+    text-align: right;
+}
+
+/*** Popup ***/
+#resxManager .resxManager-popup-overlay
+{
+    background:url('../../images/RESXManager/bg-overlay.png') repeat 0 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: none;
+}
+#resxManager .resxManager-popup-main
+{
+    width: 536px;
+    background-color: #fff;
+    color: #000;
+    position: absolute;
+    left: 50%;
+    top: 25%;
+    margin-left: -268px;
+    z-index: 1000;
+    display: none;
+}
+#resxManager .resxManager-popup-title
+{
+    height: 39px;
+    background:url('../../images/RESXManager/popup-title-bg.png') repeat-x 0 0;
+    margin: 5px;
+}
+#resxManager .resxManager-popup-title h2
+{
+    font-size: 18px;
+    padding-left: 15px;
+    margin-right: 50px;
+    line-height: 39px;
+}
+#resxManager .resxManager-popup-close
+{
+    background:url('../../images/RESXManager/popup-close.gif') no-repeat 0 0;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    cursor: pointer;
+}
+#resxManager .resxManager-popup-text
+{
+    padding: 25px 20px;
+}
+#resxManager .resxManager-popup-text .resxManager-btn {
+    margin-right: 10px;    
+}
+#resxManager .resxManager-popup-text p
+{
+    padding-bottom: 18px;
+}
+#resxManager .resxManager-popup-left-shadow
+{
+    background:url('../../images/RESXManager/popup-left-shadow.png') repeat-y 0 0;
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 8px;
+    height: 100%;
+}
+#resxManager .resxManager-popup-bottom-shadow
+{
+    background:url('../../images/RESXManager/popup-bottom-shadow.png') repeat-x 0 0;
+    position: absolute;
+    left: 0px;
+    bottom: -7px;
+    width: 99%;
+    height: 7px;
+}
+#resxManager .resxManager-popup-shadow-corner
+{
+    background:url('../../images/RESXManager/popup-shadow-corner.png') no-repeat 0 0;
+    position: absolute;
+    left: -8px;
+    bottom: -7px;
+    width: 8px;
+    height: 7px;
+}
+#resxManager .resxManager-show-popup
+{
+    cursor: pointer;
+}
+
+#resxManager .resxManager-small-padding-bottom 
+{    
+    padding-bottom:5px;
+}
+#resxManager .resxManager-pointer 
+{    
+    cursor: pointer;
+}
+#resxManager .resxManager-font11 
+{
+   font-size: 11px; 
+}
+#resxManager .resxManager-small-padding-left 
+{
+    padding-left:3px;
+}
+#resxManager .resxManager-small-padding-right 
+{
+    padding-right: 5px;
+    float: left;
+}
+#resxManager .resxManager-small-padding-top 
+{
+   padding-top: 5px; 
+}
+#resxManager .resxManager-padding-left-10 
+{
+   padding-left: 10px; 
+}
+#resxManager .resxManager-padding-left-20 
+{
+   padding-left: 20px; 
+}
+#resxManager .resxManager-padding-top-10 
+{
+   padding-top: 10px; 
+}
+#resxManager .resxManager-padding-right-10 
+{
+   padding-right: 10px; 
+}
+#resxManager .resxManager-margin-top-15 
+{    
+    margin-top:15px;
+}
+#resxManager .resxManager-margin-right-10 
+{
+    margin-right: 10px;
+}
+#resxManager .resxManager-result-empty 
+{
+    margin: 8px 0 0 5px;
+}
+#resxManager .resxManager-labelsPane 
+{
+    position: relative;
+}
+#resxManager .resxManager-upload-path 
+{
+    font-family:'Courier New';
+    font-size:13px;
+}
+#resxManager .resxManager-upload-option 
+{
+    margin-left:25px;
+    width:300px;
+}
+#resxManager .resxManager-labels-search-result 
+{
+    vertical-align:top;
+    width:50%;
+}
+#resxManager .resxManager-check-spelling 
+{
+    margin: 5px 0 0 10px;
+}
+#resxManager .resxManager-bottom-item-label 
+{
+    cursor: pointer;
+    color:#0074BC;
+}
+#resxManager .resxManager-bottom-item-panel 
+{
+     padding-left: 20px;
+     padding-bottom:30px;
+}
+#resxManager .resxManager-bottom-item-dropdown 
+{
+     height:22px;
+     width:180px;
+     float:left;
+}
+#resxManager .resxManager-pnl-auto-translate 
+{
+     float: left;
+     width: 100%;
+     margin-top: 10px;
+}

@@ -1,0 +1,16 @@
+﻿.column-right .box-gray .txt input
+{
+    width: 300px!important;
+}
+.advanced-search td input[type="checkbox"]
+{
+    margin-top: -6px;
+}
+.accordionMainHeader .spellcheck-input
+{
+    margin-top: -6px;
+}
+.main-tabs .summary
+{
+    width: 420px;
+}
