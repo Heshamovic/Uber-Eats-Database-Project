@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="FNAME" Type="varchar2" MaxLength="20" />
+          <Property Name="LNAME" Type="varchar2" MaxLength="20" />
+          <Property Name="LOCATION" Type="varchar2" MaxLength="200" />
+          <Property Name="CREDIT_NO" Type="varchar2" MaxLength="100" />
+          <Property Name="PASSWORD" Type="varchar2" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DELIVERY_PARTNER">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="NO_OF_TRIPS" Type="number" Precision="38" Scale="0" />
+          <Property Name="VEHICLE" Type="varchar2" MaxLength="50" />
+          <Property Name="PASSWORD" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="RATING" Type="float" Precision="126" Scale="0" />
+        </EntityType>
+        <EntityType Name="FOOD">
+          <Key>
+            <PropertyRef Name="FOOD_NAME" />
+            <PropertyRef Name="RESTAURANT_NAME" />
+            <PropertyRef Name="RESTAURANT_LOCATION" />
+          </Key>
+          <Property Name="FOOD_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="RESTAURANT_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="RESTAURANT_LOCATION" Type="varchar2" MaxLength="200" Nullable="false" />
+          <Property Name="PRICE" Type="number" Precision="38" Scale="0" />
+          <Property Name="DISCOUNT" Type="number" Precision="38" Scale="0" />
+          <Property Name="RATING" Type="number" Precision="38" Scale="0" />
+          <Property Name="INGREDIANTS" Type="varchar2" MaxLength="500" />
+          <Property Name="TOP_DISH" Type="varchar2" MaxLength="5" />
+          <Property Name="FOODIMAGE" Type="varchar2" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="FOOD_TYPE">
+          <Key>
+            <PropertyRef Name="FOOD_NAME" />
+          </Key>
+          <Property Name="FOOD_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="FOOD_TYPE" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ORDER_FOOD">
+          <Key>
+            <PropertyRef Name="ORDER_ID" />
+            <PropertyRef Name="RESTAURANT_NAME" />
+            <PropertyRef Name="RESTAURANT_LOCATION" />
+            <PropertyRef Name="FOOD_NAME" />
+          </Key>
+          <Property Name="ORDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="RESTAURANT_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="RESTAURANT_LOCATION" Type="varchar2" MaxLength="200" Nullable="false" />
+          <Property Name="FOOD_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
+          <Property Name="NO_OF_ITEMS_PER_FOOD" Type="number" Precision="38" Scale="0" />
+          <Property Name="BOUGHT" Type="varchar2" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORDERS">
+          <Key>
+            <PropertyRef Name="ORDER_ID" />
+          </Key>
+          <Property Name="ORDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIP" Type="varchar2" MaxLength="20" />
+          <Property Name="DATE" Type="date" />
+          <Property Name="PAYMENT_TYPE" Type="varchar2" MaxLength="20" />
+          <Property Name="STATUS" Type="varchar2" MaxLength="20" />
+          <Property Name="CUSTOMER_USERNAME" Type="varchar2" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="REST_NUMBERS">
+          <Key>
+            <PropertyRef Name="RESTAURANT_NAME" />
+            <PropertyRef Name="RESTAURANT_LOCATION" />
+            <PropertyRef Name="PHONE_NO" />
+          </Key>
+          <Property Name="RESTAURANT_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="RESTAURANT_LOCATION" Type="varchar2" MaxLength="200" Nullable="false" />
+          <Property Name="PHONE_NO" Type="varchar2" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RESTAURANT">
+          <Key>
+            <PropertyRef Name="RESTAURANT_NAME" />
+            <PropertyRef Name="RESTAURANT_LOCATION" />
+          </Key>
+          <Property Name="RESTAURANT_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="RESTAURANT_LOCATION" Type="varchar2" MaxLength="200" Nullable="false" />
+          <Property Name="RATING" Type="number" Precision="38" Scale="0" />
+          <Property Name="CUISINE_TYPE" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TRIP">
+          <Key>
+            <PropertyRef Name="ORDER_ID" />
+          </Key>
+          <Property Name="ORDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DISTANCE_OF_TRIP" Type="number" Precision="38" Scale="0" />
+          <Property Name="DELIVERYPARTNER_USERNAME" Type="varchar2" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="WORKING_TIME">
+          <Key>
+            <PropertyRef Name="DAY" />
+            <PropertyRef Name="RESTAURANT_NAME" />
+            <PropertyRef Name="RESTAURANT_LOCATION" />
+          </Key>
+          <Property Name="DAY" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="RESTAURANT_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="RESTAURANT_LOCATION" Type="varchar2" MaxLength="200" Nullable="false" />
+          <Property Name="START_TIME" Type="number" Precision="38" Scale="0" />
+          <Property Name="END_TIME" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <Association Name="FOOD_RESTAURANT_FK1">
+          <End Role="RESTAURANT" Type="Self.RESTAURANT" Multiplicity="1" />
+          <End Role="FOOD" Type="Self.FOOD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESTAURANT">
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Principal>
+            <Dependent Role="FOOD">
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ORDER_FOOD_FOOD_FK1">
+          <End Role="FOOD" Type="Self.FOOD" Multiplicity="1" />
+          <End Role="ORDER_FOOD" Type="Self.ORDER_FOOD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FOOD">
+              <PropertyRef Name="FOOD_NAME" />
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Principal>
+            <Dependent Role="ORDER_FOOD">
+              <PropertyRef Name="FOOD_NAME" />
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ORDER_FOOD_ORDER_FK1">
+          <End Role="ORDERS" Type="Self.ORDERS" Multiplicity="1" />
+          <End Role="ORDER_FOOD" Type="Self.ORDER_FOOD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERS">
+              <PropertyRef Name="ORDER_ID" />
+            </Principal>
+            <Dependent Role="ORDER_FOOD">
+              <PropertyRef Name="ORDER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ORDER_TRIP_FK1">
+          <End Role="ORDERS" Type="Self.ORDERS" Multiplicity="1" />
+          <End Role="TRIP" Type="Self.TRIP" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERS">
+              <PropertyRef Name="ORDER_ID" />
+            </Principal>
+            <Dependent Role="TRIP">
+              <PropertyRef Name="ORDER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="REST_NUMBERS_RESTAURANT_FK1">
+          <End Role="RESTAURANT" Type="Self.RESTAURANT" Multiplicity="1" />
+          <End Role="REST_NUMBERS" Type="Self.REST_NUMBERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESTAURANT">
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Principal>
+            <Dependent Role="REST_NUMBERS">
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRIP_DELIVERY_PARTNER_FK1">
+          <End Role="DELIVERY_PARTNER" Type="Self.DELIVERY_PARTNER" Multiplicity="0..1" />
+          <End Role="TRIP" Type="Self.TRIP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DELIVERY_PARTNER">
+              <PropertyRef Name="USERNAME" />
+            </Principal>
+            <Dependent Role="TRIP">
+              <PropertyRef Name="DELIVERYPARTNER_USERNAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="WORKING_TIME_RESTAURANT_FK1">
+          <End Role="RESTAURANT" Type="Self.RESTAURANT" Multiplicity="1" />
+          <End Role="WORKING_TIME" Type="Self.WORKING_TIME" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESTAURANT">
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Principal>
+            <Dependent Role="WORKING_TIME">
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SIGN_UP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
+          <Parameter Name="NUSERNAME" Type="varchar2" Mode="In" />
+          <Parameter Name="NPASSWORD" Type="varchar2" Mode="In" />
+          <Parameter Name="NROLE" Type="number" Mode="In" />
+          <Parameter Name="DONE" Type="number" Mode="Out" />
+          <Parameter Name="NFNAME" Type="varchar2" Mode="In" />
+          <Parameter Name="NLNAME" Type="varchar2" Mode="In" />
+          <Parameter Name="NLOCATION" Type="varchar2" Mode="In" />
+          <Parameter Name="NCREDIT_NO" Type="varchar2" Mode="In" />
+          <Parameter Name="NVEHICLE" Type="varchar2" Mode="In" />
+        </Function>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="SCOTT" store:Type="Tables" />
+          <EntitySet Name="DELIVERY_PARTNER" EntityType="Self.DELIVERY_PARTNER" Schema="SCOTT" store:Type="Tables" />
+          <EntitySet Name="FOOD" EntityType="Self.FOOD" Schema="SCOTT" store:Type="Tables" />
+          <EntitySet Name="FOOD_TYPE" EntityType="Self.FOOD_TYPE" Schema="SCOTT" store:Type="Tables" />
+          <EntitySet Name="ORDER_FOOD" EntityType="Self.ORDER_FOOD" Schema="SCOTT" store:Type="Tables" />
+          <EntitySet Name="ORDERS" EntityType="Self.ORDERS" Schema="SCOTT" store:Type="Tables" />
+          <EntitySet Name="REST_NUMBERS" EntityType="Self.REST_NUMBERS" Schema="SCOTT" store:Type="Tables" />
+          <EntitySet Name="RESTAURANT" EntityType="Self.RESTAURANT" Schema="SCOTT" store:Type="Tables" />
+          <EntitySet Name="TRIP" EntityType="Self.TRIP" Schema="SCOTT" store:Type="Tables" />
+          <EntitySet Name="WORKING_TIME" EntityType="Self.WORKING_TIME" Schema="SCOTT" store:Type="Tables" />
+          <AssociationSet Name="FOOD_RESTAURANT_FK1" Association="Self.FOOD_RESTAURANT_FK1">
+            <End Role="RESTAURANT" EntitySet="RESTAURANT" />
+            <End Role="FOOD" EntitySet="FOOD" />
+          </AssociationSet>
+          <AssociationSet Name="ORDER_FOOD_FOOD_FK1" Association="Self.ORDER_FOOD_FOOD_FK1">
+            <End Role="FOOD" EntitySet="FOOD" />
+            <End Role="ORDER_FOOD" EntitySet="ORDER_FOOD" />
+          </AssociationSet>
+          <AssociationSet Name="ORDER_FOOD_ORDER_FK1" Association="Self.ORDER_FOOD_ORDER_FK1">
+            <End Role="ORDERS" EntitySet="ORDERS" />
+            <End Role="ORDER_FOOD" EntitySet="ORDER_FOOD" />
+          </AssociationSet>
+          <AssociationSet Name="ORDER_TRIP_FK1" Association="Self.ORDER_TRIP_FK1">
+            <End Role="ORDERS" EntitySet="ORDERS" />
+            <End Role="TRIP" EntitySet="TRIP" />
+          </AssociationSet>
+          <AssociationSet Name="REST_NUMBERS_RESTAURANT_FK1" Association="Self.REST_NUMBERS_RESTAURANT_FK1">
+            <End Role="RESTAURANT" EntitySet="RESTAURANT" />
+            <End Role="REST_NUMBERS" EntitySet="REST_NUMBERS" />
+          </AssociationSet>
+          <AssociationSet Name="TRIP_DELIVERY_PARTNER_FK1" Association="Self.TRIP_DELIVERY_PARTNER_FK1">
+            <End Role="DELIVERY_PARTNER" EntitySet="DELIVERY_PARTNER" />
+            <End Role="TRIP" EntitySet="TRIP" />
+          </AssociationSet>
+          <AssociationSet Name="WORKING_TIME_RESTAURANT_FK1" Association="Self.WORKING_TIME_RESTAURANT_FK1">
+            <End Role="RESTAURANT" EntitySet="RESTAURANT" />
+            <End Role="WORKING_TIME" EntitySet="WORKING_TIME" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CUSTOMER">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CREDIT_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DELIVERY_PARTNER">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NO_OF_TRIPS" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="VEHICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TRIPs" Relationship="Self.TRIP_DELIVERY_PARTNER_FK1" FromRole="DELIVERY_PARTNER" ToRole="TRIP" />
+          <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="FOOD">
+          <Key>
+            <PropertyRef Name="FOOD_NAME" />
+            <PropertyRef Name="RESTAURANT_NAME" />
+            <PropertyRef Name="RESTAURANT_LOCATION" />
+          </Key>
+          <Property Name="FOOD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RESTAURANT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RESTAURANT_LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PRICE" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DISCOUNT" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="INGREDIANTS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="TOP_DISH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="RESTAURANT" Relationship="Self.FOOD_RESTAURANT_FK1" FromRole="FOOD" ToRole="RESTAURANT" />
+          <NavigationProperty Name="ORDER_FOOD" Relationship="Self.ORDER_FOOD_FOOD_FK1" FromRole="FOOD" ToRole="ORDER_FOOD" />
+          <Property Name="FOODIMAGE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FOOD_TYPE">
+          <Key>
+            <PropertyRef Name="FOOD_NAME" />
+          </Key>
+          <Property Name="FOOD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FOOD_TYPE1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ORDER_FOOD">
+          <Key>
+            <PropertyRef Name="ORDER_ID" />
+            <PropertyRef Name="RESTAURANT_NAME" />
+            <PropertyRef Name="RESTAURANT_LOCATION" />
+            <PropertyRef Name="FOOD_NAME" />
+          </Key>
+          <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="RESTAURANT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RESTAURANT_LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FOOD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NO_OF_ITEMS_PER_FOOD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BOUGHT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="FOOD" Relationship="Self.ORDER_FOOD_FOOD_FK1" FromRole="ORDER_FOOD" ToRole="FOOD" />
+          <NavigationProperty Name="ORDER" Relationship="Self.ORDER_FOOD_ORDER_FK1" FromRole="ORDER_FOOD" ToRole="ORDERS" />
+        </EntityType>
+        <EntityType Name="ORDER">
+          <Key>
+            <PropertyRef Name="ORDER_ID" />
+          </Key>
+          <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DATE" Type="DateTime" />
+          <Property Name="PAYMENT_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CUSTOMER_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ORDER_FOOD" Relationship="Self.ORDER_FOOD_ORDER_FK1" FromRole="ORDERS" ToRole="ORDER_FOOD" />
+          <NavigationProperty Name="TRIP" Relationship="Self.ORDER_TRIP_FK1" FromRole="ORDERS" ToRole="TRIP" />
+        </EntityType>
+        <EntityType Name="REST_NUMBERS">
+          <Key>
+            <PropertyRef Name="RESTAURANT_NAME" />
+            <PropertyRef Name="RESTAURANT_LOCATION" />
+            <PropertyRef Name="PHONE_NO" />
+          </Key>
+          <Property Name="RESTAURANT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RESTAURANT_LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PHONE_NO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="RESTAURANT" Relationship="Self.REST_NUMBERS_RESTAURANT_FK1" FromRole="REST_NUMBERS" ToRole="RESTAURANT" />
+        </EntityType>
+        <EntityType Name="RESTAURANT">
+          <Key>
+            <PropertyRef Name="RESTAURANT_NAME" />
+            <PropertyRef Name="RESTAURANT_LOCATION" />
+          </Key>
+          <Property Name="RESTAURANT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RESTAURANT_LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="CUISINE_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="FOODs" Relationship="Self.FOOD_RESTAURANT_FK1" FromRole="RESTAURANT" ToRole="FOOD" />
+          <NavigationProperty Name="REST_NUMBERS" Relationship="Self.REST_NUMBERS_RESTAURANT_FK1" FromRole="RESTAURANT" ToRole="REST_NUMBERS" />
+          <NavigationProperty Name="WORKING_TIME" Relationship="Self.WORKING_TIME_RESTAURANT_FK1" FromRole="RESTAURANT" ToRole="WORKING_TIME" />
+        </EntityType>
+        <EntityType Name="TRIP">
+          <Key>
+            <PropertyRef Name="ORDER_ID" />
+          </Key>
+          <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DISTANCE_OF_TRIP" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="DELIVERYPARTNER_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DELIVERY_PARTNER" Relationship="Self.TRIP_DELIVERY_PARTNER_FK1" FromRole="TRIP" ToRole="DELIVERY_PARTNER" />
+          <NavigationProperty Name="ORDER" Relationship="Self.ORDER_TRIP_FK1" FromRole="TRIP" ToRole="ORDERS" />
+        </EntityType>
+        <EntityType Name="WORKING_TIME">
+          <Key>
+            <PropertyRef Name="DAY" />
+            <PropertyRef Name="RESTAURANT_NAME" />
+            <PropertyRef Name="RESTAURANT_LOCATION" />
+          </Key>
+          <Property Name="DAY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RESTAURANT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RESTAURANT_LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="START_TIME" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="END_TIME" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="RESTAURANT" Relationship="Self.WORKING_TIME_RESTAURANT_FK1" FromRole="WORKING_TIME" ToRole="RESTAURANT" />
+        </EntityType>
+        <Association Name="TRIP_DELIVERY_PARTNER_FK1">
+          <End Role="DELIVERY_PARTNER" Type="Self.DELIVERY_PARTNER" Multiplicity="0..1" />
+          <End Role="TRIP" Type="Self.TRIP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DELIVERY_PARTNER">
+              <PropertyRef Name="USERNAME" />
+            </Principal>
+            <Dependent Role="TRIP">
+              <PropertyRef Name="DELIVERYPARTNER_USERNAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FOOD_RESTAURANT_FK1">
+          <End Role="RESTAURANT" Type="Self.RESTAURANT" Multiplicity="1" />
+          <End Role="FOOD" Type="Self.FOOD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESTAURANT">
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Principal>
+            <Dependent Role="FOOD">
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ORDER_FOOD_FOOD_FK1">
+          <End Role="FOOD" Type="Self.FOOD" Multiplicity="1" />
+          <End Role="ORDER_FOOD" Type="Self.ORDER_FOOD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FOOD">
+              <PropertyRef Name="FOOD_NAME" />
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Principal>
+            <Dependent Role="ORDER_FOOD">
+              <PropertyRef Name="FOOD_NAME" />
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ORDER_FOOD_ORDER_FK1">
+          <End Role="ORDERS" Type="Self.ORDER" Multiplicity="1" />
+          <End Role="ORDER_FOOD" Type="Self.ORDER_FOOD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERS">
+              <PropertyRef Name="ORDER_ID" />
+            </Principal>
+            <Dependent Role="ORDER_FOOD">
+              <PropertyRef Name="ORDER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ORDER_TRIP_FK1">
+          <End Role="ORDERS" Type="Self.ORDER" Multiplicity="1" />
+          <End Role="TRIP" Type="Self.TRIP" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ORDERS">
+              <PropertyRef Name="ORDER_ID" />
+            </Principal>
+            <Dependent Role="TRIP">
+              <PropertyRef Name="ORDER_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="REST_NUMBERS_RESTAURANT_FK1">
+          <End Role="RESTAURANT" Type="Self.RESTAURANT" Multiplicity="1" />
+          <End Role="REST_NUMBERS" Type="Self.REST_NUMBERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESTAURANT">
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Principal>
+            <Dependent Role="REST_NUMBERS">
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="WORKING_TIME_RESTAURANT_FK1">
+          <End Role="RESTAURANT" Type="Self.RESTAURANT" Multiplicity="1" />
+          <End Role="WORKING_TIME" Type="Self.WORKING_TIME" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RESTAURANT">
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Principal>
+            <Dependent Role="WORKING_TIME">
+              <PropertyRef Name="RESTAURANT_NAME" />
+              <PropertyRef Name="RESTAURANT_LOCATION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
+          <EntitySet Name="DELIVERY_PARTNER" EntityType="Self.DELIVERY_PARTNER" />
+          <EntitySet Name="FOODs" EntityType="Self.FOOD" />
+          <EntitySet Name="FOOD_TYPE" EntityType="Self.FOOD_TYPE" />
+          <EntitySet Name="ORDER_FOOD" EntityType="Self.ORDER_FOOD" />
+          <EntitySet Name="ORDERS" EntityType="Self.ORDER" />
+          <EntitySet Name="REST_NUMBERS" EntityType="Self.REST_NUMBERS" />
+          <EntitySet Name="RESTAURANTs" EntityType="Self.RESTAURANT" />
+          <EntitySet Name="TRIPs" EntityType="Self.TRIP" />
+          <EntitySet Name="WORKING_TIME" EntityType="Self.WORKING_TIME" />
+          <AssociationSet Name="TRIP_DELIVERY_PARTNER_FK1" Association="Self.TRIP_DELIVERY_PARTNER_FK1">
+            <End Role="DELIVERY_PARTNER" EntitySet="DELIVERY_PARTNER" />
+            <End Role="TRIP" EntitySet="TRIPs" />
+          </AssociationSet>
+          <AssociationSet Name="FOOD_RESTAURANT_FK1" Association="Self.FOOD_RESTAURANT_FK1">
+            <End Role="RESTAURANT" EntitySet="RESTAURANTs" />
+            <End Role="FOOD" EntitySet="FOODs" />
+          </AssociationSet>
+          <AssociationSet Name="ORDER_FOOD_FOOD_FK1" Association="Self.ORDER_FOOD_FOOD_FK1">
+            <End Role="FOOD" EntitySet="FOODs" />
+            <End Role="ORDER_FOOD" EntitySet="ORDER_FOOD" />
+          </AssociationSet>
+          <AssociationSet Name="ORDER_FOOD_ORDER_FK1" Association="Self.ORDER_FOOD_ORDER_FK1">
+            <End Role="ORDERS" EntitySet="ORDERS" />
+            <End Role="ORDER_FOOD" EntitySet="ORDER_FOOD" />
+          </AssociationSet>
+          <AssociationSet Name="ORDER_TRIP_FK1" Association="Self.ORDER_TRIP_FK1">
+            <End Role="ORDERS" EntitySet="ORDERS" />
+            <End Role="TRIP" EntitySet="TRIPs" />
+          </AssociationSet>
+          <AssociationSet Name="REST_NUMBERS_RESTAURANT_FK1" Association="Self.REST_NUMBERS_RESTAURANT_FK1">
+            <End Role="RESTAURANT" EntitySet="RESTAURANTs" />
+            <End Role="REST_NUMBERS" EntitySet="REST_NUMBERS" />
+          </AssociationSet>
+          <AssociationSet Name="WORKING_TIME_RESTAURANT_FK1" Association="Self.WORKING_TIME_RESTAURANT_FK1">
+            <End Role="RESTAURANT" EntitySet="RESTAURANTs" />
+            <End Role="WORKING_TIME" EntitySet="WORKING_TIME" />
+          </AssociationSet>
+          <FunctionImport Name="SIGN_UP">
+            <Parameter Name="NUSERNAME" Mode="In" Type="String" />
+            <Parameter Name="NPASSWORD" Mode="In" Type="String" />
+            <Parameter Name="NROLE" Mode="In" Type="Decimal" />
+            <Parameter Name="DONE" Mode="Out" Type="Decimal" />
+            <Parameter Name="NFNAME" Mode="In" Type="String" />
+            <Parameter Name="NLNAME" Mode="In" Type="String" />
+            <Parameter Name="NLOCATION" Mode="In" Type="String" />
+            <Parameter Name="NCREDIT_NO" Mode="In" Type="String" />
+            <Parameter Name="NVEHICLE" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="CUSTOMERs">
+            <EntityTypeMapping TypeName="Model.CUSTOMER">
+              <MappingFragment StoreEntitySet="CUSTOMER">
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="FNAME" ColumnName="FNAME" />
+                <ScalarProperty Name="LNAME" ColumnName="LNAME" />
+                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+                <ScalarProperty Name="CREDIT_NO" ColumnName="CREDIT_NO" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DELIVERY_PARTNER">
+            <EntityTypeMapping TypeName="Model.DELIVERY_PARTNER">
+              <MappingFragment StoreEntitySet="DELIVERY_PARTNER">
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="NO_OF_TRIPS" ColumnName="NO_OF_TRIPS" />
+                <ScalarProperty Name="VEHICLE" ColumnName="VEHICLE" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FOODs">
+            <EntityTypeMapping TypeName="Model.FOOD">
+              <MappingFragment StoreEntitySet="FOOD">
+                <ScalarProperty Name="FOODIMAGE" ColumnName="FOODIMAGE" />
+                <ScalarProperty Name="FOOD_NAME" ColumnName="FOOD_NAME" />
+                <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
+                <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="DISCOUNT" ColumnName="DISCOUNT" />
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="INGREDIANTS" ColumnName="INGREDIANTS" />
+                <ScalarProperty Name="TOP_DISH" ColumnName="TOP_DISH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FOOD_TYPE">
+            <EntityTypeMapping TypeName="Model.FOOD_TYPE">
+              <MappingFragment StoreEntitySet="FOOD_TYPE">
+                <ScalarProperty Name="FOOD_NAME" ColumnName="FOOD_NAME" />
+                <ScalarProperty Name="FOOD_TYPE1" ColumnName="FOOD_TYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_FOOD">
+            <EntityTypeMapping TypeName="Model.ORDER_FOOD">
+              <MappingFragment StoreEntitySet="ORDER_FOOD">
+                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+                <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
+                <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />
+                <ScalarProperty Name="FOOD_NAME" ColumnName="FOOD_NAME" />
+                <ScalarProperty Name="NO_OF_ITEMS_PER_FOOD" ColumnName="NO_OF_ITEMS_PER_FOOD" />
+                <ScalarProperty Name="BOUGHT" ColumnName="BOUGHT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDERS">
+            <EntityTypeMapping TypeName="Model.ORDER">
+              <MappingFragment StoreEntitySet="ORDERS">
+                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+                <ScalarProperty Name="TIP" ColumnName="TIP" />
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="PAYMENT_TYPE" ColumnName="PAYMENT_TYPE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="CUSTOMER_USERNAME" ColumnName="CUSTOMER_USERNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="REST_NUMBERS">
+            <EntityTypeMapping TypeName="Model.REST_NUMBERS">
+              <MappingFragment StoreEntitySet="REST_NUMBERS">
+                <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
+                <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />
+                <ScalarProperty Name="PHONE_NO" ColumnName="PHONE_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RESTAURANTs">
+            <EntityTypeMapping TypeName="Model.RESTAURANT">
+              <MappingFragment StoreEntitySet="RESTAURANT">
+                <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
+                <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="CUISINE_TYPE" ColumnName="CUISINE_TYPE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRIPs">
+            <EntityTypeMapping TypeName="Model.TRIP">
+              <MappingFragment StoreEntitySet="TRIP">
+                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+                <ScalarProperty Name="DISTANCE_OF_TRIP" ColumnName="DISTANCE_OF_TRIP" />
+                <ScalarProperty Name="DELIVERYPARTNER_USERNAME" ColumnName="DELIVERYPARTNER_USERNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WORKING_TIME">
+            <EntityTypeMapping TypeName="Model.WORKING_TIME">
+              <MappingFragment StoreEntitySet="WORKING_TIME">
+                <ScalarProperty Name="DAY" ColumnName="DAY" />
+                <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
+                <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />
+                <ScalarProperty Name="START_TIME" ColumnName="START_TIME" />
+                <ScalarProperty Name="END_TIME" ColumnName="END_TIME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SIGN_UP" FunctionName="Model.Store.SIGN_UP" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

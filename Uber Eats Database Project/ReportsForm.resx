@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,67 +112,29 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-<<<<<<< HEAD
-||||||| 18d1669... adding bunifu framework
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAalJREFUSEvd
+        lctKA0EQRQMS/ZUoxscf6MaFIGShENDf0a0ofoAuBDf5G8UHSnY+EnGhgiQ9k/ZUp5KZnunJA3STCxd6
+        qm7dma5qekqzDWvtgo2ig14UNeAT/FDKukFuXzQqnw4U72HShHYMm2h3tWw8+KK52JiTgNFIUnMstWpT
+        jDiKzkIGk5DaU7UJg63WQoVTsIfHjtr5YHvzCB69AmNuKdhm/e7F+2y7HBovbswDXmW1TYC47gmhNWbD
+        5brdVZ5bqVzLdjorLmfMZirer+OASM4D/bvKCuELX1ORPIbLPL/BV1m7mLWLolHtkHhdSt6DbC0rVD4P
+        X2LtkpjqukIuZ+5I20TjgcRXTphQWlJVqeymKrGMJs1PlSYg+J0RpdlmDmsqlZmsEwsNfsDAC4pblAyU
+        9gxblB98QmPuROOhYMihgYYG79UFhzzymOYHmgx+0mNKQZmt3XtinjHYYh1qRcvlsq2N42u8wncSb655
+        4ulZfFUMwK14FCiciNQeqk0xZHv/el0PIIOi8O9/OGnwRfLLrHPsLhjmDWY/jqyJnUtONCqfSZRKv/y0
+        1sG1QbxAAAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="exit_delete_close_remove_door-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\exit_delete_close_remove_door-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-<<<<<<< HEAD
-  <data name="exit_delete_close_remove_door-5122" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\exit_delete_close_remove_door-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-||||||| 18d1669... adding bunifu framework
-  <data name="exit_delete_close_remove_door-5121" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\exit_delete_close_remove_door-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> parent of 18d1669... adding bunifu framework
-  </data>
-=======
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-||||||| 18d1669... adding bunifu framework
-  <data name="exit_delete_close_remove_door-5121" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\exit_delete_close_remove_door-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
-  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> parent of 18d1669... adding bunifu framework
-  </data>
-  <data name="exit_delete_close_remove_door-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\exit_delete_close_remove_door-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 18d1669... adding bunifu framework
-||||||| 18d1669... adding bunifu framework
-  <data name="exit_delete_close_remove_door-5122" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\exit_delete_close_remove_door-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-=======
->>>>>>> parent of 18d1669... adding bunifu framework
-||||||| 18d1669... adding bunifu framework
-  <data name="exit_delete_close_remove_door-5122" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\exit_delete_close_remove_door-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-=======
->>>>>>> parent of 18d1669... adding bunifu framework
-||||||| 18d1669... adding bunifu framework
-  <data name="exit_delete_close_remove_door-5122" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\exit_delete_close_remove_door-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-=======
->>>>>>> parent of 18d1669... adding bunifu framework
+  <metadata name="bunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>141, 17</value>
+  </metadata>
 </root>
