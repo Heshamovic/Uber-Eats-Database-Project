@@ -25,9 +25,8 @@ namespace Uber_Eats_Database_Project
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            UsernameLabel.Text += Helper.currentUserName;
             ToggleUser();
-            
+            UsernameLabel.Text += Helper.currentUserName;
         }
         private void ToggleUser()
         {
@@ -116,15 +115,6 @@ namespace Uber_Eats_Database_Project
             //Orders o = new Orders();
             //o.Show();
             //this.Hide();
-        }
-
-        private void testBtn_Click(object sender, EventArgs e)
-        {
-            /* PendingDelivering pd = new PendingDelivering();
-             pd.Show();
-             this.Hide();
-             pd.FormClosing += letsShow;*/
-
         }
 
         public void letsShow(object sender, FormClosingEventArgs e)

@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.EntityClient;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 
 namespace Uber_Eats_Database_Project
 {
     public partial class PendingDelivering : Form
     {
-        private int ordID;
+        private int ordID = 0;
         public PendingDelivering()
         {
             InitializeComponent();
@@ -28,6 +29,8 @@ namespace Uber_Eats_Database_Project
         private void PendingDelivering_Load(object sender, EventArgs e)
         {
             OrdersGV.ColumnHeadersVisible = true;
+            OrdersGV.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            OrdersGV.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
             Entities ent = new Entities();
             var oid = from ord in ent.ORDERS
                       join t in ent.TRIPs on ord.ORDER_ID equals t.ORDER_ID
@@ -60,6 +63,7 @@ namespace Uber_Eats_Database_Project
         private void enableConfirmBtn()
         {
             Entities ent = new Entities();
+            int c = ent.ORDER_FOOD.Count(x => x.ORDER_ID == ordID && (x.BOUGHT == "y" || x.BOUGHT == "Y"));
             if (ent.ORDER_FOOD.Count(x => x.ORDER_ID == ordID && (x.BOUGHT == "y" || x.BOUGHT == "Y")) == ent.ORDER_FOOD.Count(x => x.ORDER_ID == ordID))
                 OrderDeliveredBtn.Enabled = true;
             else
@@ -76,7 +80,6 @@ namespace Uber_Eats_Database_Project
             DELIVERY_PARTNER dp = (from p in ent.DELIVERY_PARTNER
                                    where p.USERNAME == Helper.currentUserName
                                    select p).FirstOrDefault();
-            dp.NO_OF_TRIPS++;
             TRIP t = (from tr in ent.TRIPs
                       where tr.ORDER_ID == o.ORDER_ID
                       select tr).FirstOrDefault();
@@ -98,6 +101,7 @@ namespace Uber_Eats_Database_Project
                 deliverycost *= 5;
             else
                 deliverycost *= 3;
+            dp.RATING = Math.Max(5, dp.RATING.Value + (decimal)(0.01));
             foreach (var i in l)
                 mealcost += ((i.PRICE - i.PRICE * i.DISCOUNT) * i.NO_OF_ITEMS_PER_FOOD).Value;
             totalcost = deliverycost + applicationfees + mealcost;
@@ -121,6 +125,7 @@ namespace Uber_Eats_Database_Project
                                  where x.FOOD_NAME == s
                                  && x.RESTAURANT_NAME == t
                                  && x.RESTAURANT_LOCATION == u
+                                 && x.ORDER_ID == ordID
                                  select x).FirstOrDefault();
                 if (OrdersGV[4, e.RowIndex].Value.ToString() == "true")
                     fo.BOUGHT = "y";
@@ -155,5 +160,27 @@ namespace Uber_Eats_Database_Project
                 this.Close();
             }
         }
+
+        #region Mouse Hovers
+        private void OrderDeliveredBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void OrderDeliveredBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
+        private void CancelDeliveryBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
+        private void CancelDeliveryBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Red);
+        }
+        #endregion
     }
 }

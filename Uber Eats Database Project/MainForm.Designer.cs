@@ -44,7 +44,6 @@
             this.DeliveredOrdersBtn = new System.Windows.Forms.Button();
             this.PendingOrdersBtn = new System.Windows.Forms.Button();
             this.UsernameLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.testBtn = new System.Windows.Forms.Button();
             this.CurrentOrderBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LogoutBtn)).BeginInit();
             this.header.SuspendLayout();
@@ -247,26 +246,12 @@
             // UsernameLabel
             // 
             this.UsernameLabel.AutoSize = true;
-            this.UsernameLabel.Location = new System.Drawing.Point(79, 45);
+            this.UsernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UsernameLabel.Location = new System.Drawing.Point(49, 46);
             this.UsernameLabel.Name = "UsernameLabel";
-            this.UsernameLabel.Size = new System.Drawing.Size(58, 13);
+            this.UsernameLabel.Size = new System.Drawing.Size(101, 24);
             this.UsernameLabel.TabIndex = 25;
             this.UsernameLabel.Text = "Welcome, ";
-            // 
-            // testBtn
-            // 
-            this.testBtn.BackColor = System.Drawing.Color.Black;
-            this.testBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.testBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.testBtn.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.testBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.testBtn.Location = new System.Drawing.Point(365, 262);
-            this.testBtn.Name = "testBtn";
-            this.testBtn.Size = new System.Drawing.Size(124, 55);
-            this.testBtn.TabIndex = 26;
-            this.testBtn.Text = "Test Report";
-            this.testBtn.UseVisualStyleBackColor = false;
-            this.testBtn.Click += new System.EventHandler(this.testBtn_Click);
             // 
             // CurrentOrderBtn
             // 
@@ -291,10 +276,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(541, 347);
             this.ControlBox = false;
             this.Controls.Add(this.CurrentOrderBtn);
-            this.Controls.Add(this.testBtn);
             this.Controls.Add(this.UsernameLabel);
             this.Controls.Add(this.DeliveredOrdersBtn);
             this.Controls.Add(this.PendingOrdersBtn);
@@ -332,7 +317,6 @@
         private System.Windows.Forms.Button DAccountBtn;
         private Bunifu.Framework.UI.BunifuCustomLabel UsernameLabel;
         private Bunifu.Framework.UI.BunifuImageButton CloseBtn;
-        private System.Windows.Forms.Button testBtn;
         private System.Windows.Forms.Button CurrentOrderBtn;
     }
 }

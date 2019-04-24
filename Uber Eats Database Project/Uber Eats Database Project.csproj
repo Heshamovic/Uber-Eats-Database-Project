@@ -293,6 +293,8 @@
     <Content Include="bin\Debug\stdole.dll" />
     <Content Include="bin\Debug\Uber Eats Database Project.exe" />
     <Content Include="bin\Debug\Uber Eats Database Project.pdb" />
+    <None Include="resources\cancel %281%29.png" />
+    <None Include="resources\check.png" />
     <Content Include="UberEats.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UberEats.Context.cs</LastGenOutput>

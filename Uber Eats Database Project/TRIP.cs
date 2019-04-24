@@ -18,7 +18,7 @@ namespace Uber_Eats_Database_Project
         public Nullable<decimal> DISTANCE_OF_TRIP { get; set; }
         public string DELIVERYPARTNER_USERNAME { get; set; }
     
-        public virtual DELIVERY_PARTNER DELIVERY_PARTNER { get; set; }
         public virtual ORDER ORDER { get; set; }
+        public virtual DELIVERY_PARTNER DELIVERY_PARTNER { get; set; }
     }
 }

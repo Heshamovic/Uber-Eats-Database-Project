@@ -20,7 +20,6 @@ namespace Uber_Eats_Database_Project
         }
     
         public string USERNAME { get; set; }
-        public Nullable<decimal> NO_OF_TRIPS { get; set; }
         public string VEHICLE { get; set; }
         public string PASSWORD { get; set; }
         public Nullable<decimal> RATING { get; set; }
