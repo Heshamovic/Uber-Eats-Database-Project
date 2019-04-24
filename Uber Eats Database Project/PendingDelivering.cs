@@ -55,40 +55,56 @@ namespace Uber_Eats_Database_Project
                 OrdersGV[3, rind].Value = i.NO_OF_ITEMS_PER_FOOD.ToString();
                 OrdersGV[4, rind++].Value = (i.BOUGHT == "y" || i.BOUGHT == "Y");
             }
-            if (enableConfirmBtn())
-                OrderDeliveredBtn.Enabled = true;
+            enableConfirmBtn();
         }
-        private bool enableConfirmBtn()
+        private void enableConfirmBtn()
         {
             Entities ent = new Entities();
-            return ent.ORDER_FOOD.Count(x => x.ORDER_ID == ordID && (x.BOUGHT == "y" || x.BOUGHT == "Y")) == ent.ORDER_FOOD.Count(x => x.ORDER_ID == ordID);
+            if (ent.ORDER_FOOD.Count(x => x.ORDER_ID == ordID && (x.BOUGHT == "y" || x.BOUGHT == "Y")) == ent.ORDER_FOOD.Count(x => x.ORDER_ID == ordID))
+                OrderDeliveredBtn.Enabled = true;
+            else
+                OrderDeliveredBtn.Enabled = false;
         }
 
         private void OrderDeliveredBtn_Click(object sender, EventArgs e)
         {
-
             Entities ent = new Entities();
             ORDER o = (from x in ent.ORDERS
-                             where x.ORDER_ID == ordID
-                             select x).FirstOrDefault();
+                       where x.ORDER_ID == ordID
+                       select x).FirstOrDefault();
             o.STATUS = "d";
-            ent.SaveChanges();
-            //cars, bikes, or on foot.
-            var pv = from p in ent.DELIVERY_PARTNER
-                      where p.USERNAME == Helper.currentUserName
-                      select p.VEHICLE;
-            var td = from t in ent.TRIPs
-                     where t.ORDER_ID == ordID
-                     select t.DISTANCE_OF_TRIP;
-            float totalprice = 0, deliverycost = 0;
-            if (pv.FirstOrDefault() == "car")
-                totalprice += float.Parse(td.FirstOrDefault().ToString()) * 15;
-            else if (pv.FirstOrDefault() == "bike")
-                totalprice += float.Parse(td.FirstOrDefault().ToString()) * 20;
+            DELIVERY_PARTNER dp = (from p in ent.DELIVERY_PARTNER
+                                   where p.USERNAME == Helper.currentUserName
+                                   select p).FirstOrDefault();
+            dp.NO_OF_TRIPS++;
+            TRIP t = (from tr in ent.TRIPs
+                      where tr.ORDER_ID == o.ORDER_ID
+                      select tr).FirstOrDefault();
+
+            var l = (from fo in ent.ORDER_FOOD
+                    join f in ent.FOODs on new { k1 = fo.RESTAURANT_LOCATION, k2 = fo.RESTAURANT_NAME, k3 = fo.FOOD_NAME} 
+                                    equals new { k1 = f.RESTAURANT_LOCATION, k2 = f.RESTAURANT_NAME, k3 = f.FOOD_NAME }
+                    select new
+                    {
+                        f.PRICE,
+                        f.DISCOUNT,
+                        fo.NO_OF_ITEMS_PER_FOOD
+                    });
+
+            decimal mealcost = 0, deliverycost = t.DISTANCE_OF_TRIP.Value * dp.RATING.Value, applicationfees = 5, totalcost = 0;
+            if (dp.VEHICLE == "car")
+                deliverycost *= 8;
+            else if (dp.VEHICLE == "bike")
+                deliverycost *= 5;
             else
-                totalprice += float.Parse(td.FirstOrDefault().ToString()) * 25;
-            deliverycost = totalprice;
-            MessageBox.Show("Order total cost = " + totalprice.ToString());
+                deliverycost *= 3;
+            foreach (var i in l)
+                mealcost += ((i.PRICE - i.PRICE * i.DISCOUNT) * i.NO_OF_ITEMS_PER_FOOD).Value;
+            totalcost = deliverycost + applicationfees + mealcost;
+            MessageBox.Show("Delivery Fees = " + deliverycost.ToString() + 
+                            "\nMeal Cost = " + mealcost.ToString() + 
+                            "\nTotal Cost = " + totalcost.ToString());
+            ent.SaveChanges();
             this.Close();
         }
 
@@ -107,14 +123,36 @@ namespace Uber_Eats_Database_Project
                                  && x.RESTAURANT_LOCATION == u
                                  select x).FirstOrDefault();
                 if (OrdersGV[4, e.RowIndex].Value.ToString() == "true")
-                {
                     fo.BOUGHT = "y";
-                    MessageBox.Show("heeeeh");
-                }
                 else
                     fo.BOUGHT = "n";
                 ent.SaveChanges();
                 enableConfirmBtn();
+            }
+        }
+
+        private void CancelDeliveryBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to cancel the order\n if you cancel the order your " +
+                "rating will decrease by 0.2/"," ",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Entities ent = new Entities();
+                var l = (from fo in ent.ORDER_FOOD
+                         where fo.ORDER_ID == ordID
+                         select fo);
+                foreach (var i in l)
+                    i.BOUGHT = "f";
+                var ord = (from o in ent.ORDERS
+                           where o.ORDER_ID == ordID
+                           select o).First();
+                ord.STATUS = "pp";
+                DELIVERY_PARTNER dp = (from p in ent.DELIVERY_PARTNER
+                                       where p.USERNAME == Helper.currentUserName
+                                       select p).FirstOrDefault();
+                dp.RATING = Math.Min(0, dp.RATING.Value - (decimal)(0.2));
+                ent.SaveChanges();
+                this.Close();
             }
         }
     }

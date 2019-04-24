@@ -213,6 +213,7 @@
             this.CancelDeliveryBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CancelDeliveryBtn.Textcolor = System.Drawing.Color.White;
             this.CancelDeliveryBtn.TextFont = new System.Drawing.Font("Maiandra GD", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelDeliveryBtn.Click += new System.EventHandler(this.CancelDeliveryBtn_Click);
             // 
             // foodname
             // 

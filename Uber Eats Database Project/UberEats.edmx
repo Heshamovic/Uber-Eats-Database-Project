@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CUSTOMER">
           <Key>
             <PropertyRef Name="USERNAME" />
@@ -24,6 +24,7 @@
           <Property Name="NO_OF_TRIPS" Type="number" Precision="38" Scale="0" />
           <Property Name="VEHICLE" Type="varchar2" MaxLength="50" />
           <Property Name="PASSWORD" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="RATING" Type="float" Precision="126" Scale="0" />
         </EntityType>
         <EntityType Name="FOOD">
           <Key>
@@ -39,6 +40,7 @@
           <Property Name="RATING" Type="number" Precision="38" Scale="0" />
           <Property Name="INGREDIANTS" Type="varchar2" MaxLength="500" />
           <Property Name="TOP_DISH" Type="varchar2" MaxLength="5" />
+          <Property Name="FOODIMAGE" Type="varchar2" MaxLength="200" />
         </EntityType>
         <EntityType Name="FOOD_TYPE">
           <Key>
@@ -257,8 +259,7 @@
             <End Role="WORKING_TIME" EntitySet="WORKING_TIME" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -282,6 +283,7 @@
           <Property Name="VEHICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="TRIPs" Relationship="Self.TRIP_DELIVERY_PARTNER_FK1" FromRole="DELIVERY_PARTNER" ToRole="TRIP" />
+          <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" />
         </EntityType>
         <EntityType Name="FOOD">
           <Key>
@@ -299,6 +301,7 @@
           <Property Name="TOP_DISH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="RESTAURANT" Relationship="Self.FOOD_RESTAURANT_FK1" FromRole="FOOD" ToRole="RESTAURANT" />
           <NavigationProperty Name="ORDER_FOOD" Relationship="Self.ORDER_FOOD_FOOD_FK1" FromRole="FOOD" ToRole="ORDER_FOOD" />
+          <Property Name="FOODIMAGE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="FOOD_TYPE">
           <Key>
@@ -549,6 +552,7 @@
           <EntitySetMapping Name="DELIVERY_PARTNER">
             <EntityTypeMapping TypeName="Model.DELIVERY_PARTNER">
               <MappingFragment StoreEntitySet="DELIVERY_PARTNER">
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
                 <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
                 <ScalarProperty Name="NO_OF_TRIPS" ColumnName="NO_OF_TRIPS" />
                 <ScalarProperty Name="VEHICLE" ColumnName="VEHICLE" />
@@ -559,6 +563,7 @@
           <EntitySetMapping Name="FOODs">
             <EntityTypeMapping TypeName="Model.FOOD">
               <MappingFragment StoreEntitySet="FOOD">
+                <ScalarProperty Name="FOODIMAGE" ColumnName="FOODIMAGE" />
                 <ScalarProperty Name="FOOD_NAME" ColumnName="FOOD_NAME" />
                 <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
                 <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />

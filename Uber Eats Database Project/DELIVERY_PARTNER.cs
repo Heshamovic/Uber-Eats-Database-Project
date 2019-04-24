@@ -23,6 +23,7 @@ namespace Uber_Eats_Database_Project
         public Nullable<decimal> NO_OF_TRIPS { get; set; }
         public string VEHICLE { get; set; }
         public string PASSWORD { get; set; }
+        public Nullable<decimal> RATING { get; set; }
     
         public virtual ICollection<TRIP> TRIPs { get; set; }
     }

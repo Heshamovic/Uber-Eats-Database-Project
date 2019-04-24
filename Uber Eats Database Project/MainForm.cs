@@ -26,38 +26,31 @@ namespace Uber_Eats_Database_Project
         private void MainForm_Load(object sender, EventArgs e)
         {
             UsernameLabel.Text += Helper.currentUserName;
-            if (Helper.currentUserRole == 1) //Customer
-                ToggleUser(true);
-            else if (Helper.currentUserRole == 2) //Delivery Partner
-                ToggleUser(false);
-            else //Admin
-            {
-
-            }
+            ToggleUser();
+            
         }
-        private void ToggleUser(bool UserEnable)
+        private void ToggleUser()
         {
+            bool UserEnable = true; // User unless
+            if (Helper.currentUserRole == 2) // Delivery Partner
+                UserEnable = false;
+            else // Admin
+            { }
             //Enable Partner Controls
+            Entities ent = new Entities();
+            int oid = (from o in ent.ORDERS
+                       join t in ent.TRIPs on o.ORDER_ID equals t.ORDER_ID
+                       where t.DELIVERYPARTNER_USERNAME == Helper.currentUserName
+                       && o.STATUS == "pd"
+                       select o.ORDER_ID).Count();
             PendingOrdersBtn.Enabled = !UserEnable;
             PendingOrdersBtn.Visible = !UserEnable;
             DeliveredOrdersBtn.Enabled = !UserEnable;
             DeliveredOrdersBtn.Visible = !UserEnable;
             DAccountBtn.Enabled = !UserEnable;
             DAccountBtn.Visible = !UserEnable;
-            CurrentOrderBtn.Enabled = !UserEnable;
-            CurrentOrderBtn.Visible = !UserEnable;
-            if (!UserEnable)
-            {
-                Entities ent = new Entities();
-                var oid = from ord in ent.ORDERS
-                          where ord.STATUS == "pd"
-                          select ord.ORDER_ID;
-                if (oid != null)
-                {
-                    if (ent.TRIPs.Where(x => x.DELIVERYPARTNER_USERNAME == Helper.currentUserName && x.ORDER_ID == oid.FirstOrDefault()).Count() < 1)
-                        CurrentOrderBtn.Enabled = false;
-                }
-            }
+            CurrentOrderBtn.Enabled = !UserEnable & (oid != 0);
+            CurrentOrderBtn.Visible = !UserEnable & (oid != 0);
             //Disable Customer Controls
             OrdersBtn.Enabled = UserEnable;
             OrdersBtn.Visible = UserEnable;
@@ -136,6 +129,7 @@ namespace Uber_Eats_Database_Project
 
         public void letsShow(object sender, FormClosingEventArgs e)
         {
+            ToggleUser();
             this.Show();
         }
         #region Buttons Hovers
