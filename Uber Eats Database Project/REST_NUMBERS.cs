@@ -7,14 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
-public partial class REST_NUMBERS
+namespace Uber_Eats_Database_Project
 {
-    public string RESTAURANT_NAME { get; set; }
-    public string RESTAURANT_LOCATION { get; set; }
-    public string PHONE_NO { get; set; }
-
-    public virtual RESTAURANT RESTAURANT { get; set; }
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class REST_NUMBERS
+    {
+        public string RESTAURANT_NAME { get; set; }
+        public string RESTAURANT_LOCATION { get; set; }
+        public string PHONE_NO { get; set; }
+    
+        public virtual RESTAURANT RESTAURANT { get; set; }
+    }
 }

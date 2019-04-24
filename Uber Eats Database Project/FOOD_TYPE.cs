@@ -7,11 +7,14 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
-public partial class FOOD_TYPE
+namespace Uber_Eats_Database_Project
 {
-    public string FOOD_NAME { get; set; }
-    public string FOOD_TYPE1 { get; set; }
+    using System;
+    using System.Collections.Generic;
+    
+    public partial class FOOD_TYPE
+    {
+        public string FOOD_NAME { get; set; }
+        public string FOOD_TYPE1 { get; set; }
+    }
 }
