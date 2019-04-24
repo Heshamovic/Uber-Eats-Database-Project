@@ -16,14 +16,14 @@ namespace Uber_Eats_Database_Project {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class DeliveredOrders : ReportClass {
+    public class RestaurantFood : ReportClass {
         
-        public DeliveredOrders() {
+        public RestaurantFood() {
         }
         
         public override string ResourceName {
             get {
-                return "DeliveredOrders.rpt";
+                return "RestaurantFood.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace Uber_Eats_Database_Project {
         
         public override string FullResourceName {
             get {
-                return "Uber_Eats_Database_Project.DeliveredOrders.rpt";
+                return "Uber_Eats_Database_Project.RestaurantFood.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace Uber_Eats_Database_Project {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace Uber_Eats_Database_Project {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,49 +82,17 @@ namespace Uber_Eats_Database_Project {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_DeliveryPartnerUsername {
-            get {
-                return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_order_status {
-            get {
-                return this.DataDefinition.ParameterFields[1];
+                return this.ReportDefinition.Sections[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedDeliveredOrders : Component, ICachedReport {
+    public class CachedRestaurantFood : Component, ICachedReport {
         
-        public CachedDeliveredOrders() {
+        public CachedRestaurantFood() {
         }
         
         [Browsable(false)]
@@ -161,7 +129,7 @@ namespace Uber_Eats_Database_Project {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            DeliveredOrders rpt = new DeliveredOrders();
+            RestaurantFood rpt = new RestaurantFood();
             rpt.Site = this.Site;
             return rpt;
         }
