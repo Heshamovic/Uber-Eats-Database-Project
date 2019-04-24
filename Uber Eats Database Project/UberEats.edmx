@@ -100,6 +100,7 @@
           <Property Name="ORDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="DISTANCE_OF_TRIP" Type="number" Precision="38" Scale="0" />
           <Property Name="DELIVERYPARTNER_USERNAME" Type="varchar2" MaxLength="20" />
+          <Property Name="DELIVERYFEES" Type="float" Precision="126" Scale="0" />
         </EntityType>
         <EntityType Name="WORKING_TIME">
           <Key>
@@ -360,6 +361,7 @@
           <Property Name="DELIVERYPARTNER_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ORDER" Relationship="Self.ORDER_TRIP_FK1" FromRole="TRIP" ToRole="ORDERS" />
           <NavigationProperty Name="DELIVERY_PARTNER" Relationship="Model.TRIP_DELIVERY_PARTNER_FK1" FromRole="TRIP" ToRole="DELIVERY_PARTNER" />
+          <Property Name="DELIVERYFEES" Type="Decimal" Precision="38" Scale="0" />
         </EntityType>
         <EntityType Name="WORKING_TIME">
           <Key>
@@ -616,6 +618,7 @@
           <EntitySetMapping Name="TRIPs">
             <EntityTypeMapping TypeName="Model.TRIP">
               <MappingFragment StoreEntitySet="TRIP">
+                <ScalarProperty Name="DELIVERYFEES" ColumnName="DELIVERYFEES" />
                 <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
                 <ScalarProperty Name="DISTANCE_OF_TRIP" ColumnName="DISTANCE_OF_TRIP" />
                 <ScalarProperty Name="DELIVERYPARTNER_USERNAME" ColumnName="DELIVERYPARTNER_USERNAME" />

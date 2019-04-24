@@ -105,6 +105,12 @@
     <Compile Include="CUSTOMER.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomMsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMsgBox.Designer.cs">
+      <DependentUpon>CustomMsgBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeliveredOrders.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="cartItem.resx">
       <DependentUpon>cartItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomMsgBox.resx">
+      <DependentUpon>CustomMsgBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeliveredOrders.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

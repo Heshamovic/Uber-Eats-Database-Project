@@ -101,13 +101,14 @@ namespace Uber_Eats_Database_Project
                 deliverycost *= 5;
             else
                 deliverycost *= 3;
+            t.DELIVERYFEES = deliverycost;
             dp.RATING = Math.Max(5, dp.RATING.Value + (decimal)(0.01));
             foreach (var i in l)
                 mealcost += ((i.PRICE - i.PRICE * i.DISCOUNT) * i.NO_OF_ITEMS_PER_FOOD).Value;
             totalcost = deliverycost + applicationfees + mealcost;
-            MessageBox.Show("Delivery Fees = " + deliverycost.ToString() + 
-                            "\nMeal Cost = " + mealcost.ToString() + 
-                            "\nTotal Cost = " + totalcost.ToString());
+            CustomMsgBox.Show("Delivery Fees = " + deliverycost.ToString() + 
+                              "\nMeal Cost = " + mealcost.ToString() + 
+                              "\nTotal Cost = " + totalcost.ToString());
             ent.SaveChanges();
             this.Close();
         }
@@ -138,8 +139,8 @@ namespace Uber_Eats_Database_Project
 
         private void CancelDeliveryBtn_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to cancel the order\n if you cancel the order your " +
-                "rating will decrease by 0.2/"," ",MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult dialogResult = CustomMsgBox.Show("Are you sure you want to cancel the order\n if you cancel the order your " +
+                "rating will decrease by 0.2", 2);
             if (dialogResult == DialogResult.Yes)
             {
                 Entities ent = new Entities();
@@ -161,7 +162,7 @@ namespace Uber_Eats_Database_Project
             }
         }
 
-        #region Mouse Hovers
+        #region Buttons Hovers
         private void OrderDeliveredBtn_MouseEnter(object sender, EventArgs e)
         {
             Helper.onHover((Button)sender, Color.Green);
