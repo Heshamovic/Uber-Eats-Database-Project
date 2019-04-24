@@ -10,7 +10,7 @@ namespace Uber_Eats_Database_Project
 {
     public static class Helper
     {
-        public static string currentUserName, conStr = "data source = orcl; user id = scott; password = tiger;";
+        public static string currentUserName;
         public static int currentUserRole;
         public static string constr = "data source = orcl; user id = scott; password = tiger;";
         public static void RemovePlaceHolder(TextBox tb, string placeHolderText)
