@@ -117,36 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-<<<<<<< HEAD
-||||||| 633306c... 	fixing GUI and radio button behavior (Login and signup are finished now)
   <metadata name="metroStyleManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>54</value>
   </metadata>
-=======
   <metadata name="metroStyleManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
->>>>>>> parent of 633306c... 	fixing GUI and radio button behavior (Login and signup are finished now)
-||||||| 633306c... 	fixing GUI and radio button behavior (Login and signup are finished now)
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>54</value>
   </metadata>
-=======
->>>>>>> parent of 633306c... 	fixing GUI and radio button behavior (Login and signup are finished now)
-||||||| 633306c... 	fixing GUI and radio button behavior (Login and signup are finished now)
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>54</value>
   </metadata>
-=======
->>>>>>> parent of 633306c... 	fixing GUI and radio button behavior (Login and signup are finished now)
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="LogoutBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -847,7 +832,6 @@
   <metadata name="bunifuElipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-<<<<<<< HEAD
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>54</value>
   </metadata>
@@ -880,7 +864,6 @@
   <metadata name="bunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>141, 17</value>
   </metadata>
-||||||| 18d1669... adding bunifu framework
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1578,9 +1561,6 @@
         5+XI8zwvR57neTkiDzMneA3z/tN/+v8BCzLPKG0vKJgAAAAASUVORK5CYII=
 </value>
   </data>
-=======
->>>>>>> parent of 18d1669... adding bunifu framework
-||||||| 18d1669... adding bunifu framework
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2278,9 +2258,6 @@
         5+XI8zwvR57neTkiDzMneA3z/tN/+v8BCzLPKG0vKJgAAAAASUVORK5CYII=
 </value>
   </data>
-=======
->>>>>>> parent of 18d1669... adding bunifu framework
-||||||| 18d1669... adding bunifu framework
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2978,9 +2955,6 @@
         5+XI8zwvR57neTkiDzMneA3z/tN/+v8BCzLPKG0vKJgAAAAASUVORK5CYII=
 </value>
   </data>
-=======
->>>>>>> parent of 18d1669... adding bunifu framework
-||||||| 18d1669... adding bunifu framework
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3678,6 +3652,4 @@
         5+XI8zwvR57neTkiDzMneA3z/tN/+v8BCzLPKG0vKJgAAAAASUVORK5CYII=
 </value>
   </data>
-=======
->>>>>>> parent of 18d1669... adding bunifu framework
 </root>
