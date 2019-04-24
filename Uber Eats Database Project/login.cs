@@ -237,8 +237,8 @@ namespace Uber_Eats_Database_Project
         }
         public void letsShow(object sender, FormClosingEventArgs e)
         {
-            userNameSignIn.ForeColor = passwordSignIn.ForeColor = Color.DarkGray;
-            userNameSignIn.Text = "Username*";
+            passwordSignIn.ForeColor = Color.DarkGray;
+            userNameSignIn.Text = Helper.currentUserName;
             passwordSignIn.Text = "Password*";
             this.Show();
         }
