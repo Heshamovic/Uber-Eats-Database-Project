@@ -66,21 +66,16 @@
     <Compile Include="RESTAURANT.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="RestaurantFood.cs" />
     <Compile Include="restaurants.cs" />
     <Compile Include="restaurants.Designer.cs">
       <DependentUpon>restaurants.cs</DependentUpon>
     </Compile>
-||||||| 55cab79... Adjusting delivered orders report
     <Compile Include="RestaurantFood.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RestaurantFood.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-=======
->>>>>>> parent of 55cab79... Adjusting delivered orders report
     <Compile Include="REST_NUMBERS.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
@@ -172,14 +167,9 @@
     <EmbeddedResource Include="ReportsForm.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="RestaurantFood.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="restaurants.resx">
       <DependentUpon>restaurants.cs</DependentUpon>
     </EmbeddedResource>
-||||||| 55cab79... Adjusting delivered orders report
     <EmbeddedResource Include="RestaurantFood.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RestaurantFood.cs</LastGenOutput>
@@ -211,7 +201,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-=======
     <None Include="bin\Debug\Uber Eats Database Project.exe.config" />
     <None Include="obj\Release\Uber Eats Database Project.csproj.CoreCompileInputs.cache" />
     <None Include="packages.config" />
@@ -239,7 +228,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
->>>>>>> parent of 55cab79... Adjusting delivered orders report
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Debug\" />
