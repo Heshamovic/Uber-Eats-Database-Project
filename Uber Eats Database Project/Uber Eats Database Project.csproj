@@ -105,6 +105,12 @@
     <Compile Include="CUSTOMER.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
+    <Compile Include="CustomMsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMsgBox.Designer.cs">
+      <DependentUpon>CustomMsgBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeliveredOrders.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -162,6 +168,12 @@
     <Compile Include="ReportsForm.Designer.cs">
       <DependentUpon>ReportsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ResaturantFoodReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResaturantFoodReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RESTAURANT.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
@@ -195,6 +207,9 @@
     <EmbeddedResource Include="cartItem.resx">
       <DependentUpon>cartItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomMsgBox.resx">
+      <DependentUpon>CustomMsgBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeliveredOrders.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DeliveredOrders.cs</LastGenOutput>
@@ -218,6 +233,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportsForm.resx">
       <DependentUpon>ReportsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResaturantFoodReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResaturantFoodReport.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="bin\Debug\Uber Eats Database Project.exe.config" />
     <None Include="obj\Release\Uber Eats Database Project.csproj.CoreCompileInputs.cache" />
@@ -283,6 +302,8 @@
     <Content Include="bin\Debug\stdole.dll" />
     <Content Include="bin\Debug\Uber Eats Database Project.exe" />
     <Content Include="bin\Debug\Uber Eats Database Project.pdb" />
+    <None Include="resources\cancel %281%29.png" />
+    <None Include="resources\check.png" />
     <Content Include="UberEats.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UberEats.Context.cs</LastGenOutput>

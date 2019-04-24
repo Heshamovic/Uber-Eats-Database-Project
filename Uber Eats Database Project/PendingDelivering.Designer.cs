@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PendingDelivering));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PendingDelivering));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.header = new System.Windows.Forms.Panel();
             this.exit = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.OrdersGV = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.OrderDeliveredBtn = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.CancelDeliveryBtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.foodname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RestName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RestLoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NoItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Bought = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.CancelDeliveryBtn = new System.Windows.Forms.Button();
+            this.OrderDeliveredBtn = new System.Windows.Forms.Button();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGV)).BeginInit();
@@ -99,11 +99,10 @@
             this.OrdersGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.OrdersGV.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.OrdersGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OrdersGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 13.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Green;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -134,86 +133,10 @@
             this.OrdersGV.MinimumSize = new System.Drawing.Size(800, 0);
             this.OrdersGV.Name = "OrdersGV";
             this.OrdersGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.OrdersGV.RowHeadersVisible = false;
             this.OrdersGV.Size = new System.Drawing.Size(800, 336);
             this.OrdersGV.TabIndex = 29;
             this.OrdersGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrdersGV_CellContentClick);
-            // 
-            // OrderDeliveredBtn
-            // 
-            this.OrderDeliveredBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.OrderDeliveredBtn.BackColor = System.Drawing.Color.Black;
-            this.OrderDeliveredBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.OrderDeliveredBtn.BorderRadius = 0;
-            this.OrderDeliveredBtn.ButtonText = "Order Delivered";
-            this.OrderDeliveredBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.OrderDeliveredBtn.DisabledColor = System.Drawing.Color.DimGray;
-            this.OrderDeliveredBtn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.OrderDeliveredBtn.Enabled = false;
-            this.OrderDeliveredBtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderDeliveredBtn.Iconcolor = System.Drawing.Color.Transparent;
-            this.OrderDeliveredBtn.Iconimage = ((System.Drawing.Image)(resources.GetObject("OrderDeliveredBtn.Iconimage")));
-            this.OrderDeliveredBtn.Iconimage_right = null;
-            this.OrderDeliveredBtn.Iconimage_right_Selected = null;
-            this.OrderDeliveredBtn.Iconimage_Selected = null;
-            this.OrderDeliveredBtn.IconMarginLeft = 30;
-            this.OrderDeliveredBtn.IconMarginRight = 0;
-            this.OrderDeliveredBtn.IconRightVisible = true;
-            this.OrderDeliveredBtn.IconRightZoom = 0D;
-            this.OrderDeliveredBtn.IconVisible = true;
-            this.OrderDeliveredBtn.IconZoom = 100D;
-            this.OrderDeliveredBtn.IsTab = false;
-            this.OrderDeliveredBtn.Location = new System.Drawing.Point(0, 365);
-            this.OrderDeliveredBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.OrderDeliveredBtn.Name = "OrderDeliveredBtn";
-            this.OrderDeliveredBtn.Normalcolor = System.Drawing.Color.Black;
-            this.OrderDeliveredBtn.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.OrderDeliveredBtn.OnHoverTextColor = System.Drawing.Color.White;
-            this.OrderDeliveredBtn.selected = false;
-            this.OrderDeliveredBtn.Size = new System.Drawing.Size(400, 85);
-            this.OrderDeliveredBtn.TabIndex = 30;
-            this.OrderDeliveredBtn.Text = "Order Delivered";
-            this.OrderDeliveredBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.OrderDeliveredBtn.Textcolor = System.Drawing.Color.White;
-            this.OrderDeliveredBtn.TextFont = new System.Drawing.Font("Maiandra GD", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OrderDeliveredBtn.Click += new System.EventHandler(this.OrderDeliveredBtn_Click);
-            // 
-            // CancelDeliveryBtn
-            // 
-            this.CancelDeliveryBtn.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.CancelDeliveryBtn.BackColor = System.Drawing.Color.Black;
-            this.CancelDeliveryBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.CancelDeliveryBtn.BorderRadius = 0;
-            this.CancelDeliveryBtn.ButtonText = "Cancel Delivery";
-            this.CancelDeliveryBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CancelDeliveryBtn.DisabledColor = System.Drawing.Color.Gray;
-            this.CancelDeliveryBtn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CancelDeliveryBtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelDeliveryBtn.Iconcolor = System.Drawing.Color.Transparent;
-            this.CancelDeliveryBtn.Iconimage = ((System.Drawing.Image)(resources.GetObject("CancelDeliveryBtn.Iconimage")));
-            this.CancelDeliveryBtn.Iconimage_right = null;
-            this.CancelDeliveryBtn.Iconimage_right_Selected = null;
-            this.CancelDeliveryBtn.Iconimage_Selected = null;
-            this.CancelDeliveryBtn.IconMarginLeft = 30;
-            this.CancelDeliveryBtn.IconMarginRight = 0;
-            this.CancelDeliveryBtn.IconRightVisible = true;
-            this.CancelDeliveryBtn.IconRightZoom = 0D;
-            this.CancelDeliveryBtn.IconVisible = true;
-            this.CancelDeliveryBtn.IconZoom = 100D;
-            this.CancelDeliveryBtn.IsTab = false;
-            this.CancelDeliveryBtn.Location = new System.Drawing.Point(400, 365);
-            this.CancelDeliveryBtn.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.CancelDeliveryBtn.Name = "CancelDeliveryBtn";
-            this.CancelDeliveryBtn.Normalcolor = System.Drawing.Color.Black;
-            this.CancelDeliveryBtn.OnHovercolor = System.Drawing.Color.Red;
-            this.CancelDeliveryBtn.OnHoverTextColor = System.Drawing.Color.White;
-            this.CancelDeliveryBtn.selected = false;
-            this.CancelDeliveryBtn.Size = new System.Drawing.Size(400, 85);
-            this.CancelDeliveryBtn.TabIndex = 31;
-            this.CancelDeliveryBtn.Text = "Cancel Delivery";
-            this.CancelDeliveryBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.CancelDeliveryBtn.Textcolor = System.Drawing.Color.White;
-            this.CancelDeliveryBtn.TextFont = new System.Drawing.Font("Maiandra GD", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CancelDeliveryBtn.Click += new System.EventHandler(this.CancelDeliveryBtn_Click);
             // 
             // foodname
             // 
@@ -221,6 +144,7 @@
             this.foodname.HeaderText = "Food";
             this.foodname.Name = "foodname";
             this.foodname.ReadOnly = true;
+            this.foodname.ToolTipText = "Food Name";
             // 
             // RestName
             // 
@@ -242,6 +166,7 @@
             this.NoItems.HeaderText = "#";
             this.NoItems.Name = "NoItems";
             this.NoItems.ReadOnly = true;
+            this.NoItems.ToolTipText = "Number of meals Delivered";
             // 
             // Bought
             // 
@@ -249,7 +174,49 @@
             this.Bought.FillWeight = 45F;
             this.Bought.HeaderText = "Bought";
             this.Bought.Name = "Bought";
+            this.Bought.ToolTipText = "Check only if you bought total number of meals required";
             this.Bought.TrueValue = "true";
+            // 
+            // CancelDeliveryBtn
+            // 
+            this.CancelDeliveryBtn.BackColor = System.Drawing.Color.Black;
+            this.CancelDeliveryBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CancelDeliveryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CancelDeliveryBtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelDeliveryBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.CancelDeliveryBtn.Image = global::Uber_Eats_Database_Project.Properties.Resources.cancel__1_;
+            this.CancelDeliveryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CancelDeliveryBtn.Location = new System.Drawing.Point(400, 365);
+            this.CancelDeliveryBtn.Name = "CancelDeliveryBtn";
+            this.CancelDeliveryBtn.Size = new System.Drawing.Size(400, 85);
+            this.CancelDeliveryBtn.TabIndex = 33;
+            this.CancelDeliveryBtn.Text = "       Cancel Delivrey     ";
+            this.CancelDeliveryBtn.UseCompatibleTextRendering = true;
+            this.CancelDeliveryBtn.UseVisualStyleBackColor = false;
+            this.CancelDeliveryBtn.Click += new System.EventHandler(this.CancelDeliveryBtn_Click);
+            this.CancelDeliveryBtn.MouseEnter += new System.EventHandler(this.CancelDeliveryBtn_MouseEnter);
+            this.CancelDeliveryBtn.MouseLeave += new System.EventHandler(this.CancelDeliveryBtn_MouseLeave);
+            // 
+            // OrderDeliveredBtn
+            // 
+            this.OrderDeliveredBtn.BackColor = System.Drawing.Color.Black;
+            this.OrderDeliveredBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OrderDeliveredBtn.Enabled = false;
+            this.OrderDeliveredBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.OrderDeliveredBtn.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OrderDeliveredBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.OrderDeliveredBtn.Image = global::Uber_Eats_Database_Project.Properties.Resources.check;
+            this.OrderDeliveredBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.OrderDeliveredBtn.Location = new System.Drawing.Point(0, 365);
+            this.OrderDeliveredBtn.Name = "OrderDeliveredBtn";
+            this.OrderDeliveredBtn.Size = new System.Drawing.Size(400, 85);
+            this.OrderDeliveredBtn.TabIndex = 32;
+            this.OrderDeliveredBtn.Text = "        Order Delivered";
+            this.OrderDeliveredBtn.UseCompatibleTextRendering = true;
+            this.OrderDeliveredBtn.UseVisualStyleBackColor = false;
+            this.OrderDeliveredBtn.Click += new System.EventHandler(this.OrderDeliveredBtn_Click);
+            this.OrderDeliveredBtn.MouseEnter += new System.EventHandler(this.OrderDeliveredBtn_MouseEnter);
+            this.OrderDeliveredBtn.MouseLeave += new System.EventHandler(this.OrderDeliveredBtn_MouseLeave);
             // 
             // PendingDelivering
             // 
@@ -277,8 +244,8 @@
         private Bunifu.Framework.UI.BunifuImageButton exit;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuCustomDataGrid OrdersGV;
-        private Bunifu.Framework.UI.BunifuFlatButton CancelDeliveryBtn;
-        private Bunifu.Framework.UI.BunifuFlatButton OrderDeliveredBtn;
+        private System.Windows.Forms.Button OrderDeliveredBtn;
+        private System.Windows.Forms.Button CancelDeliveryBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn foodname;
         private System.Windows.Forms.DataGridViewTextBoxColumn RestName;
         private System.Windows.Forms.DataGridViewTextBoxColumn RestLoc;

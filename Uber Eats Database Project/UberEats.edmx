@@ -21,7 +21,6 @@
             <PropertyRef Name="USERNAME" />
           </Key>
           <Property Name="USERNAME" Type="varchar2" MaxLength="20" Nullable="false" />
-          <Property Name="NO_OF_TRIPS" Type="number" Precision="38" Scale="0" />
           <Property Name="VEHICLE" Type="varchar2" MaxLength="50" />
           <Property Name="PASSWORD" Type="varchar2" MaxLength="100" Nullable="false" />
           <Property Name="RATING" Type="float" Precision="126" Scale="0" />
@@ -101,6 +100,7 @@
           <Property Name="ORDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="DISTANCE_OF_TRIP" Type="number" Precision="38" Scale="0" />
           <Property Name="DELIVERYPARTNER_USERNAME" Type="varchar2" MaxLength="20" />
+          <Property Name="DELIVERYFEES" Type="float" Precision="126" Scale="0" />
         </EntityType>
         <EntityType Name="WORKING_TIME">
           <Key>
@@ -274,17 +274,6 @@
           <Property Name="CREDIT_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityType Name="DELIVERY_PARTNER">
-          <Key>
-            <PropertyRef Name="USERNAME" />
-          </Key>
-          <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NO_OF_TRIPS" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="VEHICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="TRIPs" Relationship="Self.TRIP_DELIVERY_PARTNER_FK1" FromRole="DELIVERY_PARTNER" ToRole="TRIP" />
-          <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" />
-        </EntityType>
         <EntityType Name="FOOD">
           <Key>
             <PropertyRef Name="FOOD_NAME" />
@@ -370,8 +359,9 @@
           <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <Property Name="DISTANCE_OF_TRIP" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="DELIVERYPARTNER_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="DELIVERY_PARTNER" Relationship="Self.TRIP_DELIVERY_PARTNER_FK1" FromRole="TRIP" ToRole="DELIVERY_PARTNER" />
           <NavigationProperty Name="ORDER" Relationship="Self.ORDER_TRIP_FK1" FromRole="TRIP" ToRole="ORDERS" />
+          <NavigationProperty Name="DELIVERY_PARTNER" Relationship="Model.TRIP_DELIVERY_PARTNER_FK1" FromRole="TRIP" ToRole="DELIVERY_PARTNER" />
+          <Property Name="DELIVERYFEES" Type="Decimal" Precision="38" Scale="0" />
         </EntityType>
         <EntityType Name="WORKING_TIME">
           <Key>
@@ -386,18 +376,6 @@
           <Property Name="END_TIME" Type="Decimal" Precision="38" Scale="0" />
           <NavigationProperty Name="RESTAURANT" Relationship="Self.WORKING_TIME_RESTAURANT_FK1" FromRole="WORKING_TIME" ToRole="RESTAURANT" />
         </EntityType>
-        <Association Name="TRIP_DELIVERY_PARTNER_FK1">
-          <End Role="DELIVERY_PARTNER" Type="Self.DELIVERY_PARTNER" Multiplicity="0..1" />
-          <End Role="TRIP" Type="Self.TRIP" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DELIVERY_PARTNER">
-              <PropertyRef Name="USERNAME" />
-            </Principal>
-            <Dependent Role="TRIP">
-              <PropertyRef Name="DELIVERYPARTNER_USERNAME" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FOOD_RESTAURANT_FK1">
           <End Role="RESTAURANT" Type="Self.RESTAURANT" Multiplicity="1" />
           <End Role="FOOD" Type="Self.FOOD" Multiplicity="*" />
@@ -482,7 +460,6 @@
         </Association>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
-          <EntitySet Name="DELIVERY_PARTNER" EntityType="Self.DELIVERY_PARTNER" />
           <EntitySet Name="FOODs" EntityType="Self.FOOD" />
           <EntitySet Name="FOOD_TYPE" EntityType="Self.FOOD_TYPE" />
           <EntitySet Name="ORDER_FOOD" EntityType="Self.ORDER_FOOD" />
@@ -491,10 +468,6 @@
           <EntitySet Name="RESTAURANTs" EntityType="Self.RESTAURANT" />
           <EntitySet Name="TRIPs" EntityType="Self.TRIP" />
           <EntitySet Name="WORKING_TIME" EntityType="Self.WORKING_TIME" />
-          <AssociationSet Name="TRIP_DELIVERY_PARTNER_FK1" Association="Self.TRIP_DELIVERY_PARTNER_FK1">
-            <End Role="DELIVERY_PARTNER" EntitySet="DELIVERY_PARTNER" />
-            <End Role="TRIP" EntitySet="TRIPs" />
-          </AssociationSet>
           <AssociationSet Name="FOOD_RESTAURANT_FK1" Association="Self.FOOD_RESTAURANT_FK1">
             <End Role="RESTAURANT" EntitySet="RESTAURANTs" />
             <End Role="FOOD" EntitySet="FOODs" />
@@ -530,7 +503,34 @@
             <Parameter Name="NCREDIT_NO" Mode="In" Type="String" />
             <Parameter Name="NVEHICLE" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="DELIVERY_PARTNER" EntityType="Model.DELIVERY_PARTNER" />
+          <AssociationSet Name="TRIP_DELIVERY_PARTNER_FK1" Association="Model.TRIP_DELIVERY_PARTNER_FK1">
+            <End Role="DELIVERY_PARTNER" EntitySet="DELIVERY_PARTNER" />
+            <End Role="TRIP" EntitySet="TRIPs" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="DELIVERY_PARTNER">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VEHICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="TRIPs" Relationship="Model.TRIP_DELIVERY_PARTNER_FK1" FromRole="DELIVERY_PARTNER" ToRole="TRIP" />
+        </EntityType>
+        <Association Name="TRIP_DELIVERY_PARTNER_FK1">
+          <End Type="Model.DELIVERY_PARTNER" Role="DELIVERY_PARTNER" Multiplicity="0..1" />
+          <End Type="Model.TRIP" Role="TRIP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DELIVERY_PARTNER">
+              <PropertyRef Name="USERNAME" />
+            </Principal>
+            <Dependent Role="TRIP">
+              <PropertyRef Name="DELIVERYPARTNER_USERNAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -545,17 +545,6 @@
                 <ScalarProperty Name="LNAME" ColumnName="LNAME" />
                 <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
                 <ScalarProperty Name="CREDIT_NO" ColumnName="CREDIT_NO" />
-                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DELIVERY_PARTNER">
-            <EntityTypeMapping TypeName="Model.DELIVERY_PARTNER">
-              <MappingFragment StoreEntitySet="DELIVERY_PARTNER">
-                <ScalarProperty Name="RATING" ColumnName="RATING" />
-                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
-                <ScalarProperty Name="NO_OF_TRIPS" ColumnName="NO_OF_TRIPS" />
-                <ScalarProperty Name="VEHICLE" ColumnName="VEHICLE" />
                 <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -629,6 +618,7 @@
           <EntitySetMapping Name="TRIPs">
             <EntityTypeMapping TypeName="Model.TRIP">
               <MappingFragment StoreEntitySet="TRIP">
+                <ScalarProperty Name="DELIVERYFEES" ColumnName="DELIVERYFEES" />
                 <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
                 <ScalarProperty Name="DISTANCE_OF_TRIP" ColumnName="DISTANCE_OF_TRIP" />
                 <ScalarProperty Name="DELIVERYPARTNER_USERNAME" ColumnName="DELIVERYPARTNER_USERNAME" />
@@ -647,6 +637,16 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="SIGN_UP" FunctionName="Model.Store.SIGN_UP" />
+          <EntitySetMapping Name="DELIVERY_PARTNER">
+            <EntityTypeMapping TypeName="Model.DELIVERY_PARTNER">
+              <MappingFragment StoreEntitySet="DELIVERY_PARTNER">
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="VEHICLE" ColumnName="VEHICLE" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

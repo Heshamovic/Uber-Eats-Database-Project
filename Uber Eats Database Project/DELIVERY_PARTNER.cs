@@ -14,7 +14,17 @@ public partial class DELIVERY_PARTNER
 {
     public DELIVERY_PARTNER()
     {
-        this.TRIPs = new HashSet<TRIP>();
+        public DELIVERY_PARTNER()
+        {
+            this.TRIPs = new HashSet<TRIP>();
+        }
+    
+        public string USERNAME { get; set; }
+        public string VEHICLE { get; set; }
+        public string PASSWORD { get; set; }
+        public Nullable<decimal> RATING { get; set; }
+    
+        public virtual ICollection<TRIP> TRIPs { get; set; }
     }
 
     public string USERNAME { get; set; }
