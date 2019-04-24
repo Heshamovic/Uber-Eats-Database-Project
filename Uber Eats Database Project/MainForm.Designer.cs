@@ -32,6 +32,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.LogoutBtn = new System.Windows.Forms.PictureBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -64,6 +65,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 =======
+||||||| 18d1669... adding bunifu framework
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+=======
+>>>>>>> parent of 18d1669... adding bunifu framework
 ||||||| 18d1669... adding bunifu framework
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 =======
@@ -393,6 +398,7 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             // CustomerMenuBtn
             // 
@@ -468,6 +474,10 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
 <<<<<<< HEAD
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+>>>>>>> parent of 18d1669... adding bunifu framework
+||||||| 18d1669... adding bunifu framework
+=======
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
 >>>>>>> parent of 18d1669... adding bunifu framework
 ||||||| 18d1669... adding bunifu framework
