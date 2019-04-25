@@ -118,10 +118,18 @@ namespace Uber_Eats_Database_Project
 
         private void CartBtn_Click(object sender, EventArgs e)
         {
-            //Cart c = new Cart();
-            //c.Show();
-            //this.Hide();
-            //c.FormClosing += letsShow;
+            Cart c = new Cart();
+            c.Show();
+            this.Hide();
+            c.FormClosing += letsShow;
+        }
+
+        private void CurrentOrderBtn_Click(object sender, EventArgs e)
+        {
+            PendingDelivering pd = new PendingDelivering();
+            pd.Show();
+            this.Hide();
+            pd.FormClosing += letsShow;
         }
 
         private void OrdersBtn_Click(object sender, EventArgs e)
@@ -218,13 +226,5 @@ namespace Uber_Eats_Database_Project
         }
 
         #endregion
-
-        private void CurrentOrderBtn_Click(object sender, EventArgs e)
-        {
-            PendingDelivering pd = new PendingDelivering();
-            pd.Show();
-            this.Hide();
-            pd.FormClosing += letsShow;
-        }
     }
 }

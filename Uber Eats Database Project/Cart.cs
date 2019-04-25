@@ -35,7 +35,6 @@ namespace Uber_Eats_Database_Project
             cmd.Parameters.Add("cnt", OracleDbType.Int32, ParameterDirection.Output);
             cmd.ExecuteNonQuery();
             x = int.Parse(cmd.Parameters["cnt"].Value.ToString());
-           // MessageBox.Show(x.ToString());
             con.Close();
 
             con = new OracleConnection(ordb);
@@ -55,7 +54,6 @@ namespace Uber_Eats_Database_Project
             //dr 4 no of items
              cartItems = new cartItem[x];
             
-           // MessageBox.Show(z.Controls[0].Text);
             int i = 0;
             while (dr.Read())
             {
@@ -69,7 +67,6 @@ namespace Uber_Eats_Database_Project
                 cartItems[i].cart_id = i;
 
                 flowLayoutPanel1.Controls.Add(cartItems[i]);
-                // MessageBox.Show(cartItems[i].FoodName.Text);
                 i++;
 
             }
@@ -96,29 +93,6 @@ namespace Uber_Eats_Database_Project
 
         private void flowLayoutPanel1_MouseMove(object sender, MouseEventArgs e)
         {
-            //for (int i = 0; i < x; i++)
-            //{
-            //    if (cartItems[i].Remove.Text == "Removed")
-            //    {
-            //        con = new OracleConnection(ordb);
-            //        con.Open();
-            //        OracleCommand cmd3 = new OracleCommand();
-            //        cmd3.Connection = con;
-            //        cmd3.CommandText = "Delete_Cart_Item";
-            //        cmd3.CommandType = CommandType.StoredProcedure;
-            //        cmd3.Parameters.Add("id", Helper.currentOrderId);
-            //        cmd3.Parameters.Add("rest_name", cartItems[i].RestName.Text);
-            //        cmd3.Parameters.Add("rest_loc", cartItems[i].RestLoc.Text);
-            //        cmd3.Parameters.Add("food_name", cartItems[i].FoodName.Text);
-            //        cmd3.ExecuteNonQuery();
-
-            //        // MessageBox.Show(x.ToString());
-          
-            //        flowLayoutPanel1.Controls.Remove(cartItems[i]);
-            //    }
-            //}
-
-            //con.Close();
         }
         #region buttons hovers
 
@@ -141,6 +115,17 @@ namespace Uber_Eats_Database_Project
                 cmd4.Parameters.Add("food_name", cartItems[i].FoodName.Text);
                 cmd4.Parameters.Add("no_of_items", cartItems[i].NoOfItems.Text);
                 cmd4.ExecuteNonQuery();
+                con.Close();
+                con = new OracleConnection(ordb);
+                con.Open();
+                OracleCommand cmd5 = new OracleCommand();
+                cmd5.Connection = con;
+                cmd5.CommandText = "Update_Order_Status_nc_to_pd";
+                cmd5.CommandType = CommandType.StoredProcedure;
+                cmd5.Parameters.Add("id", Helper.currentOrderId);
+                cmd5.ExecuteNonQuery();
+                con.Close();
+
 
             }
         }

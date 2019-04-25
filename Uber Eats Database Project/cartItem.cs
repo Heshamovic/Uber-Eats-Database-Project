@@ -35,9 +35,7 @@ namespace Uber_Eats_Database_Project
 
         private void Remove_Click(object sender, EventArgs e)
         {
-            //Remove.Text = "Removed";
-            //Hidden.Text = cart_id.ToString();
-            if (MessageBox.Show("Are you sure to delete this item", "delete item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (CustomMsgBox.Show("Are you sure to delete this item", 2) == DialogResult.Yes)
             {
                 con = new OracleConnection(Helper.constr);
                 con.Open();
@@ -50,8 +48,7 @@ namespace Uber_Eats_Database_Project
                 cmd3.Parameters.Add("rest_loc", RestLoc.Text);
                 cmd3.Parameters.Add("food_name", FoodName.Text);
                 cmd3.ExecuteNonQuery();
-
-                // MessageBox.Show(x.ToString());
+                
 
                 con.Close();
                 this.Parent.Controls.Remove(this);
