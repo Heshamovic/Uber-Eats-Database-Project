@@ -16,7 +16,7 @@ namespace Uber_Eats_Database_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OrdersDeliveryPartner(1));
+            Application.Run(new login());
         }
     }
 }
