@@ -13,6 +13,7 @@ namespace Uber_Eats_Database_Project
 {
     public partial class MainForm : Form
     {
+        private int oid = 0;
         public MainForm()
         {
             InitializeComponent();
@@ -37,7 +38,6 @@ namespace Uber_Eats_Database_Project
             { }
             //Enable Partner Controls
             Entities ent = new Entities();
-            int oid = 0;
             try
             {
                 oid = (from o in ent.ORDERS
@@ -76,6 +76,7 @@ namespace Uber_Eats_Database_Project
             //Menus menuform = new Menus();
             //menuform.Show();
             //this.Hide();
+            //menuform.FormClosing += letsShow;
         }
 
         private void DAccountBtn_Click(object sender, EventArgs e)
@@ -104,10 +105,15 @@ namespace Uber_Eats_Database_Project
 
         private void PendingOrdersBtn_Click(object sender, EventArgs e)
         {
-            OrdersDeliveryPartner p = new OrdersDeliveryPartner(1);
-            p.Show();
-            this.Hide();
-            p.FormClosing += letsShow;
+            if (oid == 0)
+            {
+                OrdersDeliveryPartner p = new OrdersDeliveryPartner(1);
+                p.Show();
+                this.Hide();
+                p.FormClosing += letsShow;
+            }
+            else
+                CustomMsgBox.Show("Please Finish your Current Order before you take any other order.");
         }
 
         private void CartBtn_Click(object sender, EventArgs e)
@@ -115,6 +121,7 @@ namespace Uber_Eats_Database_Project
             //Cart c = new Cart();
             //c.Show();
             //this.Hide();
+            //c.FormClosing += letsShow;
         }
 
         private void OrdersBtn_Click(object sender, EventArgs e)
@@ -122,6 +129,7 @@ namespace Uber_Eats_Database_Project
             //Orders o = new Orders();
             //o.Show();
             //this.Hide();
+            //o.FormClosing += letsShow;
         }
 
         public void letsShow(object sender, FormClosingEventArgs e)

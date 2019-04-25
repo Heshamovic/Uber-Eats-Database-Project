@@ -14,6 +14,11 @@ namespace Uber_Eats_Database_Project
 {
     public partial class OrdersDeliveryPartner : Form
     {
+        int pending = 1, type;
+        bool erg3 = false;
+        DataSet ds;
+        OracleDataAdapter adapter1, adapter2;
+        OracleCommandBuilder builder;
         protected override CreateParams CreateParams
         {
             get
@@ -24,7 +29,6 @@ namespace Uber_Eats_Database_Project
                 return cp;
             }
         }
-        int pending = 1, type;
         public OrdersDeliveryPartner(int t)
         {
             InitializeComponent();
@@ -35,18 +39,22 @@ namespace Uber_Eats_Database_Project
         {
             this.Close();
         }
-        OracleDataAdapter adapter1, adapter2;
-        bool erg3 = false;
-        private void orders_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+
+        private void OrdersDeliveryPartner_Shown(object sender, EventArgs e)
+        {
+            if (erg3)
+                this.Close();
+        }
+
+        private void orders_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (type == 1)
             {
                 DialogResult dialogResult = CustomMsgBox.Show("Do you want to take this order?", 2);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    int i = orders.CurrentCell.RowIndex;
-                    int id = Convert.ToInt32(orders.Rows[i].Cells[0].Value);
-                    orders.Rows[i].Cells[4].Value = "pd";
+                    int id = Convert.ToInt32(orders.Rows[e.RowIndex].Cells[0].Value);
+                    orders.Rows[e.RowIndex].Cells[4].Value = "pd";
                     OracleConnection con = new OracleConnection(Helper.constr);
                     con.Open();
                     OracleCommand cmd = new OracleCommand(@"update trip set DELIVERYPARTNER_USERNAME = '" + Helper.currentUserName + "'" +
@@ -62,15 +70,6 @@ namespace Uber_Eats_Database_Project
             }
         }
 
-        DataSet ds;
-
-        private void OrdersDeliveryPartner_Shown(object sender, EventArgs e)
-        {
-            if (erg3)
-                this.Close();
-        }
-
-        OracleCommandBuilder builder;
         private void OrdersDeliveryPartner_Load(object sender, EventArgs e)
         {
             if (type == pending)

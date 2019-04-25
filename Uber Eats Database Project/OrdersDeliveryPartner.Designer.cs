@@ -57,8 +57,9 @@
             this.header.Controls.Add(this.exit);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
+            this.header.Margin = new System.Windows.Forms.Padding(2);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(1308, 33);
+            this.header.Size = new System.Drawing.Size(981, 27);
             this.header.TabIndex = 0;
             // 
             // exit
@@ -67,10 +68,10 @@
             this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
             this.exit.ImageActive = null;
-            this.exit.Location = new System.Drawing.Point(1270, -1);
-            this.exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.exit.Location = new System.Drawing.Point(952, -1);
+            this.exit.Margin = new System.Windows.Forms.Padding(2);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(26, 36);
+            this.exit.Size = new System.Drawing.Size(20, 29);
             this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.exit.TabIndex = 18;
             this.exit.TabStop = false;
@@ -101,15 +102,17 @@
             this.orders.EnableHeadersVisualStyles = false;
             this.orders.HeaderBgColor = System.Drawing.Color.Black;
             this.orders.HeaderForeColor = System.Drawing.Color.White;
-            this.orders.Location = new System.Drawing.Point(0, 33);
+            this.orders.Location = new System.Drawing.Point(0, 27);
+            this.orders.Margin = new System.Windows.Forms.Padding(2);
             this.orders.MultiSelect = false;
             this.orders.Name = "orders";
             this.orders.ReadOnly = true;
             this.orders.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.orders.RowHeadersVisible = false;
             this.orders.RowTemplate.Height = 24;
-            this.orders.Size = new System.Drawing.Size(1308, 375);
+            this.orders.Size = new System.Drawing.Size(981, 305);
             this.orders.TabIndex = 1;
-            this.orders.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orders_CellContentDoubleClick);
+            this.orders.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.orders_CellMouseDoubleClick);
             // 
             // food
             // 
@@ -134,13 +137,15 @@
             this.food.EnableHeadersVisualStyles = false;
             this.food.HeaderBgColor = System.Drawing.Color.Black;
             this.food.HeaderForeColor = System.Drawing.Color.White;
-            this.food.Location = new System.Drawing.Point(0, 408);
+            this.food.Location = new System.Drawing.Point(0, 332);
+            this.food.Margin = new System.Windows.Forms.Padding(2);
             this.food.MultiSelect = false;
             this.food.Name = "food";
             this.food.ReadOnly = true;
             this.food.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.food.RowHeadersVisible = false;
             this.food.RowTemplate.Height = 24;
-            this.food.Size = new System.Drawing.Size(1308, 218);
+            this.food.Size = new System.Drawing.Size(981, 177);
             this.food.TabIndex = 2;
             // 
             // bunifuDragControl1
@@ -152,14 +157,15 @@
             // 
             // OrdersDeliveryPartner
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1308, 626);
+            this.ClientSize = new System.Drawing.Size(981, 509);
             this.Controls.Add(this.food);
             this.Controls.Add(this.orders);
             this.Controls.Add(this.header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "OrdersDeliveryPartner";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OrdersDeliveryPartner";
