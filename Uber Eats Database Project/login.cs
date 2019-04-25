@@ -14,6 +14,16 @@ namespace Uber_Eats_Database_Project
 {
     public partial class login : Form
     {
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
         public OracleConnection con;
         public login()
         {

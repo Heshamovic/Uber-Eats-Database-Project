@@ -151,6 +151,12 @@
     <Compile Include="ORDER.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrdersDeliveryPartner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdersDeliveryPartner.Designer.cs">
+      <DependentUpon>OrdersDeliveryPartner.cs</DependentUpon>
+    </Compile>
     <Compile Include="ORDER_FOOD.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
@@ -179,6 +185,12 @@
     </Compile>
     <Compile Include="REST_NUMBERS.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="test.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="test.Designer.cs">
+      <DependentUpon>test.cs</DependentUpon>
     </Compile>
     <Compile Include="TRIP.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
@@ -223,6 +235,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrdersDeliveryPartner.resx">
+      <DependentUpon>OrdersDeliveryPartner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PendingDelivering.resx">
       <DependentUpon>PendingDelivering.cs</DependentUpon>
     </EmbeddedResource>
@@ -237,6 +252,9 @@
     <EmbeddedResource Include="ResaturantFoodReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ResaturantFoodReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="test.resx">
+      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\Uber Eats Database Project.exe.config" />
     <None Include="obj\Release\Uber Eats Database Project.csproj.CoreCompileInputs.cache" />
