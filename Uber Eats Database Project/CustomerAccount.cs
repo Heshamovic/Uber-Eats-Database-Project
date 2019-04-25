@@ -108,6 +108,46 @@ namespace Uber_Eats_Database_Project
             savePasswordBtn.Show();
         }
 
+        private void userName_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void oldPassword_Enter(object sender, EventArgs e)
+        {
+            Helper.RemovePlaceHolder((TextBox)sender, "Password");
+        }
+
+        private void newPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newPassword_Enter(object sender, EventArgs e)
+        {
+            Helper.RemovePlaceHolder((TextBox)sender, "New Password");
+        }
+
+        private void confirmPassword_Enter(object sender, EventArgs e)
+        {
+            Helper.RemovePlaceHolder((TextBox)sender,"Confirm Password");
+        }
+
+        private void oldPassword_Leave(object sender, EventArgs e)
+        {
+            Helper.AddPlaceHolder((TextBox)sender, "Password*");
+        }
+
+        private void newPassword_Leave(object sender, EventArgs e)
+        {
+            Helper.AddPlaceHolder((TextBox)sender, "New Password*");
+        }
+
+        private void confirmPassword_Leave(object sender, EventArgs e)
+        {
+            Helper.AddPlaceHolder((TextBox)sender, "Confirm Password*");
+        }
+
         private void savePasswordBtn_Click(object sender, EventArgs e)
         {
             if (newPassword.Text == "" || oldPassword.Text == "" || confirmPassword.Text == "")
