@@ -37,11 +37,16 @@ namespace Uber_Eats_Database_Project
             { }
             //Enable Partner Controls
             Entities ent = new Entities();
-            int oid = (from o in ent.ORDERS
+            int oid = 0;
+            try
+            {
+                oid = (from o in ent.ORDERS
                        join t in ent.TRIPs on o.ORDER_ID equals t.ORDER_ID
                        where t.DELIVERYPARTNER_USERNAME == Helper.currentUserName
                        && o.STATUS == "pd"
                        select o.ORDER_ID).Count();
+            }
+            catch (Exception) { }
             PendingOrdersBtn.Enabled = !UserEnable;
             PendingOrdersBtn.Visible = !UserEnable;
             DeliveredOrdersBtn.Enabled = !UserEnable;
@@ -68,9 +73,10 @@ namespace Uber_Eats_Database_Project
 
         private void MenusBtn_Click(object sender, EventArgs e)
         {
-            //Menus menuform = new Menus();
-            //menuform.Show();
+            //Restaurant r = new Restaurant();
+            //r.Show();
             //this.Hide();
+            //ac.FormClosing += letsShow;
         }
 
         private void DAccountBtn_Click(object sender, EventArgs e)
