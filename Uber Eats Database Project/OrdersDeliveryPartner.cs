@@ -36,7 +36,7 @@ namespace Uber_Eats_Database_Project
             this.Close();
         }
         OracleDataAdapter adapter1, adapter2;
-
+        bool erg3 = false;
         private void orders_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if(Helper.currentUserRole == 2)
@@ -66,6 +66,13 @@ namespace Uber_Eats_Database_Project
         }
 
         DataSet ds;
+
+        private void OrdersDeliveryPartner_Shown(object sender, EventArgs e)
+        {
+            if (erg3)
+                this.Close();
+        }
+
         OracleCommandBuilder builder;
         private void OrdersDeliveryPartner_Load(object sender, EventArgs e)
         {
@@ -89,8 +96,8 @@ namespace Uber_Eats_Database_Project
                     }
                     catch
                     {
+                        erg3 = true;
                         MessageBox.Show("There's no orders to show");
-                        this.Close();
                     }
                 }
                 else
@@ -109,10 +116,10 @@ namespace Uber_Eats_Database_Project
                         orders.DataSource = bs_Master;
                         food.DataSource = bs_child1;
                     }
-                    catch 
+                    catch
                     {
+                        erg3 = true;
                         MessageBox.Show("There's no orders to show");
-                        this.Close();
                     }
                 }
             }
@@ -136,8 +143,8 @@ namespace Uber_Eats_Database_Project
                     }
                     catch
                     {
+                        erg3 = true;
                         MessageBox.Show("There's no orders to show");
-                        this.Close();
                     }
                 }
                 else
@@ -158,8 +165,8 @@ namespace Uber_Eats_Database_Project
                     }
                     catch
                     {
+                        erg3 = true;
                         MessageBox.Show("There's no orders to show");
-                        this.Close();
                     }
                 }
             }
