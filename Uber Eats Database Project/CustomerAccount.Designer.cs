@@ -68,9 +68,10 @@
             this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
             this.exit.ImageActive = null;
-            this.exit.Location = new System.Drawing.Point(1148, 3);
+            this.exit.Location = new System.Drawing.Point(765, 2);
+            this.exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(39, 42);
+            this.exit.Size = new System.Drawing.Size(26, 27);
             this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.exit.TabIndex = 17;
             this.exit.TabStop = false;
@@ -84,8 +85,9 @@
             this.header.Controls.Add(this.exit);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
+            this.header.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(1113, 45);
+            this.header.Size = new System.Drawing.Size(742, 29);
             this.header.TabIndex = 35;
             // 
             // CloseBtn
@@ -94,9 +96,10 @@
             this.CloseBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CloseBtn.Image = ((System.Drawing.Image)(resources.GetObject("CloseBtn.Image")));
             this.CloseBtn.ImageActive = null;
-            this.CloseBtn.Location = new System.Drawing.Point(1062, 0);
+            this.CloseBtn.Location = new System.Drawing.Point(708, 0);
+            this.CloseBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(39, 42);
+            this.CloseBtn.Size = new System.Drawing.Size(26, 27);
             this.CloseBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CloseBtn.TabIndex = 39;
             this.CloseBtn.TabStop = false;
@@ -109,10 +112,9 @@
             this.label2.BackColor = System.Drawing.SystemColors.ControlText;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(4, 4);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(3, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(220, 39);
+            this.label2.Size = new System.Drawing.Size(151, 25);
             this.label2.TabIndex = 38;
             this.label2.Text = "Account Info";
             // 
@@ -128,10 +130,9 @@
             this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.editBtn.Location = new System.Drawing.Point(714, 343);
-            this.editBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.editBtn.Location = new System.Drawing.Point(476, 223);
             this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(112, 57);
+            this.editBtn.Size = new System.Drawing.Size(75, 37);
             this.editBtn.TabIndex = 29;
             this.editBtn.Text = "Edit";
             this.editBtn.UseVisualStyleBackColor = false;
@@ -149,10 +150,9 @@
             this.creditCard.Enabled = false;
             this.creditCard.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.creditCard.ForeColor = System.Drawing.Color.DarkGray;
-            this.creditCard.Location = new System.Drawing.Point(702, 266);
-            this.creditCard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.creditCard.Location = new System.Drawing.Point(468, 173);
             this.creditCard.Name = "creditCard";
-            this.creditCard.Size = new System.Drawing.Size(367, 34);
+            this.creditCard.Size = new System.Drawing.Size(246, 25);
             this.creditCard.TabIndex = 26;
             this.creditCard.Text = "Credit Card";
             // 
@@ -161,10 +161,9 @@
             this.location.Enabled = false;
             this.location.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.location.ForeColor = System.Drawing.Color.DarkGray;
-            this.location.Location = new System.Drawing.Point(702, 212);
-            this.location.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.location.Location = new System.Drawing.Point(468, 138);
             this.location.Name = "location";
-            this.location.Size = new System.Drawing.Size(367, 34);
+            this.location.Size = new System.Drawing.Size(246, 25);
             this.location.TabIndex = 25;
             this.location.Text = "Location";
             // 
@@ -173,10 +172,9 @@
             this.lName.Enabled = false;
             this.lName.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lName.ForeColor = System.Drawing.Color.DarkGray;
-            this.lName.Location = new System.Drawing.Point(702, 163);
-            this.lName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lName.Location = new System.Drawing.Point(468, 106);
             this.lName.Name = "lName";
-            this.lName.Size = new System.Drawing.Size(367, 34);
+            this.lName.Size = new System.Drawing.Size(246, 25);
             this.lName.TabIndex = 23;
             this.lName.Text = "Last Name";
             // 
@@ -185,10 +183,9 @@
             this.fName.Enabled = false;
             this.fName.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fName.ForeColor = System.Drawing.Color.DarkGray;
-            this.fName.Location = new System.Drawing.Point(702, 114);
-            this.fName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.fName.Location = new System.Drawing.Point(468, 74);
             this.fName.Name = "fName";
-            this.fName.Size = new System.Drawing.Size(367, 34);
+            this.fName.Size = new System.Drawing.Size(246, 25);
             this.fName.TabIndex = 22;
             this.fName.Text = "First Name";
             // 
@@ -196,21 +193,20 @@
             // 
             this.userName.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userName.ForeColor = System.Drawing.Color.DarkGray;
-            this.userName.Location = new System.Drawing.Point(40, 102);
-            this.userName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.userName.Location = new System.Drawing.Point(27, 66);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(367, 34);
+            this.userName.Size = new System.Drawing.Size(246, 25);
             this.userName.TabIndex = 20;
             this.userName.Text = "Username";
+            this.userName.Enter += new System.EventHandler(this.userName_Enter);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label1.Location = new System.Drawing.Point(170, 13);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(113, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 32);
+            this.label1.Size = new System.Drawing.Size(78, 21);
             this.label1.TabIndex = 18;
             this.label1.Text = "Sign Up!";
             // 
@@ -221,10 +217,9 @@
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.saveBtn.Location = new System.Drawing.Point(900, 343);
-            this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.saveBtn.Location = new System.Drawing.Point(600, 223);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(112, 57);
+            this.saveBtn.Size = new System.Drawing.Size(75, 37);
             this.saveBtn.TabIndex = 36;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = false;
@@ -237,10 +232,9 @@
             this.changePasswordBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.changePasswordBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changePasswordBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.changePasswordBtn.Location = new System.Drawing.Point(40, 296);
-            this.changePasswordBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.changePasswordBtn.Location = new System.Drawing.Point(27, 192);
             this.changePasswordBtn.Name = "changePasswordBtn";
-            this.changePasswordBtn.Size = new System.Drawing.Size(367, 46);
+            this.changePasswordBtn.Size = new System.Drawing.Size(245, 30);
             this.changePasswordBtn.TabIndex = 37;
             this.changePasswordBtn.Text = "Change Password";
             this.changePasswordBtn.UseVisualStyleBackColor = false;
@@ -250,34 +244,38 @@
             // 
             this.oldPassword.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.oldPassword.ForeColor = System.Drawing.Color.DarkGray;
-            this.oldPassword.Location = new System.Drawing.Point(40, 365);
-            this.oldPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.oldPassword.Location = new System.Drawing.Point(27, 237);
             this.oldPassword.Name = "oldPassword";
-            this.oldPassword.Size = new System.Drawing.Size(367, 34);
+            this.oldPassword.Size = new System.Drawing.Size(246, 25);
             this.oldPassword.TabIndex = 38;
-            this.oldPassword.Text = "Password";
+            this.oldPassword.Text = "Password*";
+            this.oldPassword.Enter += new System.EventHandler(this.oldPassword_Enter);
+            this.oldPassword.Leave += new System.EventHandler(this.oldPassword_Leave);
             // 
             // newPassword
             // 
             this.newPassword.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newPassword.ForeColor = System.Drawing.Color.DarkGray;
-            this.newPassword.Location = new System.Drawing.Point(40, 409);
-            this.newPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.newPassword.Location = new System.Drawing.Point(27, 266);
             this.newPassword.Name = "newPassword";
-            this.newPassword.Size = new System.Drawing.Size(367, 34);
+            this.newPassword.Size = new System.Drawing.Size(246, 25);
             this.newPassword.TabIndex = 39;
-            this.newPassword.Text = "New Password";
+            this.newPassword.Text = "New Password*";
+            this.newPassword.TextChanged += new System.EventHandler(this.newPassword_TextChanged);
+            this.newPassword.Enter += new System.EventHandler(this.newPassword_Enter);
+            this.newPassword.Leave += new System.EventHandler(this.newPassword_Leave);
             // 
             // confirmPassword
             // 
             this.confirmPassword.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPassword.ForeColor = System.Drawing.Color.DarkGray;
-            this.confirmPassword.Location = new System.Drawing.Point(40, 453);
-            this.confirmPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.confirmPassword.Location = new System.Drawing.Point(27, 294);
             this.confirmPassword.Name = "confirmPassword";
-            this.confirmPassword.Size = new System.Drawing.Size(367, 34);
+            this.confirmPassword.Size = new System.Drawing.Size(246, 25);
             this.confirmPassword.TabIndex = 40;
-            this.confirmPassword.Text = "Confirm Password";
+            this.confirmPassword.Text = "Confirm Password*";
+            this.confirmPassword.Enter += new System.EventHandler(this.confirmPassword_Enter);
+            this.confirmPassword.Leave += new System.EventHandler(this.confirmPassword_Leave);
             // 
             // savePasswordBtn
             // 
@@ -286,10 +284,9 @@
             this.savePasswordBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savePasswordBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.savePasswordBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.savePasswordBtn.Location = new System.Drawing.Point(113, 501);
-            this.savePasswordBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.savePasswordBtn.Location = new System.Drawing.Point(75, 326);
             this.savePasswordBtn.Name = "savePasswordBtn";
-            this.savePasswordBtn.Size = new System.Drawing.Size(213, 57);
+            this.savePasswordBtn.Size = new System.Drawing.Size(142, 37);
             this.savePasswordBtn.TabIndex = 41;
             this.savePasswordBtn.Text = "Save Password";
             this.savePasswordBtn.UseVisualStyleBackColor = false;
@@ -299,10 +296,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label3.Location = new System.Drawing.Point(34, 65);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(23, 42);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 32);
+            this.label3.Size = new System.Drawing.Size(98, 21);
             this.label3.TabIndex = 42;
             this.label3.Text = "Username";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -311,10 +307,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label6.Location = new System.Drawing.Point(547, 116);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(365, 75);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(145, 32);
+            this.label6.Size = new System.Drawing.Size(100, 21);
             this.label6.TabIndex = 45;
             this.label6.Text = "First Name";
             // 
@@ -322,10 +317,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label7.Location = new System.Drawing.Point(547, 165);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(365, 107);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 32);
+            this.label7.Size = new System.Drawing.Size(103, 21);
             this.label7.TabIndex = 46;
             this.label7.Text = "Last Name";
             // 
@@ -333,10 +327,9 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label8.Location = new System.Drawing.Point(547, 214);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(365, 139);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(126, 32);
+            this.label8.Size = new System.Drawing.Size(87, 21);
             this.label8.TabIndex = 47;
             this.label8.Text = "Location";
             // 
@@ -344,10 +337,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label9.Location = new System.Drawing.Point(547, 266);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(365, 173);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 32);
+            this.label9.Size = new System.Drawing.Size(99, 21);
             this.label9.TabIndex = 48;
             this.label9.Text = "Credit No.";
             // 
@@ -358,10 +350,9 @@
             this.editUsernameBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editUsernameBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editUsernameBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.editUsernameBtn.Location = new System.Drawing.Point(40, 155);
-            this.editUsernameBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.editUsernameBtn.Location = new System.Drawing.Point(27, 101);
             this.editUsernameBtn.Name = "editUsernameBtn";
-            this.editUsernameBtn.Size = new System.Drawing.Size(367, 47);
+            this.editUsernameBtn.Size = new System.Drawing.Size(245, 31);
             this.editUsernameBtn.TabIndex = 49;
             this.editUsernameBtn.Text = "Change Username";
             this.editUsernameBtn.UseVisualStyleBackColor = false;
@@ -370,9 +361,10 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(508, 78);
+            this.panel2.Location = new System.Drawing.Point(339, 51);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(2, 465);
+            this.panel2.Size = new System.Drawing.Size(1, 302);
             this.panel2.TabIndex = 50;
             // 
             // saveUserNameBtn
@@ -382,10 +374,9 @@
             this.saveUserNameBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveUserNameBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveUserNameBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.saveUserNameBtn.Location = new System.Drawing.Point(113, 214);
-            this.saveUserNameBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.saveUserNameBtn.Location = new System.Drawing.Point(75, 139);
             this.saveUserNameBtn.Name = "saveUserNameBtn";
-            this.saveUserNameBtn.Size = new System.Drawing.Size(213, 57);
+            this.saveUserNameBtn.Size = new System.Drawing.Size(142, 37);
             this.saveUserNameBtn.TabIndex = 51;
             this.saveUserNameBtn.Text = "Save Username";
             this.saveUserNameBtn.UseVisualStyleBackColor = false;
@@ -393,9 +384,9 @@
             // 
             // CustomerAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1113, 600);
+            this.ClientSize = new System.Drawing.Size(742, 390);
             this.Controls.Add(this.saveUserNameBtn);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.editUsernameBtn);
@@ -419,6 +410,7 @@
             this.Controls.Add(this.userName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CustomerAccount";
             this.Text = "CustomerAccount";
             this.Load += new System.EventHandler(this.CustomerAccount_Load);

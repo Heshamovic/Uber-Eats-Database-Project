@@ -102,9 +102,9 @@ namespace Uber_Eats_Database_Project
 
         private void CartBtn_Click(object sender, EventArgs e)
         {
-            //Cart c = new Cart();
-            //c.Show();
-            //this.Hide();
+            Cart c = new Cart();
+            c.Show();
+            this.Close();
         }
 
         private void OrdersBtn_Click(object sender, EventArgs e)

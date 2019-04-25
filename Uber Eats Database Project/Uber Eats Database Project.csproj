@@ -78,7 +78,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cart.cs" />
+    <Compile Include="Cart.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Cart.Designer.cs">
       <DependentUpon>Cart.cs</DependentUpon>
     </Compile>
