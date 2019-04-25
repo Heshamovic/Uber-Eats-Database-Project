@@ -91,16 +91,18 @@ namespace Uber_Eats_Database_Project
 
         private void DeliveredOrdersBtn_Click(object sender, EventArgs e)
         {
-            //Delivered d = new Delivered();
-            //d.Show();
-            //this.Hide();
+            OrdersDeliveryPartner d = new OrdersDeliveryPartner(2);
+            d.Show();
+            this.Hide();
+            d.FormClosing += letsShow;
         }
 
         private void PendingOrdersBtn_Click(object sender, EventArgs e)
         {
-            //Porders p = new Porders();
-            //p.Show();
-            //this.Hide();
+            OrdersDeliveryPartner p = new OrdersDeliveryPartner(1);
+            p.Show();
+            this.Hide();
+            p.FormClosing += letsShow;
         }
 
         private void CartBtn_Click(object sender, EventArgs e)

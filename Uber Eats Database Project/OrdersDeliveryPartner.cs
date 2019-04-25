@@ -24,7 +24,7 @@ namespace Uber_Eats_Database_Project
                 return cp;
             }
         }
-        int pending = 1, delivered = 2, type;
+        int pending = 1, type;
         public OrdersDeliveryPartner(int t)
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace Uber_Eats_Database_Project
         {
             this.Close();
         }
-        OracleDataAdapter adapter1, adapter2, adapter3;
+        OracleDataAdapter adapter1, adapter2;
 
         private void orders_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -69,8 +69,6 @@ namespace Uber_Eats_Database_Project
         OracleCommandBuilder builder;
         private void OrdersDeliveryPartner_Load(object sender, EventArgs e)
         {
-            //Helper.currentUserName = "q";
-            //Helper.currentUserRole = 2;
             if(type == pending)
             {
                 if(Helper.currentUserRole == 1)
