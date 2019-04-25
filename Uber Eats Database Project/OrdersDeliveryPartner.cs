@@ -152,7 +152,7 @@ namespace Uber_Eats_Database_Project
                     try
                     {
                         adapter1 = new OracleDataAdapter("select o.* from orders o, trip t where t.DELIVERYPARTNER_USERNAME = '" + Helper.currentUserName + "' and t.ORDER_ID = o.ORDER_ID and o.status = 'd'", new OracleConnection(Helper.constr));
-                        adapter2 = new OracleDataAdapter("select o.ORDER_ID, f.* from food f, order_food offf, orders o, trip t where o.ORDER_ID = offf.ORDER_ID and t.order_id = o.order_id and offf.RESTAURANT_NAME = f.RESTAURANT_NAME and offf.RESTAURANT_LOCATION = f.RESTAURANT_LOCATION and offf.FOOD_NAME= f.FOOD_NAME and t.DELIVERYPARTNER_USERNAME = '" + Helper.currentUserName + "'", new OracleConnection(Helper.constr));
+                        adapter2 = new OracleDataAdapter("select o.ORDER_ID, f.* from food f, order_food offf, orders o, trip t where o.ORDER_ID = offf.ORDER_ID and t.order_id = o.order_id and offf.RESTAURANT_NAME = f.RESTAURANT_NAME and offf.RESTAURANT_LOCATION = f.RESTAURANT_LOCATION and offf.FOOD_NAME= f.FOOD_NAME and t.DELIVERYPARTNER_USERNAME = '" + Helper.currentUserName + "' and o.status = 'd'", new OracleConnection(Helper.constr));
                         ds = new DataSet();
                         adapter1.Fill(ds, "order");
                         adapter2.Fill(ds, "food");
