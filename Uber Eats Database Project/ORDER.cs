@@ -7,23 +7,26 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
-public partial class ORDER
+namespace Uber_Eats_Database_Project
 {
-    public ORDER()
+    using System;
+    using System.Collections.Generic;
+
+    public partial class ORDER
     {
-        this.ORDER_FOOD = new HashSet<ORDER_FOOD>();
+        public ORDER()
+        {
+            this.ORDER_FOOD = new HashSet<ORDER_FOOD>();
+        }
+
+        public decimal ORDER_ID { get; set; }
+        public string TIP { get; set; }
+        public Nullable<System.DateTime> DATE { get; set; }
+        public string PAYMENT_TYPE { get; set; }
+        public string STATUS { get; set; }
+        public string CUSTOMER_USERNAME { get; set; }
+
+        public virtual ICollection<ORDER_FOOD> ORDER_FOOD { get; set; }
+        public virtual TRIP TRIP { get; set; }
     }
-
-    public decimal ORDER_ID { get; set; }
-    public string TIP { get; set; }
-    public Nullable<System.DateTime> DATE { get; set; }
-    public string PAYMENT_TYPE { get; set; }
-    public string STATUS { get; set; }
-    public string CUSTOMER_USERNAME { get; set; }
-
-    public virtual ICollection<ORDER_FOOD> ORDER_FOOD { get; set; }
-    public virtual TRIP TRIP { get; set; }
 }

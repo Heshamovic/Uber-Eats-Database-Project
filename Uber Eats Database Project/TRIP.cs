@@ -7,15 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-
-public partial class TRIP
+namespace Uber_Eats_Database_Project
 {
-    public decimal ORDER_ID { get; set; }
-    public Nullable<decimal> DISTANCE_OF_TRIP { get; set; }
-    public string DELIVERYPARTNER_USERNAME { get; set; }
+    using System;
+    using System.Collections.Generic;
 
-    public virtual DELIVERY_PARTNER DELIVERY_PARTNER { get; set; }
-    public virtual ORDER ORDER { get; set; }
+    public partial class TRIP
+    {
+        public decimal ORDER_ID { get; set; }
+        public Nullable<decimal> DISTANCE_OF_TRIP { get; set; }
+        public string DELIVERYPARTNER_USERNAME { get; set; }
+        public Nullable<decimal> DELIVERYFEES { get; set; }
+
+        public virtual ORDER ORDER { get; set; }
+        public virtual DELIVERY_PARTNER DELIVERY_PARTNER { get; set; }
+    }
 }
