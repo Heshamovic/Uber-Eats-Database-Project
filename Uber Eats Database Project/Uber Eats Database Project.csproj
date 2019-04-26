@@ -50,8 +50,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
@@ -70,10 +73,15 @@
     <Reference Include="Oracle.DataAccess">
       <HintPath>E:\app\DELL\product\11.2.0\dbhome_1\ODP.NET\bin\2.x\Oracle.DataAccess.dll</HintPath>
     </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=2.0.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.Core.2.18.6\lib\netstandard2.0\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.18.3.0\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -179,8 +187,26 @@
       <DependentUpon>ResaturantFoodReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="resfood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resfood.Designer.cs">
+      <DependentUpon>resfood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rest.Designer.cs">
+      <DependentUpon>rest.cs</DependentUpon>
+    </Compile>
     <Compile Include="RESTAURANT.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="restItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="restItem.Designer.cs">
+      <DependentUpon>restItem.cs</DependentUpon>
     </Compile>
     <Compile Include="REST_NUMBERS.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
@@ -244,6 +270,15 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ResaturantFoodReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="resfood.resx">
+      <DependentUpon>resfood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rest.resx">
+      <DependentUpon>rest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="restItem.resx">
+      <DependentUpon>restItem.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="bin\Debug\Uber Eats Database Project.exe.config" />
     <None Include="obj\Release\Uber Eats Database Project.csproj.CoreCompileInputs.cache" />
     <None Include="packages.config" />
@@ -305,6 +340,7 @@
     <Content Include="bin\Debug\Uber Eats Database Project.pdb" />
     <None Include="resources\cancel %281%29.png" />
     <None Include="resources\check.png" />
+    <None Include="resources\Checkout_32px.png" />
     <Content Include="UberEats.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UberEats.Context.cs</LastGenOutput>
