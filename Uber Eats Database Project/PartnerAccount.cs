@@ -15,8 +15,17 @@ namespace Uber_Eats_Database_Project
     public partial class PartnerAccount : Form
     {
         public OracleConnection con;
+<<<<<<< HEAD
         string part_pass,part_vehicle,rating;
         int index;
+||||||| fdea548... fixing bugs
+        string part_pass, part_vehicle, rating;
+        int index;
+=======
+        string part_pass,part_vehicle,rating;
+        int trip_order,index;
+        float trip_dist, trip_fee;
+>>>>>>> parent of fdea548... fixing bugs
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -32,6 +41,7 @@ namespace Uber_Eats_Database_Project
         private void saveUserNameBtn_Click(object sender, EventArgs e)
         {
             con.Open();
+<<<<<<< HEAD
             if (userName.Text != Helper.currentUserName)
             {
                 OracleCommand cmd = new OracleCommand();
@@ -43,6 +53,53 @@ namespace Uber_Eats_Database_Project
                 cmd.Parameters.Add("pass", part_pass);
                 cmd.Parameters.Add("rating", rating);
                 cmd.ExecuteNonQuery();
+||||||| fdea548... fixing bugs
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from delivery_partner";
+            cmd.CommandType = CommandType.Text;
+            OracleDataReader rdr = cmd.ExecuteReader();
+            int tmp_ind = 0;
+            bool found = false;
+            while (rdr.Read())
+            {
+                if (rdr[0].ToString() == userName.Text && tmp_ind != index)
+                {
+                    found = true;
+                    break;
+                }
+                tmp_ind++;
+            }
+            if (found == true)
+            {
+                CustomMsgBox.Show("Username already taken.");
+            }
+            else
+            {
+                if (userName.Text != Helper.currentUserName)
+                {
+                    cmd = new OracleCommand();
+                    cmd.Connection = con;
+                    cmd.CommandText = "insert into delivery_partner values(:uname, :vehicle, :pass, :rating)";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.Add("uname", userName.Text);
+                    cmd.Parameters.Add("vehicle", part_vehicle);
+                    cmd.Parameters.Add("pass", part_pass);
+                    cmd.Parameters.Add("rating", rating);
+                    cmd.ExecuteNonQuery();
+=======
+            if (userName.Text != Helper.currentUserName)
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "insert into delivery_partner values(:uname, :vehicle, :pass, :rating)";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("uname", userName.Text);
+                cmd.Parameters.Add("vehicle", part_vehicle);
+                cmd.Parameters.Add("pass", part_pass);
+                cmd.Parameters.Add("rating", rating);
+                cmd.ExecuteNonQuery();
+>>>>>>> parent of fdea548... fixing bugs
 
                 OracleCommand cmd3 = new OracleCommand();
                 cmd3.Connection = con;
@@ -138,6 +195,28 @@ namespace Uber_Eats_Database_Project
             editBtn.Show();
             userName.Enabled = false;
             vehicleType.Enabled = false;
+            //string cmdstr = "select * from delivery_partner";
+            //OracleDataAdapter adapter = new OracleDataAdapter(cmdstr, constr);
+            //DataSet ds = new DataSet();
+            //adapter.Fill(ds);
+            //OracleCommandBuilder builder = new OracleCommandBuilder(adapter);
+            //part_index = 0;
+            //foreach (DataRow row in ds.Tables[0].Rows)
+            //{
+            //    string tmp_username = row[0].ToString();
+            //    if (tmp_username == Helper.currentUserName)
+            //    {
+            //        break;
+            //    }
+            //    part_index++;
+            //}
+            //DataRow r = ds.Tables[0].Rows[part_index];
+            //r[1] = vehicleType.Text;
+            //adapter.Update(ds.Tables[0]);
+            //vehicle = vehicleType.Text;
+            //MessageBox.Show("Vehicle type changed successfully.");
+            //saveBtn.Hide();
+            //vehicleType.Enabled = false;
         }
 
         private void savePasswordBtn_Click(object sender, EventArgs e)
@@ -253,6 +332,40 @@ namespace Uber_Eats_Database_Project
                 label4.Text = "0";
             }
             con.Close();
+
+            //    trips = 0;
+            //    constr = "data source = orcl; user id = scott; password = tiger;";
+            //    string cmdstr = "select * from delivery_partner";
+            //    OracleDataAdapter adapter = new OracleDataAdapter(cmdstr,constr);
+            //    DataSet ds = new DataSet();
+            //    adapter.Fill(ds);
+            //    foreach(DataRow row in ds.Tables[0].Rows)
+            //    {
+            //        string tmp_username = row[0].ToString();
+            //        if(tmp_username==Helper.currentUserName)
+            //        {
+            //            userName.Text = tmp_username;
+            //            vehicleType.Text = row[1].ToString();
+            //            vehicle = row[1].ToString();
+            //            pass = row[2].ToString();
+            //            rating = row[3].ToString();
+            //            double x = Math.Round(float.Parse(rating));
+            //            bunifuRating1.Value = Convert.ToInt32(x);
+            //        }
+            //    }
+            //    cmdstr = "select * from trip";
+            //    adapter = new OracleDataAdapter(cmdstr,constr);
+            //    ds = new DataSet();
+            //    adapter.Fill(ds);
+            //    foreach(DataRow row in ds.Tables[0].Rows)
+            //    {
+            //        string tmp_username = row[2].ToString();
+            //        if(tmp_username==Helper.currentUserName)
+            //        {
+            //            trips++;
+            //        }
+            //    }
+            //    label4.Text = trips.ToString();
         }
     }
 }
