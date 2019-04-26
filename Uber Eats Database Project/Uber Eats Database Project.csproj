@@ -160,11 +160,23 @@
     <Compile Include="ORDER.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrderDetails_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OrderDetails_Item.Designer.cs">
+      <DependentUpon>OrderDetails_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="OrdersDeliveryPartner.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrdersDeliveryPartner.Designer.cs">
       <DependentUpon>OrdersDeliveryPartner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order_details.Designer.cs">
+      <DependentUpon>Order_details.cs</DependentUpon>
     </Compile>
     <Compile Include="ORDER_FOOD.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
@@ -219,6 +231,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UberEats.edmx</DependentUpon>
     </Compile>
+    <Compile Include="UserOrderItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserOrderItem.Designer.cs">
+      <DependentUpon>UserOrderItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserOrders.Designer.cs">
+      <DependentUpon>UserOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="WORKING_TIME.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
@@ -244,8 +268,14 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrderDetails_Item.resx">
+      <DependentUpon>OrderDetails_Item.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OrdersDeliveryPartner.resx">
       <DependentUpon>OrdersDeliveryPartner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order_details.resx">
+      <DependentUpon>Order_details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PendingDelivering.resx">
       <DependentUpon>PendingDelivering.cs</DependentUpon>
@@ -264,6 +294,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="test.resx">
       <DependentUpon>test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserOrderItem.resx">
+      <DependentUpon>UserOrderItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserOrders.resx">
+      <DependentUpon>UserOrders.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\Uber Eats Database Project.exe.config" />
     <None Include="obj\Release\Uber Eats Database Project.csproj.CoreCompileInputs.cache" />

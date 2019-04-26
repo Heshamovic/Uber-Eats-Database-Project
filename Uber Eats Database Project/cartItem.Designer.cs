@@ -37,7 +37,6 @@
             this.NoOfItems = new System.Windows.Forms.NumericUpDown();
             this.Remove = new System.Windows.Forms.Button();
             this.RestLoc = new System.Windows.Forms.Label();
-            this.Hidden = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoOfItems)).BeginInit();
             this.SuspendLayout();
@@ -128,20 +127,10 @@
             this.RestLoc.TabIndex = 37;
             this.RestLoc.Text = "RestLoc";
             // 
-            // Hidden
-            // 
-            this.Hidden.AutoSize = true;
-            this.Hidden.Location = new System.Drawing.Point(213, 16);
-            this.Hidden.Name = "Hidden";
-            this.Hidden.Size = new System.Drawing.Size(41, 13);
-            this.Hidden.TabIndex = 38;
-            this.Hidden.Text = "Hidden";
-            // 
             // cartItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Hidden);
             this.Controls.Add(this.RestLoc);
             this.Controls.Add(this.Remove);
             this.Controls.Add(this.NoOfItems);
@@ -170,6 +159,5 @@
         public System.Windows.Forms.NumericUpDown NoOfItems;
         public System.Windows.Forms.Button Remove;
         public System.Windows.Forms.Label RestLoc;
-        public System.Windows.Forms.Label Hidden;
     }
 }
