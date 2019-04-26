@@ -38,7 +38,7 @@ namespace Uber_Eats_Database_Project
             ordID = int.Parse(oid.FirstOrDefault().ToString());
             var v = from of in ent.ORDER_FOOD
                     join t in ent.TRIPs on of.ORDER_ID equals t.ORDER_ID
-                    where t.ORDER_ID == oid.FirstOrDefault()
+                    where t.ORDER_ID == oid.FirstOrDefault() && t.DELIVERYPARTNER_USERNAME == Helper.currentUserName
                     select new
                     {
                         of.FOOD_NAME,
