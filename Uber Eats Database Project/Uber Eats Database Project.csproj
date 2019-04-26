@@ -193,6 +193,12 @@
     <Compile Include="resfood.Designer.cs">
       <DependentUpon>resfood.cs</DependentUpon>
     </Compile>
+    <Compile Include="resfooditem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="resfooditem.Designer.cs">
+      <DependentUpon>resfooditem.cs</DependentUpon>
+    </Compile>
     <Compile Include="rest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="resfood.resx">
       <DependentUpon>resfood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resfooditem.resx">
+      <DependentUpon>resfooditem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rest.resx">
       <DependentUpon>rest.cs</DependentUpon>

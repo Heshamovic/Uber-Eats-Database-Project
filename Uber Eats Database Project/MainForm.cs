@@ -76,7 +76,7 @@ namespace Uber_Eats_Database_Project
             rest r = new rest();
             r.Show();
             this.Hide();
-           // ac.FormClosing += letsShow;
+            r.FormClosing += letsShow;
         }
 
         private void DAccountBtn_Click(object sender, EventArgs e)

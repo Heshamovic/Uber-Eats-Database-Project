@@ -15,17 +15,15 @@ namespace Uber_Eats_Database_Project
         public restItem( string img,string name,double rating ,string type)
         {
             InitializeComponent();
-            //MessageBox.Show("seeees");
-           // this.foodimg = new PictureBox();
+           
             this.foodimg.Image = Image.FromFile(img);
-           // this.name = new Label();
+           
             this.name.Text = name;
-            // this.rating.Text = rating;
-           // this.type = new Label();
+           
             this.type.Text = type;
 
             double x = Math.Round(rating);
-            //this.bunifuRating1 = new Bunifu.Framework.UI.BunifuRating();
+            
             this.bunifuRating1.Value =  Convert.ToInt32(x);
         }
 
@@ -36,12 +34,30 @@ namespace Uber_Eats_Database_Project
 
         private void foodimg_Click(object sender, EventArgs e)
         {
-
+             
         }
 
         private void name_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void letsShow(object sender, FormClosingEventArgs e)
+        {
+            
+            this.Show();
+        }
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            
+            resfood r = new resfood(this.name.Text);
+            r.Show();
+            this.Hide();
+            r.FormClosing += letsShow;
         }
     }
 }

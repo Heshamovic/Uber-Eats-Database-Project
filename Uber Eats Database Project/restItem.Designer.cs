@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(restItem));
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.restimg = new Bunifu.Framework.UI.BunifuCards();
-            this.type = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.Label();
-            this.bunifuRating1 = new Bunifu.Framework.UI.BunifuRating();
-            this.foodimg = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.name = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuRating1 = new Bunifu.Framework.UI.BunifuRating();
+            this.type = new System.Windows.Forms.Label();
+            this.foodimg = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.restimg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foodimg)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foodimg)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -70,27 +72,45 @@
             this.restimg.Size = new System.Drawing.Size(547, 256);
             this.restimg.TabIndex = 0;
             // 
-            // type
+            // panel3
             // 
-            this.type.AutoSize = true;
-            this.type.Dock = System.Windows.Forms.DockStyle.Right;
-            this.type.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.type.Location = new System.Drawing.Point(494, 0);
-            this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(51, 19);
-            this.type.TabIndex = 2;
-            this.type.Text = "label1";
+            this.panel3.Controls.Add(this.foodimg);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 25);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(547, 200);
+            this.panel3.TabIndex = 7;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.name);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 225);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(547, 31);
+            this.panel2.TabIndex = 6;
             // 
             // name
             // 
             this.name.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(249, 14);
+            this.name.Location = new System.Drawing.Point(250, 14);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(35, 13);
             this.name.TabIndex = 3;
             this.name.Text = "label1";
             this.name.Click += new System.EventHandler(this.name_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.bunifuRating1);
+            this.panel1.Controls.Add(this.type);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(547, 25);
+            this.panel1.TabIndex = 5;
             // 
             // bunifuRating1
             // 
@@ -103,44 +123,42 @@
             this.bunifuRating1.TabIndex = 0;
             this.bunifuRating1.Value = 1;
             // 
+            // type
+            // 
+            this.type.AutoSize = true;
+            this.type.Dock = System.Windows.Forms.DockStyle.Right;
+            this.type.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.type.Location = new System.Drawing.Point(496, 0);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(51, 19);
+            this.type.TabIndex = 2;
+            this.type.Text = "label1";
+            // 
             // foodimg
             // 
             this.foodimg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.foodimg.Location = new System.Drawing.Point(0, 0);
             this.foodimg.Name = "foodimg";
-            this.foodimg.Size = new System.Drawing.Size(545, 192);
+            this.foodimg.Size = new System.Drawing.Size(547, 200);
             this.foodimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.foodimg.TabIndex = 4;
             this.foodimg.TabStop = false;
             this.foodimg.Click += new System.EventHandler(this.foodimg_Click);
             // 
-            // panel1
+            // button2
             // 
-            this.panel1.Controls.Add(this.bunifuRating1);
-            this.panel1.Controls.Add(this.type);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(545, 25);
-            this.panel1.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.name);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 222);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(545, 31);
-            this.panel2.TabIndex = 6;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.foodimg);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 30);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(545, 192);
-            this.panel3.TabIndex = 7;
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(495, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(49, 27);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "\r\n";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // restItem
             // 
@@ -152,12 +170,12 @@
             this.Size = new System.Drawing.Size(550, 256);
             this.Load += new System.EventHandler(this.restItem_Load);
             this.restimg.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.foodimg)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foodimg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,5 +191,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button2;
     }
 }

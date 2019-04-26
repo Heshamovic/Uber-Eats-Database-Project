@@ -43,23 +43,23 @@ namespace Uber_Eats_Database_Project
             OracleDataReader red = cmd.ExecuteReader();
             while (red.Read())
             {
-                OracleCommand cmd1 = new OracleCommand();
-                cmd1.CommandText = "select FOODIMAGE from FOOD where restaurant_name =:rn and top_dish='0'";
-                cmd1.Parameters.Add("rn", red[0]);
-                cmd1.CommandType = CommandType.Text;
-                cmd1.Connection = Conn;
-                OracleDataReader red1 = cmd1.ExecuteReader();
-                if (red1.Read())
+                
+                if (red[4]!=null)
                 {
-                    img = red1[0].ToString();
+                    img = red[4].ToString();
                 }
                 restItem x = new restItem(img, red[0].ToString(), Convert.ToDouble(red[2].ToString()), red[3].ToString());
                 flowLayoutPanel1.Controls.Add(x);
-                red1.Close();
+                
 
             }
             red.Close();
             Conn.Close();
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
