@@ -80,10 +80,10 @@ namespace Uber_Eats_Database_Project
 
         private void DAccountBtn_Click(object sender, EventArgs e)
         {
-            /*CustomerAccount acc = new CustomerAccount();
+            PartnerAccount acc = new PartnerAccount();
             acc.Show();
             this.Hide();
-            acc.FormClosing += letsShow;*/
+            acc.FormClosing += letsShow;
         }
 
         private void AccountBtn_Click(object sender, EventArgs e)

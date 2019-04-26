@@ -29,166 +29,44 @@ namespace Uber_Eats_Database_Project
         {
             userName.Enabled = true;
             saveUserNameBtn.Show();
-
-            con.Open();
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "select * from delivery_partner";
-            cmd.CommandType = CommandType.Text;
-            index = 0;
-            OracleDataReader rdr = cmd.ExecuteReader();
-            while(rdr.Read())
-            {
-                if(rdr[0].ToString()==Helper.currentUserName)
-                {
-                    index++;
-                }
-            }
-            //cmd.CommandText = "select * from trip where deliverypartner_username=:uname";
-            //cmd.CommandType = CommandType.Text;
-            //cmd.Parameters.Add("uname",Helper.currentUserName);
-            //OracleDataReader rdr = cmd.ExecuteReader();
-            //if(rdr.Read())
-            //{
-            //    trip_order =  int.Parse(rdr[0].ToString());
-            //    trip_dist = float.Parse(rdr[1].ToString());
-            //    trip_fee = float.Parse(rdr[3].ToString());
-            //}
-            //OracleCommand cmd2 = new OracleCommand();
-            //cmd2.Connection = con;
-            //cmd2.CommandText = "delete from delivery_partner where username=:uname";
-            //cmd2.CommandType = CommandType.Text;
-            //cmd2.Parameters.Add("uname", Helper.currentUserName);
-            //cmd2.ExecuteNonQuery();
-            con.Close();
+            
         }
 
         private void saveUserNameBtn_Click(object sender, EventArgs e)
         {
             con.Open();
-            if(userName.Text!=Helper.currentUserName)
+            if (userName.Text != Helper.currentUserName)
             {
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText = "insert into delivery_partner values(:uname, :vehicle, :pass, :rating)";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add("uname", userName.Text);
-                cmd.Parameters.Add("vehicle",part_vehicle);
+                cmd.Parameters.Add("vehicle", part_vehicle);
                 cmd.Parameters.Add("pass", part_pass);
                 cmd.Parameters.Add("rating", rating);
                 cmd.ExecuteNonQuery();
-                OracleCommand cmd2 = new OracleCommand();
 
+                OracleCommand cmd3 = new OracleCommand();
+                cmd3.Connection = con;
+                cmd3.CommandText = "update trip set deliverypartner_username=:newd where deliverypartner_username=:oldd";
+                cmd3.CommandType = CommandType.Text;
+                cmd3.Parameters.Add("newd", userName.Text);
+                cmd3.Parameters.Add("oldd", Helper.currentUserName);
+                cmd3.ExecuteNonQuery();
+
+                OracleCommand cmd2 = new OracleCommand();
+                cmd2.Connection = con;
+                cmd2.CommandText = "delete from delivery_partner where username=:del";
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Parameters.Add("del", Helper.currentUserName);
+                cmd2.ExecuteNonQuery();
+
+                Helper.currentUserName = userName.Text;
             }
-            
-            //OracleDataReader rdr = cmd.ExecuteReader();
-            //if (rdr.Read())
-            //{
-            //    MessageBox.Show("Username already taken.");
-            //}
-            //else
-            //{
-            //    OracleCommand cmd2 = new OracleCommand();
-            //    cmd2.Connection = con;
-            //    cmd2.CommandText = "insert into delivery_partner values (:uname,:vehicle,:pass,:rating)";
-            //    cmd2.CommandType = CommandType.Text;
-            //    cmd2.Parameters.Add("uname", userName.Text);
-            //    cmd2.Parameters.Add("vehicle", part_vehicle);
-            //    cmd2.Parameters.Add("pass", part_pass);
-            //    cmd2.Parameters.Add("rating", rating);
-            //    int r = cmd2.ExecuteNonQuery();
-            //    if (r != -1)
-            //    {
-            //        MessageBox.Show("Username changed successfully.");
-            //        OracleCommand cmd3 = new OracleCommand();
-            //        cmd3.Connection = con;
-            //        cmd3.CommandText = "update trip set deliverypartner_username=:uname where deliverypartner_username is NULL";
-            //        cmd3.CommandType = CommandType.Text;
-            //        //cmd3.Parameters.Add("orderid", trip_order);
-            //        //cmd3.Parameters.Add("distance", trip_dist);
-            //        cmd3.Parameters.Add("uname", Helper.currentUserName);
-            //        //cmd3.Parameters.Add("fees", trip_fee);
-            //        cmd3.ExecuteNonQuery();
-            //        saveUserNameBtn.Hide();
-            //        userName.Enabled = false;
-            //        Helper.currentUserName = userName.Text;
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Couldn't change username. Please try again.");
-            //    }
-            //}
+            CustomMsgBox.Show("Username changed successfully.");
             con.Close();
             savePasswordBtn.Hide();
-            //string cmdstr = "select * from delivery_partner";
-            //OracleDataAdapter adapter = new OracleDataAdapter(cmdstr, constr);
-            //DataSet ds = new DataSet();
-            //adapter.Fill(ds,"partner");
-            //part_index = 0;
-            //fk_index = 0;
-            //foreach (DataRow row in ds.Tables["partner"].Rows)
-            //{
-            //    string tmp_username = row[0].ToString();
-            //    if (tmp_username == Helper.currentUserName)
-            //    {
-            //        break;
-            //    }
-            //    part_index++;
-            //}
-
-            //cmdstr = "select * from trip";
-            //OracleDataAdapter adapter1 = new OracleDataAdapter(cmdstr, constr);
-            ////DataSet ds1 = new DataSet();
-            //adapter1.Fill(ds,"trip");
-            //bool rel = false;
-            //foreach (DataRow row in ds.Tables["trip"].Rows)
-            //{
-            //    string tmp_fk = row[2].ToString();
-            //    if (tmp_fk == Helper.currentUserName)
-            //    {
-            //        rel = true;
-            //        break;
-            //    }
-            //    fk_index++;
-            //}
-
-            //OracleCommandBuilder builder = new OracleCommandBuilder(adapter);
-            //OracleCommandBuilder builder1 = new OracleCommandBuilder(adapter1);
-            //DataRow r = ds.Tables["partner"].Rows[part_index];
-            //DataRow f = ds.Tables["trip"].Rows[fk_index];
-            //bool exist = false;
-            //int tmp = 0;
-            //foreach(DataRow row in ds.Tables["partner"].Rows)
-            //{
-            //    string tmp_username = row[0].ToString();
-            //    if(tmp_username == userName.Text && tmp!=part_index)
-            //    {
-            //        exist = true;
-            //        MessageBox.Show("Username is already taken.");
-            //        userName.Text = "";
-            //    }
-            //    tmp++;
-            //}
-            //var relation = ds.Relations.Add(ds.Tables["partner"].Columns["USERNAME"], ds.Tables["trip"].Columns["DELIVERYPARTNER_USERNAME"]);
-            //relation.ChildKeyConstraint.UpdateRule = Rule.None;
-            //if (exist==false)
-            //{
-            //    r[0] = userName.Text;
-
-            //    if (rel==true)
-            //    {
-            //        f[2] = userName.Text;
-            //        adapter1.Update(ds.Tables["trip"]);
-            //    }
-            //    adapter.Update(ds.Tables["partner"]);
-            //    Helper.currentUserName = userName.Text;
-            //    MessageBox.Show("Username changed successfully.");
-            //    saveUserNameBtn.Hide();
-            //    userName.Enabled = false;
-
-
-            //}
-
         }
 
         private void changePasswordBtn_Click(object sender, EventArgs e)
