@@ -139,6 +139,12 @@
     <Compile Include="ORDER_FOOD.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
+    <Compile Include="PartnerAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartnerAccount.Designer.cs">
+      <DependentUpon>PartnerAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="PendingDelivering.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartnerAccount.resx">
+      <DependentUpon>PartnerAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PendingDelivering.resx">
       <DependentUpon>PendingDelivering.cs</DependentUpon>
