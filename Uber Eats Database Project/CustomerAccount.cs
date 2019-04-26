@@ -243,12 +243,22 @@ namespace Uber_Eats_Database_Project
         {
             userName.Enabled = true;
             saveUserNameBtn.Show();
+            
+            con.Open();
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "delete from customer where username=:uname";
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("uname",Helper.currentUserName);
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
 
         private void saveUserNameBtn_Click(object sender, EventArgs e)
         {
-
+            
             con.Open();
+<<<<<<< HEAD
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "select * from customer where username=:uname";
@@ -260,31 +270,27 @@ namespace Uber_Eats_Database_Project
                 CustomMsgBox.Show("Username already taken.");
             }
             else
+||||||| b5b9606... 2 forms done
+            if (userName.Text != Helper.currentUserName)
+=======
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from customer where username=:uname";
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("uname",userName.Text);
+            OracleDataReader rdr = cmd.ExecuteReader();
+            if (rdr.Read())
             {
-                OracleCommand cmd = new OracleCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "insert into customer values (:uname,:fname,:lname,:loc,:credit,:pass)";
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add("uname", userName.Text);
-                cmd.Parameters.Add("fname", cust_fname);
-                cmd.Parameters.Add("lname", cust_lname);
-                cmd.Parameters.Add("loc", cust_loc);
-                cmd.Parameters.Add("credit", cust_credit);
-                cmd.Parameters.Add("pass", cust_pass);
-                cmd.ExecuteNonQuery();
-
-                OracleCommand cmd3 = new OracleCommand();
-                cmd3.Connection = con;
-                cmd3.CommandText = "update orders set customer_username=:newd where customer_username=:oldd";
-                cmd3.CommandType = CommandType.Text;
-                cmd3.Parameters.Add("newd", userName.Text);
-                cmd3.Parameters.Add("oldd", Helper.currentUserName);
-                cmd3.ExecuteNonQuery();
-
+                MessageBox.Show("Username already taken.");
+            }
+            else
+>>>>>>> parent of b5b9606... 2 forms done
+            {
                 OracleCommand cmd2 = new OracleCommand();
                 cmd2.Connection = con;
-                cmd2.CommandText = "delete from customer where username=:del";
+                cmd2.CommandText = "insert into customer values (:uname,:fname,:lname,:loc,:credit,:pass)";
                 cmd2.CommandType = CommandType.Text;
+<<<<<<< HEAD
                 cmd2.Parameters.Add("uname",userName.Text);
                 cmd2.Parameters.Add("fname",cust_fname);
                 cmd2.Parameters.Add("lname",cust_lname);
@@ -310,11 +316,41 @@ namespace Uber_Eats_Database_Project
                 {
                     CustomMsgBox.Show("Couldn't change username. Please try again.");
                 }
+||||||| b5b9606... 2 forms done
+                cmd2.Parameters.Add("del", Helper.currentUserName);
+                cmd2.ExecuteNonQuery();
+
+                Helper.currentUserName = userName.Text;
+=======
+                cmd2.Parameters.Add("uname",userName.Text);
+                cmd2.Parameters.Add("fname",cust_fname);
+                cmd2.Parameters.Add("lname",cust_lname);
+                cmd2.Parameters.Add("loc",cust_loc);
+                cmd2.Parameters.Add("credit",cust_credit);
+                cmd2.Parameters.Add("pass",cust_pass);
+                int r = cmd2.ExecuteNonQuery();
+                if (r != -1)
+                {
+                    MessageBox.Show("Username changed successfully.");
+                    OracleCommand cmd3 = new OracleCommand();
+                    cmd3.Connection = con;
+                    cmd3.CommandText = "update orders set customer_username=:new where customer_username=:old";
+                    cmd3.CommandType = CommandType.Text;
+                    cmd3.Parameters.Add("new",userName.Text);
+                    cmd3.Parameters.Add("old", Helper.currentUserName);
+                    cmd3.ExecuteNonQuery();
+                    saveUserNameBtn.Hide();
+                    userName.Enabled = false;
+                    Helper.currentUserName = userName.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Couldn't change username. Please try again.");
+                }
+>>>>>>> parent of b5b9606... 2 forms done
             }
-            MessageBox.Show("Username changed successfully.");
             con.Close();
-            saveUserNameBtn.Hide();
-            userName.Enabled = false;
+            savePasswordBtn.Hide();
         }
     }
 }
