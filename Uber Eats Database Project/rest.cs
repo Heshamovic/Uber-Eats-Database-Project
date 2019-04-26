@@ -60,5 +60,17 @@ namespace Uber_Eats_Database_Project
         {
 
         }
+        public void letsShow(object sender, FormClosingEventArgs e)
+        {
+            this.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cart r = new Cart();
+            r.Show();
+            this.Hide();
+            r.FormClosing += letsShow;
+        }
     }
 }
