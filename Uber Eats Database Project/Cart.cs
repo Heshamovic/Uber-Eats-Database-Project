@@ -124,10 +124,12 @@ namespace Uber_Eats_Database_Project
                 cmd5.CommandType = CommandType.StoredProcedure;
                 cmd5.Parameters.Add("id", Helper.currentOrderId);
                 cmd5.ExecuteNonQuery();
-                con.Close();
-
-
             }
+            OracleCommand cmd = new OracleCommand("Create_Cart", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("un", Helper.currentUserName);
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
