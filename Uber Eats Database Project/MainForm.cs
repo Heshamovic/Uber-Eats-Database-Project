@@ -71,11 +71,10 @@ namespace Uber_Eats_Database_Project
 
         private void MenusBtn_Click(object sender, EventArgs e)
         {
-            //Menus menuform = new Menus();
-            //Helper.currentOrderId = getCartId();
-            //menuform.Show();
-            //this.Hide();
-            //menuform.FormClosing += letsShow;
+            rest r = new rest();
+            r.Show();
+            this.Hide();
+            r.FormClosing += letsShow;
         }
 
         private void DAccountBtn_Click(object sender, EventArgs e)
