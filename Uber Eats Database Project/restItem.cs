@@ -48,8 +48,7 @@ namespace Uber_Eats_Database_Project
         }
         public void letsShow(object sender, FormClosingEventArgs e)
         {
-            
-            this.Show();
+            this.Parent.Parent.Parent.Parent.Show();
         }
         private void button2_Click_1(object sender, EventArgs e)
         {

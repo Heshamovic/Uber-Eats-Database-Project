@@ -77,7 +77,7 @@ namespace Uber_Eats_Database_Project
 
             Cart r = new Cart();
             r.Show();
-            this.Parent.Parent.Parent.Parent.Hide();
+            this.Hide();
             r.FormClosing += letsShow;
         }
     }
