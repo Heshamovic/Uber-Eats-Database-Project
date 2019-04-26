@@ -15,7 +15,8 @@ namespace Uber_Eats_Database_Project
     public partial class CustomerAccount : Form
     {
         public OracleConnection con;
-        string cust_fname, cust_lname,cust_loc,cust_credit,cust_pass;
+        string cust_fname, cust_lname, cust_loc, cust_credit, cust_pass;
+        int index;
         public CustomerAccount()
         {
             InitializeComponent();
@@ -76,14 +77,14 @@ namespace Uber_Eats_Database_Project
             cmd2.Connection = con;
             cmd2.CommandText = "select count(*) from orders where customer_username=:uname";
             cmd2.CommandType = CommandType.Text;
-            cmd2.Parameters.Add("uname",Helper.currentUserName);
-            int order_cnt=0;
+            cmd2.Parameters.Add("uname", Helper.currentUserName);
+            int order_cnt = 0;
             OracleDataReader rdr2 = cmd2.ExecuteReader();
-            if(rdr2.Read())
+            if (rdr2.Read())
             {
                 order_cnt = int.Parse(rdr2[0].ToString());
             }
-            int voucher =(int) order_cnt / 10;
+            int voucher = (int)order_cnt / 10;
             voucher = voucher * 10;
             string perc = voucher.ToString() + '%';
             label5.Text = perc;
@@ -148,7 +149,7 @@ namespace Uber_Eats_Database_Project
             {
                 CustomMsgBox.Show("Please fill all fields.");
             }
-            
+
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
@@ -205,7 +206,7 @@ namespace Uber_Eats_Database_Project
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            
+
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
@@ -243,65 +244,86 @@ namespace Uber_Eats_Database_Project
         {
             userName.Enabled = true;
             saveUserNameBtn.Show();
-            
+
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
-            cmd.CommandText = "delete from customer where username=:uname";
+            cmd.CommandText = "select * from customer";
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("uname",Helper.currentUserName);
-            cmd.ExecuteNonQuery();
+            index = 0;
+            OracleDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                if (rdr[0].ToString() == Helper.currentUserName)
+                {
+                    break;
+                }
+                index++;
+            }
             con.Close();
         }
 
         private void saveUserNameBtn_Click(object sender, EventArgs e)
         {
-            
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
-            cmd.CommandText = "select * from customer where username=:uname";
+            cmd.CommandText = "select * from customer";
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("uname",userName.Text);
             OracleDataReader rdr = cmd.ExecuteReader();
-            if (rdr.Read())
+            int tmp_ind = 0;
+            bool found = false;
+            while (rdr.Read())
+            {
+                if (rdr[0].ToString() == userName.Text && tmp_ind != index)
+                {
+                    found = true;
+                    break;
+                }
+                tmp_ind++;
+            }
+            if (found == true)
             {
                 CustomMsgBox.Show("Username already taken.");
             }
             else
             {
-                OracleCommand cmd2 = new OracleCommand();
-                cmd2.Connection = con;
-                cmd2.CommandText = "insert into customer values (:uname,:fname,:lname,:loc,:credit,:pass)";
-                cmd2.CommandType = CommandType.Text;
-                cmd2.Parameters.Add("uname",userName.Text);
-                cmd2.Parameters.Add("fname",cust_fname);
-                cmd2.Parameters.Add("lname",cust_lname);
-                cmd2.Parameters.Add("loc",cust_loc);
-                cmd2.Parameters.Add("credit",cust_credit);
-                cmd2.Parameters.Add("pass",cust_pass);
-                int r = cmd2.ExecuteNonQuery();
-                if (r != -1)
+                if (userName.Text != Helper.currentUserName)
                 {
-                    MessageBox.Show("Username changed successfully.");
+                    cmd = new OracleCommand();
+                    cmd.Connection = con;
+                    cmd.CommandText = "insert into customer values(:uname, :fname, :lname, :loc, :credit, :pass)";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.Add("uname", userName.Text);
+                    cmd.Parameters.Add("fname", cust_fname);
+                    cmd.Parameters.Add("lname", cust_lname);
+                    cmd.Parameters.Add("loc", cust_loc);
+                    cmd.Parameters.Add("credit", cust_credit);
+                    cmd.Parameters.Add("pass", cust_pass);
+                    cmd.ExecuteNonQuery();
+
                     OracleCommand cmd3 = new OracleCommand();
                     cmd3.Connection = con;
-                    cmd3.CommandText = "update orders set customer_username=:new where customer_username=:old";
+                    cmd3.CommandText = "update orders set customer_username=:newd where customer_username=:oldd";
                     cmd3.CommandType = CommandType.Text;
-                    cmd3.Parameters.Add("new",userName.Text);
-                    cmd3.Parameters.Add("old", Helper.currentUserName);
+                    cmd3.Parameters.Add("newd", userName.Text);
+                    cmd3.Parameters.Add("oldd", Helper.currentUserName);
                     cmd3.ExecuteNonQuery();
-                    saveUserNameBtn.Hide();
-                    userName.Enabled = false;
+
+                    OracleCommand cmd2 = new OracleCommand();
+                    cmd2.Connection = con;
+                    cmd2.CommandText = "delete from customer where username=:del";
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.Parameters.Add("del", Helper.currentUserName);
+                    cmd2.ExecuteNonQuery();
+
                     Helper.currentUserName = userName.Text;
                 }
-                else
-                {
-                    CustomMsgBox.Show("Couldn't change username. Please try again.");
-                }
+                MessageBox.Show("Username changed successfully.");
             }
             con.Close();
-            savePasswordBtn.Hide();
+            saveUserNameBtn.Hide();
+            userName.Enabled = false;
         }
     }
 }
