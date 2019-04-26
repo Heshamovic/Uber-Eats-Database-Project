@@ -14,18 +14,11 @@ namespace Uber_Eats_Database_Project
 {
     public partial class PartnerAccount : Form
     {
+        //string constr,pass,vehicle;
+        //int part_index,fk_index;
         public OracleConnection con;
-<<<<<<< HEAD
-        string part_pass,part_vehicle,rating;
-        int index;
-||||||| fdea548... fixing bugs
         string part_pass, part_vehicle, rating;
         int index;
-=======
-        string part_pass,part_vehicle,rating;
-        int trip_order,index;
-        float trip_dist, trip_fee;
->>>>>>> parent of fdea548... fixing bugs
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -35,25 +28,28 @@ namespace Uber_Eats_Database_Project
         {
             userName.Enabled = true;
             saveUserNameBtn.Show();
-            
+
+            con.Open();
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from delivery_partner";
+            cmd.CommandType = CommandType.Text;
+            index = 0;
+            OracleDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                if (rdr[0].ToString() == Helper.currentUserName)
+                {
+                    break;
+                }
+                index++;
+            }
+            con.Close();
         }
 
         private void saveUserNameBtn_Click(object sender, EventArgs e)
         {
             con.Open();
-<<<<<<< HEAD
-            if (userName.Text != Helper.currentUserName)
-            {
-                OracleCommand cmd = new OracleCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "insert into delivery_partner values(:uname, :vehicle, :pass, :rating)";
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add("uname", userName.Text);
-                cmd.Parameters.Add("vehicle", part_vehicle);
-                cmd.Parameters.Add("pass", part_pass);
-                cmd.Parameters.Add("rating", rating);
-                cmd.ExecuteNonQuery();
-||||||| fdea548... fixing bugs
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "select * from delivery_partner";
@@ -87,40 +83,29 @@ namespace Uber_Eats_Database_Project
                     cmd.Parameters.Add("pass", part_pass);
                     cmd.Parameters.Add("rating", rating);
                     cmd.ExecuteNonQuery();
-=======
-            if (userName.Text != Helper.currentUserName)
-            {
-                OracleCommand cmd = new OracleCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "insert into delivery_partner values(:uname, :vehicle, :pass, :rating)";
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add("uname", userName.Text);
-                cmd.Parameters.Add("vehicle", part_vehicle);
-                cmd.Parameters.Add("pass", part_pass);
-                cmd.Parameters.Add("rating", rating);
-                cmd.ExecuteNonQuery();
->>>>>>> parent of fdea548... fixing bugs
 
-                OracleCommand cmd3 = new OracleCommand();
-                cmd3.Connection = con;
-                cmd3.CommandText = "update trip set deliverypartner_username=:newd where deliverypartner_username=:oldd";
-                cmd3.CommandType = CommandType.Text;
-                cmd3.Parameters.Add("newd", userName.Text);
-                cmd3.Parameters.Add("oldd", Helper.currentUserName);
-                cmd3.ExecuteNonQuery();
+                    OracleCommand cmd3 = new OracleCommand();
+                    cmd3.Connection = con;
+                    cmd3.CommandText = "update trip set deliverypartner_username=:newd where deliverypartner_username=:oldd";
+                    cmd3.CommandType = CommandType.Text;
+                    cmd3.Parameters.Add("newd", userName.Text);
+                    cmd3.Parameters.Add("oldd", Helper.currentUserName);
+                    cmd3.ExecuteNonQuery();
 
-                OracleCommand cmd2 = new OracleCommand();
-                cmd2.Connection = con;
-                cmd2.CommandText = "delete from delivery_partner where username=:del";
-                cmd2.CommandType = CommandType.Text;
-                cmd2.Parameters.Add("del", Helper.currentUserName);
-                cmd2.ExecuteNonQuery();
+                    OracleCommand cmd2 = new OracleCommand();
+                    cmd2.Connection = con;
+                    cmd2.CommandText = "delete from delivery_partner where username=:del";
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.Parameters.Add("del", Helper.currentUserName);
+                    cmd2.ExecuteNonQuery();
 
-                Helper.currentUserName = userName.Text;
+                    Helper.currentUserName = userName.Text;
+                }
+                MessageBox.Show("Username changed successfully.");
             }
-            CustomMsgBox.Show("Username changed successfully.");
             con.Close();
-            savePasswordBtn.Hide();
+            saveUserNameBtn.Hide();
+            userName.Enabled = false;
         }
 
         private void changePasswordBtn_Click(object sender, EventArgs e)
@@ -179,7 +164,7 @@ namespace Uber_Eats_Database_Project
             cmd.CommandText = "update delivery_partner set vehicle=:veh where username=:uname";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("veh", vehicleType.Text);
-            cmd.Parameters.Add("uname",Helper.currentUserName);
+            cmd.Parameters.Add("uname", Helper.currentUserName);
             int r = cmd.ExecuteNonQuery();
             if (r != -1)
             {
@@ -195,28 +180,6 @@ namespace Uber_Eats_Database_Project
             editBtn.Show();
             userName.Enabled = false;
             vehicleType.Enabled = false;
-            //string cmdstr = "select * from delivery_partner";
-            //OracleDataAdapter adapter = new OracleDataAdapter(cmdstr, constr);
-            //DataSet ds = new DataSet();
-            //adapter.Fill(ds);
-            //OracleCommandBuilder builder = new OracleCommandBuilder(adapter);
-            //part_index = 0;
-            //foreach (DataRow row in ds.Tables[0].Rows)
-            //{
-            //    string tmp_username = row[0].ToString();
-            //    if (tmp_username == Helper.currentUserName)
-            //    {
-            //        break;
-            //    }
-            //    part_index++;
-            //}
-            //DataRow r = ds.Tables[0].Rows[part_index];
-            //r[1] = vehicleType.Text;
-            //adapter.Update(ds.Tables[0]);
-            //vehicle = vehicleType.Text;
-            //MessageBox.Show("Vehicle type changed successfully.");
-            //saveBtn.Hide();
-            //vehicleType.Enabled = false;
         }
 
         private void savePasswordBtn_Click(object sender, EventArgs e)
@@ -315,7 +278,7 @@ namespace Uber_Eats_Database_Project
                 double x = Math.Round(float.Parse(rating));
                 bunifuRating1.Value = Convert.ToInt32(x);
             }
-            
+
             OracleCommand cmd2 = new OracleCommand();
             cmd2.Connection = con;
             cmd2.CommandText = "select count(*) from trip where deliverypartner_username=:uname";
@@ -323,7 +286,7 @@ namespace Uber_Eats_Database_Project
             cmd2.CommandType = CommandType.Text;
             cmd2.Parameters.Add("uname", Helper.currentUserName);
             OracleDataReader rdr2 = cmd2.ExecuteReader();
-            if(rdr2.Read())
+            if (rdr2.Read())
             {
                 label4.Text = rdr2[0].ToString();
             }
@@ -332,40 +295,6 @@ namespace Uber_Eats_Database_Project
                 label4.Text = "0";
             }
             con.Close();
-
-            //    trips = 0;
-            //    constr = "data source = orcl; user id = scott; password = tiger;";
-            //    string cmdstr = "select * from delivery_partner";
-            //    OracleDataAdapter adapter = new OracleDataAdapter(cmdstr,constr);
-            //    DataSet ds = new DataSet();
-            //    adapter.Fill(ds);
-            //    foreach(DataRow row in ds.Tables[0].Rows)
-            //    {
-            //        string tmp_username = row[0].ToString();
-            //        if(tmp_username==Helper.currentUserName)
-            //        {
-            //            userName.Text = tmp_username;
-            //            vehicleType.Text = row[1].ToString();
-            //            vehicle = row[1].ToString();
-            //            pass = row[2].ToString();
-            //            rating = row[3].ToString();
-            //            double x = Math.Round(float.Parse(rating));
-            //            bunifuRating1.Value = Convert.ToInt32(x);
-            //        }
-            //    }
-            //    cmdstr = "select * from trip";
-            //    adapter = new OracleDataAdapter(cmdstr,constr);
-            //    ds = new DataSet();
-            //    adapter.Fill(ds);
-            //    foreach(DataRow row in ds.Tables[0].Rows)
-            //    {
-            //        string tmp_username = row[2].ToString();
-            //        if(tmp_username==Helper.currentUserName)
-            //        {
-            //            trips++;
-            //        }
-            //    }
-            //    label4.Text = trips.ToString();
         }
     }
 }
