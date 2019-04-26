@@ -27,7 +27,7 @@ namespace Uber_Eats_Database_Project
 
         private void Order_details_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(c_order.ToString());
+            CustomMsgBox.Show(c_order.ToString());
             con = new OracleConnection(ordb);
             con.Open();
             OracleCommand cmd9 = new OracleCommand();

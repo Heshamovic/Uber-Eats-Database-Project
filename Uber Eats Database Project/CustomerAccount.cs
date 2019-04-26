@@ -294,7 +294,7 @@ namespace Uber_Eats_Database_Project
                 int r = cmd2.ExecuteNonQuery();
                 if (r != -1)
                 {
-                    MessageBox.Show("Username changed successfully.");
+                    CustomMsgBox.Show("Username changed successfully.");
                     OracleCommand cmd3 = new OracleCommand();
                     cmd3.Connection = con;
                     cmd3.CommandText = "update orders set customer_username=:new where customer_username=:old";
@@ -311,7 +311,7 @@ namespace Uber_Eats_Database_Project
                     CustomMsgBox.Show("Couldn't change username. Please try again.");
                 }
             }
-            MessageBox.Show("Username changed successfully.");
+            CustomMsgBox.Show("Username changed successfully.");
             con.Close();
             saveUserNameBtn.Hide();
             userName.Enabled = false;
