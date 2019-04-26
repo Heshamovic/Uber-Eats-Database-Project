@@ -92,7 +92,6 @@ namespace Uber_Eats_Database_Project
 
         private void signUpBtn_Click(object sender, EventArgs e)
         {
-            con.Close();
             if (!customerChkBx.Checked && !partnerChkBx.Checked)
             {
                 CustomMsgBox.Show("Please select your membership role!");

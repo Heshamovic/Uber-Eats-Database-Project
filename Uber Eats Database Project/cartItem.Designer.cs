@@ -45,7 +45,7 @@
             // 
             this.FoodName.AutoSize = true;
             this.FoodName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FoodName.Location = new System.Drawing.Point(93, 19);
+            this.FoodName.Location = new System.Drawing.Point(113, 19);
             this.FoodName.Name = "FoodName";
             this.FoodName.Size = new System.Drawing.Size(85, 16);
             this.FoodName.TabIndex = 0;
@@ -54,7 +54,7 @@
             // RestName
             // 
             this.RestName.AutoSize = true;
-            this.RestName.Location = new System.Drawing.Point(100, 42);
+            this.RestName.Location = new System.Drawing.Point(122, 42);
             this.RestName.Name = "RestName";
             this.RestName.Size = new System.Drawing.Size(57, 13);
             this.RestName.TabIndex = 1;
@@ -65,7 +65,7 @@
             this.Price.AutoSize = true;
             this.Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price.ForeColor = System.Drawing.Color.Firebrick;
-            this.Price.Location = new System.Drawing.Point(108, 68);
+            this.Price.Location = new System.Drawing.Point(129, 68);
             this.Price.Name = "Price";
             this.Price.Size = new System.Drawing.Size(36, 13);
             this.Price.TabIndex = 2;
@@ -89,7 +89,7 @@
             this.Discount.AutoSize = true;
             this.Discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Discount.ForeColor = System.Drawing.Color.Firebrick;
-            this.Discount.Location = new System.Drawing.Point(187, 68);
+            this.Discount.Location = new System.Drawing.Point(210, 68);
             this.Discount.Name = "Discount";
             this.Discount.Size = new System.Drawing.Size(57, 13);
             this.Discount.TabIndex = 5;
@@ -97,7 +97,7 @@
             // 
             // NoOfItems
             // 
-            this.NoOfItems.Location = new System.Drawing.Point(297, 19);
+            this.NoOfItems.Location = new System.Drawing.Point(333, 19);
             this.NoOfItems.Name = "NoOfItems";
             this.NoOfItems.Size = new System.Drawing.Size(118, 20);
             this.NoOfItems.TabIndex = 8;
@@ -110,7 +110,7 @@
             this.Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Remove.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Remove.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Remove.Location = new System.Drawing.Point(297, 52);
+            this.Remove.Location = new System.Drawing.Point(340, 52);
             this.Remove.Name = "Remove";
             this.Remove.Size = new System.Drawing.Size(105, 29);
             this.Remove.TabIndex = 36;
@@ -121,7 +121,7 @@
             // RestLoc
             // 
             this.RestLoc.AutoSize = true;
-            this.RestLoc.Location = new System.Drawing.Point(201, 43);
+            this.RestLoc.Location = new System.Drawing.Point(215, 43);
             this.RestLoc.Name = "RestLoc";
             this.RestLoc.Size = new System.Drawing.Size(47, 13);
             this.RestLoc.TabIndex = 37;
@@ -131,6 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.RestLoc);
             this.Controls.Add(this.Remove);
             this.Controls.Add(this.NoOfItems);
@@ -140,7 +141,7 @@
             this.Controls.Add(this.RestName);
             this.Controls.Add(this.FoodName);
             this.Name = "cartItem";
-            this.Size = new System.Drawing.Size(458, 104);
+            this.Size = new System.Drawing.Size(494, 102);
             this.Load += new System.EventHandler(this.cartItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoOfItems)).EndInit();
