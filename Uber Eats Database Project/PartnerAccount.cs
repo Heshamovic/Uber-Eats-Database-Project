@@ -126,12 +126,12 @@ namespace Uber_Eats_Database_Project
             int r = cmd.ExecuteNonQuery();
             if (r != -1)
             {
-                CustomMsgBox.Show("Vehicle is Updated successfully.");
+                MessageBox.Show("Vehicle is Updated successfully.");
                 part_vehicle = vehicleType.Text;
             }
             else
             {
-                CustomMsgBox.Show("Couldn't update your information. Please try again.");
+                MessageBox.Show("Couldn't update your information. Please try again.");
             }
             con.Close();
             saveBtn.Hide();
@@ -144,7 +144,7 @@ namespace Uber_Eats_Database_Project
         {
             if (newPassword.Text == "" || oldPassword.Text == "" || confirmPassword.Text == "")
             {
-                CustomMsgBox.Show("Please fill all fields.");
+                MessageBox.Show("Please fill all fields.");
             }
 
             con.Open();
@@ -171,7 +171,7 @@ namespace Uber_Eats_Database_Project
                     int r = cmd2.ExecuteNonQuery();
                     if (r != -1)
                     {
-                        CustomMsgBox.Show("Password is changed successfully.");
+                        MessageBox.Show("Password is changed successfully.");
                         part_pass = newPassword.Text;
                         oldPassword.Text = "";
                         newPassword.Text = "";
@@ -183,19 +183,19 @@ namespace Uber_Eats_Database_Project
                     }
                     else
                     {
-                        CustomMsgBox.Show("Couldn't change your password. Please try again.");
+                        MessageBox.Show("Couldn't change your password. Please try again.");
                     }
                 }
                 else
                 {
-                    CustomMsgBox.Show("Please re-enter your new password.");
+                    MessageBox.Show("Please re-enter your new password.");
                     newPassword.Text = "";
                     confirmPassword.Text = "";
                 }
             }
             else
             {
-                CustomMsgBox.Show("Wrong Password! Enter your password again.");
+                MessageBox.Show("Wrong Password! Enter your password again.");
                 oldPassword.Text = "";
             }
             con.Close();

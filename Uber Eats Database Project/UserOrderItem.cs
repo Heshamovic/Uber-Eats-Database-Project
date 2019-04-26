@@ -23,6 +23,11 @@ namespace Uber_Eats_Database_Project
             Order_details o = new Order_details();
             o.c_order = cur_order;
             o.Show();
+            //string s= this.Order_Number;
+
+           // MessageBox.Show(o.c_order.ToString());
+
+         
         }
 
         private void UserOrderItem_Load(object sender, EventArgs e)
