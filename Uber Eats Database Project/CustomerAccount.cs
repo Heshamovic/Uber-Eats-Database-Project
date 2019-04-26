@@ -15,7 +15,7 @@ namespace Uber_Eats_Database_Project
     public partial class CustomerAccount : Form
     {
         public OracleConnection con;
-        public string cust_fname, cust_lname,cust_loc,cust_credit,cust_pass;
+        string cust_fname, cust_lname,cust_loc,cust_credit,cust_pass;
         public CustomerAccount()
         {
             InitializeComponent();
@@ -53,21 +53,6 @@ namespace Uber_Eats_Database_Project
             userName.Text = Helper.currentUserName;
             con = new OracleConnection("data source = orcl; user id = scott; password = tiger;");
             con.Open();
-            //OracleCommand cmd = new OracleCommand();
-            //cmd.Connection = con;
-            //cmd.CommandText = "get_customer_info";
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.Parameters.Add("user_name",OracleDbType.Varchar2).Value=Helper.currentUserName;
-            ////cmd.Parameters.Add("user_name", OracleDbType.Varchar2, Helper.currentUserName, ParameterDirection.Input);
-            //cmd.Parameters.Add("first_name", OracleDbType.Varchar2, ParameterDirection.Output);
-            //cmd.Parameters.Add("last_name", OracleDbType.Varchar2, ParameterDirection.Output);
-            //cmd.Parameters.Add("loc", OracleDbType.Varchar2, ParameterDirection.Output);
-            //cmd.Parameters.Add("credit", OracleDbType.Varchar2, ParameterDirection.Output);
-            //cmd.ExecuteNonQuery();
-            //fName.Text = cmd.Parameters["first_name"].Value.ToString();
-            //lName.Text = cmd.Parameters["last_name"].Value.ToString();
-            //location.Text = cmd.Parameters["loc"].Value.ToString();
-            //creditCard.Text = cmd.Parameters["credit"].Value.ToString();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "select * from customer where username=:uname";
@@ -86,6 +71,22 @@ namespace Uber_Eats_Database_Project
                 cust_credit = rdr[4].ToString();
                 cust_pass = rdr[5].ToString();
             }
+
+            OracleCommand cmd2 = new OracleCommand();
+            cmd2.Connection = con;
+            cmd2.CommandText = "select count(*) from orders where customer_username=:uname";
+            cmd2.CommandType = CommandType.Text;
+            cmd2.Parameters.Add("uname",Helper.currentUserName);
+            int order_cnt=0;
+            OracleDataReader rdr2 = cmd2.ExecuteReader();
+            if(rdr2.Read())
+            {
+                order_cnt = int.Parse(rdr2[0].ToString());
+            }
+            int voucher =(int) order_cnt / 10;
+            voucher = voucher * 10;
+            string perc = voucher.ToString() + '%';
+            label5.Text = perc;
             con.Close();
 
         }
@@ -106,6 +107,39 @@ namespace Uber_Eats_Database_Project
             newPassword.Show();
             confirmPassword.Show();
             savePasswordBtn.Show();
+            Helper.AddPlaceHolder(oldPassword, "Password");
+            Helper.AddPlaceHolder(newPassword, "New Password");
+            Helper.AddPlaceHolder(confirmPassword, "Confirm Password");
+        }
+
+        private void oldPassword_Enter(object sender, EventArgs e)
+        {
+            Helper.RemovePlaceHolder((TextBox)sender, "Password");
+        }
+
+        private void oldPassword_Leave(object sender, EventArgs e)
+        {
+            Helper.AddPlaceHolder((TextBox)sender, "Password");
+        }
+
+        private void newPassword_Enter(object sender, EventArgs e)
+        {
+            Helper.RemovePlaceHolder((TextBox)sender, "New Password");
+        }
+
+        private void newPassword_Leave(object sender, EventArgs e)
+        {
+            Helper.AddPlaceHolder((TextBox)sender, "New Password");
+        }
+
+        private void confirmPassword_Enter(object sender, EventArgs e)
+        {
+            Helper.RemovePlaceHolder((TextBox)sender, "Confirm Password");
+        }
+
+        private void confirmPassword_Leave(object sender, EventArgs e)
+        {
+            Helper.AddPlaceHolder((TextBox)sender, "Confirm Password");
         }
 
         private void userName_Enter(object sender, EventArgs e)
@@ -154,7 +188,7 @@ namespace Uber_Eats_Database_Project
             {
                 CustomMsgBox.Show("Please fill all fields.");
             }
-            con = new OracleConnection("data source = orcl; user id = scott; password = tiger;");
+            
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
@@ -162,7 +196,6 @@ namespace Uber_Eats_Database_Project
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("uname", Helper.currentUserName);
             OracleDataReader rdr = cmd.ExecuteReader();
-            //string cust_pass = "";
             if (rdr.Read())
             {
                 cust_pass = rdr[0].ToString();
@@ -212,7 +245,7 @@ namespace Uber_Eats_Database_Project
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            con = new OracleConnection("data source = orcl; user id = scott; password = tiger;");
+            
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
@@ -250,7 +283,7 @@ namespace Uber_Eats_Database_Project
         {
             userName.Enabled = true;
             saveUserNameBtn.Show();
-            con = new OracleConnection("data source = orcl; user id = scott; password = tiger;");
+            
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
@@ -263,7 +296,7 @@ namespace Uber_Eats_Database_Project
 
         private void saveUserNameBtn_Click(object sender, EventArgs e)
         {
-            con = new OracleConnection("data source = orcl; user id = scott; password = tiger;");
+            
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
@@ -290,7 +323,14 @@ namespace Uber_Eats_Database_Project
                 int r = cmd2.ExecuteNonQuery();
                 if (r != -1)
                 {
-                    CustomMsgBox.Show("Username changed successfully.");
+                    MessageBox.Show("Username changed successfully.");
+                    OracleCommand cmd3 = new OracleCommand();
+                    cmd3.Connection = con;
+                    cmd3.CommandText = "update orders set customer_username=:new where customer_username=:old";
+                    cmd3.CommandType = CommandType.Text;
+                    cmd3.Parameters.Add("new",userName.Text);
+                    cmd3.Parameters.Add("old", Helper.currentUserName);
+                    cmd3.ExecuteNonQuery();
                     saveUserNameBtn.Hide();
                     userName.Enabled = false;
                     Helper.currentUserName = userName.Text;
@@ -301,6 +341,7 @@ namespace Uber_Eats_Database_Project
                 }
             }
             con.Close();
+            savePasswordBtn.Hide();
         }
     }
 }
