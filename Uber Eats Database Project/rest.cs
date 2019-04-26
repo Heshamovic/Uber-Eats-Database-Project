@@ -43,15 +43,13 @@ namespace Uber_Eats_Database_Project
             OracleDataReader red = cmd.ExecuteReader();
             while (red.Read())
             {
-                
-                if (red[4]!=null)
-                {
-                    img = red[4].ToString();
-                }
+                //if (red[4] != null)
+                //{
+                //    img = red[4].ToString();
+                //}
                 restItem x = new restItem(img, red[0].ToString(), Convert.ToDouble(red[2].ToString()), red[3].ToString());
+                x.Margin = new Padding(0, 15, 0, 0);
                 flowLayoutPanel1.Controls.Add(x);
-                
-
             }
             red.Close();
             Conn.Close();

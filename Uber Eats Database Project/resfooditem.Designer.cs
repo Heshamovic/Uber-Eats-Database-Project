@@ -33,6 +33,9 @@
             this.restimg = new Bunifu.Framework.UI.BunifuCards();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.resl = new System.Windows.Forms.Label();
+            this.resn = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button2 = new System.Windows.Forms.Button();
             this.topdish = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,6 +52,7 @@
             this.restimg.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +95,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.resl);
+            this.panel2.Controls.Add(this.resn);
+            this.panel2.Controls.Add(this.numericUpDown1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.topdish);
             this.panel2.Controls.Add(this.label4);
@@ -100,6 +107,36 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(565, 31);
             this.panel2.TabIndex = 6;
+            // 
+            // resl
+            // 
+            this.resl.AutoSize = true;
+            this.resl.Location = new System.Drawing.Point(154, 8);
+            this.resl.Name = "resl";
+            this.resl.Size = new System.Drawing.Size(35, 13);
+            this.resl.TabIndex = 7;
+            this.resl.Text = "label5";
+            // 
+            // resn
+            // 
+            this.resn.AutoSize = true;
+            this.resn.Location = new System.Drawing.Point(96, 8);
+            this.resn.Name = "resn";
+            this.resn.Size = new System.Drawing.Size(28, 13);
+            this.resn.TabIndex = 6;
+            this.resn.Text = "resn";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(465, 8);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(39, 20);
+            this.numericUpDown1.TabIndex = 5;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // button2
             // 
@@ -246,6 +283,7 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -270,5 +308,8 @@
         private System.Windows.Forms.Label topdish;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label resl;
+        private System.Windows.Forms.Label resn;
     }
 }

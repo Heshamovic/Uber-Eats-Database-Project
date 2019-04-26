@@ -13,8 +13,8 @@ using Oracle.DataAccess.Types;
 namespace Uber_Eats_Database_Project
 {
     public partial class resfooditem : UserControl
-    {
-        public resfooditem( string name , string discount ,string price,double rating , string img,string top,string ing)
+    { 
+        public resfooditem( string name , string discount ,string price,double rating , string img,string top,string ing,string resn,string resl)
         { //// name  discount  
             /// 0  3 4 5  6 7 8
             InitializeComponent();
@@ -33,6 +33,10 @@ namespace Uber_Eats_Database_Project
             double x = Math.Round(rating);
 
             this.bunifuRating1.Value = Convert.ToInt32(x);
+            this.resn.Text = resn;
+            this.resl.Text = resl;
+            this.resl.Hide();
+            this.resn.Hide();
         }
 
         private void resfooditem_Load(object sender, EventArgs e)
@@ -50,11 +54,11 @@ namespace Uber_Eats_Database_Project
             OracleConnection con = new OracleConnection(Helper.constr);
             con.Open();
             OracleCommand cmd = new OracleCommand("insert into order_food values(:id, :resn, :resl, :foodn, :noi, 'N')", con);
-            cmd.Parameters.Add("id", Helper.id);
-            cmd.Parameters.Add("resn", );
-            cmd.Parameters.Add("resl", );
-            cmd.Parameters.Add("foodn", );
-            cmd.Parameters.Add("noi", );
+            cmd.Parameters.Add("id", Helper.currentOrderId);
+            cmd.Parameters.Add("resn", this.resn.Text);
+            cmd.Parameters.Add("resl", this.resl.Text);
+            cmd.Parameters.Add("foodn", this.name);
+            cmd.Parameters.Add("noi",this.numericUpDown1.Value );
             con.Close();
         }
     }

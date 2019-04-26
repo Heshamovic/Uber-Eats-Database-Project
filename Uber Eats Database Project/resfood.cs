@@ -45,19 +45,40 @@ namespace Uber_Eats_Database_Project
 
                 if (red[8] != null)
                 {
-                    img = red[4].ToString();
+                    img = red[8].ToString();
                 }
                 resfooditem r = new resfooditem(name: red[0].ToString(), price: red[3].ToString(), discount: red[4].ToString(), 
-                    rating: Convert.ToDouble(red[5]), ing: red[6].ToString(), top: red[7].ToString(), img:img);
+                    rating: Convert.ToDouble(red[5]), ing: red[6].ToString(), top: red[7].ToString(), img:img,
+                    resn:red[1].ToString(),resl:red[2].ToString());
                 flowLayoutPanel1.Controls.Add(r);
             }
             red.Close();
+
+
             Conn.Close();
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        public void letsShow(object sender, FormClosingEventArgs e)
+        {
+
+            this.Show();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            Cart r = new Cart();
+            r.Show();
+            this.Parent.Parent.Parent.Parent.Hide();
+            r.FormClosing += letsShow;
         }
     }
 }

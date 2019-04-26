@@ -32,18 +32,18 @@
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.restimg = new Bunifu.Framework.UI.BunifuCards();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.foodimg = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.name = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuRating1 = new Bunifu.Framework.UI.BunifuRating();
             this.type = new System.Windows.Forms.Label();
-            this.foodimg = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.restimg.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.foodimg)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foodimg)).BeginInit();
             this.SuspendLayout();
             // 
             // splitter1
@@ -81,6 +81,17 @@
             this.panel3.Size = new System.Drawing.Size(547, 200);
             this.panel3.TabIndex = 7;
             // 
+            // foodimg
+            // 
+            this.foodimg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.foodimg.Location = new System.Drawing.Point(0, 0);
+            this.foodimg.Name = "foodimg";
+            this.foodimg.Size = new System.Drawing.Size(547, 200);
+            this.foodimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.foodimg.TabIndex = 4;
+            this.foodimg.TabStop = false;
+            this.foodimg.Click += new System.EventHandler(this.foodimg_Click);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.button2);
@@ -90,6 +101,21 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(547, 31);
             this.panel2.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(495, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(49, 27);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "\r\n";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // name
             // 
@@ -134,32 +160,6 @@
             this.type.TabIndex = 2;
             this.type.Text = "label1";
             // 
-            // foodimg
-            // 
-            this.foodimg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.foodimg.Location = new System.Drawing.Point(0, 0);
-            this.foodimg.Name = "foodimg";
-            this.foodimg.Size = new System.Drawing.Size(547, 200);
-            this.foodimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.foodimg.TabIndex = 4;
-            this.foodimg.TabStop = false;
-            this.foodimg.Click += new System.EventHandler(this.foodimg_Click);
-            // 
-            // button2
-            // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(495, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(49, 27);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "\r\n";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
-            // 
             // restItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,11 +171,11 @@
             this.Load += new System.EventHandler(this.restItem_Load);
             this.restimg.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.foodimg)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.foodimg)).EndInit();
             this.ResumeLayout(false);
 
         }

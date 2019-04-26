@@ -56,7 +56,7 @@ namespace Uber_Eats_Database_Project
             
             resfood r = new resfood(this.name.Text);
             r.Show();
-            this.Hide();
+            this.Parent.Parent.Parent.Parent.Hide();
             r.FormClosing += letsShow;
         }
     }
