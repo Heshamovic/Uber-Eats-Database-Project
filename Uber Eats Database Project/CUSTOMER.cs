@@ -7,18 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Uber_Eats_Database_Project
+using System;
+using System.Collections.Generic;
+
+public partial class CUSTOMER
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class CUSTOMER
-    {
-        public string USERNAME { get; set; }
-        public string FNAME { get; set; }
-        public string LNAME { get; set; }
-        public string LOCATION { get; set; }
-        public string CREDIT_NO { get; set; }
-        public string PASSWORD { get; set; }
-    }
+    public string USERNAME { get; set; }
+    public string FNAME { get; set; }
+    public string LNAME { get; set; }
+    public string LOCATION { get; set; }
+    public string CREDIT_NO { get; set; }
+    public string PASSWORD { get; set; }
 }

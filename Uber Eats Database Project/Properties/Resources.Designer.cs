@@ -63,9 +63,9 @@ namespace Uber_Eats_Database_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap exit_delete_close_remove_door_512 {
+        internal static System.Drawing.Bitmap cancel__1_ {
             get {
-                object obj = ResourceManager.GetObject("exit_delete_close_remove_door-512", resourceCulture);
+                object obj = ResourceManager.GetObject("cancel (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,19 +73,9 @@ namespace Uber_Eats_Database_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap exit_delete_close_remove_door_5121 {
+        internal static System.Drawing.Bitmap check {
             get {
-                object obj = ResourceManager.GetObject("exit_delete_close_remove_door-5121", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap exit_delete_close_remove_door_5122 {
-            get {
-                object obj = ResourceManager.GetObject("exit_delete_close_remove_door-5122", resourceCulture);
+                object obj = ResourceManager.GetObject("check", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

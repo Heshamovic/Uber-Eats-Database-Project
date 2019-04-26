@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.DataAccess.Client;
+using Oracle.DataAccess.Types;
 using CrystalDecisions.Shared;
 
 namespace Uber_Eats_Database_Project
 {
     public partial class MainForm : Form
     {
+        private int oid = 0;
         public MainForm()
         {
             InitializeComponent();
@@ -25,29 +28,31 @@ namespace Uber_Eats_Database_Project
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            ToggleUser();
             UsernameLabel.Text += Helper.currentUserName;
-            if (Helper.currentUserRole == 1) //Customer
-            {
-                ToggleUser(true);
-            }
-            else if (Helper.currentUserRole == 2) //Delivery Partner
-            {
-                ToggleUser(false);
-            }
-            else //Admin
-            {
-
-            }
         }
-        private void ToggleUser(bool UserEnable)
+        private void ToggleUser()
         {
+            bool UserEnable = true; // User unless
+            if (Helper.currentUserRole == 2) // Delivery Partner
+                UserEnable = false;
+            else // Admin
+            { }
             //Enable Partner Controls
+            Entities ent = new Entities();
+            oid = (from o in ent.ORDERS
+                   join t in ent.TRIPs on o.ORDER_ID equals t.ORDER_ID
+                   where t.DELIVERYPARTNER_USERNAME == Helper.currentUserName
+                   && o.STATUS == "pd"
+                   select o.ORDER_ID).Count();
             PendingOrdersBtn.Enabled = !UserEnable;
             PendingOrdersBtn.Visible = !UserEnable;
             DeliveredOrdersBtn.Enabled = !UserEnable;
             DeliveredOrdersBtn.Visible = !UserEnable;
             DAccountBtn.Enabled = !UserEnable;
             DAccountBtn.Visible = !UserEnable;
+            CurrentOrderBtn.Enabled = !UserEnable & (oid != 0);
+            CurrentOrderBtn.Visible = !UserEnable & (oid != 0);
             //Disable Customer Controls
             OrdersBtn.Enabled = UserEnable;
             OrdersBtn.Visible = UserEnable;
@@ -67,8 +72,10 @@ namespace Uber_Eats_Database_Project
         private void MenusBtn_Click(object sender, EventArgs e)
         {
             //Menus menuform = new Menus();
+            //Helper.currentOrderId = getCartId();
             //menuform.Show();
             //this.Hide();
+            //menuform.FormClosing += letsShow;
         }
 
         private void DAccountBtn_Click(object sender, EventArgs e)
@@ -76,6 +83,7 @@ namespace Uber_Eats_Database_Project
             PartnerAccount acc = new PartnerAccount();
             acc.Show();
             this.Hide();
+            acc.FormClosing += letsShow;
         }
 
         private void AccountBtn_Click(object sender, EventArgs e)
@@ -88,43 +96,71 @@ namespace Uber_Eats_Database_Project
 
         private void DeliveredOrdersBtn_Click(object sender, EventArgs e)
         {
-            //Delivered d = new Delivered();
-            //d.Show();
-            //this.Hide();
+            OrdersDeliveryPartner d = new OrdersDeliveryPartner(2);
+            d.Show();
+            this.Hide();
+            d.FormClosing += letsShow;
         }
 
         private void PendingOrdersBtn_Click(object sender, EventArgs e)
         {
-            //Porders p = new Porders();
-            //p.Show();
-            //this.Hide();
+            if (oid == 0)
+            {
+                OrdersDeliveryPartner p = new OrdersDeliveryPartner(1);
+                p.Show();
+                this.Hide();
+                p.FormClosing += letsShow;
+            }
+            else
+                CustomMsgBox.Show("Please Finish your Current Order before you take any other order.");
         }
 
         private void CartBtn_Click(object sender, EventArgs e)
         {
-            //Cart c = new Cart();
-            //c.Show();
-            //this.Hide();
+            Cart c = new Cart();
+            Helper.currentOrderId = getCartId();
+            c.Show();
+            this.Hide();
+            c.FormClosing += letsShow;
         }
 
-        private void OrdersBtn_Click(object sender, EventArgs e)
-        {
-            //Orders o = new Orders();
-            //o.Show();
-            //this.Hide();
-        }
-
-        private void testBtn_Click(object sender, EventArgs e)
+        private void CurrentOrderBtn_Click(object sender, EventArgs e)
         {
             PendingDelivering pd = new PendingDelivering();
             pd.Show();
             this.Hide();
             pd.FormClosing += letsShow;
-            
         }
+
+        private void OrdersBtn_Click(object sender, EventArgs e)
+        {
+            UserOrders o = new UserOrders();
+            o.Show();
+            this.Hide();
+            o.FormClosing += letsShow;
+        }
+
         public void letsShow(object sender, FormClosingEventArgs e)
         {
+            ToggleUser();
             this.Show();
+        }
+        private int getCartId ()
+        {
+            int id = -1;
+            OracleConnection con = new OracleConnection(Helper.constr);
+          
+            con.Open();
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "GetCartId";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("username",Helper.currentUserName);
+            cmd.Parameters.Add("cartid", OracleDbType.Int32, ParameterDirection.Output);
+            cmd.ExecuteNonQuery();
+            id = int.Parse(cmd.Parameters["cartid"].Value.ToString());
+            con.Close();
+            return id;
         }
         #region Buttons Hovers
         private void DAccountBtn_MouseEnter(object sender, EventArgs e)
@@ -196,6 +232,16 @@ namespace Uber_Eats_Database_Project
         {
             Helper.onHover((Button)sender, Color.Black);
         }
+        private void CurrentOrderBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void CurrentOrderBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
         #endregion
     }
 }

@@ -222,7 +222,7 @@
             this.changePasswordBtn.Location = new System.Drawing.Point(38, 294);
             this.changePasswordBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.changePasswordBtn.Name = "changePasswordBtn";
-            this.changePasswordBtn.Size = new System.Drawing.Size(367, 46);
+            this.changePasswordBtn.Size = new System.Drawing.Size(245, 30);
             this.changePasswordBtn.TabIndex = 37;
             this.changePasswordBtn.Text = "Change Password";
             this.changePasswordBtn.UseVisualStyleBackColor = false;
@@ -392,7 +392,7 @@
             // 
             // CustomerAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1113, 600);
             this.Controls.Add(this.label5);
@@ -419,6 +419,7 @@
             this.Controls.Add(this.fName);
             this.Controls.Add(this.userName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CustomerAccount";
             this.Text = "CustomerAccount";
             this.Load += new System.EventHandler(this.CustomerAccount_Load);

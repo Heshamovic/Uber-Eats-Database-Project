@@ -14,6 +14,16 @@ namespace Uber_Eats_Database_Project
 {
     public partial class login : Form
     {
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
         public OracleConnection con;
         public login()
         {
@@ -85,17 +95,17 @@ namespace Uber_Eats_Database_Project
             con.Close();
             if (!customerChkBx.Checked && !partnerChkBx.Checked)
             {
-                MessageBox.Show("Please select your membership role!");
+                CustomMsgBox.Show("Please select your membership role!");
                 return;
             }
             if(userNameSignUp.Text == "Username*" || userNameSignUp.Text == "")
             {
-                MessageBox.Show("Please fill the required (*) fields!");
+                CustomMsgBox.Show("Please fill the required (*) fields!");
                 return;
             }
             if (passwordSignUp.Text == "Password*" || passwordSignUp.Text == "")
             {
-                MessageBox.Show("Please fill the required (*) fields!");
+                CustomMsgBox.Show("Please fill the required (*) fields!");
                 return;
             }
             con.Open();
@@ -130,9 +140,19 @@ namespace Uber_Eats_Database_Project
             int done = Convert.ToInt32(cmd.Parameters["done"].Value.ToString());
             if (done == 0)
             {
-                MessageBox.Show("This user has been added!");
+                #region create cart
+                if (customerChkBx.Checked)
+                {
+                    cmd = new OracleCommand("Create_Cart", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("un", userNameSignUp.Text);
+                    cmd.ExecuteNonQuery();
+                }
+                #endregion
+                CustomMsgBox.Show("This user has been added!");
                 customerChkBx.Checked = partnerChkBx.Checked = false;
                 vehicleTB.Enabled = false;
+                userNameSignIn.Text = userNameSignUp.Text;
                 userNameSignUp.Text = "Username*";
                 passwordSignUp.Text = "Password*";
                 fName.Text = "First Name";
@@ -144,7 +164,7 @@ namespace Uber_Eats_Database_Project
                 fName.ForeColor = lName.ForeColor = creditCard.ForeColor = locationTB.ForeColor = userNameSignUp.ForeColor = passwordSignUp.ForeColor = Color.DarkGray;
             }
             else
-                MessageBox.Show("This username is already taken!");
+                CustomMsgBox.Show("This username is already taken!");
             con.Close();
         }
 
@@ -183,17 +203,17 @@ namespace Uber_Eats_Database_Project
         {
             if (!customerChkBxSignIn.Checked && !partnerChkBxSignIn.Checked)
             {
-                MessageBox.Show("Please select your membership role!");
+                CustomMsgBox.Show("Please select your membership role!");
                 return;
             }
             if (userNameSignIn.Text == "Username*" || userNameSignIn.Text == "")
             {
-                MessageBox.Show("Please fill the Username field");
+                CustomMsgBox.Show("Please fill the Username field");
                 return;
             }
             if (passwordSignIn.Text == "Password*" || passwordSignIn.Text == "")
             {
-                MessageBox.Show("Please fill the Password field");
+                CustomMsgBox.Show("Please fill the Password field");
                 return;
             }
             con.Open();
@@ -213,7 +233,7 @@ namespace Uber_Eats_Database_Project
                     mainform.FormClosing += letsShow;
                 }
                 else
-                    MessageBox.Show("check your username and password!");
+                    CustomMsgBox.Show("check your username and password!");
             }
             else
             {
@@ -231,14 +251,14 @@ namespace Uber_Eats_Database_Project
                     mainform.FormClosing += letsShow;
                 }
                 else
-                    MessageBox.Show("check your username and password!");
+                    CustomMsgBox.Show("check your username and password!");
             }
             con.Close();
         }
         public void letsShow(object sender, FormClosingEventArgs e)
         {
-            userNameSignIn.ForeColor = passwordSignIn.ForeColor = Color.DarkGray;
-            userNameSignIn.Text = "Username*";
+            passwordSignIn.ForeColor = Color.DarkGray;
+            userNameSignIn.Text = Helper.currentUserName;
             passwordSignIn.Text = "Password*";
             this.Show();
         }
@@ -296,17 +316,17 @@ namespace Uber_Eats_Database_Project
             {
                 if (!customerChkBxSignIn.Checked && !partnerChkBxSignIn.Checked)
                 {
-                    MessageBox.Show("Please select your membership role!");
+                    CustomMsgBox.Show("Please select your membership role!");
                     return;
                 }
                 if (userNameSignIn.Text == "Username*" || userNameSignIn.Text == "")
                 {
-                    MessageBox.Show("Please fill the Username field");
+                    CustomMsgBox.Show("Please fill the Username field");
                     return;
                 }
                 if (passwordSignIn.Text == "Password*" || passwordSignIn.Text == "")
                 {
-                    MessageBox.Show("Please fill the Password field");
+                    CustomMsgBox.Show("Please fill the Password field");
                     return;
                 }
                 con.Open();
@@ -326,7 +346,7 @@ namespace Uber_Eats_Database_Project
                         mainform.FormClosing += letsShow;
                     }
                     else
-                        MessageBox.Show("check your username and password!");
+                        CustomMsgBox.Show("check your username and password!");
                 }
                 else
                 {
@@ -344,7 +364,7 @@ namespace Uber_Eats_Database_Project
                         mainform.FormClosing += letsShow;
                     }
                     else
-                        MessageBox.Show("check your username and password!");
+                        CustomMsgBox.Show("check your username and password!");
                 }
                 con.Close();
             }
@@ -356,17 +376,17 @@ namespace Uber_Eats_Database_Project
             {
                 if (!customerChkBxSignIn.Checked && !partnerChkBxSignIn.Checked)
                 {
-                    MessageBox.Show("Please select your membership role!");
+                    CustomMsgBox.Show("Please select your membership role!");
                     return;
                 }
                 if (userNameSignIn.Text == "Username*" || userNameSignIn.Text == "")
                 {
-                    MessageBox.Show("Please fill the Username field");
+                    CustomMsgBox.Show("Please fill the Username field");
                     return;
                 }
                 if (passwordSignIn.Text == "Password*" || passwordSignIn.Text == "")
                 {
-                    MessageBox.Show("Please fill the Password field");
+                    CustomMsgBox.Show("Please fill the Password field");
                     return;
                 }
                 con.Open();
@@ -386,7 +406,7 @@ namespace Uber_Eats_Database_Project
                         mainform.FormClosing += letsShow;
                     }
                     else
-                        MessageBox.Show("check your username and password!");
+                        CustomMsgBox.Show("check your username and password!");
                 }
                 else
                 {
@@ -404,7 +424,7 @@ namespace Uber_Eats_Database_Project
                         mainform.FormClosing += letsShow;
                     }
                     else
-                        MessageBox.Show("check your username and password!");
+                        CustomMsgBox.Show("check your username and password!");
                 }
                 con.Close();
             }

@@ -11,7 +11,7 @@ namespace Uber_Eats_Database_Project
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class RESTAURANT
     {
         public RESTAURANT()
@@ -20,12 +20,12 @@ namespace Uber_Eats_Database_Project
             this.REST_NUMBERS = new HashSet<REST_NUMBERS>();
             this.WORKING_TIME = new HashSet<WORKING_TIME>();
         }
-    
+
         public string RESTAURANT_NAME { get; set; }
         public string RESTAURANT_LOCATION { get; set; }
         public Nullable<decimal> RATING { get; set; }
         public string CUISINE_TYPE { get; set; }
-    
+
         public virtual ICollection<FOOD> FOODs { get; set; }
         public virtual ICollection<REST_NUMBERS> REST_NUMBERS { get; set; }
         public virtual ICollection<WORKING_TIME> WORKING_TIME { get; set; }

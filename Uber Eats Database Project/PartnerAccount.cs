@@ -26,19 +26,20 @@ namespace Uber_Eats_Database_Project
         {
             userName.Enabled = true;
             saveUserNameBtn.Show();
+            
         }
 
         private void saveUserNameBtn_Click(object sender, EventArgs e)
         {
             con.Open();
-            if(userName.Text!=Helper.currentUserName)
+            if (userName.Text != Helper.currentUserName)
             {
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = con;
                 cmd.CommandText = "insert into delivery_partner values(:uname, :vehicle, :pass, :rating)";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add("uname", userName.Text);
-                cmd.Parameters.Add("vehicle",part_vehicle);
+                cmd.Parameters.Add("vehicle", part_vehicle);
                 cmd.Parameters.Add("pass", part_pass);
                 cmd.Parameters.Add("rating", rating);
                 cmd.ExecuteNonQuery();
@@ -55,12 +56,12 @@ namespace Uber_Eats_Database_Project
                 cmd2.Connection = con;
                 cmd2.CommandText = "delete from delivery_partner where username=:del";
                 cmd2.CommandType = CommandType.Text;
-                cmd2.Parameters.Add("del",Helper.currentUserName);
+                cmd2.Parameters.Add("del", Helper.currentUserName);
                 cmd2.ExecuteNonQuery();
-                
+
                 Helper.currentUserName = userName.Text;
             }
-            MessageBox.Show("Username changed successfully.");
+            CustomMsgBox.Show("Username changed successfully.");
             con.Close();
             savePasswordBtn.Hide();
         }

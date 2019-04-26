@@ -146,7 +146,7 @@ namespace Uber_Eats_Database_Project
         {
             if (newPassword.Text == "" || oldPassword.Text == "" || confirmPassword.Text == "")
             {
-                MessageBox.Show("Please fill all fields.");
+                CustomMsgBox.Show("Please fill all fields.");
             }
             
             con.Open();
@@ -173,7 +173,7 @@ namespace Uber_Eats_Database_Project
                     int r = cmd2.ExecuteNonQuery();
                     if (r != -1)
                     {
-                        MessageBox.Show("Password is changed successfully.");
+                        CustomMsgBox.Show("Password is changed successfully.");
                         cust_pass = newPassword.Text;
                         oldPassword.Text = "";
                         newPassword.Text = "";
@@ -185,19 +185,19 @@ namespace Uber_Eats_Database_Project
                     }
                     else
                     {
-                        MessageBox.Show("Couldn't change your password. Please try again.");
+                        CustomMsgBox.Show("Couldn't change your password. Please try again.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please re-enter your new password.");
+                    CustomMsgBox.Show("Please re-enter your new password.");
                     newPassword.Text = "";
                     confirmPassword.Text = "";
                 }
             }
             else
             {
-                MessageBox.Show("Wrong Password! Enter your password again.");
+                CustomMsgBox.Show("Wrong Password! Enter your password again.");
                 oldPassword.Text = "";
             }
             con.Close();
@@ -219,7 +219,7 @@ namespace Uber_Eats_Database_Project
             int r = cmd.ExecuteNonQuery();
             if (r != -1)
             {
-                MessageBox.Show("Info is Updated successfully.");
+                CustomMsgBox.Show("Info is Updated successfully.");
                 cust_fname = fName.Text;
                 cust_lname = lName.Text;
                 cust_loc = location.Text;
@@ -227,7 +227,7 @@ namespace Uber_Eats_Database_Project
             }
             else
             {
-                MessageBox.Show("Couldn't update your information. Please try again.");
+                CustomMsgBox.Show("Couldn't update your information. Please try again.");
             }
             con.Close();
             saveBtn.Hide();
@@ -249,7 +249,17 @@ namespace Uber_Eats_Database_Project
         {
 
             con.Open();
-            if (userName.Text != Helper.currentUserName)
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from customer where username=:uname";
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("uname",userName.Text);
+            OracleDataReader rdr = cmd.ExecuteReader();
+            if (rdr.Read())
+            {
+                CustomMsgBox.Show("Username already taken.");
+            }
+            else
             {
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = con;
@@ -275,10 +285,31 @@ namespace Uber_Eats_Database_Project
                 cmd2.Connection = con;
                 cmd2.CommandText = "delete from customer where username=:del";
                 cmd2.CommandType = CommandType.Text;
-                cmd2.Parameters.Add("del", Helper.currentUserName);
-                cmd2.ExecuteNonQuery();
-
-                Helper.currentUserName = userName.Text;
+                cmd2.Parameters.Add("uname",userName.Text);
+                cmd2.Parameters.Add("fname",cust_fname);
+                cmd2.Parameters.Add("lname",cust_lname);
+                cmd2.Parameters.Add("loc",cust_loc);
+                cmd2.Parameters.Add("credit",cust_credit);
+                cmd2.Parameters.Add("pass",cust_pass);
+                int r = cmd2.ExecuteNonQuery();
+                if (r != -1)
+                {
+                    MessageBox.Show("Username changed successfully.");
+                    OracleCommand cmd3 = new OracleCommand();
+                    cmd3.Connection = con;
+                    cmd3.CommandText = "update orders set customer_username=:new where customer_username=:old";
+                    cmd3.CommandType = CommandType.Text;
+                    cmd3.Parameters.Add("new",userName.Text);
+                    cmd3.Parameters.Add("old", Helper.currentUserName);
+                    cmd3.ExecuteNonQuery();
+                    saveUserNameBtn.Hide();
+                    userName.Enabled = false;
+                    Helper.currentUserName = userName.Text;
+                }
+                else
+                {
+                    CustomMsgBox.Show("Couldn't change username. Please try again.");
+                }
             }
             MessageBox.Show("Username changed successfully.");
             con.Close();

@@ -12,8 +12,8 @@ namespace Uber_Eats_Database_Project
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Objects;
-    using System.Data.Objects.DataClasses;
+    using System.Data.Entity.Core.Objects;
+    using System.Data.Entity.Core.Objects.DataClasses;
     using System.Linq;
     
     public partial class Entities : DbContext
@@ -29,7 +29,6 @@ namespace Uber_Eats_Database_Project
         }
     
         public DbSet<CUSTOMER> CUSTOMERs { get; set; }
-        public DbSet<DELIVERY_PARTNER> DELIVERY_PARTNER { get; set; }
         public DbSet<FOOD> FOODs { get; set; }
         public DbSet<FOOD_TYPE> FOOD_TYPE { get; set; }
         public DbSet<ORDER_FOOD> ORDER_FOOD { get; set; }
@@ -38,6 +37,7 @@ namespace Uber_Eats_Database_Project
         public DbSet<RESTAURANT> RESTAURANTs { get; set; }
         public DbSet<TRIP> TRIPs { get; set; }
         public DbSet<WORKING_TIME> WORKING_TIME { get; set; }
+        public DbSet<DELIVERY_PARTNER> DELIVERY_PARTNER { get; set; }
     
         public virtual int SIGN_UP(string nUSERNAME, string nPASSWORD, Nullable<decimal> nROLE, ObjectParameter dONE, string nFNAME, string nLNAME, string nLOCATION, string nCREDIT_NO, string nVEHICLE)
         {
