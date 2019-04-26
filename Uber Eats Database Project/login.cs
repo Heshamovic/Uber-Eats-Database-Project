@@ -139,9 +139,19 @@ namespace Uber_Eats_Database_Project
             int done = Convert.ToInt32(cmd.Parameters["done"].Value.ToString());
             if (done == 0)
             {
+                #region create cart
+                if (customerChkBx.Checked)
+                {
+                    cmd = new OracleCommand("Create_Cart", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("un", userNameSignUp.Text);
+                    cmd.ExecuteNonQuery();
+                }
+                #endregion
                 CustomMsgBox.Show("This user has been added!");
                 customerChkBx.Checked = partnerChkBx.Checked = false;
                 vehicleTB.Enabled = false;
+                userNameSignIn.Text = userNameSignUp.Text;
                 userNameSignUp.Text = "Username*";
                 passwordSignUp.Text = "Password*";
                 fName.Text = "First Name";

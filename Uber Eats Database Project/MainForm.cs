@@ -71,19 +71,18 @@ namespace Uber_Eats_Database_Project
 
         private void MenusBtn_Click(object sender, EventArgs e)
         {
-            //Menus menuform = new Menus();
-            //Helper.currentOrderId = getCartId();
-            //menuform.Show();
-            //this.Hide();
-            //menuform.FormClosing += letsShow;
+            rest r = new rest();
+            r.Show();
+            this.Hide();
+            r.FormClosing += letsShow;
         }
 
         private void DAccountBtn_Click(object sender, EventArgs e)
         {
-            /*CustomerAccount acc = new CustomerAccount();
+            PartnerAccount acc = new PartnerAccount();
             acc.Show();
             this.Hide();
-            acc.FormClosing += letsShow;*/
+            acc.FormClosing += letsShow;
         }
 
         private void AccountBtn_Click(object sender, EventArgs e)

@@ -52,22 +52,14 @@
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
-    </Reference>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
@@ -181,6 +173,12 @@
     <Compile Include="ORDER_FOOD.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
+    <Compile Include="PartnerAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartnerAccount.Designer.cs">
+      <DependentUpon>PartnerAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="PendingDelivering.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +187,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ReportsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,8 +204,32 @@
       <DependentUpon>ResaturantFoodReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="resfood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resfood.Designer.cs">
+      <DependentUpon>resfood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="resfooditem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="resfooditem.Designer.cs">
+      <DependentUpon>resfooditem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rest.Designer.cs">
+      <DependentUpon>rest.cs</DependentUpon>
+    </Compile>
     <Compile Include="RESTAURANT.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
+    </Compile>
+    <Compile Include="restItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="restItem.Designer.cs">
+      <DependentUpon>restItem.cs</DependentUpon>
     </Compile>
     <Compile Include="REST_NUMBERS.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
@@ -267,6 +294,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderDetails_Item.resx">
       <DependentUpon>OrderDetails_Item.cs</DependentUpon>
@@ -276,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Order_details.resx">
       <DependentUpon>Order_details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartnerAccount.resx">
+      <DependentUpon>PartnerAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PendingDelivering.resx">
       <DependentUpon>PendingDelivering.cs</DependentUpon>
@@ -291,6 +322,18 @@
     <EmbeddedResource Include="ResaturantFoodReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ResaturantFoodReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resfood.resx">
+      <DependentUpon>resfood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resfooditem.resx">
+      <DependentUpon>resfooditem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rest.resx">
+      <DependentUpon>rest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="restItem.resx">
+      <DependentUpon>restItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="test.resx">
       <DependentUpon>test.cs</DependentUpon>
@@ -308,11 +351,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -357,9 +395,6 @@
     <Content Include="bin\Debug\EntityFramework.dll" />
     <Content Include="bin\Debug\EntityFramework.xml" />
     <Content Include="bin\Debug\FlashControlV71.dll" />
-    <Content Include="bin\Debug\MetroFramework.Design.dll" />
-    <Content Include="bin\Debug\MetroFramework.dll" />
-    <Content Include="bin\Debug\MetroFramework.Fonts.dll" />
     <Content Include="bin\Debug\Oracle.DataAccess.dll" />
     <Content Include="bin\Debug\ShockwaveFlashObjects.dll" />
     <Content Include="bin\Debug\stdole.dll" />
@@ -367,6 +402,7 @@
     <Content Include="bin\Debug\Uber Eats Database Project.pdb" />
     <None Include="resources\cancel %281%29.png" />
     <None Include="resources\check.png" />
+    <None Include="resources\Checkout_32px.png" />
     <Content Include="UberEats.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>UberEats.Context.cs</LastGenOutput>
