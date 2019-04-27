@@ -133,9 +133,6 @@
     <Compile Include="FOOD.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
-    <Compile Include="FOOD_TYPE.cs">
-      <DependentUpon>UberEats.tt</DependentUpon>
-    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>

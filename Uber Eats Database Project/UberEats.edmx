@@ -569,7 +569,7 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
             <Parameter Name="CNT" Mode="Out" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="CREATE_CART">
-            <Parameter Name="CUSERNAME" Mode="In" Type="String" />
+          <Parameter Name="CUSERNAME" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="DELETE_CART_ITEM">
             <Parameter Name="ORDERID" Mode="In" Type="Decimal" />
@@ -578,14 +578,14 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
             <Parameter Name="FOOD_NAME" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GETALLORDERS">
-            <Parameter Name="USER_NAME" Mode="In" Type="String" />
+          <Parameter Name="USER_NAME" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="GETCARTID">
             <Parameter Name="CURRENT_USER_NAME" Mode="In" Type="String" />
             <Parameter Name="C_ID" Mode="Out" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="GETCARTITEMS">
-            <Parameter Name="CURRENT_ORDER_ID" Mode="In" Type="Decimal" />
+          <Parameter Name="CURRENT_ORDER_ID" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="UPDATE_CART_ITEMS">
             <Parameter Name="ORDERID" Mode="In" Type="Decimal" />
@@ -595,7 +595,7 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
             <Parameter Name="NO_OF_ITEMS" Mode="In" Type="Decimal" />
           </FunctionImport>
           <FunctionImport Name="UPDATE_ORDER_STATUS_NC_TO_PD">
-            <Parameter Name="ORDERID" Mode="In" Type="Decimal" />
+          <Parameter Name="ORDERID" Mode="In" Type="Decimal" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="DELIVERY_PARTNER">
