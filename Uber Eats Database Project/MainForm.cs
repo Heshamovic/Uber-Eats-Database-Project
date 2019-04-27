@@ -154,8 +154,7 @@ namespace Uber_Eats_Database_Project
         private int getCartId ()
         {
             int id = -1;
-            OracleConnection con = new OracleConnection(Helper.constr);
-          
+            OracleConnection con = new OracleConnection(Helper.constr);         
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;

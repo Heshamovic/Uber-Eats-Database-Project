@@ -12,8 +12,8 @@ namespace Uber_Eats_Database_Project
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.Core.Objects;
-    using System.Data.Entity.Core.Objects.DataClasses;
+    using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
     using System.Linq;
     
     public partial class Entities : DbContext
@@ -30,7 +30,6 @@ namespace Uber_Eats_Database_Project
     
         public DbSet<CUSTOMER> CUSTOMERs { get; set; }
         public DbSet<FOOD> FOODs { get; set; }
-        public DbSet<FOOD_TYPE> FOOD_TYPE { get; set; }
         public DbSet<ORDER_FOOD> ORDER_FOOD { get; set; }
         public DbSet<ORDER> ORDERS { get; set; }
         public DbSet<REST_NUMBERS> REST_NUMBERS { get; set; }
@@ -74,6 +73,106 @@ namespace Uber_Eats_Database_Project
                 new ObjectParameter("NVEHICLE", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SIGN_UP", nUSERNAMEParameter, nPASSWORDParameter, nROLEParameter, dONE, nFNAMEParameter, nLNAMEParameter, nLOCATIONParameter, nCREDIT_NOParameter, nVEHICLEParameter);
+        }
+    
+        public virtual int COUNT_GETCARTITEMS(Nullable<decimal> cURRENT_ORDER_ID, ObjectParameter cNT)
+        {
+            var cURRENT_ORDER_IDParameter = cURRENT_ORDER_ID.HasValue ?
+                new ObjectParameter("CURRENT_ORDER_ID", cURRENT_ORDER_ID) :
+                new ObjectParameter("CURRENT_ORDER_ID", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("COUNT_GETCARTITEMS", cURRENT_ORDER_IDParameter, cNT);
+        }
+    
+        public virtual int CREATE_CART(string cUSERNAME)
+        {
+            var cUSERNAMEParameter = cUSERNAME != null ?
+                new ObjectParameter("CUSERNAME", cUSERNAME) :
+                new ObjectParameter("CUSERNAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("CREATE_CART", cUSERNAMEParameter);
+        }
+    
+        public virtual int DELETE_CART_ITEM(Nullable<decimal> oRDERID, string rEST_NAME, string rEST_LOC, string fOOD_NAME)
+        {
+            var oRDERIDParameter = oRDERID.HasValue ?
+                new ObjectParameter("ORDERID", oRDERID) :
+                new ObjectParameter("ORDERID", typeof(decimal));
+    
+            var rEST_NAMEParameter = rEST_NAME != null ?
+                new ObjectParameter("REST_NAME", rEST_NAME) :
+                new ObjectParameter("REST_NAME", typeof(string));
+    
+            var rEST_LOCParameter = rEST_LOC != null ?
+                new ObjectParameter("REST_LOC", rEST_LOC) :
+                new ObjectParameter("REST_LOC", typeof(string));
+    
+            var fOOD_NAMEParameter = fOOD_NAME != null ?
+                new ObjectParameter("FOOD_NAME", fOOD_NAME) :
+                new ObjectParameter("FOOD_NAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("DELETE_CART_ITEM", oRDERIDParameter, rEST_NAMEParameter, rEST_LOCParameter, fOOD_NAMEParameter);
+        }
+    
+        public virtual int GETALLORDERS(string uSER_NAME)
+        {
+            var uSER_NAMEParameter = uSER_NAME != null ?
+                new ObjectParameter("USER_NAME", uSER_NAME) :
+                new ObjectParameter("USER_NAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GETALLORDERS", uSER_NAMEParameter);
+        }
+    
+        public virtual int GETCARTID(string cURRENT_USER_NAME, ObjectParameter c_ID)
+        {
+            var cURRENT_USER_NAMEParameter = cURRENT_USER_NAME != null ?
+                new ObjectParameter("CURRENT_USER_NAME", cURRENT_USER_NAME) :
+                new ObjectParameter("CURRENT_USER_NAME", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GETCARTID", cURRENT_USER_NAMEParameter, c_ID);
+        }
+    
+        public virtual int GETCARTITEMS(Nullable<decimal> cURRENT_ORDER_ID)
+        {
+            var cURRENT_ORDER_IDParameter = cURRENT_ORDER_ID.HasValue ?
+                new ObjectParameter("CURRENT_ORDER_ID", cURRENT_ORDER_ID) :
+                new ObjectParameter("CURRENT_ORDER_ID", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("GETCARTITEMS", cURRENT_ORDER_IDParameter);
+        }
+    
+        public virtual int UPDATE_CART_ITEMS(Nullable<decimal> oRDERID, string rEST_NAME, string rEST_LOC, string fOOD_NAME, Nullable<decimal> nO_OF_ITEMS)
+        {
+            var oRDERIDParameter = oRDERID.HasValue ?
+                new ObjectParameter("ORDERID", oRDERID) :
+                new ObjectParameter("ORDERID", typeof(decimal));
+    
+            var rEST_NAMEParameter = rEST_NAME != null ?
+                new ObjectParameter("REST_NAME", rEST_NAME) :
+                new ObjectParameter("REST_NAME", typeof(string));
+    
+            var rEST_LOCParameter = rEST_LOC != null ?
+                new ObjectParameter("REST_LOC", rEST_LOC) :
+                new ObjectParameter("REST_LOC", typeof(string));
+    
+            var fOOD_NAMEParameter = fOOD_NAME != null ?
+                new ObjectParameter("FOOD_NAME", fOOD_NAME) :
+                new ObjectParameter("FOOD_NAME", typeof(string));
+    
+            var nO_OF_ITEMSParameter = nO_OF_ITEMS.HasValue ?
+                new ObjectParameter("NO_OF_ITEMS", nO_OF_ITEMS) :
+                new ObjectParameter("NO_OF_ITEMS", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_CART_ITEMS", oRDERIDParameter, rEST_NAMEParameter, rEST_LOCParameter, fOOD_NAMEParameter, nO_OF_ITEMSParameter);
+        }
+    
+        public virtual int UPDATE_ORDER_STATUS_NC_TO_PD(Nullable<decimal> oRDERID)
+        {
+            var oRDERIDParameter = oRDERID.HasValue ?
+                new ObjectParameter("ORDERID", oRDERID) :
+                new ObjectParameter("ORDERID", typeof(decimal));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UPDATE_ORDER_STATUS_NC_TO_PD", oRDERIDParameter);
         }
     }
 }

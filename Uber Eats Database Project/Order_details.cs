@@ -19,7 +19,6 @@ namespace Uber_Eats_Database_Project
         public OrderDetails_Item[] orderDetails_Items;
         OracleConnection con;
 
-        string ordb = "data source = orcl; user id =scott; password=tiger;";
         public Order_details()
         {
             InitializeComponent();
@@ -28,7 +27,7 @@ namespace Uber_Eats_Database_Project
         private void Order_details_Load(object sender, EventArgs e)
         {
             MessageBox.Show(c_order.ToString());
-            con = new OracleConnection(ordb);
+            con = new OracleConnection(Helper.constr);
             con.Open();
             OracleCommand cmd9 = new OracleCommand();
             cmd9.Connection = con;
@@ -40,7 +39,7 @@ namespace Uber_Eats_Database_Project
             z = int.Parse(cmd9.Parameters["cnt"].Value.ToString());
             con.Close();
 
-            con = new OracleConnection(ordb);
+            con = new OracleConnection(Helper.constr);
             con.Open();
             OracleCommand cmd10 = new OracleCommand();
             cmd10.Connection = con;
@@ -49,12 +48,6 @@ namespace Uber_Eats_Database_Project
             cmd10.Parameters.Add("id", c_order);
             cmd10.Parameters.Add("rows", OracleDbType.RefCursor, ParameterDirection.Output);
             OracleDataReader dr = cmd10.ExecuteReader();
-            //dr[0] foodname
-            //dr[1] rest name
-
-            //dr[2] price
-            //dr[3] discount
-            //dr 4 no of items
             orderDetails_Items = new OrderDetails_Item[z];
 
             int i = 0;
@@ -67,24 +60,16 @@ namespace Uber_Eats_Database_Project
                 orderDetails_Items[i].Price1.Text = dr[3].ToString();
                 orderDetails_Items[i].Discount1.Text = dr[4].ToString();
                 orderDetails_Items[i].No_of_items1.Text = dr[5].ToString();
-
-
-
                 Order_Details_Panel.Controls.Add(orderDetails_Items[i]);
                 i++;
-
             }
             dr.Close();
-
             con.Close();
         }
-
-      
 
         private void Order_detail_close_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
     }
 }

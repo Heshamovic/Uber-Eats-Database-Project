@@ -17,7 +17,6 @@ namespace Uber_Eats_Database_Project
         public cartItem[] cartItems;
         OracleConnection con;
 
-        string ordb = "data source = orcl; user id =scott; password=tiger;";
         public Cart()
         {
             InitializeComponent();
@@ -25,7 +24,7 @@ namespace Uber_Eats_Database_Project
 
         private void Cart_Load(object sender, EventArgs e)
         {
-            con = new OracleConnection(ordb);
+            con = new OracleConnection(Helper.constr);
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
@@ -35,10 +34,7 @@ namespace Uber_Eats_Database_Project
             cmd.Parameters.Add("cnt", OracleDbType.Int32, ParameterDirection.Output);
             cmd.ExecuteNonQuery();
             x = int.Parse(cmd.Parameters["cnt"].Value.ToString());
-            con.Close();
-
-            con = new OracleConnection(ordb);
-            con.Open();
+            
             OracleCommand cmd2 = new OracleCommand();
             cmd2.Connection = con;
             cmd2.CommandText = "GetCartItems";
@@ -46,14 +42,7 @@ namespace Uber_Eats_Database_Project
             cmd2.Parameters.Add("id", Helper.currentOrderId);
             cmd2.Parameters.Add("rows", OracleDbType.RefCursor, ParameterDirection.Output);
             OracleDataReader dr = cmd2.ExecuteReader();
-            //dr[0] foodname
-            //dr[1] rest name
-           
-            //dr[2] price
-            //dr[3] discount
-            //dr 4 no of items
-             cartItems = new cartItem[x];
-            
+            cartItems = new cartItem[x];
             int i = 0;
             while (dr.Read())
             {
@@ -65,34 +54,11 @@ namespace Uber_Eats_Database_Project
                 cartItems[i].Discount.Text = (dr[4]).ToString();
                 cartItems[i].NoOfItems.Text = (dr[5]).ToString();
                 cartItems[i].cart_id = i;
-
                 flowLayoutPanel1.Controls.Add(cartItems[i]);
                 i++;
-
             }
             dr.Close();
-
             con.Close();
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Cart_Shown(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void Cart_Activated(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void flowLayoutPanel1_MouseMove(object sender, MouseEventArgs e)
-        {
         }
         #region buttons hovers
 
@@ -103,7 +69,7 @@ namespace Uber_Eats_Database_Project
             int z = flowLayoutPanel1.Controls.Count;
             for(int i = 0; i < z; i++)
             {
-                con = new OracleConnection(ordb);
+                con = new OracleConnection(Helper.constr);
                 con.Open();
                 OracleCommand cmd4 = new OracleCommand();
                 cmd4.Connection = con;
@@ -116,7 +82,7 @@ namespace Uber_Eats_Database_Project
                 cmd4.Parameters.Add("no_of_items", cartItems[i].NoOfItems.Text);
                 cmd4.ExecuteNonQuery();
                 con.Close();
-                con = new OracleConnection(ordb);
+                con = new OracleConnection(Helper.constr);
                 con.Open();
                 OracleCommand cmd5 = new OracleCommand();
                 cmd5.Connection = con;

@@ -109,7 +109,7 @@
             this.label9.Location = new System.Drawing.Point(818, 406);
             this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(143, 32);
+            this.label9.Size = new System.Drawing.Size(99, 21);
             this.label9.TabIndex = 48;
             this.label9.Text = "Credit No.";
             // 
@@ -120,7 +120,7 @@
             this.label8.Location = new System.Drawing.Point(818, 326);
             this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(126, 32);
+            this.label8.Size = new System.Drawing.Size(87, 21);
             this.label8.TabIndex = 47;
             this.label8.Text = "Location";
             // 
@@ -131,7 +131,7 @@
             this.label7.Location = new System.Drawing.Point(818, 251);
             this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 32);
+            this.label7.Size = new System.Drawing.Size(103, 21);
             this.label7.TabIndex = 46;
             this.label7.Text = "Last Name";
             // 
@@ -142,7 +142,7 @@
             this.label6.Location = new System.Drawing.Point(818, 175);
             this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(145, 32);
+            this.label6.Size = new System.Drawing.Size(100, 21);
             this.label6.TabIndex = 45;
             this.label6.Text = "First Name";
             // 
@@ -153,10 +153,9 @@
             this.label3.Location = new System.Drawing.Point(48, 97);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 32);
+            this.label3.Size = new System.Drawing.Size(98, 21);
             this.label3.TabIndex = 42;
             this.label3.Text = "Username";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // savePasswordBtn
             // 
@@ -181,7 +180,7 @@
             this.confirmPassword.Location = new System.Drawing.Point(57, 694);
             this.confirmPassword.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.confirmPassword.Name = "confirmPassword";
-            this.confirmPassword.Size = new System.Drawing.Size(548, 34);
+            this.confirmPassword.Size = new System.Drawing.Size(367, 25);
             this.confirmPassword.TabIndex = 40;
             this.confirmPassword.Text = "Confirm Password";
             this.confirmPassword.Enter += new System.EventHandler(this.confirmPassword_Enter);
@@ -194,7 +193,7 @@
             this.newPassword.Location = new System.Drawing.Point(57, 626);
             this.newPassword.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.newPassword.Name = "newPassword";
-            this.newPassword.Size = new System.Drawing.Size(548, 34);
+            this.newPassword.Size = new System.Drawing.Size(367, 25);
             this.newPassword.TabIndex = 39;
             this.newPassword.Text = "New Password";
             this.newPassword.Enter += new System.EventHandler(this.newPassword_Enter);
@@ -207,7 +206,7 @@
             this.oldPassword.Location = new System.Drawing.Point(57, 558);
             this.oldPassword.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.oldPassword.Name = "oldPassword";
-            this.oldPassword.Size = new System.Drawing.Size(548, 34);
+            this.oldPassword.Size = new System.Drawing.Size(367, 25);
             this.oldPassword.TabIndex = 38;
             this.oldPassword.Text = "Password";
             this.oldPassword.Enter += new System.EventHandler(this.oldPassword_Enter);
@@ -252,7 +251,7 @@
             this.userName.Location = new System.Drawing.Point(57, 154);
             this.userName.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(548, 34);
+            this.userName.Size = new System.Drawing.Size(367, 25);
             this.userName.TabIndex = 20;
             this.userName.Text = "Username";
             // 
@@ -264,7 +263,7 @@
             this.fName.Location = new System.Drawing.Point(1050, 172);
             this.fName.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.fName.Name = "fName";
-            this.fName.Size = new System.Drawing.Size(548, 34);
+            this.fName.Size = new System.Drawing.Size(367, 25);
             this.fName.TabIndex = 22;
             this.fName.Text = "First Name";
             // 
@@ -276,7 +275,7 @@
             this.lName.Location = new System.Drawing.Point(1050, 248);
             this.lName.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.lName.Name = "lName";
-            this.lName.Size = new System.Drawing.Size(548, 34);
+            this.lName.Size = new System.Drawing.Size(367, 25);
             this.lName.TabIndex = 23;
             this.lName.Text = "Last Name";
             // 
@@ -288,7 +287,7 @@
             this.location.Location = new System.Drawing.Point(1050, 323);
             this.location.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.location.Name = "location";
-            this.location.Size = new System.Drawing.Size(548, 34);
+            this.location.Size = new System.Drawing.Size(367, 25);
             this.location.TabIndex = 25;
             this.location.Text = "Location";
             // 
@@ -300,7 +299,7 @@
             this.creditCard.Location = new System.Drawing.Point(1050, 406);
             this.creditCard.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.creditCard.Name = "creditCard";
-            this.creditCard.Size = new System.Drawing.Size(548, 34);
+            this.creditCard.Size = new System.Drawing.Size(367, 25);
             this.creditCard.TabIndex = 26;
             this.creditCard.Text = "Credit Card";
             // 
@@ -348,7 +347,7 @@
             this.label2.Location = new System.Drawing.Point(6, 5);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(220, 39);
+            this.label2.Size = new System.Drawing.Size(151, 25);
             this.label2.TabIndex = 38;
             this.label2.Text = "Account Info";
             // 
@@ -380,7 +379,7 @@
             this.label4.Location = new System.Drawing.Point(825, 697);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 32);
+            this.label4.Size = new System.Drawing.Size(88, 21);
             this.label4.TabIndex = 52;
             this.label4.Text = "Voucher";
             // 
@@ -391,7 +390,7 @@
             this.label5.Location = new System.Drawing.Point(1118, 706);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 29);
+            this.label5.Size = new System.Drawing.Size(51, 20);
             this.label5.TabIndex = 53;
             this.label5.Text = "label5";
             // 
@@ -424,6 +423,7 @@
             this.Controls.Add(this.fName);
             this.Controls.Add(this.userName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CustomerAccount";
             this.Text = "CustomerAccount";
             this.Load += new System.EventHandler(this.CustomerAccount_Load);

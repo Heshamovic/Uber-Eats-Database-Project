@@ -30,7 +30,6 @@ namespace Uber_Eats_Database_Project
                 tb.Text = placeHolderText;
             }
         }
-
         public static void onHover(Button btn, Color c)
         {
             btn.BackColor = c;

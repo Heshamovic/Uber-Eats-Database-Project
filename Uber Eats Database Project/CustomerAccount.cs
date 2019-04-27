@@ -22,11 +22,6 @@ namespace Uber_Eats_Database_Project
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void editBtn_Click(object sender, EventArgs e)
         {
             userName.Enabled = true;
@@ -72,7 +67,6 @@ namespace Uber_Eats_Database_Project
                 cust_credit = rdr[4].ToString();
                 cust_pass = rdr[5].ToString();
             }
-
             OracleCommand cmd2 = new OracleCommand();
             cmd2.Connection = con;
             cmd2.CommandText = "select count(*) from orders where customer_username=:uname";
@@ -89,17 +83,6 @@ namespace Uber_Eats_Database_Project
             string perc = voucher.ToString() + '%';
             label5.Text = perc;
             con.Close();
-
-        }
-
-        private void password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CloseBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void changePasswordBtn_Click(object sender, EventArgs e)
@@ -211,7 +194,6 @@ namespace Uber_Eats_Database_Project
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
@@ -267,7 +249,6 @@ namespace Uber_Eats_Database_Project
             }
             con.Close();
         }
-
         private void saveUserNameBtn_Click(object sender, EventArgs e)
         {
             con.Open();

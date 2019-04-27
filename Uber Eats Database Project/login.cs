@@ -172,12 +172,7 @@ namespace Uber_Eats_Database_Project
         {
             con = new OracleConnection("data source = orcl; user id = scott; password = tiger;");
         }
-
-        private void creditCard_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void customerChkBx_CheckedChanged(object sender, EventArgs e)
         {
             if(customerChkBx.Checked)
@@ -314,7 +309,6 @@ namespace Uber_Eats_Database_Project
 
         private void signInBtn_MouseLeave(object sender, EventArgs e)
         {
-
             Helper.onHover((Button)sender, Color.Black);
         }
 
