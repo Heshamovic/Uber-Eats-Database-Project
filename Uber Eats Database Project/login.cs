@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using Oracle.DataAccess.Types;
+using Oracle.ManagedDataAccess.EntityFramework;
 
 namespace Uber_Eats_Database_Project
 {
