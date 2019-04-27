@@ -161,7 +161,6 @@
             this.creditCard.Size = new System.Drawing.Size(327, 30);
             this.creditCard.TabIndex = 6;
             this.creditCard.Text = "Credit Card";
-            this.creditCard.TextChanged += new System.EventHandler(this.creditCard_TextChanged);
             this.creditCard.Enter += new System.EventHandler(this.creditCard_Enter);
             this.creditCard.Leave += new System.EventHandler(this.creditCard_Leave);
             // 

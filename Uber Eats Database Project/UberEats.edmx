@@ -40,20 +40,17 @@
           <Property Name="INGREDIANTS" Type="varchar2" MaxLength="500" />
           <Property Name="TOP_DISH" Type="varchar2" MaxLength="5" />
           <Property Name="FOODIMAGE" Type="varchar2" MaxLength="200" />
+          <Property Name="FOODTYPE" Type="varchar2" MaxLength="30" />
         </EntityType>
-        <EntityType Name="FOOD_TYPE">
-          <Key>
-            <PropertyRef Name="FOOD_NAME" />
-          </Key>
-          <Property Name="FOOD_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
-          <Property Name="FOOD_TYPE" Type="varchar2" MaxLength="50" />
-        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ORDER_FOOD">
           <Key>
             <PropertyRef Name="ORDER_ID" />
             <PropertyRef Name="RESTAURANT_NAME" />
             <PropertyRef Name="RESTAURANT_LOCATION" />
             <PropertyRef Name="FOOD_NAME" />
+            
           </Key>
           <Property Name="ORDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="RESTAURANT_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
@@ -68,7 +65,7 @@
           </Key>
           <Property Name="ORDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="TIP" Type="varchar2" MaxLength="20" />
-          <Property Name="DATE" Type="date" />
+          <Property Name="ORDER_DATE" Type="date" />
           <Property Name="PAYMENT_TYPE" Type="varchar2" MaxLength="20" />
           <Property Name="STATUS" Type="varchar2" MaxLength="20" />
           <Property Name="CUSTOMER_USERNAME" Type="varchar2" MaxLength="20" />
@@ -92,6 +89,7 @@
           <Property Name="RESTAURANT_LOCATION" Type="varchar2" MaxLength="200" Nullable="false" />
           <Property Name="RATING" Type="number" Precision="38" Scale="0" />
           <Property Name="CUISINE_TYPE" Type="varchar2" MaxLength="50" />
+          <Property Name="RESTAURANT_IMAGE" Type="varchar2" MaxLength="200" />
         </EntityType>
         <EntityType Name="TRIP">
           <Key>
@@ -100,7 +98,7 @@
           <Property Name="ORDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="DISTANCE_OF_TRIP" Type="number" Precision="38" Scale="0" />
           <Property Name="DELIVERYPARTNER_USERNAME" Type="varchar2" MaxLength="20" />
-          <Property Name="DELIVERYFEES" Type="float" Precision="126" Scale="0" />
+          <Property Name="DELIVERYFEES" Type="float" Precision="126" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="WORKING_TIME">
           <Key>
@@ -168,6 +166,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="ORDERS_CUSTOMER_FK1">
+          <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+          <End Role="ORDERS" Type="Self.ORDERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="USERNAME" />
+            </Principal>
+            <Dependent Role="ORDERS">
+              <PropertyRef Name="CUSTOMER_USERNAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="REST_NUMBERS_RESTAURANT_FK1">
           <End Role="RESTAURANT" Type="Self.RESTAURANT" Multiplicity="1" />
           <End Role="REST_NUMBERS" Type="Self.REST_NUMBERS" Multiplicity="*" />
@@ -208,6 +218,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="COUNT_GETCARTITEMS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
+          <Parameter Name="CURRENT_ORDER_ID" Type="number" Mode="In" />
+          <Parameter Name="CNT" Type="number" Mode="Out" />
+        </Function>
+        <Function Name="CREATE_CART" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
+          <Parameter Name="CUSERNAME" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="DELETE_CART_ITEM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
+          <Parameter Name="ORDERID" Type="number" Mode="In" />
+          <Parameter Name="REST_NAME" Type="varchar2" Mode="In" />
+          <Parameter Name="REST_LOC" Type="varchar2" Mode="In" />
+          <Parameter Name="FOOD_NAME" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="GETALLORDERS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
+          <Parameter Name="USER_NAME" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="GETCARTID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
+          <Parameter Name="CURRENT_USER_NAME" Type="varchar2" Mode="In" />
+          <Parameter Name="C_ID" Type="number" Mode="Out" />
+        </Function>
+        <Function Name="GETCARTITEMS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
+          <Parameter Name="CURRENT_ORDER_ID" Type="number" Mode="In" />
+        </Function>
         <Function Name="SIGN_UP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
           <Parameter Name="NUSERNAME" Type="varchar2" Mode="In" />
           <Parameter Name="NPASSWORD" Type="varchar2" Mode="In" />
@@ -219,17 +252,35 @@
           <Parameter Name="NCREDIT_NO" Type="varchar2" Mode="In" />
           <Parameter Name="NVEHICLE" Type="varchar2" Mode="In" />
         </Function>
+        <Function Name="UPDATE_CART_ITEMS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
+          <Parameter Name="ORDERID" Type="number" Mode="In" />
+          <Parameter Name="REST_NAME" Type="varchar2" Mode="In" />
+          <Parameter Name="REST_LOC" Type="varchar2" Mode="In" />
+          <Parameter Name="FOOD_NAME" Type="varchar2" Mode="In" />
+          <Parameter Name="NO_OF_ITEMS" Type="number" Mode="In" />
+        </Function>
+        <Function Name="UPDATE_ORDER_STATUS_NC_TO_PD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
+          <Parameter Name="ORDERID" Type="number" Mode="In" />
+        </Function>
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="DELIVERY_PARTNER" EntityType="Self.DELIVERY_PARTNER" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="FOOD" EntityType="Self.FOOD" Schema="SCOTT" store:Type="Tables" />
-          <EntitySet Name="FOOD_TYPE" EntityType="Self.FOOD_TYPE" Schema="SCOTT" store:Type="Tables" />
-          <EntitySet Name="ORDER_FOOD" EntityType="Self.ORDER_FOOD" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="ORDERS" EntityType="Self.ORDERS" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="REST_NUMBERS" EntityType="Self.REST_NUMBERS" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="RESTAURANT" EntityType="Self.RESTAURANT" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="TRIP" EntityType="Self.TRIP" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="WORKING_TIME" EntityType="Self.WORKING_TIME" Schema="SCOTT" store:Type="Tables" />
+          <EntitySet Name="ORDER_FOOD" EntityType="Self.ORDER_FOOD" store:Type="Tables" store:Schema="SCOTT">
+            <DefiningQuery>SELECT 
+"ORDER_FOOD"."ORDER_ID" AS "ORDER_ID", 
+"ORDER_FOOD"."RESTAURANT_NAME" AS "RESTAURANT_NAME", 
+"ORDER_FOOD"."RESTAURANT_LOCATION" AS "RESTAURANT_LOCATION", 
+"ORDER_FOOD"."FOOD_NAME" AS "FOOD_NAME", 
+"ORDER_FOOD"."NO_OF_ITEMS_PER_FOOD" AS "NO_OF_ITEMS_PER_FOOD", 
+"ORDER_FOOD"."BOUGHT" AS "BOUGHT"
+FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FOOD_RESTAURANT_FK1" Association="Self.FOOD_RESTAURANT_FK1">
             <End Role="RESTAURANT" EntitySet="RESTAURANT" />
             <End Role="FOOD" EntitySet="FOOD" />
@@ -245,6 +296,10 @@
           <AssociationSet Name="ORDER_TRIP_FK1" Association="Self.ORDER_TRIP_FK1">
             <End Role="ORDERS" EntitySet="ORDERS" />
             <End Role="TRIP" EntitySet="TRIP" />
+          </AssociationSet>
+          <AssociationSet Name="ORDERS_CUSTOMER_FK1" Association="Self.ORDERS_CUSTOMER_FK1">
+            <End Role="CUSTOMER" EntitySet="CUSTOMER" />
+            <End Role="ORDERS" EntitySet="ORDERS" />
           </AssociationSet>
           <AssociationSet Name="REST_NUMBERS_RESTAURANT_FK1" Association="Self.REST_NUMBERS_RESTAURANT_FK1">
             <End Role="RESTAURANT" EntitySet="RESTAURANT" />
@@ -273,6 +328,7 @@
           <Property Name="LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="CREDIT_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="ORDERS" Relationship="Model.ORDERS_CUSTOMER_FK1" FromRole="CUSTOMER" ToRole="ORDER" />
         </EntityType>
         <EntityType Name="FOOD">
           <Key>
@@ -291,13 +347,7 @@
           <NavigationProperty Name="RESTAURANT" Relationship="Self.FOOD_RESTAURANT_FK1" FromRole="FOOD" ToRole="RESTAURANT" />
           <NavigationProperty Name="ORDER_FOOD" Relationship="Self.ORDER_FOOD_FOOD_FK1" FromRole="FOOD" ToRole="ORDER_FOOD" />
           <Property Name="FOODIMAGE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="FOOD_TYPE">
-          <Key>
-            <PropertyRef Name="FOOD_NAME" />
-          </Key>
-          <Property Name="FOOD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FOOD_TYPE1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FOODTYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="ORDER_FOOD">
           <Key>
@@ -327,6 +377,8 @@
           <Property Name="CUSTOMER_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="ORDER_FOOD" Relationship="Self.ORDER_FOOD_ORDER_FK1" FromRole="ORDERS" ToRole="ORDER_FOOD" />
           <NavigationProperty Name="TRIP" Relationship="Self.ORDER_TRIP_FK1" FromRole="ORDERS" ToRole="TRIP" />
+          <Property Name="ORDER_DATE" Type="DateTime" />
+          <NavigationProperty Name="CUSTOMER" Relationship="Model.ORDERS_CUSTOMER_FK1" FromRole="ORDER" ToRole="CUSTOMER" />
         </EntityType>
         <EntityType Name="REST_NUMBERS">
           <Key>
@@ -351,6 +403,7 @@
           <NavigationProperty Name="FOODs" Relationship="Self.FOOD_RESTAURANT_FK1" FromRole="RESTAURANT" ToRole="FOOD" />
           <NavigationProperty Name="REST_NUMBERS" Relationship="Self.REST_NUMBERS_RESTAURANT_FK1" FromRole="RESTAURANT" ToRole="REST_NUMBERS" />
           <NavigationProperty Name="WORKING_TIME" Relationship="Self.WORKING_TIME_RESTAURANT_FK1" FromRole="RESTAURANT" ToRole="WORKING_TIME" />
+          <Property Name="RESTAURANT_IMAGE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TRIP">
           <Key>
@@ -461,7 +514,6 @@
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
           <EntitySet Name="FOODs" EntityType="Self.FOOD" />
-          <EntitySet Name="FOOD_TYPE" EntityType="Self.FOOD_TYPE" />
           <EntitySet Name="ORDER_FOOD" EntityType="Self.ORDER_FOOD" />
           <EntitySet Name="ORDERS" EntityType="Self.ORDER" />
           <EntitySet Name="REST_NUMBERS" EntityType="Self.REST_NUMBERS" />
@@ -508,6 +560,43 @@
             <End Role="DELIVERY_PARTNER" EntitySet="DELIVERY_PARTNER" />
             <End Role="TRIP" EntitySet="TRIPs" />
           </AssociationSet>
+          <AssociationSet Name="ORDERS_CUSTOMER_FK1" Association="Model.ORDERS_CUSTOMER_FK1">
+            <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+            <End Role="ORDER" EntitySet="ORDERS" />
+          </AssociationSet>
+          <FunctionImport Name="COUNT_GETCARTITEMS">
+            <Parameter Name="CURRENT_ORDER_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="CNT" Mode="Out" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="CREATE_CART">
+            <Parameter Name="CUSERNAME" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="DELETE_CART_ITEM">
+            <Parameter Name="ORDERID" Mode="In" Type="Decimal" />
+            <Parameter Name="REST_NAME" Mode="In" Type="String" />
+            <Parameter Name="REST_LOC" Mode="In" Type="String" />
+            <Parameter Name="FOOD_NAME" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GETALLORDERS">
+            <Parameter Name="USER_NAME" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GETCARTID">
+            <Parameter Name="CURRENT_USER_NAME" Mode="In" Type="String" />
+            <Parameter Name="C_ID" Mode="Out" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="GETCARTITEMS">
+            <Parameter Name="CURRENT_ORDER_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="UPDATE_CART_ITEMS">
+            <Parameter Name="ORDERID" Mode="In" Type="Decimal" />
+            <Parameter Name="REST_NAME" Mode="In" Type="String" />
+            <Parameter Name="REST_LOC" Mode="In" Type="String" />
+            <Parameter Name="FOOD_NAME" Mode="In" Type="String" />
+            <Parameter Name="NO_OF_ITEMS" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="UPDATE_ORDER_STATUS_NC_TO_PD">
+            <Parameter Name="ORDERID" Mode="In" Type="Decimal" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="DELIVERY_PARTNER">
           <Key>
@@ -528,6 +617,18 @@
             </Principal>
             <Dependent Role="TRIP">
               <PropertyRef Name="DELIVERYPARTNER_USERNAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ORDERS_CUSTOMER_FK1">
+          <End Type="Model.CUSTOMER" Role="CUSTOMER" Multiplicity="0..1" />
+          <End Type="Model.ORDER" Role="ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="USERNAME" />
+            </Principal>
+            <Dependent Role="ORDER">
+              <PropertyRef Name="CUSTOMER_USERNAME" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -552,6 +653,7 @@
           <EntitySetMapping Name="FOODs">
             <EntityTypeMapping TypeName="Model.FOOD">
               <MappingFragment StoreEntitySet="FOOD">
+                <ScalarProperty Name="FOODTYPE" ColumnName="FOODTYPE" />
                 <ScalarProperty Name="FOODIMAGE" ColumnName="FOODIMAGE" />
                 <ScalarProperty Name="FOOD_NAME" ColumnName="FOOD_NAME" />
                 <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
@@ -561,14 +663,6 @@
                 <ScalarProperty Name="RATING" ColumnName="RATING" />
                 <ScalarProperty Name="INGREDIANTS" ColumnName="INGREDIANTS" />
                 <ScalarProperty Name="TOP_DISH" ColumnName="TOP_DISH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="FOOD_TYPE">
-            <EntityTypeMapping TypeName="Model.FOOD_TYPE">
-              <MappingFragment StoreEntitySet="FOOD_TYPE">
-                <ScalarProperty Name="FOOD_NAME" ColumnName="FOOD_NAME" />
-                <ScalarProperty Name="FOOD_TYPE1" ColumnName="FOOD_TYPE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -587,9 +681,9 @@
           <EntitySetMapping Name="ORDERS">
             <EntityTypeMapping TypeName="Model.ORDER">
               <MappingFragment StoreEntitySet="ORDERS">
+                <ScalarProperty Name="ORDER_DATE" ColumnName="ORDER_DATE" />
                 <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
                 <ScalarProperty Name="TIP" ColumnName="TIP" />
-                <ScalarProperty Name="DATE" ColumnName="DATE" />
                 <ScalarProperty Name="PAYMENT_TYPE" ColumnName="PAYMENT_TYPE" />
                 <ScalarProperty Name="STATUS" ColumnName="STATUS" />
                 <ScalarProperty Name="CUSTOMER_USERNAME" ColumnName="CUSTOMER_USERNAME" />
@@ -608,6 +702,7 @@
           <EntitySetMapping Name="RESTAURANTs">
             <EntityTypeMapping TypeName="Model.RESTAURANT">
               <MappingFragment StoreEntitySet="RESTAURANT">
+                <ScalarProperty Name="RESTAURANT_IMAGE" ColumnName="RESTAURANT_IMAGE" />
                 <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
                 <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />
                 <ScalarProperty Name="RATING" ColumnName="RATING" />
@@ -647,6 +742,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="COUNT_GETCARTITEMS" FunctionName="Model.Store.COUNT_GETCARTITEMS" />
+          <FunctionImportMapping FunctionImportName="CREATE_CART" FunctionName="Model.Store.CREATE_CART" />
+          <FunctionImportMapping FunctionImportName="DELETE_CART_ITEM" FunctionName="Model.Store.DELETE_CART_ITEM" />
+          <FunctionImportMapping FunctionImportName="GETALLORDERS" FunctionName="Model.Store.GETALLORDERS" />
+          <FunctionImportMapping FunctionImportName="GETCARTID" FunctionName="Model.Store.GETCARTID" />
+          <FunctionImportMapping FunctionImportName="GETCARTITEMS" FunctionName="Model.Store.GETCARTITEMS" />
+          <FunctionImportMapping FunctionImportName="UPDATE_CART_ITEMS" FunctionName="Model.Store.UPDATE_CART_ITEMS" />
+          <FunctionImportMapping FunctionImportName="UPDATE_ORDER_STATUS_NC_TO_PD" FunctionName="Model.Store.UPDATE_ORDER_STATUS_NC_TO_PD" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

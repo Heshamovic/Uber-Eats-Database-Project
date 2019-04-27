@@ -11,7 +11,7 @@ namespace Uber_Eats_Database_Project
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class WORKING_TIME
     {
         public string DAY { get; set; }
@@ -19,7 +19,7 @@ namespace Uber_Eats_Database_Project
         public string RESTAURANT_LOCATION { get; set; }
         public Nullable<decimal> START_TIME { get; set; }
         public Nullable<decimal> END_TIME { get; set; }
-
+    
         public virtual RESTAURANT RESTAURANT { get; set; }
     }
 }

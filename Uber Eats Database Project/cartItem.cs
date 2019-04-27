@@ -16,7 +16,6 @@ namespace Uber_Eats_Database_Project
     public partial class cartItem : UserControl
     {
         OracleConnection con;
-        
         public int cart_id;
         public cartItem()
         {
@@ -27,12 +26,7 @@ namespace Uber_Eats_Database_Project
         {
             RestLoc.Visible = false;
         }
-
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void Remove_Click(object sender, EventArgs e)
         {
             if (CustomMsgBox.Show("Are you sure to delete this item", 2) == DialogResult.Yes)
@@ -48,8 +42,6 @@ namespace Uber_Eats_Database_Project
                 cmd3.Parameters.Add("rest_loc", RestLoc.Text);
                 cmd3.Parameters.Add("food_name", FoodName.Text);
                 cmd3.ExecuteNonQuery();
-                
-
                 con.Close();
                 this.Parent.Controls.Remove(this);
             }

@@ -101,7 +101,6 @@
             this.NoOfItems.Name = "NoOfItems";
             this.NoOfItems.Size = new System.Drawing.Size(118, 20);
             this.NoOfItems.TabIndex = 8;
-            this.NoOfItems.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
             // 
             // Remove
             // 

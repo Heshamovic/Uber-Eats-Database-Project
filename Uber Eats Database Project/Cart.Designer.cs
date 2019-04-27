@@ -49,8 +49,6 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(541, 351);
             this.flowLayoutPanel1.TabIndex = 33;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            this.flowLayoutPanel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseMove);
             // 
             // bunifuElipse1
             // 
@@ -117,9 +115,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Cart";
             this.Text = "Cart";
-            this.Activated += new System.EventHandler(this.Cart_Activated);
             this.Load += new System.EventHandler(this.Cart_Load);
-            this.Shown += new System.EventHandler(this.Cart_Shown);
             this.header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);

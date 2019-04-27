@@ -5,9 +5,8 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="b59a45e8d6ff47a0874e425ed1ff9b6e" Name="Diagram1">
-        <EntityTypeShape EntityType="Model.CUSTOMER" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CUSTOMER" Width="1.5" PointX="0.625" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.FOOD" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.FOOD_TYPE" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.ORDER_FOOD" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.ORDER" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.REST_NUMBERS" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
@@ -20,8 +19,9 @@
         <AssociationConnector Association="Model.ORDER_TRIP_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.REST_NUMBERS_RESTAURANT_FK1" ManuallyRouted="false" />
         <AssociationConnector Association="Model.WORKING_TIME_RESTAURANT_FK1" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="Model.DELIVERY_PARTNER" Width="1.5" PointX="7.375" PointY="7.875" />
+        <EntityTypeShape EntityType="Model.DELIVERY_PARTNER" Width="1.5" PointX="7.5" PointY="10.75" />
         <AssociationConnector Association="Model.TRIP_DELIVERY_PARTNER_FK1" />
+        <AssociationConnector Association="Model.ORDERS_CUSTOMER_FK1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
