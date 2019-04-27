@@ -61,6 +61,10 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MetroFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
       <HintPath>..\packages\Oracle.DataAccess.x86.2.112.1.0\lib\Oracle.DataAccess.dll</HintPath>
@@ -84,6 +88,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminForm.Designer.cs">
+      <DependentUpon>adminForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +276,9 @@
     <Compile Include="WORKING_TIME.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="adminForm.resx">
+      <DependentUpon>adminForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cart.resx">
       <DependentUpon>Cart.cs</DependentUpon>
     </EmbeddedResource>
