@@ -65,6 +65,7 @@
             this.foodimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.foodimg.TabIndex = 4;
             this.foodimg.TabStop = false;
+            this.foodimg.Click += new System.EventHandler(this.foodimg_Click);
             // 
             // restimg
             // 
@@ -259,7 +260,7 @@
             this.price.Size = new System.Drawing.Size(54, 18);
             this.price.TabIndex = 2;
             this.price.Text = "label1";
-            this.price.Click += new System.EventHandler(this.price_Click);
+           
             // 
             // splitter1
             // 
@@ -277,7 +278,6 @@
             this.Controls.Add(this.splitter1);
             this.Name = "resfooditem";
             this.Size = new System.Drawing.Size(568, 202);
-            this.Load += new System.EventHandler(this.resfooditem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.foodimg)).EndInit();
             this.restimg.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

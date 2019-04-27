@@ -37,29 +37,39 @@ namespace Uber_Eats_Database_Project
             this.resl.Text = resl;
             this.resl.Hide();
             this.resn.Hide();
-        }
-
-        private void resfooditem_Load(object sender, EventArgs e)
-        {
+            this.ing.Text = ing;
 
         }
-
-        private void price_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OracleConnection con = new OracleConnection(Helper.constr);
-            con.Open();
-            OracleCommand cmd = new OracleCommand("insert into order_food values(:id, :resn, :resl, :foodn, :noi, 'N')", con);
-            cmd.Parameters.Add("id", Helper.currentOrderId);
-            cmd.Parameters.Add("resn", this.resn.Text);
-            cmd.Parameters.Add("resl", this.resl.Text);
-            cmd.Parameters.Add("foodn", this.name);
-            cmd.Parameters.Add("noi",this.numericUpDown1.Value );
-            con.Close();
+            
+            Entities ent = new Entities();
+            if (ent.ORDER_FOOD.Where(x => x.ORDER_ID == Helper.currentOrderId && x.RESTAURANT_NAME == resn.Text &&
+                x.RESTAURANT_LOCATION == resl.Text && x.FOOD_NAME == this.name.Text).Count() > 0)
+            {
+                ent.ORDER_FOOD.Where(x => x.ORDER_ID == Helper.currentOrderId && x.RESTAURANT_NAME == resn.Text &&
+                x.RESTAURANT_LOCATION == resl.Text && x.FOOD_NAME == this.name.Text).First().NO_OF_ITEMS_PER_FOOD += this.numericUpDown1.Value;
+
+            }
+            else {
+                ORDER_FOOD x = new ORDER_FOOD();
+                x.ORDER_ID = Helper.currentOrderId;
+                x.RESTAURANT_NAME = resn.Text;
+                x.RESTAURANT_LOCATION = resl.Text;
+                x.FOOD_NAME = this.name.Text;
+                x.NO_OF_ITEMS_PER_FOOD = this.numericUpDown1.Value;
+                x.BOUGHT = "n";
+                ent.ORDER_FOOD.Add(x);
+
+            }
+            ent.SaveChanges();
+        }
+
+        private void foodimg_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
