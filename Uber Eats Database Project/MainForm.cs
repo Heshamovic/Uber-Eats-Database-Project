@@ -40,11 +40,18 @@ namespace Uber_Eats_Database_Project
             { }
             //Enable Partner Controls
             Entities ent = new Entities();
-            oid = (from o in ent.ORDERS
-                   join t in ent.TRIPs on o.ORDER_ID equals t.ORDER_ID
-                   where t.DELIVERYPARTNER_USERNAME == Helper.currentUserName
-                   && o.STATUS == "pd"
-                   select o.ORDER_ID).Count();
+            try
+            {
+                oid = (from o in ent.ORDERS
+                       join t in ent.TRIPs on o.ORDER_ID equals t.ORDER_ID
+                       where t.DELIVERYPARTNER_USERNAME == Helper.currentUserName
+                       && o.STATUS == "pd"
+                       select o.ORDER_ID).Count();
+            }
+            catch
+            {
+
+            }
             PendingOrdersBtn.Enabled = !UserEnable;
             PendingOrdersBtn.Visible = !UserEnable;
             DeliveredOrdersBtn.Enabled = !UserEnable;
