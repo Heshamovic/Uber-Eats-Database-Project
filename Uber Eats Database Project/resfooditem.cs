@@ -19,7 +19,7 @@ namespace Uber_Eats_Database_Project
             /// 0  3 4 5  6 7 8
             InitializeComponent();
 
-            this.foodimg.Image = Image.FromFile(img);
+            //this.foodimg.Image = Image.FromFile(img);
 
             this.name.Text = name;
 
@@ -37,6 +37,7 @@ namespace Uber_Eats_Database_Project
             this.resl.Text = resl;
             this.resl.Hide();
             this.resn.Hide();
+            this.ing.Text = ing;
         }
 
         private void resfooditem_Load(object sender, EventArgs e)
@@ -57,8 +58,9 @@ namespace Uber_Eats_Database_Project
             cmd.Parameters.Add("id", Helper.currentOrderId);
             cmd.Parameters.Add("resn", this.resn.Text);
             cmd.Parameters.Add("resl", this.resl.Text);
-            cmd.Parameters.Add("foodn", this.name);
+            cmd.Parameters.Add("foodn", this.name.Text);
             cmd.Parameters.Add("noi",this.numericUpDown1.Value );
+            cmd.ExecuteNonQuery();
             con.Close();
         }
     }

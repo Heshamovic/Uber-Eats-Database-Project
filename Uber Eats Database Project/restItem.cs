@@ -16,7 +16,7 @@ namespace Uber_Eats_Database_Project
         {
             InitializeComponent();
            
-            this.foodimg.Image = Image.FromFile(img);
+            //this.foodimg.Image = Image.FromFile(img);
            
             this.name.Text = name;
            
