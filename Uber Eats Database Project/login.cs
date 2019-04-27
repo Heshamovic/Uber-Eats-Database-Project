@@ -201,6 +201,14 @@ namespace Uber_Eats_Database_Project
         MainForm mainform;
         private void signInBtn_Click(object sender, EventArgs e)
         {
+            if (userNameSignIn.Text.ToLower() == "admin" && passwordSignIn.Text == "123456789")
+            {
+                adminForm af = new adminForm();
+                af.Show();
+                this.Hide();
+                af.FormClosing += letsShow;
+                return;
+            }
             if (!customerChkBxSignIn.Checked && !partnerChkBxSignIn.Checked)
             {
                 CustomMsgBox.Show("Please select your membership role!");
