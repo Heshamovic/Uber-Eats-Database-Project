@@ -97,6 +97,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserOrders";
             this.Text = "UserCart";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserOrders_FormClosing);
             this.Load += new System.EventHandler(this.UserOrders_Load);
             this.header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton2)).EndInit();

@@ -29,29 +29,20 @@ namespace Uber_Eats_Database_Project
         private void MainForm_Load(object sender, EventArgs e)
         {
             ToggleUser();
-            UsernameLabel.Text += Helper.currentUserName;
         }
         private void ToggleUser()
         {
+            UsernameLabel.Text += Helper.currentUserName;
             bool UserEnable = true; // User unless
             if (Helper.currentUserRole == 2) // Delivery Partner
                 UserEnable = false;
-            else // Admin
-            { }
             //Enable Partner Controls
             Entities ent = new Entities();
-            try
-            {
-                oid = (from o in ent.ORDERS
-                       join t in ent.TRIPs on o.ORDER_ID equals t.ORDER_ID
-                       where t.DELIVERYPARTNER_USERNAME == Helper.currentUserName
-                       && o.STATUS == "pd"
-                       select o.ORDER_ID).Count();
-            }
-            catch
-            {
-
-            }
+            oid = (from o in ent.ORDERS
+                   join t in ent.TRIPs on o.ORDER_ID equals t.ORDER_ID
+                   where t.DELIVERYPARTNER_USERNAME == Helper.currentUserName
+                   && o.STATUS == "pd"
+                   select o.ORDER_ID).Count();
             PendingOrdersBtn.Enabled = !UserEnable;
             PendingOrdersBtn.Visible = !UserEnable;
             DeliveredOrdersBtn.Enabled = !UserEnable;

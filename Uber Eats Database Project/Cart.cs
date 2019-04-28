@@ -58,19 +58,14 @@ namespace Uber_Eats_Database_Project
                 i++;
             }
             dr.Close();
-            con.Close();
         }
-        #region buttons hovers
-
-        #endregion
+        
 
         private void Confirm_Click(object sender, EventArgs e)
         {
             int z = flowLayoutPanel1.Controls.Count;
             for(int i = 0; i < z; i++)
             {
-                con = new OracleConnection(Helper.constr);
-                con.Open();
                 OracleCommand cmd4 = new OracleCommand();
                 cmd4.Connection = con;
                 cmd4.CommandText = "Update_Cart_Items";
@@ -81,9 +76,6 @@ namespace Uber_Eats_Database_Project
                 cmd4.Parameters.Add("food_name", cartItems[i].FoodName.Text);
                 cmd4.Parameters.Add("no_of_items", cartItems[i].NoOfItems.Text);
                 cmd4.ExecuteNonQuery();
-                con.Close();
-                con = new OracleConnection(Helper.constr);
-                con.Open();
                 OracleCommand cmd5 = new OracleCommand();
                 cmd5.Connection = con;
                 cmd5.CommandText = "Update_Order_Status_nc_to_pd";
@@ -95,12 +87,28 @@ namespace Uber_Eats_Database_Project
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("un", Helper.currentUserName);
             cmd.ExecuteNonQuery();
-            con.Close();
         }
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void Cart_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            con.Dispose();
+        }
+
+        #region buttons hovers
+        private void Confirm_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void Confirm_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+        #endregion
     }
 }

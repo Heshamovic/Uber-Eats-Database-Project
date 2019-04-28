@@ -90,7 +90,6 @@
             this.foodimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.foodimg.TabIndex = 4;
             this.foodimg.TabStop = false;
-            this.foodimg.Click += new System.EventHandler(this.foodimg_Click);
             // 
             // panel2
             // 
@@ -126,7 +125,6 @@
             this.name.Size = new System.Drawing.Size(35, 13);
             this.name.TabIndex = 3;
             this.name.Text = "label1";
-            this.name.Click += new System.EventHandler(this.name_Click);
             // 
             // panel1
             // 
@@ -168,7 +166,6 @@
             this.Controls.Add(this.splitter1);
             this.Name = "restItem";
             this.Size = new System.Drawing.Size(550, 256);
-            this.Load += new System.EventHandler(this.restItem_Load);
             this.restimg.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.foodimg)).EndInit();

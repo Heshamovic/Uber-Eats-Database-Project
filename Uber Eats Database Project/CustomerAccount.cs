@@ -35,6 +35,8 @@ namespace Uber_Eats_Database_Project
 
         private void CustomerAccount_Load(object sender, EventArgs e)
         {
+            con = new OracleConnection(Helper.constr);
+            con.Open();
             userName.Enabled = false;
             fName.Enabled = false;
             lName.Enabled = false;
@@ -47,8 +49,6 @@ namespace Uber_Eats_Database_Project
             saveUserNameBtn.Hide();
             saveBtn.Hide();
             userName.Text = Helper.currentUserName;
-            con = new OracleConnection("data source = orcl; user id = scott; password = tiger;");
-            con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "select * from customer where username=:uname";
@@ -82,7 +82,6 @@ namespace Uber_Eats_Database_Project
             voucher = voucher * 10;
             string perc = voucher.ToString() + '%';
             label5.Text = perc;
-            con.Close();
         }
 
         private void changePasswordBtn_Click(object sender, EventArgs e)
@@ -131,14 +130,17 @@ namespace Uber_Eats_Database_Project
             this.Close();
         }
 
+        private void CustomerAccount_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            con.Dispose();
+        }
+
         private void savePasswordBtn_Click(object sender, EventArgs e)
         {
             if (newPassword.Text == "" || oldPassword.Text == "" || confirmPassword.Text == "")
             {
                 CustomMsgBox.Show("Please fill all fields.");
             }
-
-            con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "select password from customer where username=:uname";
@@ -189,12 +191,10 @@ namespace Uber_Eats_Database_Project
                 CustomMsgBox.Show("Wrong Password! Enter your password again.");
                 oldPassword.Text = "";
             }
-            con.Close();
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "update customer set fname=:fn, lname=:ln, location=:loc, credit_no=:credit where username=:uname";
@@ -217,7 +217,6 @@ namespace Uber_Eats_Database_Project
             {
                 CustomMsgBox.Show("Couldn't update your information. Please try again.");
             }
-            con.Close();
             saveBtn.Hide();
             editBtn.Show();
             userName.Enabled = false;
@@ -231,8 +230,6 @@ namespace Uber_Eats_Database_Project
         {
             userName.Enabled = true;
             saveUserNameBtn.Show();
-
-            con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "select * from customer";
@@ -247,11 +244,9 @@ namespace Uber_Eats_Database_Project
                 }
                 index++;
             }
-            con.Close();
         }
         private void saveUserNameBtn_Click(object sender, EventArgs e)
         {
-            con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "select * from customer";
@@ -307,7 +302,6 @@ namespace Uber_Eats_Database_Project
                 }
                 CustomMsgBox.Show("Username changed successfully.");
             }
-            con.Close();
             saveUserNameBtn.Hide();
             userName.Enabled = false;
         }

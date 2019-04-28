@@ -103,6 +103,8 @@
             this.Confirm.Text = "Confirm";
             this.Confirm.UseVisualStyleBackColor = false;
             this.Confirm.Click += new System.EventHandler(this.Confirm_Click);
+            this.Confirm.MouseEnter += new System.EventHandler(this.Confirm_MouseEnter);
+            this.Confirm.MouseLeave += new System.EventHandler(this.Confirm_MouseLeave);
             // 
             // Cart
             // 
@@ -117,6 +119,7 @@
             this.Name = "Cart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cart";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cart_FormClosing);
             this.Load += new System.EventHandler(this.Cart_Load);
             this.header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();

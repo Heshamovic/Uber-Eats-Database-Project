@@ -260,7 +260,6 @@
             this.price.Size = new System.Drawing.Size(54, 18);
             this.price.TabIndex = 2;
             this.price.Text = "label1";
-           
             // 
             // splitter1
             // 

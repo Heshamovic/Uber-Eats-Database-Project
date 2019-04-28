@@ -108,7 +108,6 @@ namespace Uber_Eats_Database_Project
                 CustomMsgBox.Show("Please fill the required (*) fields!");
                 return;
             }
-            con.Open();
             string lname = lName.Text, fname = fName.Text, location = locationTB.Text, cc = creditCard.Text, vehicle = vehicleTB.Text;
             if (lname == "Last Name")
                 lname = null;
@@ -165,12 +164,12 @@ namespace Uber_Eats_Database_Project
             }
             else
                 CustomMsgBox.Show("This username is already taken!");
-            con.Close();
         }
 
         private void login_Load(object sender, EventArgs e)
         {
-            con = new OracleConnection("data source = orcl; user id = scott; password = tiger;");
+            con = new OracleConnection(Helper.constr);
+            con.Open();
         }
         
         private void customerChkBx_CheckedChanged(object sender, EventArgs e)
@@ -219,7 +218,6 @@ namespace Uber_Eats_Database_Project
                 CustomMsgBox.Show("Please fill the Password field");
                 return;
             }
-            con.Open();
             if(customerChkBxSignIn.Checked)
             {
                 OracleCommand cmd = new OracleCommand("select count(USERNAME) from customer where USERNAME = :name and PASSWORD = :pass", con);
@@ -256,7 +254,6 @@ namespace Uber_Eats_Database_Project
                 else
                     CustomMsgBox.Show("check your username and password!");
             }
-            con.Close();
         }
         public void letsShow(object sender, FormClosingEventArgs e)
         {
@@ -331,7 +328,6 @@ namespace Uber_Eats_Database_Project
                     CustomMsgBox.Show("Please fill the Password field");
                     return;
                 }
-                con.Open();
                 if (customerChkBxSignIn.Checked)
                 {
                     OracleCommand cmd = new OracleCommand("select count(USERNAME) from customer where USERNAME = :name and PASSWORD = :pass", con);
@@ -368,7 +364,6 @@ namespace Uber_Eats_Database_Project
                     else
                         CustomMsgBox.Show("check your username and password!");
                 }
-                con.Close();
             }
         }
 
@@ -391,7 +386,6 @@ namespace Uber_Eats_Database_Project
                     CustomMsgBox.Show("Please fill the Password field");
                     return;
                 }
-                con.Open();
                 if (customerChkBxSignIn.Checked)
                 {
                     OracleCommand cmd = new OracleCommand("select count(USERNAME) from customer where USERNAME = :name and PASSWORD = :pass", con);
@@ -428,8 +422,12 @@ namespace Uber_Eats_Database_Project
                     else
                         CustomMsgBox.Show("check your username and password!");
                 }
-                con.Close();
             }
+        }
+
+        private void login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            con.Dispose();
         }
     }
 }

@@ -56,7 +56,6 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(730, 450);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.WrapContents = false;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // header
             // 
@@ -69,7 +68,6 @@
             this.header.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.header.Size = new System.Drawing.Size(800, 29);
             this.header.TabIndex = 37;
-            this.header.Paint += new System.Windows.Forms.PaintEventHandler(this.header_Paint);
             // 
             // exit
             // 
@@ -149,6 +147,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "resfood";
             this.Text = "resfood";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.resfood_FormClosing);
             this.Load += new System.EventHandler(this.resfood_Load);
             this.header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();

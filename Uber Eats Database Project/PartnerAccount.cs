@@ -14,11 +14,13 @@ namespace Uber_Eats_Database_Project
 {
     public partial class PartnerAccount : Form
     {
-        //string constr,pass,vehicle;
-        //int part_index,fk_index;
         public OracleConnection con;
         string part_pass, part_vehicle, rating;
         int index;
+        public PartnerAccount()
+        {
+            InitializeComponent();
+        }
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -28,8 +30,7 @@ namespace Uber_Eats_Database_Project
         {
             userName.Enabled = true;
             saveUserNameBtn.Show();
-
-            con.Open();
+            
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "select * from delivery_partner";
@@ -44,12 +45,10 @@ namespace Uber_Eats_Database_Project
                 }
                 index++;
             }
-            con.Close();
         }
 
         private void saveUserNameBtn_Click(object sender, EventArgs e)
         {
-            con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "select * from delivery_partner";
@@ -101,9 +100,8 @@ namespace Uber_Eats_Database_Project
 
                     Helper.currentUserName = userName.Text;
                 }
-                MessageBox.Show("Username changed successfully.");
+                CustomMsgBox.Show("Username changed successfully.");
             }
-            con.Close();
             saveUserNameBtn.Hide();
             userName.Enabled = false;
         }
@@ -153,12 +151,10 @@ namespace Uber_Eats_Database_Project
         {
             vehicleType.Enabled = true;
             saveBtn.Show();
-
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "update delivery_partner set vehicle=:veh where username=:uname";
@@ -168,14 +164,13 @@ namespace Uber_Eats_Database_Project
             int r = cmd.ExecuteNonQuery();
             if (r != -1)
             {
-                MessageBox.Show("Vehicle is Updated successfully.");
+                CustomMsgBox.Show("Vehicle is Updated successfully.");
                 part_vehicle = vehicleType.Text;
             }
             else
             {
-                MessageBox.Show("Couldn't update your information. Please try again.");
+                CustomMsgBox.Show("Couldn't update your information. Please try again.");
             }
-            con.Close();
             saveBtn.Hide();
             editBtn.Show();
             userName.Enabled = false;
@@ -186,10 +181,9 @@ namespace Uber_Eats_Database_Project
         {
             if (newPassword.Text == "" || oldPassword.Text == "" || confirmPassword.Text == "")
             {
-                MessageBox.Show("Please fill all fields.");
+                CustomMsgBox.Show("Please fill all fields.");
             }
-
-            con.Open();
+            
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "select password from delivery_partner where username=:uname";
@@ -213,7 +207,7 @@ namespace Uber_Eats_Database_Project
                     int r = cmd2.ExecuteNonQuery();
                     if (r != -1)
                     {
-                        MessageBox.Show("Password is changed successfully.");
+                        CustomMsgBox.Show("Password is changed successfully.");
                         part_pass = newPassword.Text;
                         oldPassword.Text = "";
                         newPassword.Text = "";
@@ -225,32 +219,42 @@ namespace Uber_Eats_Database_Project
                     }
                     else
                     {
-                        MessageBox.Show("Couldn't change your password. Please try again.");
+                        CustomMsgBox.Show("Couldn't change your password. Please try again.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please re-enter your new password.");
+                    CustomMsgBox.Show("Please re-enter your new password.");
                     newPassword.Text = "";
                     confirmPassword.Text = "";
                 }
             }
             else
             {
-                MessageBox.Show("Wrong Password! Enter your password again.");
+                CustomMsgBox.Show("Wrong Password! Enter your password again.");
                 oldPassword.Text = "";
             }
-            con.Close();
+        }
+
+        private void DeliveredOrdersRptBtn_Click(object sender, EventArgs e)
+        {
+            ReportsForm rf = new ReportsForm(0);
+            rf.Show();
+            this.Hide();
+            rf.FormClosing += letsShow;
         }
 
         public int trips;
-        public PartnerAccount()
+
+        private void PartnerAccount_FormClosing(object sender, FormClosingEventArgs e)
         {
-            InitializeComponent();
+            con.Dispose();
         }
 
         private void PartnerAccount_Load(object sender, EventArgs e)
         {
+            con = new OracleConnection(Helper.constr);
+            con.Open();
             bunifuRating1.Enabled = false;
             userName.Enabled = false;
             vehicleType.Enabled = false;
@@ -260,8 +264,6 @@ namespace Uber_Eats_Database_Project
             newPassword.Hide();
             confirmPassword.Hide();
             saveBtn.Hide();
-            con = new OracleConnection("data source = orcl; user id = scott; password = tiger;");
-            con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "select * from delivery_partner where username=:uname";
@@ -294,7 +296,10 @@ namespace Uber_Eats_Database_Project
             {
                 label4.Text = "0";
             }
-            con.Close();
+        }
+        public void letsShow(object sender, FormClosingEventArgs e)
+        {
+            this.Show();
         }
     }
 }

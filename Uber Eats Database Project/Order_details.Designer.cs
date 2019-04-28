@@ -98,6 +98,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Order_details";
             this.Text = "Order_details";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Order_details_FormClosing);
             this.Load += new System.EventHandler(this.Order_details_Load);
             this.header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Order_detail_close)).EndInit();

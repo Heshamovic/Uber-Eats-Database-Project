@@ -42,7 +42,6 @@ namespace Uber_Eats_Database_Project
             RestaurantsNamesUpdate.DataSource = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).ToList();
         }
         
-
         private void button1_Click(object sender, EventArgs e)
         {
             ent.SaveChanges();

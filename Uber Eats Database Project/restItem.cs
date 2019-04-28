@@ -12,7 +12,7 @@ namespace Uber_Eats_Database_Project
 {
     public partial class restItem : UserControl
     {
-        public restItem( string img,string name,double rating ,string type)
+        public restItem(string img, string name, double rating, string type)
         {
             InitializeComponent();
            
@@ -26,33 +26,12 @@ namespace Uber_Eats_Database_Project
             
             this.bunifuRating1.Value =  Convert.ToInt32(x);
         }
-
-        private void restItem_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void foodimg_Click(object sender, EventArgs e)
-        {
-             
-        }
-
-        private void name_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
         public void letsShow(object sender, FormClosingEventArgs e)
         {
             this.Parent.Parent.Parent.Parent.Show();
         }
         private void button2_Click_1(object sender, EventArgs e)
         {
-            
             resfood r = new resfood(this.name.Text);
             r.Show();
             this.Parent.Parent.Parent.Parent.Hide();

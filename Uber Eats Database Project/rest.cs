@@ -14,17 +14,12 @@ namespace Uber_Eats_Database_Project
 {
     public partial class rest : Form
     {
-           string str= Helper.constr;
-
+        OracleConnection Conn;
         public rest()
         {
             InitializeComponent();
         }
-
-        private void restItem1_Load(object sender, EventArgs e)
-        {  
-        }
-
+        
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -32,10 +27,10 @@ namespace Uber_Eats_Database_Project
 
         private void rest_Load(object sender, EventArgs e)
         {
+            Conn = new OracleConnection(Helper.constr);
+            Conn.Open();
             FolderBrowserDialog b = new FolderBrowserDialog();
             string img = "NoCamera_32px.png";
-            OracleConnection Conn = new OracleConnection(str);
-            Conn.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.CommandText = "select * from restaurant";
             cmd.Connection = Conn;
@@ -52,25 +47,22 @@ namespace Uber_Eats_Database_Project
                 flowLayoutPanel1.Controls.Add(x);
             }
             red.Close();
-            Conn.Close();
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
         public void letsShow(object sender, FormClosingEventArgs e)
         {
             this.Show();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Cart r = new Cart();
             r.Show();
             this.Hide();
             r.FormClosing += letsShow;
+        }
+
+        private void rest_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Conn.Dispose();
         }
     }
 }

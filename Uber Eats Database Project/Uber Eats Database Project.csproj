@@ -243,12 +243,6 @@
     <Compile Include="REST_NUMBERS.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
-    <Compile Include="test.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="test.Designer.cs">
-      <DependentUpon>test.cs</DependentUpon>
-    </Compile>
     <Compile Include="TRIP.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
@@ -346,9 +340,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="restItem.resx">
       <DependentUpon>restItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="test.resx">
-      <DependentUpon>test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserOrderItem.resx">
       <DependentUpon>UserOrderItem.cs</DependentUpon>

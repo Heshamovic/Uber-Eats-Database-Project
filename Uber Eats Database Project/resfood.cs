@@ -14,7 +14,7 @@ namespace Uber_Eats_Database_Project
 {
     public partial class resfood : Form
     {
-        string str = Helper.constr;
+        OracleConnection Conn;
         string img = "NoCamera_32px.png";
         string resn;
         public resfood(string id )
@@ -23,17 +23,12 @@ namespace Uber_Eats_Database_Project
             this.resn = id;
         }
 
-        private void header_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void resfood_Load(object sender, EventArgs e)
         {
+            Conn = new OracleConnection(Helper.constr);
+            Conn.Open();
             FolderBrowserDialog b = new FolderBrowserDialog();
             string img = "NoCamera_32px.png";
-            OracleConnection Conn = new OracleConnection(str);
-            Conn.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.CommandText = "select * from food where food.restaurant_name =:resn";
             cmd.Parameters.Add("resn",resn);
@@ -53,14 +48,6 @@ namespace Uber_Eats_Database_Project
                 flowLayoutPanel1.Controls.Add(r);
             }
             red.Close();
-
-
-            Conn.Close();
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void exit_Click(object sender, EventArgs e)
@@ -69,16 +56,19 @@ namespace Uber_Eats_Database_Project
         }
         public void letsShow(object sender, FormClosingEventArgs e)
         {
-
             this.Show();
         }
         private void button1_Click(object sender, EventArgs e)
         {
-
             Cart r = new Cart();
             r.Show();
             this.Hide();
             r.FormClosing += letsShow;
+        }
+
+        private void resfood_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Conn.Dispose();
         }
     }
 }

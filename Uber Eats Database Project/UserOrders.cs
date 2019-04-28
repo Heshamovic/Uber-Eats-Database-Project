@@ -38,10 +38,7 @@ namespace Uber_Eats_Database_Project
             cmd6.Parameters.Add("cnt", OracleDbType.Int32, ParameterDirection.Output);
             cmd6.ExecuteNonQuery();
             userorders_count = int.Parse(cmd6.Parameters["cnt"].Value.ToString());
-            con.Close();
 
-            con = new OracleConnection(Helper.constr);
-            con.Open();
             OracleCommand cmd7 = new OracleCommand();
             cmd7.Connection = con;
             cmd7.CommandText = "GetAllOrders";
@@ -76,21 +73,15 @@ namespace Uber_Eats_Database_Project
 
                 userOrderItems[i].Price_integer.Text = ( totalprice.ToString()+ "LE");
                 totalprice = 0;
-
-                //userOrderItems[i].RestName.Text = dr[1].ToString();
-                //cartItems[i].RestLoc.Text = dr[2].ToString();
-                //cartItems[i].Price.Text = dr[3].ToString();
-                //cartItems[i].Discount.Text = (dr[4]).ToString();
-                //cartItems[i].NoOfItems.Text = (dr[5]).ToString();
-                //cartItems[i].cart_id = i;
-          
                 User_Order_Panel.Controls.Add(userOrderItems[i]);
                 i++;
-
             }
             dr.Close();
+        }
 
-            con.Close();
+        private void UserOrders_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            con.Dispose();
         }
     }
 }

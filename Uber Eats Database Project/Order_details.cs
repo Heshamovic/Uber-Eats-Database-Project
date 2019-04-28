@@ -15,7 +15,6 @@ namespace Uber_Eats_Database_Project
     {
         public int c_order;
         int z = 0;
-       
         public OrderDetails_Item[] orderDetails_Items;
         OracleConnection con;
 
@@ -26,9 +25,9 @@ namespace Uber_Eats_Database_Project
 
         private void Order_details_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(c_order.ToString());
             con = new OracleConnection(Helper.constr);
             con.Open();
+            CustomMsgBox.Show(c_order.ToString());
             OracleCommand cmd9 = new OracleCommand();
             cmd9.Connection = con;
             cmd9.CommandText = "Count_GetCartItems";
@@ -37,10 +36,7 @@ namespace Uber_Eats_Database_Project
             cmd9.Parameters.Add("cnt", OracleDbType.Int32, ParameterDirection.Output);
             cmd9.ExecuteNonQuery();
             z = int.Parse(cmd9.Parameters["cnt"].Value.ToString());
-            con.Close();
 
-            con = new OracleConnection(Helper.constr);
-            con.Open();
             OracleCommand cmd10 = new OracleCommand();
             cmd10.Connection = con;
             cmd10.CommandText = "GetCartItems";
@@ -64,12 +60,16 @@ namespace Uber_Eats_Database_Project
                 i++;
             }
             dr.Close();
-            con.Close();
         }
 
         private void Order_detail_close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Order_details_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            con.Dispose();
         }
     }
 }
