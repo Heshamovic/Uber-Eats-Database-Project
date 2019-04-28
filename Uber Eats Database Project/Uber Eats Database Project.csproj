@@ -68,9 +68,10 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Oracle.DataAccess, Version=2.112.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
       <HintPath>..\packages\Oracle.DataAccess.x86.2.112.1.0\lib\Oracle.DataAccess.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <HintPath>..\packages\Oracle.ManagedDataAccess.18.6.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
+    <Reference Include="Oracle.ManagedDataAccess, Version=2.0.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <HintPath>..\packages\Oracle.ManagedDataAccess.Core.2.18.3\lib\netstandard2.0\Oracle.ManagedDataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
       <HintPath>..\packages\Oracle.ManagedDataAccess.EntityFramework.18.3.0\lib\net45\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
@@ -138,9 +139,6 @@
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
     <Compile Include="FOOD.cs">
-      <DependentUpon>UberEats.tt</DependentUpon>
-    </Compile>
-    <Compile Include="FOOD_TYPE.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
@@ -413,19 +411,19 @@
     <Content Include="bin\Debug\stdole.dll" />
     <Content Include="bin\Debug\Uber Eats Database Project.exe" />
     <Content Include="bin\Debug\Uber Eats Database Project.pdb" />
-    <None Include="resources\cancel %281%29.png" />
-    <None Include="resources\check.png" />
-    <None Include="resources\Checkout_32px.png" />
     <Content Include="UberEats.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>UberEats.Context.cs</LastGenOutput>
       <DependentUpon>UberEats.edmx</DependentUpon>
+      <LastGenOutput>UberEats.Context.cs</LastGenOutput>
     </Content>
     <Content Include="UberEats.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UberEats.edmx</DependentUpon>
       <LastGenOutput>UberEats.cs</LastGenOutput>
     </Content>
+    <None Include="resources\cancel %281%29.png" />
+    <None Include="resources\check.png" />
+    <None Include="resources\Checkout_32px.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

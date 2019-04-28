@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CUSTOMER">
           <Key>
             <PropertyRef Name="USERNAME" />
@@ -50,7 +50,7 @@ warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defi
             <PropertyRef Name="RESTAURANT_NAME" />
             <PropertyRef Name="RESTAURANT_LOCATION" />
             <PropertyRef Name="FOOD_NAME" />
-            
+            <PropertyRef Name="BOUGHT" />
           </Key>
           <Property Name="ORDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="RESTAURANT_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
@@ -314,7 +314,8 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
             <End Role="WORKING_TIME" EntitySet="WORKING_TIME" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -328,7 +329,17 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <Property Name="LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="CREDIT_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="ORDERS" Relationship="Model.ORDERS_CUSTOMER_FK1" FromRole="CUSTOMER" ToRole="ORDER" />
+          <NavigationProperty Name="ORDERS" Relationship="Self.ORDERS_CUSTOMER_FK1" FromRole="CUSTOMER" ToRole="ORDERS" />
+        </EntityType>
+        <EntityType Name="DELIVERY_PARTNER">
+          <Key>
+            <PropertyRef Name="USERNAME" />
+          </Key>
+          <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VEHICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="TRIPs" Relationship="Self.TRIP_DELIVERY_PARTNER_FK1" FromRole="DELIVERY_PARTNER" ToRole="TRIP" />
         </EntityType>
         <EntityType Name="FOOD">
           <Key>
@@ -344,26 +355,10 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="INGREDIANTS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="TOP_DISH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="RESTAURANT" Relationship="Self.FOOD_RESTAURANT_FK1" FromRole="FOOD" ToRole="RESTAURANT" />
-          <NavigationProperty Name="ORDER_FOOD" Relationship="Self.ORDER_FOOD_FOOD_FK1" FromRole="FOOD" ToRole="ORDER_FOOD" />
           <Property Name="FOODIMAGE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="FOODTYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="ORDER_FOOD">
-          <Key>
-            <PropertyRef Name="ORDER_ID" />
-            <PropertyRef Name="RESTAURANT_NAME" />
-            <PropertyRef Name="RESTAURANT_LOCATION" />
-            <PropertyRef Name="FOOD_NAME" />
-          </Key>
-          <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="RESTAURANT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="RESTAURANT_LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FOOD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NO_OF_ITEMS_PER_FOOD" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="BOUGHT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="FOOD" Relationship="Self.ORDER_FOOD_FOOD_FK1" FromRole="ORDER_FOOD" ToRole="FOOD" />
-          <NavigationProperty Name="ORDER" Relationship="Self.ORDER_FOOD_ORDER_FK1" FromRole="ORDER_FOOD" ToRole="ORDERS" />
+          <NavigationProperty Name="RESTAURANT" Relationship="Self.FOOD_RESTAURANT_FK1" FromRole="FOOD" ToRole="RESTAURANT" />
+          <NavigationProperty Name="ORDER_FOOD" Relationship="Self.ORDER_FOOD_FOOD_FK1" FromRole="FOOD" ToRole="ORDER_FOOD" />
         </EntityType>
         <EntityType Name="ORDER">
           <Key>
@@ -371,14 +366,13 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           </Key>
           <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <Property Name="TIP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="DATE" Type="DateTime" />
+          <Property Name="ORDER_DATE" Type="DateTime" />
           <Property Name="PAYMENT_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="CUSTOMER_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CUSTOMER" Relationship="Self.ORDERS_CUSTOMER_FK1" FromRole="ORDERS" ToRole="CUSTOMER" />
           <NavigationProperty Name="ORDER_FOOD" Relationship="Self.ORDER_FOOD_ORDER_FK1" FromRole="ORDERS" ToRole="ORDER_FOOD" />
           <NavigationProperty Name="TRIP" Relationship="Self.ORDER_TRIP_FK1" FromRole="ORDERS" ToRole="TRIP" />
-          <Property Name="ORDER_DATE" Type="DateTime" />
-          <NavigationProperty Name="CUSTOMER" Relationship="Model.ORDERS_CUSTOMER_FK1" FromRole="ORDER" ToRole="CUSTOMER" />
         </EntityType>
         <EntityType Name="REST_NUMBERS">
           <Key>
@@ -400,10 +394,10 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <Property Name="RESTAURANT_LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="CUISINE_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RESTAURANT_IMAGE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="FOODs" Relationship="Self.FOOD_RESTAURANT_FK1" FromRole="RESTAURANT" ToRole="FOOD" />
           <NavigationProperty Name="REST_NUMBERS" Relationship="Self.REST_NUMBERS_RESTAURANT_FK1" FromRole="RESTAURANT" ToRole="REST_NUMBERS" />
           <NavigationProperty Name="WORKING_TIME" Relationship="Self.WORKING_TIME_RESTAURANT_FK1" FromRole="RESTAURANT" ToRole="WORKING_TIME" />
-          <Property Name="RESTAURANT_IMAGE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TRIP">
           <Key>
@@ -412,9 +406,9 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <Property Name="DISTANCE_OF_TRIP" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="DELIVERYPARTNER_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DELIVERYFEES" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <NavigationProperty Name="DELIVERY_PARTNER" Relationship="Self.TRIP_DELIVERY_PARTNER_FK1" FromRole="TRIP" ToRole="DELIVERY_PARTNER" />
           <NavigationProperty Name="ORDER" Relationship="Self.ORDER_TRIP_FK1" FromRole="TRIP" ToRole="ORDERS" />
-          <NavigationProperty Name="DELIVERY_PARTNER" Relationship="Model.TRIP_DELIVERY_PARTNER_FK1" FromRole="TRIP" ToRole="DELIVERY_PARTNER" />
-          <Property Name="DELIVERYFEES" Type="Decimal" Precision="38" Scale="0" />
         </EntityType>
         <EntityType Name="WORKING_TIME">
           <Key>
@@ -429,6 +423,47 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <Property Name="END_TIME" Type="Decimal" Precision="38" Scale="0" />
           <NavigationProperty Name="RESTAURANT" Relationship="Self.WORKING_TIME_RESTAURANT_FK1" FromRole="WORKING_TIME" ToRole="RESTAURANT" />
         </EntityType>
+        <EntityType Name="ORDER_FOOD">
+          <Key>
+            <PropertyRef Name="ORDER_ID" />
+            <PropertyRef Name="RESTAURANT_NAME" />
+            <PropertyRef Name="RESTAURANT_LOCATION" />
+            <PropertyRef Name="FOOD_NAME" />
+            <PropertyRef Name="BOUGHT" />
+          </Key>
+          <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="RESTAURANT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RESTAURANT_LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FOOD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NO_OF_ITEMS_PER_FOOD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="BOUGHT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="FOOD" Relationship="Self.ORDER_FOOD_FOOD_FK1" FromRole="ORDER_FOOD" ToRole="FOOD" />
+          <NavigationProperty Name="ORDER" Relationship="Self.ORDER_FOOD_ORDER_FK1" FromRole="ORDER_FOOD" ToRole="ORDERS" />
+        </EntityType>
+        <Association Name="ORDERS_CUSTOMER_FK1">
+          <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
+          <End Role="ORDERS" Type="Self.ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CUSTOMER">
+              <PropertyRef Name="USERNAME" />
+            </Principal>
+            <Dependent Role="ORDERS">
+              <PropertyRef Name="CUSTOMER_USERNAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TRIP_DELIVERY_PARTNER_FK1">
+          <End Role="DELIVERY_PARTNER" Type="Self.DELIVERY_PARTNER" Multiplicity="0..1" />
+          <End Role="TRIP" Type="Self.TRIP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DELIVERY_PARTNER">
+              <PropertyRef Name="USERNAME" />
+            </Principal>
+            <Dependent Role="TRIP">
+              <PropertyRef Name="DELIVERYPARTNER_USERNAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FOOD_RESTAURANT_FK1">
           <End Role="RESTAURANT" Type="Self.RESTAURANT" Multiplicity="1" />
           <End Role="FOOD" Type="Self.FOOD" Multiplicity="*" />
@@ -513,13 +548,22 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
         </Association>
         <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
+          <EntitySet Name="DELIVERY_PARTNER" EntityType="Self.DELIVERY_PARTNER" />
           <EntitySet Name="FOODs" EntityType="Self.FOOD" />
-          <EntitySet Name="ORDER_FOOD" EntityType="Self.ORDER_FOOD" />
           <EntitySet Name="ORDERS" EntityType="Self.ORDER" />
           <EntitySet Name="REST_NUMBERS" EntityType="Self.REST_NUMBERS" />
           <EntitySet Name="RESTAURANTs" EntityType="Self.RESTAURANT" />
           <EntitySet Name="TRIPs" EntityType="Self.TRIP" />
           <EntitySet Name="WORKING_TIME" EntityType="Self.WORKING_TIME" />
+          <EntitySet Name="ORDER_FOOD" EntityType="Self.ORDER_FOOD" />
+          <AssociationSet Name="ORDERS_CUSTOMER_FK1" Association="Self.ORDERS_CUSTOMER_FK1">
+            <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
+            <End Role="ORDERS" EntitySet="ORDERS" />
+          </AssociationSet>
+          <AssociationSet Name="TRIP_DELIVERY_PARTNER_FK1" Association="Self.TRIP_DELIVERY_PARTNER_FK1">
+            <End Role="DELIVERY_PARTNER" EntitySet="DELIVERY_PARTNER" />
+            <End Role="TRIP" EntitySet="TRIPs" />
+          </AssociationSet>
           <AssociationSet Name="FOOD_RESTAURANT_FK1" Association="Self.FOOD_RESTAURANT_FK1">
             <End Role="RESTAURANT" EntitySet="RESTAURANTs" />
             <End Role="FOOD" EntitySet="FOODs" />
@@ -544,26 +588,6 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
             <End Role="RESTAURANT" EntitySet="RESTAURANTs" />
             <End Role="WORKING_TIME" EntitySet="WORKING_TIME" />
           </AssociationSet>
-          <FunctionImport Name="SIGN_UP">
-            <Parameter Name="NUSERNAME" Mode="In" Type="String" />
-            <Parameter Name="NPASSWORD" Mode="In" Type="String" />
-            <Parameter Name="NROLE" Mode="In" Type="Decimal" />
-            <Parameter Name="DONE" Mode="Out" Type="Decimal" />
-            <Parameter Name="NFNAME" Mode="In" Type="String" />
-            <Parameter Name="NLNAME" Mode="In" Type="String" />
-            <Parameter Name="NLOCATION" Mode="In" Type="String" />
-            <Parameter Name="NCREDIT_NO" Mode="In" Type="String" />
-            <Parameter Name="NVEHICLE" Mode="In" Type="String" />
-          </FunctionImport>
-          <EntitySet Name="DELIVERY_PARTNER" EntityType="Model.DELIVERY_PARTNER" />
-          <AssociationSet Name="TRIP_DELIVERY_PARTNER_FK1" Association="Model.TRIP_DELIVERY_PARTNER_FK1">
-            <End Role="DELIVERY_PARTNER" EntitySet="DELIVERY_PARTNER" />
-            <End Role="TRIP" EntitySet="TRIPs" />
-          </AssociationSet>
-          <AssociationSet Name="ORDERS_CUSTOMER_FK1" Association="Model.ORDERS_CUSTOMER_FK1">
-            <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
-            <End Role="ORDER" EntitySet="ORDERS" />
-          </AssociationSet>
           <FunctionImport Name="COUNT_GETCARTITEMS">
             <Parameter Name="CURRENT_ORDER_ID" Mode="In" Type="Decimal" />
             <Parameter Name="CNT" Mode="Out" Type="Decimal" />
@@ -587,6 +611,17 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <FunctionImport Name="GETCARTITEMS">
             <Parameter Name="CURRENT_ORDER_ID" Mode="In" Type="Decimal" />
           </FunctionImport>
+          <FunctionImport Name="SIGN_UP">
+            <Parameter Name="NUSERNAME" Mode="In" Type="String" />
+            <Parameter Name="NPASSWORD" Mode="In" Type="String" />
+            <Parameter Name="NROLE" Mode="In" Type="Decimal" />
+            <Parameter Name="DONE" Mode="Out" Type="Decimal" />
+            <Parameter Name="NFNAME" Mode="In" Type="String" />
+            <Parameter Name="NLNAME" Mode="In" Type="String" />
+            <Parameter Name="NLOCATION" Mode="In" Type="String" />
+            <Parameter Name="NCREDIT_NO" Mode="In" Type="String" />
+            <Parameter Name="NVEHICLE" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="UPDATE_CART_ITEMS">
             <Parameter Name="ORDERID" Mode="In" Type="Decimal" />
             <Parameter Name="REST_NAME" Mode="In" Type="String" />
@@ -598,40 +633,6 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
             <Parameter Name="ORDERID" Mode="In" Type="Decimal" />
           </FunctionImport>
         </EntityContainer>
-        <EntityType Name="DELIVERY_PARTNER">
-          <Key>
-            <PropertyRef Name="USERNAME" />
-          </Key>
-          <Property Name="USERNAME" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="VEHICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" />
-          <NavigationProperty Name="TRIPs" Relationship="Model.TRIP_DELIVERY_PARTNER_FK1" FromRole="DELIVERY_PARTNER" ToRole="TRIP" />
-        </EntityType>
-        <Association Name="TRIP_DELIVERY_PARTNER_FK1">
-          <End Type="Model.DELIVERY_PARTNER" Role="DELIVERY_PARTNER" Multiplicity="0..1" />
-          <End Type="Model.TRIP" Role="TRIP" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DELIVERY_PARTNER">
-              <PropertyRef Name="USERNAME" />
-            </Principal>
-            <Dependent Role="TRIP">
-              <PropertyRef Name="DELIVERYPARTNER_USERNAME" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="ORDERS_CUSTOMER_FK1">
-          <End Type="Model.CUSTOMER" Role="CUSTOMER" Multiplicity="0..1" />
-          <End Type="Model.ORDER" Role="ORDER" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CUSTOMER">
-              <PropertyRef Name="USERNAME" />
-            </Principal>
-            <Dependent Role="ORDER">
-              <PropertyRef Name="CUSTOMER_USERNAME" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -650,11 +651,19 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="DELIVERY_PARTNER">
+            <EntityTypeMapping TypeName="Model.DELIVERY_PARTNER">
+              <MappingFragment StoreEntitySet="DELIVERY_PARTNER">
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="VEHICLE" ColumnName="VEHICLE" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="RATING" ColumnName="RATING" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="FOODs">
             <EntityTypeMapping TypeName="Model.FOOD">
               <MappingFragment StoreEntitySet="FOOD">
-                <ScalarProperty Name="FOODTYPE" ColumnName="FOODTYPE" />
-                <ScalarProperty Name="FOODIMAGE" ColumnName="FOODIMAGE" />
                 <ScalarProperty Name="FOOD_NAME" ColumnName="FOOD_NAME" />
                 <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
                 <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />
@@ -663,27 +672,17 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
                 <ScalarProperty Name="RATING" ColumnName="RATING" />
                 <ScalarProperty Name="INGREDIANTS" ColumnName="INGREDIANTS" />
                 <ScalarProperty Name="TOP_DISH" ColumnName="TOP_DISH" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ORDER_FOOD">
-            <EntityTypeMapping TypeName="Model.ORDER_FOOD">
-              <MappingFragment StoreEntitySet="ORDER_FOOD">
-                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
-                <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
-                <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />
-                <ScalarProperty Name="FOOD_NAME" ColumnName="FOOD_NAME" />
-                <ScalarProperty Name="NO_OF_ITEMS_PER_FOOD" ColumnName="NO_OF_ITEMS_PER_FOOD" />
-                <ScalarProperty Name="BOUGHT" ColumnName="BOUGHT" />
+                <ScalarProperty Name="FOODIMAGE" ColumnName="FOODIMAGE" />
+                <ScalarProperty Name="FOODTYPE" ColumnName="FOODTYPE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ORDERS">
             <EntityTypeMapping TypeName="Model.ORDER">
               <MappingFragment StoreEntitySet="ORDERS">
-                <ScalarProperty Name="ORDER_DATE" ColumnName="ORDER_DATE" />
                 <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
                 <ScalarProperty Name="TIP" ColumnName="TIP" />
+                <ScalarProperty Name="ORDER_DATE" ColumnName="ORDER_DATE" />
                 <ScalarProperty Name="PAYMENT_TYPE" ColumnName="PAYMENT_TYPE" />
                 <ScalarProperty Name="STATUS" ColumnName="STATUS" />
                 <ScalarProperty Name="CUSTOMER_USERNAME" ColumnName="CUSTOMER_USERNAME" />
@@ -702,21 +701,21 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <EntitySetMapping Name="RESTAURANTs">
             <EntityTypeMapping TypeName="Model.RESTAURANT">
               <MappingFragment StoreEntitySet="RESTAURANT">
-                <ScalarProperty Name="RESTAURANT_IMAGE" ColumnName="RESTAURANT_IMAGE" />
                 <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
                 <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />
                 <ScalarProperty Name="RATING" ColumnName="RATING" />
                 <ScalarProperty Name="CUISINE_TYPE" ColumnName="CUISINE_TYPE" />
+                <ScalarProperty Name="RESTAURANT_IMAGE" ColumnName="RESTAURANT_IMAGE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TRIPs">
             <EntityTypeMapping TypeName="Model.TRIP">
               <MappingFragment StoreEntitySet="TRIP">
-                <ScalarProperty Name="DELIVERYFEES" ColumnName="DELIVERYFEES" />
                 <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
                 <ScalarProperty Name="DISTANCE_OF_TRIP" ColumnName="DISTANCE_OF_TRIP" />
                 <ScalarProperty Name="DELIVERYPARTNER_USERNAME" ColumnName="DELIVERYPARTNER_USERNAME" />
+                <ScalarProperty Name="DELIVERYFEES" ColumnName="DELIVERYFEES" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -731,14 +730,15 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="SIGN_UP" FunctionName="Model.Store.SIGN_UP" />
-          <EntitySetMapping Name="DELIVERY_PARTNER">
-            <EntityTypeMapping TypeName="Model.DELIVERY_PARTNER">
-              <MappingFragment StoreEntitySet="DELIVERY_PARTNER">
-                <ScalarProperty Name="RATING" ColumnName="RATING" />
-                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
-                <ScalarProperty Name="VEHICLE" ColumnName="VEHICLE" />
-                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <EntitySetMapping Name="ORDER_FOOD">
+            <EntityTypeMapping TypeName="Model.ORDER_FOOD">
+              <MappingFragment StoreEntitySet="ORDER_FOOD">
+                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+                <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
+                <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />
+                <ScalarProperty Name="FOOD_NAME" ColumnName="FOOD_NAME" />
+                <ScalarProperty Name="NO_OF_ITEMS_PER_FOOD" ColumnName="NO_OF_ITEMS_PER_FOOD" />
+                <ScalarProperty Name="BOUGHT" ColumnName="BOUGHT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -748,6 +748,7 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="GETALLORDERS" FunctionName="Model.Store.GETALLORDERS" />
           <FunctionImportMapping FunctionImportName="GETCARTID" FunctionName="Model.Store.GETCARTID" />
           <FunctionImportMapping FunctionImportName="GETCARTITEMS" FunctionName="Model.Store.GETCARTITEMS" />
+          <FunctionImportMapping FunctionImportName="SIGN_UP" FunctionName="Model.Store.SIGN_UP" />
           <FunctionImportMapping FunctionImportName="UPDATE_CART_ITEMS" FunctionName="Model.Store.UPDATE_CART_ITEMS" />
           <FunctionImportMapping FunctionImportName="UPDATE_ORDER_STATUS_NC_TO_PD" FunctionName="Model.Store.UPDATE_ORDER_STATUS_NC_TO_PD" />
         </EntityContainerMapping>
@@ -766,7 +767,7 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
