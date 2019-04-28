@@ -45,6 +45,10 @@
             this.PendingOrdersBtn = new System.Windows.Forms.Button();
             this.UsernameLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.CurrentOrderBtn = new System.Windows.Forms.Button();
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse4 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuElipse5 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.LogoutBtn)).BeginInit();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
@@ -55,9 +59,9 @@
             // 
             this.LogoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogoutBtn.Image = ((System.Drawing.Image)(resources.GetObject("LogoutBtn.Image")));
-            this.LogoutBtn.Location = new System.Drawing.Point(236, 262);
+            this.LogoutBtn.Location = new System.Drawing.Point(236, 268);
             this.LogoutBtn.Name = "LogoutBtn";
-            this.LogoutBtn.Size = new System.Drawing.Size(77, 73);
+            this.LogoutBtn.Size = new System.Drawing.Size(69, 56);
             this.LogoutBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LogoutBtn.TabIndex = 4;
             this.LogoutBtn.TabStop = false;
@@ -272,6 +276,26 @@
             this.CurrentOrderBtn.MouseEnter += new System.EventHandler(this.CurrentOrderBtn_MouseEnter);
             this.CurrentOrderBtn.MouseLeave += new System.EventHandler(this.CurrentOrderBtn_MouseLeave);
             // 
+            // bunifuElipse2
+            // 
+            this.bunifuElipse2.ElipseRadius = 20;
+            this.bunifuElipse2.TargetControl = this;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 20;
+            this.bunifuElipse3.TargetControl = this;
+            // 
+            // bunifuElipse4
+            // 
+            this.bunifuElipse4.ElipseRadius = 20;
+            this.bunifuElipse4.TargetControl = this;
+            // 
+            // bunifuElipse5
+            // 
+            this.bunifuElipse5.ElipseRadius = 20;
+            this.bunifuElipse5.TargetControl = this;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,6 +316,7 @@
             this.Controls.Add(this.LogoutBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.LogoutBtn)).EndInit();
             this.header.ResumeLayout(false);
@@ -318,5 +343,9 @@
         private Bunifu.Framework.UI.BunifuCustomLabel UsernameLabel;
         private Bunifu.Framework.UI.BunifuImageButton CloseBtn;
         private System.Windows.Forms.Button CurrentOrderBtn;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse4;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse5;
     }
 }

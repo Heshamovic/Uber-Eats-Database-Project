@@ -64,10 +64,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label1.Location = new System.Drawing.Point(259, 71);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(194, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 25);
+            this.label1.Size = new System.Drawing.Size(78, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sign Up!";
             // 
@@ -75,10 +74,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label2.Location = new System.Drawing.Point(703, 261);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(527, 212);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 25);
+            this.label2.Size = new System.Drawing.Size(70, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Sign In!";
             // 
@@ -86,10 +84,10 @@
             // 
             this.userNameSignUp.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameSignUp.ForeColor = System.Drawing.Color.DarkGray;
-            this.userNameSignUp.Location = new System.Drawing.Point(144, 119);
-            this.userNameSignUp.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.userNameSignUp.Location = new System.Drawing.Point(108, 97);
+            this.userNameSignUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.userNameSignUp.Name = "userNameSignUp";
-            this.userNameSignUp.Size = new System.Drawing.Size(327, 30);
+            this.userNameSignUp.Size = new System.Drawing.Size(246, 25);
             this.userNameSignUp.TabIndex = 1;
             this.userNameSignUp.Text = "Username*";
             this.userNameSignUp.Enter += new System.EventHandler(this.textBox1_Enter);
@@ -99,10 +97,10 @@
             // 
             this.passwordSignUp.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordSignUp.ForeColor = System.Drawing.Color.DarkGray;
-            this.passwordSignUp.Location = new System.Drawing.Point(144, 158);
-            this.passwordSignUp.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.passwordSignUp.Location = new System.Drawing.Point(108, 128);
+            this.passwordSignUp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passwordSignUp.Name = "passwordSignUp";
-            this.passwordSignUp.Size = new System.Drawing.Size(327, 30);
+            this.passwordSignUp.Size = new System.Drawing.Size(246, 25);
             this.passwordSignUp.TabIndex = 2;
             this.passwordSignUp.Text = "Password*";
             this.passwordSignUp.Enter += new System.EventHandler(this.passwordSignUp_Enter);
@@ -113,10 +111,10 @@
             this.fName.Enabled = false;
             this.fName.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fName.ForeColor = System.Drawing.Color.DarkGray;
-            this.fName.Location = new System.Drawing.Point(144, 230);
-            this.fName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.fName.Location = new System.Drawing.Point(108, 187);
+            this.fName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fName.Name = "fName";
-            this.fName.Size = new System.Drawing.Size(327, 30);
+            this.fName.Size = new System.Drawing.Size(246, 25);
             this.fName.TabIndex = 3;
             this.fName.Text = "First Name";
             this.fName.Enter += new System.EventHandler(this.fName_Enter);
@@ -127,10 +125,10 @@
             this.lName.Enabled = false;
             this.lName.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lName.ForeColor = System.Drawing.Color.DarkGray;
-            this.lName.Location = new System.Drawing.Point(144, 270);
-            this.lName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.lName.Location = new System.Drawing.Point(108, 219);
+            this.lName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lName.Name = "lName";
-            this.lName.Size = new System.Drawing.Size(327, 30);
+            this.lName.Size = new System.Drawing.Size(246, 25);
             this.lName.TabIndex = 4;
             this.lName.Text = "Last Name";
             this.lName.Enter += new System.EventHandler(this.lName_Enter);
@@ -141,10 +139,10 @@
             this.locationTB.Enabled = false;
             this.locationTB.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.locationTB.ForeColor = System.Drawing.Color.DarkGray;
-            this.locationTB.Location = new System.Drawing.Point(144, 309);
-            this.locationTB.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.locationTB.Location = new System.Drawing.Point(108, 251);
+            this.locationTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.locationTB.Name = "locationTB";
-            this.locationTB.Size = new System.Drawing.Size(327, 30);
+            this.locationTB.Size = new System.Drawing.Size(246, 25);
             this.locationTB.TabIndex = 5;
             this.locationTB.Text = "Location";
             this.locationTB.Enter += new System.EventHandler(this.location_Enter);
@@ -155,10 +153,10 @@
             this.creditCard.Enabled = false;
             this.creditCard.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.creditCard.ForeColor = System.Drawing.Color.DarkGray;
-            this.creditCard.Location = new System.Drawing.Point(144, 352);
-            this.creditCard.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.creditCard.Location = new System.Drawing.Point(108, 286);
+            this.creditCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.creditCard.Name = "creditCard";
-            this.creditCard.Size = new System.Drawing.Size(327, 30);
+            this.creditCard.Size = new System.Drawing.Size(246, 25);
             this.creditCard.TabIndex = 6;
             this.creditCard.Text = "Credit Card";
             this.creditCard.Enter += new System.EventHandler(this.creditCard_Enter);
@@ -171,10 +169,10 @@
             this.signUpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signUpBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signUpBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.signUpBtn.Location = new System.Drawing.Point(251, 436);
-            this.signUpBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.signUpBtn.Location = new System.Drawing.Point(188, 354);
+            this.signUpBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.signUpBtn.Name = "signUpBtn";
-            this.signUpBtn.Size = new System.Drawing.Size(100, 46);
+            this.signUpBtn.Size = new System.Drawing.Size(75, 37);
             this.signUpBtn.TabIndex = 9;
             this.signUpBtn.Text = "Sign Up";
             this.signUpBtn.UseVisualStyleBackColor = false;
@@ -186,10 +184,10 @@
             // 
             this.customerChkBx.AutoSize = true;
             this.customerChkBx.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerChkBx.Location = new System.Drawing.Point(144, 193);
-            this.customerChkBx.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.customerChkBx.Location = new System.Drawing.Point(108, 157);
+            this.customerChkBx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.customerChkBx.Name = "customerChkBx";
-            this.customerChkBx.Size = new System.Drawing.Size(119, 26);
+            this.customerChkBx.Size = new System.Drawing.Size(97, 24);
             this.customerChkBx.TabIndex = 7;
             this.customerChkBx.Text = "Customer";
             this.customerChkBx.UseVisualStyleBackColor = true;
@@ -199,10 +197,10 @@
             // 
             this.partnerChkBx.AutoSize = true;
             this.partnerChkBx.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partnerChkBx.Location = new System.Drawing.Point(293, 193);
-            this.partnerChkBx.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.partnerChkBx.Location = new System.Drawing.Point(220, 157);
+            this.partnerChkBx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.partnerChkBx.Name = "partnerChkBx";
-            this.partnerChkBx.Size = new System.Drawing.Size(177, 26);
+            this.partnerChkBx.Size = new System.Drawing.Size(144, 24);
             this.partnerChkBx.TabIndex = 8;
             this.partnerChkBx.Text = "Delivery Partner";
             this.partnerChkBx.UseVisualStyleBackColor = true;
@@ -213,10 +211,10 @@
             this.vehicleTB.Enabled = false;
             this.vehicleTB.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vehicleTB.ForeColor = System.Drawing.Color.DarkGray;
-            this.vehicleTB.Location = new System.Drawing.Point(144, 391);
-            this.vehicleTB.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.vehicleTB.Location = new System.Drawing.Point(108, 318);
+            this.vehicleTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.vehicleTB.Name = "vehicleTB";
-            this.vehicleTB.Size = new System.Drawing.Size(327, 30);
+            this.vehicleTB.Size = new System.Drawing.Size(246, 25);
             this.vehicleTB.TabIndex = 5;
             this.vehicleTB.Text = "Vehicle";
             this.vehicleTB.Enter += new System.EventHandler(this.vehicleTB_Enter);
@@ -226,10 +224,10 @@
             // 
             this.userNameSignIn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameSignIn.ForeColor = System.Drawing.Color.DarkGray;
-            this.userNameSignIn.Location = new System.Drawing.Point(593, 309);
-            this.userNameSignIn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.userNameSignIn.Location = new System.Drawing.Point(445, 251);
+            this.userNameSignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.userNameSignIn.Name = "userNameSignIn";
-            this.userNameSignIn.Size = new System.Drawing.Size(327, 30);
+            this.userNameSignIn.Size = new System.Drawing.Size(246, 25);
             this.userNameSignIn.TabIndex = 10;
             this.userNameSignIn.Text = "Username*";
             this.userNameSignIn.Enter += new System.EventHandler(this.textBox1_Enter);
@@ -240,12 +238,13 @@
             // 
             this.passwordSignIn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordSignIn.ForeColor = System.Drawing.Color.DarkGray;
-            this.passwordSignIn.Location = new System.Drawing.Point(593, 348);
-            this.passwordSignIn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.passwordSignIn.Location = new System.Drawing.Point(445, 283);
+            this.passwordSignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passwordSignIn.Name = "passwordSignIn";
-            this.passwordSignIn.Size = new System.Drawing.Size(327, 30);
+            this.passwordSignIn.Size = new System.Drawing.Size(246, 25);
             this.passwordSignIn.TabIndex = 11;
             this.passwordSignIn.Text = "Password*";
+            this.passwordSignIn.UseSystemPasswordChar = true;
             this.passwordSignIn.Enter += new System.EventHandler(this.passwordSignUp_Enter);
             this.passwordSignIn.KeyUp += new System.Windows.Forms.KeyEventHandler(this.passwordSignIn_KeyUp);
             this.passwordSignIn.Leave += new System.EventHandler(this.passwordSignUp_Leave);
@@ -255,10 +254,10 @@
             this.customerChkBxSignIn.AutoSize = true;
             this.customerChkBxSignIn.Checked = true;
             this.customerChkBxSignIn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerChkBxSignIn.Location = new System.Drawing.Point(12, 6);
-            this.customerChkBxSignIn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.customerChkBxSignIn.Location = new System.Drawing.Point(9, 5);
+            this.customerChkBxSignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.customerChkBxSignIn.Name = "customerChkBxSignIn";
-            this.customerChkBxSignIn.Size = new System.Drawing.Size(119, 26);
+            this.customerChkBxSignIn.Size = new System.Drawing.Size(97, 24);
             this.customerChkBxSignIn.TabIndex = 12;
             this.customerChkBxSignIn.TabStop = true;
             this.customerChkBxSignIn.Text = "Customer";
@@ -268,10 +267,10 @@
             // 
             this.partnerChkBxSignIn.AutoSize = true;
             this.partnerChkBxSignIn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partnerChkBxSignIn.Location = new System.Drawing.Point(149, 6);
-            this.partnerChkBxSignIn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.partnerChkBxSignIn.Location = new System.Drawing.Point(112, 5);
+            this.partnerChkBxSignIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.partnerChkBxSignIn.Name = "partnerChkBxSignIn";
-            this.partnerChkBxSignIn.Size = new System.Drawing.Size(177, 26);
+            this.partnerChkBxSignIn.Size = new System.Drawing.Size(144, 24);
             this.partnerChkBxSignIn.TabIndex = 13;
             this.partnerChkBxSignIn.Text = "Delivery Partner";
             this.partnerChkBxSignIn.UseVisualStyleBackColor = true;
@@ -283,10 +282,10 @@
             this.signInBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signInBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signInBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.signInBtn.Location = new System.Drawing.Point(696, 436);
-            this.signInBtn.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.signInBtn.Location = new System.Drawing.Point(522, 354);
+            this.signInBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.signInBtn.Name = "signInBtn";
-            this.signInBtn.Size = new System.Drawing.Size(100, 46);
+            this.signInBtn.Size = new System.Drawing.Size(75, 37);
             this.signInBtn.TabIndex = 14;
             this.signInBtn.Text = "Sign In";
             this.signInBtn.UseVisualStyleBackColor = false;
@@ -298,19 +297,19 @@
             // 
             this.panel1.Controls.Add(this.customerChkBxSignIn);
             this.panel1.Controls.Add(this.partnerChkBxSignIn);
-            this.panel1.Location = new System.Drawing.Point(587, 380);
-            this.panel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel1.Location = new System.Drawing.Point(440, 309);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(340, 41);
+            this.panel1.Size = new System.Drawing.Size(255, 33);
             this.panel1.TabIndex = 10;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(641, 71);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(481, 58);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(212, 174);
+            this.pictureBox1.Size = new System.Drawing.Size(159, 141);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -326,9 +325,9 @@
             this.header.Controls.Add(this.exit);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
-            this.header.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.header.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(1067, 36);
+            this.header.Size = new System.Drawing.Size(800, 29);
             this.header.TabIndex = 16;
             // 
             // exit
@@ -337,10 +336,10 @@
             this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
             this.exit.ImageActive = null;
-            this.exit.Location = new System.Drawing.Point(1029, 0);
-            this.exit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.exit.Location = new System.Drawing.Point(772, 0);
+            this.exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(26, 36);
+            this.exit.Size = new System.Drawing.Size(20, 29);
             this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.exit.TabIndex = 17;
             this.exit.TabStop = false;
@@ -357,18 +356,18 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(516, 91);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(387, 74);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 372);
+            this.panel2.Size = new System.Drawing.Size(1, 302);
             this.panel2.TabIndex = 17;
             // 
             // login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.header);
             this.Controls.Add(this.pictureBox1);
@@ -389,7 +388,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
