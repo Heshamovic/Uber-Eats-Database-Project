@@ -123,7 +123,7 @@
             this.resn.AutoSize = true;
             this.resn.Location = new System.Drawing.Point(96, 8);
             this.resn.Name = "resn";
-            this.resn.Size = new System.Drawing.Size(28, 13);
+            this.resn.Size = new System.Drawing.Size(27, 13);
             this.resn.TabIndex = 6;
             this.resn.Text = "resn";
             // 

@@ -305,7 +305,7 @@ namespace Uber_Eats_Database_Project
 
                     Helper.currentUserName = userName.Text;
                 }
-                MessageBox.Show("Username changed successfully.");
+                CustomMsgBox.Show("Username changed successfully.");
             }
             con.Close();
             saveUserNameBtn.Hide();
