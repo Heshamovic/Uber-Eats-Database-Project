@@ -238,7 +238,7 @@ namespace Uber_Eats_Database_Project
 
         private void DeliveredOrdersRptBtn_Click(object sender, EventArgs e)
         {
-            ReportsForm rf = new ReportsForm(0);
+            ReportsForm rf = new ReportsForm();
             rf.Show();
             this.Hide();
             rf.FormClosing += letsShow;
