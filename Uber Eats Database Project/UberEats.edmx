@@ -401,7 +401,7 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           </Key>
           <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <Property Name="DISTANCE_OF_TRIP" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="DELIVERYPARTNER_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DELIVERYPARTNER_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DELIVERYFEES" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <NavigationProperty Name="DELIVERY_PARTNER" Relationship="Self.TRIP_DELIVERY_PARTNER_FK1" FromRole="TRIP" ToRole="DELIVERY_PARTNER" />
           <NavigationProperty Name="ORDER" Relationship="Self.ORDER_TRIP_FK1" FromRole="TRIP" ToRole="ORDERS" />
@@ -449,7 +449,7 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           </ReferentialConstraint>
         </Association>
         <Association Name="TRIP_DELIVERY_PARTNER_FK1">
-          <End Role="DELIVERY_PARTNER" Type="Self.DELIVERY_PARTNER" Multiplicity="0..1" />
+          <End Role="DELIVERY_PARTNER" Type="Self.DELIVERY_PARTNER" Multiplicity="1" />
           <End Role="TRIP" Type="Self.TRIP" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DELIVERY_PARTNER">
