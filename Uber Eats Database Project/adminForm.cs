@@ -18,6 +18,7 @@ namespace Uber_Eats_Database_Project
     {
         Entities ent = new Entities();
         string foodimgadd = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\") + "NO Image Available.jpg";
+        string foodimgupdate = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\") + "NO Image Available.jpg";
         public adminForm()
         {
             InitializeComponent();
@@ -50,12 +51,10 @@ namespace Uber_Eats_Database_Project
 
         private void adminForm_Load(object sender, EventArgs e)
         {
-            List<string> l = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
-            List<string> l1 = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
-            List<string> l2 = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
-            RestaurantsNamesUpdate.DataSource = l;
-            RestNameRpt.DataSource = l1;
-            FoodRestNameAdd.DataSource = l2;
+            RestaurantsNamesUpdate.DataSource = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
+            RestNameRpt.DataSource = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
+            FoodRestNameAdd.DataSource = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
+            FoodRestNameUpdate.DataSource = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
         }
         
         private void RestaurantsNamesUpdate_SelectedValueChanged(object sender, EventArgs e)
@@ -113,7 +112,33 @@ namespace Uber_Eats_Database_Project
                 ent.SaveChanges();
             }
         }
-        
+
+        private void FoodRestLocUpdate_SelectedValueChanged(object sender, EventArgs e)
+        {
+            FoodNameUpdate.DataSource = (from f in ent.FOODs
+                                         where f.RESTAURANT_NAME == FoodRestNameUpdate.Text && f.RESTAURANT_LOCATION == FoodRestLocUpdate.Text
+                                         select f.FOOD_NAME).ToList();
+        }
+
+        private void FoodRestNameUpdate_SelectedValueChanged(object sender, EventArgs e)
+        {
+            FoodRestLocUpdate.DataSource = ent.RESTAURANTs.Where(re => re.RESTAURANT_NAME == FoodRestNameUpdate.Text).Select(x => x.RESTAURANT_LOCATION).ToList();
+            FoodRestLocUpdate.Refresh();
+        }
+
+        private void FoodImageUpdate_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog of = new OpenFileDialog();
+            of.Title = "Add Image";
+            of.Filter = "Image Files| *.jpg; *.jpeg; *.png; *.bmp";
+            if (of.ShowDialog() == DialogResult.OK)
+            {
+                FoodImgUpdate.Image = Image.FromFile(Helper.placeFileinResources(of.FileName));
+                foodimgupdate = Helper.placeFileinResources(of.FileName);
+            }
+            of.Dispose();
+        }
+
         private void FoodImageAdd_Click(object sender, EventArgs e)
         {
             OpenFileDialog of = new OpenFileDialog();
@@ -125,6 +150,26 @@ namespace Uber_Eats_Database_Project
                 foodimgadd = Helper.placeFileinResources(of.FileName);
             }
             of.Dispose();
+        }
+
+        private void FoodUpdateBtn_Click(object sender, EventArgs e)
+        {
+            if (CustomMsgBox.Show("Are you sure You want to Update this food to " + FoodRestNameUpdate.Text + " located at " + FoodRestLocUpdate.Text + "?", 2) == DialogResult.Yes)
+            {
+                FOOD f = new FOOD();
+                f.DISCOUNT = Convert.ToDecimal(FoodDiscountUpdate.Text);
+                f.FOODIMAGE = Helper.getFileName(foodimgupdate);
+                f.FOODTYPE = FoodTypeUpdate.Text;
+                f.FOOD_NAME = FoodNameUpdate.Text;
+                f.INGREDIANTS = FoodIngUpdate.Text;
+                f.PRICE = Convert.ToDecimal(FoodPriceUpdate.Text);
+                f.RATING = FoodRatingUpdate.Value;
+                f.RESTAURANT_LOCATION = FoodRestLocUpdate.Text;
+                f.RESTAURANT_NAME = FoodRestNameUpdate.Text;
+                f.TOP_DISH = (FoodTopDishUpdate.Checked ? "y" : "n");
+                ent.FOODs.AddOrUpdate(f);
+                ent.SaveChanges();
+            }
         }
         #region Buttons Hovers
         private void addResBtn_MouseEnter(object sender, EventArgs e)
@@ -208,7 +253,7 @@ namespace Uber_Eats_Database_Project
         {
             Helper.AddPlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Ingrediants");
         }
-        
+
         private void FoodIngAdd_Enter(object sender, EventArgs e)
         {
             Helper.RemovePlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Ingrediants");
