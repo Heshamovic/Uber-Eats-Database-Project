@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CUSTOMER">
           <Key>
             <PropertyRef Name="USERNAME" />
@@ -97,7 +97,7 @@ warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defi
           </Key>
           <Property Name="ORDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="DISTANCE_OF_TRIP" Type="number" Precision="38" Scale="0" />
-          <Property Name="DELIVERYPARTNER_USERNAME" Type="varchar2" MaxLength="20" />
+          <Property Name="DELIVERYPARTNER_USERNAME" Type="varchar2" MaxLength="20" Nullable="false" />
           <Property Name="DELIVERYFEES" Type="float" Precision="126" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="WORKING_TIME">
@@ -193,7 +193,7 @@ warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defi
           </ReferentialConstraint>
         </Association>
         <Association Name="TRIP_DELIVERY_PARTNER_FK1">
-          <End Role="DELIVERY_PARTNER" Type="Self.DELIVERY_PARTNER" Multiplicity="0..1" />
+          <End Role="DELIVERY_PARTNER" Type="Self.DELIVERY_PARTNER" Multiplicity="1" />
           <End Role="TRIP" Type="Self.TRIP" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DELIVERY_PARTNER">
@@ -230,9 +230,6 @@ warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defi
           <Parameter Name="REST_NAME" Type="varchar2" Mode="In" />
           <Parameter Name="REST_LOC" Type="varchar2" Mode="In" />
           <Parameter Name="FOOD_NAME" Type="varchar2" Mode="In" />
-        </Function>
-        <Function Name="GETALLORDERS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
-          <Parameter Name="USER_NAME" Type="varchar2" Mode="In" />
         </Function>
         <Function Name="GETCARTID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
           <Parameter Name="CURRENT_USER_NAME" Type="varchar2" Mode="In" />
@@ -314,8 +311,7 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
             <End Role="WORKING_TIME" EntitySet="WORKING_TIME" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -745,7 +741,6 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <FunctionImportMapping FunctionImportName="COUNT_GETCARTITEMS" FunctionName="Model.Store.COUNT_GETCARTITEMS" />
           <FunctionImportMapping FunctionImportName="CREATE_CART" FunctionName="Model.Store.CREATE_CART" />
           <FunctionImportMapping FunctionImportName="DELETE_CART_ITEM" FunctionName="Model.Store.DELETE_CART_ITEM" />
-          <FunctionImportMapping FunctionImportName="GETALLORDERS" FunctionName="Model.Store.GETALLORDERS" />
           <FunctionImportMapping FunctionImportName="GETCARTID" FunctionName="Model.Store.GETCARTID" />
           <FunctionImportMapping FunctionImportName="GETCARTITEMS" FunctionName="Model.Store.GETCARTITEMS" />
           <FunctionImportMapping FunctionImportName="SIGN_UP" FunctionName="Model.Store.SIGN_UP" />
