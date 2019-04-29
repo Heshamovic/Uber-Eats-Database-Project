@@ -22,7 +22,23 @@ namespace Uber_Eats_Database_Project
                 tb.ForeColor = Color.Black;
             }
         }
+        public static void RemovePlaceHolderB(Bunifu.Framework.UI.BunifuMetroTextbox tb, string placeHolderText)
+        {
+            if (tb.Text != null && tb.Text == placeHolderText)
+            {
+                tb.Text = "";
+                tb.ForeColor = Color.Black;
+            }
+        }
         public static void AddPlaceHolder(TextBox tb, string placeHolderText)
+        {
+            if (tb.Text == "" || tb.Text == null)
+            {
+                tb.ForeColor = Color.DarkGray;
+                tb.Text = placeHolderText;
+            }
+        }
+        public static void AddPlaceHolderB(Bunifu.Framework.UI.BunifuMetroTextbox tb, string placeHolderText)
         {
             if (tb.Text == "" || tb.Text == null)
             {
