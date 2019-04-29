@@ -135,6 +135,11 @@ namespace Uber_Eats_Database_Project
             con.Dispose();
         }
 
+        private void bunifuImageButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void savePasswordBtn_Click(object sender, EventArgs e)
         {
             if (newPassword.Text == "" || oldPassword.Text == "" || confirmPassword.Text == "")

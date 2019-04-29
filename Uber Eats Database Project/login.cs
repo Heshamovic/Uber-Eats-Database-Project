@@ -152,6 +152,7 @@ namespace Uber_Eats_Database_Project
                 customerChkBx.Checked = partnerChkBx.Checked = false;
                 vehicleTB.Enabled = false;
                 userNameSignIn.Text = userNameSignUp.Text;
+                userNameSignIn.ForeColor = Color.Black;
                 userNameSignUp.Text = "Username*";
                 passwordSignUp.Text = "Password*";
                 fName.Text = "First Name";
