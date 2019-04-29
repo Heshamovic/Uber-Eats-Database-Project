@@ -56,8 +56,9 @@ namespace Uber_Eats_Database_Project
                     int id = Convert.ToInt32(orders.Rows[e.RowIndex].Cells[0].Value);
                     OracleConnection con = new OracleConnection(Helper.constr);
                     con.Open();
-                    OracleCommand cmd = new OracleCommand(@"update trip set DELIVERYPARTNER_USERNAME = '" + Helper.currentUserName + "'" +
-                                                           "where order_id = " + id.ToString(), con);
+                    OracleCommand cmd = new OracleCommand(@"insert into trip 
+                                                        (order_id, deliverypartner_username, distance_of_trip, deliveryfees) 
+                                                        values (1, '" + Helper.currentUserName + "', ROUND(DBMS_RANDOM.VALUE(0,999999),2), 0)", con);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     builder = new OracleCommandBuilder(adapter1);
