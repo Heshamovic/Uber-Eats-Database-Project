@@ -86,13 +86,17 @@
             this.FoodTypeAdd = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.splitContainer19 = new System.Windows.Forms.SplitContainer();
             this.FoodImageAdd = new System.Windows.Forms.Button();
-            this.FoodPriceAdd = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.splitContainer20 = new System.Windows.Forms.SplitContainer();
-            this.FoodDiscountAdd = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.FoodAddBtn = new System.Windows.Forms.Button();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.FoodImgAdd = new System.Windows.Forms.PictureBox();
+            this.splitContainer21 = new System.Windows.Forms.SplitContainer();
+            this.FoodDiscountAdd = new System.Windows.Forms.NumericUpDown();
+            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.splitContainer22 = new System.Windows.Forms.SplitContainer();
+            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.FoodPriceAdd = new System.Windows.Forms.NumericUpDown();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -181,6 +185,16 @@
             this.splitContainer20.Panel2.SuspendLayout();
             this.splitContainer20.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FoodImgAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer21)).BeginInit();
+            this.splitContainer21.Panel1.SuspendLayout();
+            this.splitContainer21.Panel2.SuspendLayout();
+            this.splitContainer21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodDiscountAdd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer22)).BeginInit();
+            this.splitContainer22.Panel1.SuspendLayout();
+            this.splitContainer22.Panel2.SuspendLayout();
+            this.splitContainer22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodPriceAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -977,7 +991,7 @@
             // 
             // splitContainer15.Panel2
             // 
-            this.splitContainer15.Panel2.Controls.Add(this.FoodPriceAdd);
+            this.splitContainer15.Panel2.Controls.Add(this.splitContainer22);
             this.splitContainer15.Size = new System.Drawing.Size(436, 205);
             this.splitContainer15.SplitterDistance = 164;
             this.splitContainer15.TabIndex = 4;
@@ -1119,28 +1133,6 @@
             this.FoodImageAdd.MouseEnter += new System.EventHandler(this.FoodImageAdd_MouseEnter);
             this.FoodImageAdd.MouseLeave += new System.EventHandler(this.FoodImageAdd_MouseLeave);
             // 
-            // FoodPriceAdd
-            // 
-            this.FoodPriceAdd.AutoScroll = true;
-            this.FoodPriceAdd.BorderColorFocused = System.Drawing.Color.Blue;
-            this.FoodPriceAdd.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.FoodPriceAdd.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.FoodPriceAdd.BorderThickness = 3;
-            this.FoodPriceAdd.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.FoodPriceAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FoodPriceAdd.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.FoodPriceAdd.ForeColor = System.Drawing.Color.DarkGray;
-            this.FoodPriceAdd.isPassword = false;
-            this.FoodPriceAdd.Location = new System.Drawing.Point(0, 0);
-            this.FoodPriceAdd.Margin = new System.Windows.Forms.Padding(0);
-            this.FoodPriceAdd.Name = "FoodPriceAdd";
-            this.FoodPriceAdd.Size = new System.Drawing.Size(436, 37);
-            this.FoodPriceAdd.TabIndex = 10;
-            this.FoodPriceAdd.Text = "Food Price";
-            this.FoodPriceAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.FoodPriceAdd.Enter += new System.EventHandler(this.bunifuMetroTextbox1_Enter);
-            this.FoodPriceAdd.Leave += new System.EventHandler(this.bunifuMetroTextbox1_Leave);
-            // 
             // splitContainer20
             // 
             this.splitContainer20.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1150,7 +1142,7 @@
             // 
             // splitContainer20.Panel1
             // 
-            this.splitContainer20.Panel1.Controls.Add(this.FoodDiscountAdd);
+            this.splitContainer20.Panel1.Controls.Add(this.splitContainer21);
             // 
             // splitContainer20.Panel2
             // 
@@ -1159,28 +1151,6 @@
             this.splitContainer20.Size = new System.Drawing.Size(436, 175);
             this.splitContainer20.SplitterDistance = 36;
             this.splitContainer20.TabIndex = 5;
-            // 
-            // FoodDiscountAdd
-            // 
-            this.FoodDiscountAdd.AutoScroll = true;
-            this.FoodDiscountAdd.BorderColorFocused = System.Drawing.Color.Blue;
-            this.FoodDiscountAdd.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.FoodDiscountAdd.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.FoodDiscountAdd.BorderThickness = 3;
-            this.FoodDiscountAdd.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.FoodDiscountAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FoodDiscountAdd.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.FoodDiscountAdd.ForeColor = System.Drawing.Color.DarkGray;
-            this.FoodDiscountAdd.isPassword = false;
-            this.FoodDiscountAdd.Location = new System.Drawing.Point(0, 0);
-            this.FoodDiscountAdd.Margin = new System.Windows.Forms.Padding(0);
-            this.FoodDiscountAdd.Name = "FoodDiscountAdd";
-            this.FoodDiscountAdd.Size = new System.Drawing.Size(436, 36);
-            this.FoodDiscountAdd.TabIndex = 10;
-            this.FoodDiscountAdd.Text = "Discount";
-            this.FoodDiscountAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.FoodDiscountAdd.Enter += new System.EventHandler(this.FoodDiscountAdd_Enter);
-            this.FoodDiscountAdd.Leave += new System.EventHandler(this.FoodDiscountAdd_Leave);
             // 
             // FoodAddBtn
             // 
@@ -1224,6 +1194,99 @@
             this.FoodImgAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodImgAdd.TabIndex = 1;
             this.FoodImgAdd.TabStop = false;
+            // 
+            // splitContainer21
+            // 
+            this.splitContainer21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer21.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer21.Name = "splitContainer21";
+            // 
+            // splitContainer21.Panel1
+            // 
+            this.splitContainer21.Panel1.Controls.Add(this.bunifuCustomLabel9);
+            this.splitContainer21.Panel1.Padding = new System.Windows.Forms.Padding(25, 8, 0, 0);
+            // 
+            // splitContainer21.Panel2
+            // 
+            this.splitContainer21.Panel2.Controls.Add(this.FoodDiscountAdd);
+            this.splitContainer21.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.splitContainer21.Size = new System.Drawing.Size(436, 36);
+            this.splitContainer21.SplitterDistance = 145;
+            this.splitContainer21.TabIndex = 0;
+            // 
+            // FoodDiscountAdd
+            // 
+            this.FoodDiscountAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FoodDiscountAdd.Location = new System.Drawing.Point(0, 3);
+            this.FoodDiscountAdd.Margin = new System.Windows.Forms.Padding(2, 5, 2, 2);
+            this.FoodDiscountAdd.Name = "FoodDiscountAdd";
+            this.FoodDiscountAdd.Size = new System.Drawing.Size(287, 27);
+            this.FoodDiscountAdd.TabIndex = 4;
+            this.FoodDiscountAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.FoodDiscountAdd.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // bunifuCustomLabel9
+            // 
+            this.bunifuCustomLabel9.AutoSize = true;
+            this.bunifuCustomLabel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(25, 8);
+            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(82, 21);
+            this.bunifuCustomLabel9.TabIndex = 5;
+            this.bunifuCustomLabel9.Text = "Discount:";
+            // 
+            // splitContainer22
+            // 
+            this.splitContainer22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer22.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer22.Name = "splitContainer22";
+            // 
+            // splitContainer22.Panel1
+            // 
+            this.splitContainer22.Panel1.Controls.Add(this.bunifuCustomLabel10);
+            this.splitContainer22.Panel1.Padding = new System.Windows.Forms.Padding(25, 8, 0, 0);
+            // 
+            // splitContainer22.Panel2
+            // 
+            this.splitContainer22.Panel2.Controls.Add(this.FoodPriceAdd);
+            this.splitContainer22.Panel2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.splitContainer22.Size = new System.Drawing.Size(436, 37);
+            this.splitContainer22.SplitterDistance = 145;
+            this.splitContainer22.TabIndex = 0;
+            // 
+            // bunifuCustomLabel10
+            // 
+            this.bunifuCustomLabel10.AutoSize = true;
+            this.bunifuCustomLabel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(25, 8);
+            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
+            this.bunifuCustomLabel10.Size = new System.Drawing.Size(51, 21);
+            this.bunifuCustomLabel10.TabIndex = 6;
+            this.bunifuCustomLabel10.Text = "Price:";
+            // 
+            // FoodPriceAdd
+            // 
+            this.FoodPriceAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FoodPriceAdd.Location = new System.Drawing.Point(0, 5);
+            this.FoodPriceAdd.Margin = new System.Windows.Forms.Padding(2, 5, 2, 2);
+            this.FoodPriceAdd.Maximum = new decimal(new int[] {
+            123456789,
+            0,
+            0,
+            0});
+            this.FoodPriceAdd.Name = "FoodPriceAdd";
+            this.FoodPriceAdd.Size = new System.Drawing.Size(287, 27);
+            this.FoodPriceAdd.TabIndex = 5;
+            this.FoodPriceAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.FoodPriceAdd.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // adminForm
             // 
@@ -1335,6 +1398,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer20)).EndInit();
             this.splitContainer20.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.FoodImgAdd)).EndInit();
+            this.splitContainer21.Panel1.ResumeLayout(false);
+            this.splitContainer21.Panel1.PerformLayout();
+            this.splitContainer21.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer21)).EndInit();
+            this.splitContainer21.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.FoodDiscountAdd)).EndInit();
+            this.splitContainer22.Panel1.ResumeLayout(false);
+            this.splitContainer22.Panel1.PerformLayout();
+            this.splitContainer22.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer22)).EndInit();
+            this.splitContainer22.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.FoodPriceAdd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1400,9 +1475,13 @@
         private System.Windows.Forms.SplitContainer splitContainer19;
         private System.Windows.Forms.Button FoodImageAdd;
         private System.Windows.Forms.SplitContainer splitContainer20;
-        private Bunifu.Framework.UI.BunifuMetroTextbox FoodPriceAdd;
-        private Bunifu.Framework.UI.BunifuMetroTextbox FoodDiscountAdd;
         private System.Windows.Forms.Button FoodAddBtn;
         private System.Windows.Forms.PictureBox FoodImgAdd;
+        private System.Windows.Forms.SplitContainer splitContainer21;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
+        private System.Windows.Forms.NumericUpDown FoodDiscountAdd;
+        private System.Windows.Forms.SplitContainer splitContainer22;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
+        private System.Windows.Forms.NumericUpDown FoodPriceAdd;
     }
 }

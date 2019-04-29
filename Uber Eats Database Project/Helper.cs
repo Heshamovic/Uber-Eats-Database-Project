@@ -13,7 +13,7 @@ namespace Uber_Eats_Database_Project
     {
         public static string currentUserName;
         public static int currentUserRole;
-        public static int currentOrderId=1;
+        public static int currentOrderId = 1;
         public static string constr = "data source = orcl; user id = scott; password = tiger;";
         public static void RemovePlaceHolder(TextBox tb, string placeHolderText)
         {
@@ -53,19 +53,29 @@ namespace Uber_Eats_Database_Project
             for (int i = fileToCopy.Length - 1; i > -1; i--)
             {
                 if (fileToCopy[i] == '\\')
-                   break;
+                    break;
                 newCopy += fileToCopy[i];
             }
-            char []s = newCopy.ToCharArray();
+            char[] s = newCopy.ToCharArray();
             Array.Reverse(s);
             newCopy = new string(s);
             newCopy = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\") + newCopy;
             if (System.IO.File.Exists(fileToCopy) && !System.IO.File.Exists(newCopy))
-            {
                 System.IO.File.Copy(fileToCopy, newCopy);
-                CustomMsgBox.Show(newCopy);
-            }
             return newCopy;
+        }
+        public static string getFileName(string fil)
+        {
+            string ans = "";
+            for (int i = fil.Length - 1; i > -1; i--)
+            {
+                if (fil[i] == '\\')
+                    break;
+                ans += fil[i];
+            }
+            char[] s = ans.ToCharArray();
+            Array.Reverse(s);
+            return new string(s);
         }
         public static void onHover(Button btn, Color c)
         {

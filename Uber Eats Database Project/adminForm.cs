@@ -100,7 +100,7 @@ namespace Uber_Eats_Database_Project
             {
                 FOOD f = new FOOD();
                 f.DISCOUNT = Convert.ToDecimal(FoodDiscountAdd.Text);
-                f.FOODIMAGE = FoodImgAdd.Name;
+                f.FOODIMAGE = Helper.getFileName(foodimgadd);
                 f.FOODTYPE = FoodTypeAdd.Text;
                 f.FOOD_NAME = FoodNameAdd.Text;
                 f.INGREDIANTS = FoodIngAdd.Text;
