@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -45,6 +46,26 @@ namespace Uber_Eats_Database_Project
                 tb.ForeColor = Color.DarkGray;
                 tb.Text = placeHolderText;
             }
+        }
+        public static string placeFileinResources(string fileToCopy)
+        {
+            string newCopy = "";
+            for (int i = fileToCopy.Length - 1; i > -1; i--)
+            {
+                if (fileToCopy[i] == '\\')
+                   break;
+                newCopy += fileToCopy[i];
+            }
+            char []s = newCopy.ToCharArray();
+            Array.Reverse(s);
+            newCopy = new string(s);
+            newCopy = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\") + newCopy;
+            if (System.IO.File.Exists(fileToCopy) && !System.IO.File.Exists(newCopy))
+            {
+                System.IO.File.Copy(fileToCopy, newCopy);
+                CustomMsgBox.Show(newCopy);
+            }
+            return newCopy;
         }
         public static void onHover(Button btn, Color c)
         {

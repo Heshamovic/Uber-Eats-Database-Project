@@ -403,6 +403,8 @@
     <Content Include="bin\Debug\stdole.dll" />
     <Content Include="bin\Debug\Uber Eats Database Project.exe" />
     <Content Include="bin\Debug\Uber Eats Database Project.pdb" />
+    <None Include="resources\Add Image_100px.png" />
+    <None Include="resources\NO Image Available.jpg" />
     <Content Include="UberEats.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UberEats.edmx</DependentUpon>

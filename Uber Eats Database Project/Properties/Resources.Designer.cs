@@ -63,6 +63,16 @@ namespace Uber_Eats_Database_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_Image_100px {
+            get {
+                object obj = ResourceManager.GetObject("Add Image_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cancel__1_ {
             get {
                 object obj = ResourceManager.GetObject("cancel (1)", resourceCulture);
@@ -86,6 +96,16 @@ namespace Uber_Eats_Database_Project.Properties {
         internal static System.Drawing.Bitmap Checkout_32px {
             get {
                 object obj = ResourceManager.GetObject("Checkout_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NO_Image_Available {
+            get {
+                object obj = ResourceManager.GetObject("NO Image Available", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

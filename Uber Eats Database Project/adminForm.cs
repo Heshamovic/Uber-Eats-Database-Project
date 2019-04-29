@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,7 @@ namespace Uber_Eats_Database_Project
     public partial class adminForm : Form
     {
         Entities ent = new Entities();
+        string foodimgadd = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\") + "NO Image Available.jpg";
         public adminForm()
         {
             InitializeComponent();
@@ -28,26 +30,32 @@ namespace Uber_Eats_Database_Project
 
         private void addResBtn_Click(object sender, EventArgs e)
         {
-            if (ent.RESTAURANTs.Where(x => x.RESTAURANT_NAME == RestaurantsNamesAdd.Text && x.RESTAURANT_LOCATION == RestaurantLocationAdd.Text).Count() > 0)
+            if (CustomMsgBox.Show("Are you sure you want to add this restaurant?", 2) == DialogResult.Yes)
             {
-                CustomMsgBox.Show("This restaurant already exists");
-                return;
+                if (ent.RESTAURANTs.Where(x => x.RESTAURANT_NAME == RestaurantsNamesAdd.Text && x.RESTAURANT_LOCATION == RestaurantLocationAdd.Text).Count() > 0)
+                {
+                    CustomMsgBox.Show("This restaurant already exists");
+                    return;
+                }
+                RESTAURANT r = new RESTAURANT();
+                r.RESTAURANT_NAME = RestaurantsNamesAdd.Text;
+                r.RESTAURANT_LOCATION = RestaurantLocationAdd.Text;
+                r.RATING = int.Parse(ratingRest.Text);
+                r.CUISINE_TYPE = CusineTypeAdd.Text;
+                ent.RESTAURANTs.Add(r);
+                ent.SaveChanges();
+                CustomMsgBox.Show("Restaurant added");
             }
-            RESTAURANT r = new RESTAURANT();
-            r.RESTAURANT_NAME = RestaurantsNamesAdd.Text;
-            r.RESTAURANT_LOCATION = RestaurantLocationAdd.Text;
-            r.RATING = int.Parse(ratingRest.Text);
-            r.CUISINE_TYPE = CusineTypeAdd.Text;
-            ent.RESTAURANTs.Add(r);
-            ent.SaveChanges();
-            CustomMsgBox.Show("Restaurant added");
         }
 
         private void adminForm_Load(object sender, EventArgs e)
         {
-            List<string> l = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).ToList();
+            List<string> l = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
+            List<string> l1 = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
+            List<string> l2 = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
             RestaurantsNamesUpdate.DataSource = l;
-            RestNameRpt.DataSource = l;
+            RestNameRpt.DataSource = l1;
+            FoodRestNameAdd.DataSource = l2;
         }
         
         private void RestaurantsNamesUpdate_SelectedValueChanged(object sender, EventArgs e)
@@ -60,11 +68,63 @@ namespace Uber_Eats_Database_Project
 
         private void updateRatingBtn_Click(object sender, EventArgs e)
         {
-            RESTAURANT r = ent.RESTAURANTs.Where(x => x.RESTAURANT_NAME == RestaurantsNamesUpdate.Text && x.RESTAURANT_LOCATION == RestaurantLocationUpdate.Text).First();
-            r.RATING = Convert.ToDecimal(RestaurantRatingUpdate.Text);
-            r.CUISINE_TYPE = CusineTypeUpdate.Text;
-            ent.SaveChanges();
-            CustomMsgBox.Show("Restaurant Updated");
+            if (CustomMsgBox.Show("Are you sure you want to update this restaurant?", 2) == DialogResult.Yes)
+            {
+                RESTAURANT r = ent.RESTAURANTs.Where(x => x.RESTAURANT_NAME == RestaurantsNamesUpdate.Text && x.RESTAURANT_LOCATION == RestaurantLocationUpdate.Text).First();
+                r.RATING = Convert.ToDecimal(RestaurantRatingUpdate.Text);
+                r.CUISINE_TYPE = CusineTypeUpdate.Text;
+                ent.SaveChanges();
+                CustomMsgBox.Show("Restaurant Updated");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReportsForm rf = new ReportsForm(FromDatePicker.Value, ToDatePicker.Value, RestNameRpt.Text);
+            rf.Show();
+            this.Hide();
+            rf.FormClosing += letsShow;
+        }
+        public void letsShow(object sender, FormClosingEventArgs e)
+        {
+            this.Show();
+        }
+        private void FoodRestNameAdd_SelectedValueChanged(object sender, EventArgs e)
+        {
+            FoodRestLocAdd.DataSource = ent.RESTAURANTs.Where(re => re.RESTAURANT_NAME == FoodRestNameAdd.Text).Select(x => x.RESTAURANT_LOCATION).ToList();
+        }
+
+        private void FoodAddBtn_Click(object sender, EventArgs e)
+        {
+            if (CustomMsgBox.Show("Are you sure You want to add this food to " + FoodRestNameAdd.Text + " located at " + FoodRestLocAdd.Text + "?", 2) == DialogResult.Yes)
+            {
+                FOOD f = new FOOD();
+                f.DISCOUNT = Convert.ToDecimal(FoodDiscountAdd.Text);
+                f.FOODIMAGE = FoodImgAdd.Name;
+                f.FOODTYPE = FoodTypeAdd.Text;
+                f.FOOD_NAME = FoodNameAdd.Text;
+                f.INGREDIANTS = FoodIngAdd.Text;
+                f.PRICE = Convert.ToDecimal(FoodPriceAdd.Text);
+                f.RATING = FoodRatingAdd.Value;
+                f.RESTAURANT_LOCATION = FoodRestLocAdd.Text;
+                f.RESTAURANT_NAME = FoodRestNameAdd.Text;
+                f.TOP_DISH = (FoodTopDishAdd.Checked ? "y" : "n");
+                ent.FOODs.Add(f);
+                ent.SaveChanges();
+            }
+        }
+        
+        private void FoodImageAdd_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog of = new OpenFileDialog();
+            of.Title = "Add Image";
+            of.Filter = "Image Files| *.jpg; *.jpeg; *.png; *.bmp";
+            if (of.ShowDialog() == DialogResult.OK)
+            {
+                FoodImgAdd.Image = Image.FromFile(Helper.placeFileinResources(of.FileName));
+                foodimgadd = Helper.placeFileinResources(of.FileName);
+            }
+            of.Dispose();
         }
         #region Buttons Hovers
         private void addResBtn_MouseEnter(object sender, EventArgs e)
@@ -85,6 +145,32 @@ namespace Uber_Eats_Database_Project
         private void updateRatingBtn_MouseEnter(object sender, EventArgs e)
         {
             Helper.onHover((Button)sender, Color.Green);
+        }
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+        private void FoodAddBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+        private void FoodAddBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+        private void FoodImageAdd_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void FoodImageAdd_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
         }
         #endregion
         #region Text boxes enter and leave
@@ -117,18 +203,56 @@ namespace Uber_Eats_Database_Project
         {
             Helper.RemovePlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Cusine Type");
         }
-        #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+        private void FoodIngAdd_Leave(object sender, EventArgs e)
         {
-            ReportsForm rf = new ReportsForm(FromDatePicker.Value, ToDatePicker.Value, RestNameRpt.Text);
-            rf.Show();
-            this.Hide();
-            rf.FormClosing += letsShow;
+            Helper.AddPlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Ingrediants");
         }
-        public void letsShow(object sender, FormClosingEventArgs e)
+        
+        private void FoodIngAdd_Enter(object sender, EventArgs e)
         {
-            this.Show();
+            Helper.RemovePlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Ingrediants");
         }
+
+        private void FoodNameAdd_Enter(object sender, EventArgs e)
+        {
+            Helper.RemovePlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Food Name");
+        }
+
+        private void FoodNameAdd_Leave(object sender, EventArgs e)
+        {
+            Helper.AddPlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Food Name");
+        }
+
+        private void FoodTypeAdd_Leave(object sender, EventArgs e)
+        {
+            Helper.AddPlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Food Type");
+        }
+
+        private void FoodTypeAdd_Enter(object sender, EventArgs e)
+        {
+            Helper.RemovePlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Food Type");
+        }
+
+        private void FoodDiscountAdd_Enter(object sender, EventArgs e)
+        {
+            Helper.RemovePlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Discount");
+        }
+
+        private void FoodDiscountAdd_Leave(object sender, EventArgs e)
+        {
+            Helper.AddPlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Discount");
+        }
+
+        private void bunifuMetroTextbox1_Enter(object sender, EventArgs e)
+        {
+            Helper.RemovePlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Food Price");
+        }
+
+        private void bunifuMetroTextbox1_Leave(object sender, EventArgs e)
+        {
+            Helper.AddPlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Food Price");
+        }
+        #endregion
     }
 }
