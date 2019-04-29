@@ -158,10 +158,10 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 35);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(892, 665);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(892, 615);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -175,15 +175,15 @@
             this.tableLayoutPanel3.Controls.Add(this.splitContainer2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.splitContainer4, 0, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 224);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 218);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.93258F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.06742F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.60396F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.39604F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(440, 215);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(440, 209);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // updateRatingBtn
@@ -194,10 +194,10 @@
             this.updateRatingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateRatingBtn.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.updateRatingBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.updateRatingBtn.Location = new System.Drawing.Point(28, 175);
+            this.updateRatingBtn.Location = new System.Drawing.Point(28, 168);
             this.updateRatingBtn.Margin = new System.Windows.Forms.Padding(25, 3, 25, 3);
             this.updateRatingBtn.Name = "updateRatingBtn";
-            this.updateRatingBtn.Size = new System.Drawing.Size(384, 34);
+            this.updateRatingBtn.Size = new System.Drawing.Size(384, 35);
             this.updateRatingBtn.TabIndex = 1;
             this.updateRatingBtn.Text = "Update Restaurant";
             this.updateRatingBtn.UseVisualStyleBackColor = false;
@@ -221,7 +221,7 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(6, 133);
+            this.splitContainer1.Location = new System.Drawing.Point(6, 125);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -232,7 +232,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.CusineTypeUpdate);
-            this.splitContainer1.Size = new System.Drawing.Size(428, 33);
+            this.splitContainer1.Size = new System.Drawing.Size(428, 34);
             this.splitContainer1.SplitterDistance = 218;
             this.splitContainer1.TabIndex = 5;
             // 
@@ -249,7 +249,7 @@
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(6, 51);
+            this.splitContainer2.Location = new System.Drawing.Point(6, 36);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -260,7 +260,7 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.RestaurantLocationUpdate);
-            this.splitContainer2.Size = new System.Drawing.Size(428, 29);
+            this.splitContainer2.Size = new System.Drawing.Size(428, 36);
             this.splitContainer2.SplitterDistance = 217;
             this.splitContainer2.TabIndex = 6;
             // 
@@ -293,7 +293,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(440, 215);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(440, 209);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // addResBtn
@@ -304,7 +304,7 @@
             this.addResBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addResBtn.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.addResBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addResBtn.Location = new System.Drawing.Point(28, 175);
+            this.addResBtn.Location = new System.Drawing.Point(28, 169);
             this.addResBtn.Margin = new System.Windows.Forms.Padding(25, 3, 25, 3);
             this.addResBtn.Name = "addResBtn";
             this.addResBtn.Size = new System.Drawing.Size(384, 34);
@@ -350,7 +350,7 @@
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(6, 89);
+            this.splitContainer3.Location = new System.Drawing.Point(6, 83);
             this.splitContainer3.Name = "splitContainer3";
             // 
             // splitContainer3.Panel1
@@ -379,7 +379,7 @@
             // splitContainer4
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.Location = new System.Drawing.Point(6, 89);
+            this.splitContainer4.Location = new System.Drawing.Point(6, 81);
             this.splitContainer4.Name = "splitContainer4";
             // 
             // splitContainer4.Panel1
@@ -444,7 +444,7 @@
             this.CusineTypeUpdate.Location = new System.Drawing.Point(0, 0);
             this.CusineTypeUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.CusineTypeUpdate.Name = "CusineTypeUpdate";
-            this.CusineTypeUpdate.Size = new System.Drawing.Size(206, 33);
+            this.CusineTypeUpdate.Size = new System.Drawing.Size(206, 34);
             this.CusineTypeUpdate.TabIndex = 0;
             this.CusineTypeUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -463,7 +463,7 @@
             this.RestaurantLocationUpdate.Location = new System.Drawing.Point(0, 0);
             this.RestaurantLocationUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.RestaurantLocationUpdate.Name = "RestaurantLocationUpdate";
-            this.RestaurantLocationUpdate.Size = new System.Drawing.Size(207, 29);
+            this.RestaurantLocationUpdate.Size = new System.Drawing.Size(207, 36);
             this.RestaurantLocationUpdate.TabIndex = 1;
             this.RestaurantLocationUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -481,7 +481,7 @@
             this.RestaurantsNamesAdd.Location = new System.Drawing.Point(3, 3);
             this.RestaurantsNamesAdd.Margin = new System.Windows.Forms.Padding(0);
             this.RestaurantsNamesAdd.Name = "RestaurantsNamesAdd";
-            this.RestaurantsNamesAdd.Size = new System.Drawing.Size(434, 42);
+            this.RestaurantsNamesAdd.Size = new System.Drawing.Size(434, 38);
             this.RestaurantsNamesAdd.TabIndex = 3;
             this.RestaurantsNamesAdd.Text = "Restaurant Name";
             this.RestaurantsNamesAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -499,10 +499,10 @@
             this.RestaurantLocationAdd.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.RestaurantLocationAdd.ForeColor = System.Drawing.Color.DarkGray;
             this.RestaurantLocationAdd.isPassword = false;
-            this.RestaurantLocationAdd.Location = new System.Drawing.Point(3, 48);
+            this.RestaurantLocationAdd.Location = new System.Drawing.Point(3, 44);
             this.RestaurantLocationAdd.Margin = new System.Windows.Forms.Padding(0);
             this.RestaurantLocationAdd.Name = "RestaurantLocationAdd";
-            this.RestaurantLocationAdd.Size = new System.Drawing.Size(434, 35);
+            this.RestaurantLocationAdd.Size = new System.Drawing.Size(434, 33);
             this.RestaurantLocationAdd.TabIndex = 4;
             this.RestaurantLocationAdd.Text = "Location";
             this.RestaurantLocationAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -520,7 +520,7 @@
             this.CusineTypeAdd.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.CusineTypeAdd.ForeColor = System.Drawing.Color.DarkGray;
             this.CusineTypeAdd.isPassword = false;
-            this.CusineTypeAdd.Location = new System.Drawing.Point(3, 130);
+            this.CusineTypeAdd.Location = new System.Drawing.Point(3, 124);
             this.CusineTypeAdd.Margin = new System.Windows.Forms.Padding(0);
             this.CusineTypeAdd.Name = "CusineTypeAdd";
             this.CusineTypeAdd.Size = new System.Drawing.Size(434, 39);
@@ -533,7 +533,7 @@
             // splitContainer5
             // 
             this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer5.Location = new System.Drawing.Point(3, 445);
+            this.splitContainer5.Location = new System.Drawing.Point(3, 433);
             this.splitContainer5.Name = "splitContainer5";
             this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -544,8 +544,8 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer7);
-            this.splitContainer5.Size = new System.Drawing.Size(440, 217);
-            this.splitContainer5.SplitterDistance = 107;
+            this.splitContainer5.Size = new System.Drawing.Size(440, 179);
+            this.splitContainer5.SplitterDistance = 82;
             this.splitContainer5.TabIndex = 2;
             // 
             // splitContainer6
@@ -562,8 +562,8 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.FromDatePicker);
-            this.splitContainer6.Size = new System.Drawing.Size(440, 107);
-            this.splitContainer6.SplitterDistance = 45;
+            this.splitContainer6.Size = new System.Drawing.Size(440, 82);
+            this.splitContainer6.SplitterDistance = 34;
             this.splitContainer6.TabIndex = 0;
             // 
             // splitContainer7
@@ -580,8 +580,9 @@
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.button1);
-            this.splitContainer7.Size = new System.Drawing.Size(440, 106);
-            this.splitContainer7.SplitterDistance = 39;
+            this.splitContainer7.Panel2.Padding = new System.Windows.Forms.Padding(25, 5, 25, 5);
+            this.splitContainer7.Size = new System.Drawing.Size(440, 93);
+            this.splitContainer7.SplitterDistance = 44;
             this.splitContainer7.TabIndex = 0;
             // 
             // RestNameRpt
@@ -600,12 +601,13 @@
             // 
             this.FromDatePicker.BackColor = System.Drawing.Color.SeaGreen;
             this.FromDatePicker.BorderRadius = 0;
+            this.FromDatePicker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FromDatePicker.ForeColor = System.Drawing.Color.White;
             this.FromDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.FromDatePicker.FormatCustom = null;
-            this.FromDatePicker.Location = new System.Drawing.Point(64, 3);
+            this.FromDatePicker.Location = new System.Drawing.Point(0, 0);
             this.FromDatePicker.Name = "FromDatePicker";
-            this.FromDatePicker.Size = new System.Drawing.Size(303, 36);
+            this.FromDatePicker.Size = new System.Drawing.Size(440, 44);
             this.FromDatePicker.TabIndex = 0;
             this.FromDatePicker.Value = new System.DateTime(2019, 4, 29, 3, 54, 22, 876);
             // 
@@ -613,12 +615,13 @@
             // 
             this.ToDatePicker.BackColor = System.Drawing.Color.SeaGreen;
             this.ToDatePicker.BorderRadius = 0;
+            this.ToDatePicker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ToDatePicker.ForeColor = System.Drawing.Color.White;
             this.ToDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.ToDatePicker.FormatCustom = null;
-            this.ToDatePicker.Location = new System.Drawing.Point(69, 1);
+            this.ToDatePicker.Location = new System.Drawing.Point(0, 0);
             this.ToDatePicker.Name = "ToDatePicker";
-            this.ToDatePicker.Size = new System.Drawing.Size(303, 36);
+            this.ToDatePicker.Size = new System.Drawing.Size(440, 44);
             this.ToDatePicker.TabIndex = 1;
             this.ToDatePicker.Value = new System.DateTime(2019, 4, 29, 3, 54, 22, 876);
             // 
@@ -630,12 +633,12 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Location = new System.Drawing.Point(25, 5);
             this.button1.Margin = new System.Windows.Forms.Padding(25, 3, 25, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(440, 63);
+            this.button1.Size = new System.Drawing.Size(390, 35);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Update Restaurant";
+            this.button1.Text = "Show Food Selling Report";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -644,7 +647,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(892, 700);
+            this.ClientSize = new System.Drawing.Size(892, 650);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

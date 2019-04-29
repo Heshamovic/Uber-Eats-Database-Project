@@ -25,7 +25,7 @@ namespace Uber_Eats_Database_Project
         public ReportsForm(DateTime fDate = new DateTime(), DateTime tDate = new DateTime(), string rest = "")
         {
             InitializeComponent();
-            if (rest == "")
+            if (rest != "")
                 choice = 1;
             fromDate = fDate;
             toDate = tDate;
