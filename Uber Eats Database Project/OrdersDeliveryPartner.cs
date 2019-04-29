@@ -54,16 +54,14 @@ namespace Uber_Eats_Database_Project
                 if (dialogResult == DialogResult.Yes)
                 {
                     int id = Convert.ToInt32(orders.Rows[e.RowIndex].Cells[0].Value);
-                    orders.Rows[e.RowIndex].Cells[4].Value = "pd";
                     OracleConnection con = new OracleConnection(Helper.constr);
                     con.Open();
                     OracleCommand cmd = new OracleCommand(@"update trip set DELIVERYPARTNER_USERNAME = '" + Helper.currentUserName + "'" +
                                                            "where order_id = " + id.ToString(), con);
                     cmd.ExecuteNonQuery();
-                    cmd = new OracleCommand(@"update Orders set status = 'pd' where order_id = " + id.ToString(), con);
-                    cmd.ExecuteNonQuery();
                     con.Close();
                     builder = new OracleCommandBuilder(adapter1);
+                    adapter1.UpdateCommand = new OracleCommand("update Orders set status = 'pd' where order_id = " + id.ToString());
                     adapter1.Update(ds.Tables[0]);
                     this.Close();
                 }
@@ -76,7 +74,7 @@ namespace Uber_Eats_Database_Project
             {
                 try
                 {
-                    adapter1 = new OracleDataAdapter("select o.* from orders o, trip t where t.DELIVERYPARTNER_USERNAME is null and t.ORDER_ID = o.ORDER_ID and o.status = 'pp'", new OracleConnection(Helper.constr));
+                    adapter1 = new OracleDataAdapter("select o.* from orders where status = 'pp'", new OracleConnection(Helper.constr));
                     adapter2 = new OracleDataAdapter("select o.ORDER_ID, f.* from food f, order_food offf, orders o, trip t where o.ORDER_ID = offf.ORDER_ID and t.order_id = o.order_id and offf.RESTAURANT_NAME = f.RESTAURANT_NAME and offf.RESTAURANT_LOCATION = f.RESTAURANT_LOCATION and offf.FOOD_NAME= f.FOOD_NAME and t.deliverypartner_username is null", new OracleConnection(Helper.constr));
                     ds = new DataSet();
                     adapter1.Fill(ds, "order");
