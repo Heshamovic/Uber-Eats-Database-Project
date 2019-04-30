@@ -32,6 +32,7 @@ namespace Uber_Eats_Database_Project
         }
         private void ToggleUser()
         {
+            UsernameLabel.Text = "Welcome, ";
             UsernameLabel.Text += Helper.currentUserName;
             bool UserEnable = true; // User unless
             if (Helper.currentUserRole == 2) // Delivery Partner
