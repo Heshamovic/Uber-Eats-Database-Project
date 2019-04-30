@@ -58,6 +58,11 @@ namespace Uber_Eats_Database_Project
                 i++;
             }
             dr.Close();
+            if(x==0)
+            {
+                Confirm.Enabled = false;
+
+            }
         }
         
 
@@ -76,18 +81,27 @@ namespace Uber_Eats_Database_Project
                 cmd4.Parameters.Add("food_name", cartItems[i].FoodName.Text);
                 cmd4.Parameters.Add("no_of_items", cartItems[i].NoOfItems.Text);
                 cmd4.ExecuteNonQuery();
+               
+              
+            }
+            if (z > 0)
+            {
                 OracleCommand cmd5 = new OracleCommand();
                 cmd5.Connection = con;
                 cmd5.CommandText = "Update_Order_Status_nc_to_pd";
                 cmd5.CommandType = CommandType.StoredProcedure;
                 cmd5.Parameters.Add("id", Helper.currentOrderId);
                 cmd5.ExecuteNonQuery();
+                OracleCommand cmd = new OracleCommand("Create_Cart", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("un", Helper.currentUserName);
+                cmd.ExecuteNonQuery();
+                CustomMsgBox.Show("Order Confirmed");
+               
             }
-            OracleCommand cmd = new OracleCommand("Create_Cart", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("un", Helper.currentUserName);
-            cmd.ExecuteNonQuery();
+            this.Close();
         }
+
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {

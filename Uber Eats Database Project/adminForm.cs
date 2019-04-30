@@ -308,5 +308,10 @@ namespace Uber_Eats_Database_Project
             Helper.AddPlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Food Price");
         }
         #endregion
+
+        private void header_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
