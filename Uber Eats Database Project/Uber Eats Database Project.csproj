@@ -407,8 +407,6 @@
     <Content Include="bin\Debug\stdole.dll" />
     <Content Include="bin\Debug\Uber Eats Database Project.exe" />
     <Content Include="bin\Debug\Uber Eats Database Project.pdb" />
-    <None Include="resources\Add Image_100px.png" />
-    <None Include="resources\NO Image Available.jpg" />
     <Content Include="UberEats.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UberEats.edmx</DependentUpon>
@@ -419,6 +417,8 @@
       <DependentUpon>UberEats.edmx</DependentUpon>
       <LastGenOutput>UberEats.cs</LastGenOutput>
     </Content>
+    <None Include="resources\Add Image_100px.png" />
+    <None Include="resources\NO Image Available.jpg" />
     <None Include="resources\cancel %281%29.png" />
     <None Include="resources\check.png" />
     <None Include="resources\Checkout_32px.png" />

@@ -50,7 +50,7 @@ namespace Uber_Eats_Database_Project
             userOrderItems = new UserOrderItem[userorders_count];
 
             int i = 0;
-            int totalprice = 0;
+            decimal totalprice = 0;
             while (dr.Read())
             {
                 userOrderItems[i] = new UserOrderItem();
@@ -68,7 +68,7 @@ namespace Uber_Eats_Database_Project
                 OracleDataReader dr1 = cmd8.ExecuteReader();
                 while(dr1.Read())
                 {
-                    totalprice += (Convert.ToInt32(dr1[1]) * Convert.ToInt32(dr1[2]));
+                    totalprice += (Convert.ToDecimal(dr1[1]) * Convert.ToDecimal(dr1[2]));
                 }
 
                 userOrderItems[i].Price_integer.Text = ( totalprice.ToString()+ "LE");

@@ -26,6 +26,7 @@ namespace Uber_Eats_Database_Project
         public string PAYMENT_TYPE { get; set; }
         public string STATUS { get; set; }
         public string CUSTOMER_USERNAME { get; set; }
+        public decimal FOOD_PRICE { get; set; }
     
         public virtual CUSTOMER CUSTOMER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

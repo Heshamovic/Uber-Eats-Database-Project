@@ -34,7 +34,6 @@ namespace Uber_Eats_Database_Project
             cmd.Parameters.Add("cnt", OracleDbType.Int32, ParameterDirection.Output);
             cmd.ExecuteNonQuery();
             x = int.Parse(cmd.Parameters["cnt"].Value.ToString());
-            
             OracleCommand cmd2 = new OracleCommand();
             cmd2.Connection = con;
             cmd2.CommandText = "GetCartItems";
@@ -58,10 +57,9 @@ namespace Uber_Eats_Database_Project
                 i++;
             }
             dr.Close();
-            if(x==0)
+            if(x == 0)
             {
                 Confirm.Enabled = false;
-
             }
         }
         
@@ -81,9 +79,24 @@ namespace Uber_Eats_Database_Project
                 cmd4.Parameters.Add("food_name", cartItems[i].FoodName.Text);
                 cmd4.Parameters.Add("no_of_items", cartItems[i].NoOfItems.Text);
                 cmd4.ExecuteNonQuery();
-               
-              
             }
+            decimal totalprice = 0;
+            OracleCommand cmd8 = new OracleCommand();
+            cmd8.Connection = con;
+            cmd8.CommandText = "Order_Total_Price";
+            cmd8.CommandType = CommandType.StoredProcedure;
+            cmd8.Parameters.Add("orderno", Helper.currentOrderId);
+            cmd8.Parameters.Add("r", OracleDbType.RefCursor, ParameterDirection.Output);
+            OracleDataReader dr1 = cmd8.ExecuteReader();
+            while (dr1.Read())
+            {
+                totalprice += (Convert.ToDecimal(dr1[1]) * Convert.ToDecimal(dr1[2]));
+            }
+            Entities ent = new Entities();
+            ORDER ord = ent.ORDERS.Where(h => h.ORDER_ID == Helper.currentOrderId).First();
+            ord.FOOD_PRICE = totalprice;
+            ent.SaveChanges();
+
             if (z > 0)
             {
                 OracleCommand cmd5 = new OracleCommand();
@@ -97,7 +110,6 @@ namespace Uber_Eats_Database_Project
                 cmd.Parameters.Add("un", Helper.currentUserName);
                 cmd.ExecuteNonQuery();
                 CustomMsgBox.Show("Order Confirmed");
-               
             }
             this.Close();
         }

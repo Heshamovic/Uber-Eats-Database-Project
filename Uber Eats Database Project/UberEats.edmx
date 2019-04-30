@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CUSTOMER">
           <Key>
             <PropertyRef Name="USERNAME" />
@@ -68,6 +68,7 @@ warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defi
           <Property Name="PAYMENT_TYPE" Type="varchar2" MaxLength="20" />
           <Property Name="STATUS" Type="varchar2" MaxLength="20" />
           <Property Name="CUSTOMER_USERNAME" Type="varchar2" MaxLength="20" />
+          <Property Name="FOOD_PRICE" Type="float" Precision="126" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="REST_NUMBERS">
           <Key>
@@ -217,47 +218,6 @@ warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defi
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="COUNT_GETCARTITEMS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
-          <Parameter Name="CURRENT_ORDER_ID" Type="number" Mode="In" />
-          <Parameter Name="CNT" Type="number" Mode="Out" />
-        </Function>
-        <Function Name="CREATE_CART" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
-          <Parameter Name="CUSERNAME" Type="varchar2" Mode="In" />
-        </Function>
-        <Function Name="DELETE_CART_ITEM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
-          <Parameter Name="ORDERID" Type="number" Mode="In" />
-          <Parameter Name="REST_NAME" Type="varchar2" Mode="In" />
-          <Parameter Name="REST_LOC" Type="varchar2" Mode="In" />
-          <Parameter Name="FOOD_NAME" Type="varchar2" Mode="In" />
-        </Function>
-        <Function Name="GETCARTID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
-          <Parameter Name="CURRENT_USER_NAME" Type="varchar2" Mode="In" />
-          <Parameter Name="C_ID" Type="number" Mode="Out" />
-        </Function>
-        <Function Name="GETCARTITEMS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
-          <Parameter Name="CURRENT_ORDER_ID" Type="number" Mode="In" />
-        </Function>
-        <Function Name="SIGN_UP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
-          <Parameter Name="NUSERNAME" Type="varchar2" Mode="In" />
-          <Parameter Name="NPASSWORD" Type="varchar2" Mode="In" />
-          <Parameter Name="NROLE" Type="number" Mode="In" />
-          <Parameter Name="DONE" Type="number" Mode="Out" />
-          <Parameter Name="NFNAME" Type="varchar2" Mode="In" />
-          <Parameter Name="NLNAME" Type="varchar2" Mode="In" />
-          <Parameter Name="NLOCATION" Type="varchar2" Mode="In" />
-          <Parameter Name="NCREDIT_NO" Type="varchar2" Mode="In" />
-          <Parameter Name="NVEHICLE" Type="varchar2" Mode="In" />
-        </Function>
-        <Function Name="UPDATE_CART_ITEMS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
-          <Parameter Name="ORDERID" Type="number" Mode="In" />
-          <Parameter Name="REST_NAME" Type="varchar2" Mode="In" />
-          <Parameter Name="REST_LOC" Type="varchar2" Mode="In" />
-          <Parameter Name="FOOD_NAME" Type="varchar2" Mode="In" />
-          <Parameter Name="NO_OF_ITEMS" Type="number" Mode="In" />
-        </Function>
-        <Function Name="UPDATE_ORDER_STATUS_NC_TO_PD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="SCOTT">
-          <Parameter Name="ORDERID" Type="number" Mode="In" />
-        </Function>
         <EntityContainer Name="ModelStoreContainer">
           <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="DELIVERY_PARTNER" EntityType="Self.DELIVERY_PARTNER" Schema="SCOTT" store:Type="Tables" />
@@ -310,7 +270,8 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
             <End Role="WORKING_TIME" EntitySet="WORKING_TIME" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -365,6 +326,7 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <Property Name="PAYMENT_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="CUSTOMER_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FOOD_PRICE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <NavigationProperty Name="CUSTOMER" Relationship="Self.ORDERS_CUSTOMER_FK1" FromRole="ORDERS" ToRole="CUSTOMER" />
           <NavigationProperty Name="ORDER_FOOD" Relationship="Self.ORDER_FOOD_ORDER_FK1" FromRole="ORDERS" ToRole="ORDER_FOOD" />
           <NavigationProperty Name="TRIP" Relationship="Self.ORDER_TRIP_FK1" FromRole="ORDERS" ToRole="TRIP" />
@@ -582,50 +544,6 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
             <End Role="RESTAURANT" EntitySet="RESTAURANTs" />
             <End Role="WORKING_TIME" EntitySet="WORKING_TIME" />
           </AssociationSet>
-          <FunctionImport Name="COUNT_GETCARTITEMS">
-            <Parameter Name="CURRENT_ORDER_ID" Mode="In" Type="Decimal" />
-            <Parameter Name="CNT" Mode="Out" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="CREATE_CART">
-          <Parameter Name="CUSERNAME" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="DELETE_CART_ITEM">
-            <Parameter Name="ORDERID" Mode="In" Type="Decimal" />
-            <Parameter Name="REST_NAME" Mode="In" Type="String" />
-            <Parameter Name="REST_LOC" Mode="In" Type="String" />
-            <Parameter Name="FOOD_NAME" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="GETALLORDERS">
-          <Parameter Name="USER_NAME" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="GETCARTID">
-            <Parameter Name="CURRENT_USER_NAME" Mode="In" Type="String" />
-            <Parameter Name="C_ID" Mode="Out" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="GETCARTITEMS">
-          <Parameter Name="CURRENT_ORDER_ID" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="SIGN_UP">
-            <Parameter Name="NUSERNAME" Mode="In" Type="String" />
-            <Parameter Name="NPASSWORD" Mode="In" Type="String" />
-            <Parameter Name="NROLE" Mode="In" Type="Decimal" />
-            <Parameter Name="DONE" Mode="Out" Type="Decimal" />
-            <Parameter Name="NFNAME" Mode="In" Type="String" />
-            <Parameter Name="NLNAME" Mode="In" Type="String" />
-            <Parameter Name="NLOCATION" Mode="In" Type="String" />
-            <Parameter Name="NCREDIT_NO" Mode="In" Type="String" />
-            <Parameter Name="NVEHICLE" Mode="In" Type="String" />
-          </FunctionImport>
-          <FunctionImport Name="UPDATE_CART_ITEMS">
-            <Parameter Name="ORDERID" Mode="In" Type="Decimal" />
-            <Parameter Name="REST_NAME" Mode="In" Type="String" />
-            <Parameter Name="REST_LOC" Mode="In" Type="String" />
-            <Parameter Name="FOOD_NAME" Mode="In" Type="String" />
-            <Parameter Name="NO_OF_ITEMS" Mode="In" Type="Decimal" />
-          </FunctionImport>
-          <FunctionImport Name="UPDATE_ORDER_STATUS_NC_TO_PD">
-          <Parameter Name="ORDERID" Mode="In" Type="Decimal" />
-          </FunctionImport>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -680,6 +598,7 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
                 <ScalarProperty Name="PAYMENT_TYPE" ColumnName="PAYMENT_TYPE" />
                 <ScalarProperty Name="STATUS" ColumnName="STATUS" />
                 <ScalarProperty Name="CUSTOMER_USERNAME" ColumnName="CUSTOMER_USERNAME" />
+                <ScalarProperty Name="FOOD_PRICE" ColumnName="FOOD_PRICE" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -736,14 +655,6 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="COUNT_GETCARTITEMS" FunctionName="Model.Store.COUNT_GETCARTITEMS" />
-          <FunctionImportMapping FunctionImportName="CREATE_CART" FunctionName="Model.Store.CREATE_CART" />
-          <FunctionImportMapping FunctionImportName="DELETE_CART_ITEM" FunctionName="Model.Store.DELETE_CART_ITEM" />
-          <FunctionImportMapping FunctionImportName="GETCARTID" FunctionName="Model.Store.GETCARTID" />
-          <FunctionImportMapping FunctionImportName="GETCARTITEMS" FunctionName="Model.Store.GETCARTITEMS" />
-          <FunctionImportMapping FunctionImportName="SIGN_UP" FunctionName="Model.Store.SIGN_UP" />
-          <FunctionImportMapping FunctionImportName="UPDATE_CART_ITEMS" FunctionName="Model.Store.UPDATE_CART_ITEMS" />
-          <FunctionImportMapping FunctionImportName="UPDATE_ORDER_STATUS_NC_TO_PD" FunctionName="Model.Store.UPDATE_ORDER_STATUS_NC_TO_PD" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
