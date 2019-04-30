@@ -314,12 +314,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(4, 1);
+            this.label2.Location = new System.Drawing.Point(9, 8);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 20);
+            this.label2.Size = new System.Drawing.Size(104, 21);
             this.label2.TabIndex = 39;
             this.label2.Text = "Admin Tools";
             // 
@@ -874,7 +874,7 @@
             // 
             this.splitContainer9.Panel2.Controls.Add(this.splitContainer11);
             this.splitContainer9.Size = new System.Drawing.Size(436, 80);
-            this.splitContainer9.SplitterDistance = 215;
+            this.splitContainer9.SplitterDistance = 214;
             this.splitContainer9.TabIndex = 0;
             // 
             // splitContainer10
@@ -893,7 +893,7 @@
             // 
             this.splitContainer10.Panel2.Controls.Add(this.FoodRestNameAdd);
             this.splitContainer10.Panel2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.splitContainer10.Size = new System.Drawing.Size(215, 80);
+            this.splitContainer10.Size = new System.Drawing.Size(214, 80);
             this.splitContainer10.SplitterDistance = 32;
             this.splitContainer10.TabIndex = 0;
             // 
@@ -914,7 +914,7 @@
             this.FoodRestNameAdd.ItemHeight = 23;
             this.FoodRestNameAdd.Location = new System.Drawing.Point(0, 5);
             this.FoodRestNameAdd.Name = "FoodRestNameAdd";
-            this.FoodRestNameAdd.Size = new System.Drawing.Size(215, 29);
+            this.FoodRestNameAdd.Size = new System.Drawing.Size(214, 29);
             this.FoodRestNameAdd.TabIndex = 0;
             this.FoodRestNameAdd.UseSelectable = true;
             this.FoodRestNameAdd.SelectedValueChanged += new System.EventHandler(this.FoodRestNameAdd_SelectedValueChanged);
@@ -935,7 +935,7 @@
             // 
             this.splitContainer11.Panel2.Controls.Add(this.FoodRestLocAdd);
             this.splitContainer11.Panel2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.splitContainer11.Size = new System.Drawing.Size(217, 80);
+            this.splitContainer11.Size = new System.Drawing.Size(218, 80);
             this.splitContainer11.SplitterDistance = 32;
             this.splitContainer11.TabIndex = 0;
             // 
@@ -956,7 +956,7 @@
             this.FoodRestLocAdd.ItemHeight = 23;
             this.FoodRestLocAdd.Location = new System.Drawing.Point(0, 5);
             this.FoodRestLocAdd.Name = "FoodRestLocAdd";
-            this.FoodRestLocAdd.Size = new System.Drawing.Size(217, 29);
+            this.FoodRestLocAdd.Size = new System.Drawing.Size(218, 29);
             this.FoodRestLocAdd.TabIndex = 1;
             this.FoodRestLocAdd.UseSelectable = true;
             // 

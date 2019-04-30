@@ -265,7 +265,7 @@
             this.CurrentOrderBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CurrentOrderBtn.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CurrentOrderBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.CurrentOrderBtn.Location = new System.Drawing.Point(53, 73);
+            this.CurrentOrderBtn.Location = new System.Drawing.Point(53, 72);
             this.CurrentOrderBtn.Name = "CurrentOrderBtn";
             this.CurrentOrderBtn.Size = new System.Drawing.Size(177, 55);
             this.CurrentOrderBtn.TabIndex = 27;

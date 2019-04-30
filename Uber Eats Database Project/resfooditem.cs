@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity.Migrations;
 using Oracle.DataAccess.Client;
 using Oracle.DataAccess.Types;
 
@@ -14,6 +15,7 @@ namespace Uber_Eats_Database_Project
 {
     public partial class resfooditem : UserControl
     {
+        Entities ent = new Entities();
         public resfooditem( string name , string discount ,string price,double rating , string img,string top,string ing,string resn,string resl)
         { 
             InitializeComponent();
@@ -37,29 +39,30 @@ namespace Uber_Eats_Database_Project
         
         private void button2_Click(object sender, EventArgs e)
         {
-            Entities ent = new Entities();
             if (ent.ORDER_FOOD.Where(x => x.ORDER_ID == Helper.currentOrderId && x.RESTAURANT_NAME == resn.Text &&
                 x.RESTAURANT_LOCATION == resl.Text && x.FOOD_NAME == this.name.Text).Count() > 0)
             {
                 ent.ORDER_FOOD.Where(x => x.ORDER_ID == Helper.currentOrderId && x.RESTAURANT_NAME == resn.Text &&
                 x.RESTAURANT_LOCATION == resl.Text && x.FOOD_NAME == this.name.Text).First().NO_OF_ITEMS_PER_FOOD += this.numericUpDown1.Value;
+                ent.SaveChanges();
             }
-            else {
-                ORDER_FOOD x = new ORDER_FOOD();
-                x.ORDER_ID = Helper.currentOrderId;
-                x.RESTAURANT_NAME = resn.Text;
-                x.RESTAURANT_LOCATION = resl.Text;
-                x.FOOD_NAME = this.name.Text;
-                x.NO_OF_ITEMS_PER_FOOD = this.numericUpDown1.Value;
-                x.BOUGHT = "n";
-                ent.ORDER_FOOD.Add(x);
+            else
+            {
+                ORDER_FOOD newItem = new ORDER_FOOD();
+                newItem.RESTAURANT_NAME = resn.Text;
+                newItem.RESTAURANT_LOCATION = resl.Text;
+                newItem.FOOD_NAME = name.Text;
+                newItem.NO_OF_ITEMS_PER_FOOD = numericUpDown1.Value;
+                newItem.BOUGHT = "n";
+                newItem.ORDER_ID = Helper.currentOrderId;
+                ent.ORDER_FOOD.AddOrUpdate(newItem);
+                ent.SaveChanges();
             }
-            ent.SaveChanges();
         }
 
         private void foodimg_Click(object sender, EventArgs e)
         {
-            OracleConnection con = new OracleConnection(Helper.constr);
+            /*OracleConnection con = new OracleConnection(Helper.constr);
             con.Open();
             OracleCommand cmd = new OracleCommand("insert into order_food values(:id, :resn, :resl, :foodn, :noi, 'N')", con);
             cmd.Parameters.Add("id", Helper.currentOrderId);
@@ -68,7 +71,7 @@ namespace Uber_Eats_Database_Project
             cmd.Parameters.Add("foodn", this.name.Text);
             cmd.Parameters.Add("noi",this.numericUpDown1.Value );
             cmd.ExecuteNonQuery();
-            con.Close();
+            con.Close();*/
         }
     }
 }

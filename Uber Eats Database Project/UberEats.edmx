@@ -50,7 +50,6 @@ warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defi
             <PropertyRef Name="RESTAURANT_NAME" />
             <PropertyRef Name="RESTAURANT_LOCATION" />
             <PropertyRef Name="FOOD_NAME" />
-            <PropertyRef Name="BOUGHT" />
           </Key>
           <Property Name="ORDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="RESTAURANT_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
@@ -425,7 +424,6 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
             <PropertyRef Name="RESTAURANT_NAME" />
             <PropertyRef Name="RESTAURANT_LOCATION" />
             <PropertyRef Name="FOOD_NAME" />
-            <PropertyRef Name="BOUGHT" />
           </Key>
           <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <Property Name="RESTAURANT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />

@@ -46,15 +46,21 @@ namespace Uber_Eats_Database_Project
                 ent.RESTAURANTs.Add(r);
                 ent.SaveChanges();
                 CustomMsgBox.Show("Restaurant added");
+                updateRest();
             }
         }
 
-        private void adminForm_Load(object sender, EventArgs e)
+        private void updateRest()
         {
             RestaurantsNamesUpdate.DataSource = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
             RestNameRpt.DataSource = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
             FoodRestNameAdd.DataSource = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
             FoodRestNameUpdate.DataSource = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
+        }
+
+        private void adminForm_Load(object sender, EventArgs e)
+        {
+            updateRest();
         }
         
         private void RestaurantsNamesUpdate_SelectedValueChanged(object sender, EventArgs e)
@@ -74,6 +80,7 @@ namespace Uber_Eats_Database_Project
                 r.CUISINE_TYPE = CusineTypeUpdate.Text;
                 ent.SaveChanges();
                 CustomMsgBox.Show("Restaurant Updated");
+                updateRest();
             }
         }
 
@@ -110,6 +117,7 @@ namespace Uber_Eats_Database_Project
                 f.TOP_DISH = (FoodTopDishAdd.Checked ? "y" : "n");
                 ent.FOODs.Add(f);
                 ent.SaveChanges();
+                CustomMsgBox.Show(FoodNameAdd.Text + " Added");
             }
         }
 
@@ -169,6 +177,7 @@ namespace Uber_Eats_Database_Project
                 f.TOP_DISH = (FoodTopDishUpdate.Checked ? "y" : "n");
                 ent.FOODs.AddOrUpdate(f);
                 ent.SaveChanges();
+                CustomMsgBox.Show(FoodNameUpdate.Text + " Updated");
             }
         }
         #region Buttons Hovers

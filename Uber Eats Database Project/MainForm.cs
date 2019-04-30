@@ -69,6 +69,8 @@ namespace Uber_Eats_Database_Project
 
         private void MenusBtn_Click(object sender, EventArgs e)
         {
+            Entities ent = new Entities();
+            Helper.currentOrderId = Convert.ToInt32(ent.ORDERS.Where(x => x.CUSTOMER_USERNAME == Helper.currentUserName && x.STATUS == "nc").First().ORDER_ID);
             rest r = new rest();
             r.Show();
             this.Hide();
