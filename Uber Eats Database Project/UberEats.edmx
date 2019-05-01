@@ -320,7 +320,7 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <Key>
             <PropertyRef Name="ORDER_ID" />
           </Key>
-          <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ORDER_ID" Type="Int32" Nullable="false" />
           <Property Name="TIP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="ORDER_DATE" Type="DateTime" />
           <Property Name="PAYMENT_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
@@ -360,7 +360,7 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <Key>
             <PropertyRef Name="ORDER_ID" />
           </Key>
-          <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ORDER_ID" Type="Int32" Nullable="false" />
           <Property Name="DISTANCE_OF_TRIP" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="DELIVERYPARTNER_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DELIVERYFEES" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
@@ -387,11 +387,11 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
             <PropertyRef Name="RESTAURANT_LOCATION" />
             <PropertyRef Name="FOOD_NAME" />
           </Key>
-          <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ORDER_ID" Type="Int32" Nullable="false" />
           <Property Name="RESTAURANT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RESTAURANT_LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FOOD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NO_OF_ITEMS_PER_FOOD" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="NO_OF_ITEMS_PER_FOOD" Type="Int32" />
           <Property Name="BOUGHT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="FOOD" Relationship="Self.ORDER_FOOD_FOOD_FK1" FromRole="ORDER_FOOD" ToRole="FOOD" />
           <NavigationProperty Name="ORDER" Relationship="Self.ORDER_FOOD_ORDER_FK1" FromRole="ORDER_FOOD" ToRole="ORDERS" />

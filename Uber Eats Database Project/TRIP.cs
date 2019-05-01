@@ -14,7 +14,7 @@ namespace Uber_Eats_Database_Project
     
     public partial class TRIP
     {
-        public decimal ORDER_ID { get; set; }
+        public int ORDER_ID { get; set; }
         public Nullable<decimal> DISTANCE_OF_TRIP { get; set; }
         public string DELIVERYPARTNER_USERNAME { get; set; }
         public decimal DELIVERYFEES { get; set; }
