@@ -138,7 +138,7 @@ namespace Uber_Eats_Database_Project
         {
             Helper.onHover((Button)sender, Color.Black);
         }
-        #endregion
+    
 
         private void Cart_MouseMove(object sender, MouseEventArgs e)
         { 
@@ -155,5 +155,6 @@ namespace Uber_Eats_Database_Project
                 Confirm.Enabled = false;
             }
         }
+        #endregion
     }
 }
