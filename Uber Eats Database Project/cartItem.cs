@@ -33,14 +33,7 @@ namespace Uber_Eats_Database_Project
             {
                 con = new OracleConnection(Helper.constr);
                 con.Open();
-                OracleCommand cmd = new OracleCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "Update_Order_food_price";
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("OrderID", Helper.currentOrderId);
-                decimal price = NoOfItems.Value * Convert.ToDecimal(Price.Text);
-                cmd.Parameters.Add("Food_p", price);
-                cmd.ExecuteNonQuery();
+               
 
                 OracleCommand cmd3 = new OracleCommand();
                 cmd3.Connection = con;
