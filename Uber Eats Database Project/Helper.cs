@@ -87,13 +87,13 @@ namespace Uber_Eats_Database_Project
         public static int getCartId()
         {
             int id = -1;
-            OracleConnection con = new OracleConnection(Helper.constr);
+            OracleConnection con = new OracleConnection(constr);
             con.Open();
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
             cmd.CommandText = "GetCartId";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.Add("username", Helper.currentUserName);
+            cmd.Parameters.Add("username", currentUserName);
             cmd.Parameters.Add("cartid", OracleDbType.Int32, System.Data.ParameterDirection.Output);
             cmd.ExecuteNonQuery();
             id = int.Parse(cmd.Parameters["cartid"].Value.ToString());

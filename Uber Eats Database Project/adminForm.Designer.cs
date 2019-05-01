@@ -1444,7 +1444,7 @@
             this.splitContainer27.Panel2.Controls.Add(this.bunifuCustomLabel12);
             this.splitContainer27.Panel2.Padding = new System.Windows.Forms.Padding(20, 3, 0, 0);
             this.splitContainer27.Size = new System.Drawing.Size(392, 32);
-            this.splitContainer27.SplitterDistance = 190;
+            this.splitContainer27.SplitterDistance = 189;
             this.splitContainer27.SplitterWidth = 3;
             this.splitContainer27.TabIndex = 0;
             // 
@@ -1507,7 +1507,7 @@
             this.splitContainer28.Panel2.Controls.Add(this.FoodRestLocUpdate);
             this.splitContainer28.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
             this.splitContainer28.Size = new System.Drawing.Size(392, 43);
-            this.splitContainer28.SplitterDistance = 190;
+            this.splitContainer28.SplitterDistance = 189;
             this.splitContainer28.SplitterWidth = 3;
             this.splitContainer28.TabIndex = 0;
             // 
@@ -1519,7 +1519,7 @@
             this.FoodRestNameUpdate.Location = new System.Drawing.Point(0, 3);
             this.FoodRestNameUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.FoodRestNameUpdate.Name = "FoodRestNameUpdate";
-            this.FoodRestNameUpdate.Size = new System.Drawing.Size(190, 29);
+            this.FoodRestNameUpdate.Size = new System.Drawing.Size(189, 29);
             this.FoodRestNameUpdate.TabIndex = 1;
             this.FoodRestNameUpdate.UseSelectable = true;
             this.FoodRestNameUpdate.SelectedValueChanged += new System.EventHandler(this.FoodRestNameUpdate_SelectedValueChanged);
@@ -1532,7 +1532,7 @@
             this.FoodRestLocUpdate.Location = new System.Drawing.Point(0, 3);
             this.FoodRestLocUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.FoodRestLocUpdate.Name = "FoodRestLocUpdate";
-            this.FoodRestLocUpdate.Size = new System.Drawing.Size(199, 29);
+            this.FoodRestLocUpdate.Size = new System.Drawing.Size(200, 29);
             this.FoodRestLocUpdate.TabIndex = 2;
             this.FoodRestLocUpdate.UseSelectable = true;
             this.FoodRestLocUpdate.SelectedValueChanged += new System.EventHandler(this.FoodRestLocUpdate_SelectedValueChanged);

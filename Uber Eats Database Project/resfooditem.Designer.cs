@@ -61,7 +61,7 @@
             this.foodimg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.foodimg.Location = new System.Drawing.Point(0, 0);
             this.foodimg.Name = "foodimg";
-            this.foodimg.Size = new System.Drawing.Size(565, 146);
+            this.foodimg.Size = new System.Drawing.Size(561, 142);
             this.foodimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.foodimg.TabIndex = 4;
             this.foodimg.TabStop = false;
@@ -82,7 +82,7 @@
             this.restimg.Name = "restimg";
             this.restimg.RightSahddow = true;
             this.restimg.ShadowDepth = 20;
-            this.restimg.Size = new System.Drawing.Size(565, 202);
+            this.restimg.Size = new System.Drawing.Size(561, 198);
             this.restimg.TabIndex = 2;
             // 
             // panel3
@@ -91,11 +91,12 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 25);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(565, 146);
+            this.panel3.Size = new System.Drawing.Size(561, 142);
             this.panel3.TabIndex = 7;
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.resl);
             this.panel2.Controls.Add(this.resn);
             this.panel2.Controls.Add(this.numericUpDown1);
@@ -104,9 +105,9 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.ing);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 171);
+            this.panel2.Location = new System.Drawing.Point(0, 167);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(565, 31);
+            this.panel2.Size = new System.Drawing.Size(561, 31);
             this.panel2.TabIndex = 6;
             // 
             // resl
@@ -149,7 +150,7 @@
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(510, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(52, 31);
+            this.button2.Size = new System.Drawing.Size(46, 29);
             this.button2.TabIndex = 4;
             this.button2.Text = "\r\n";
             this.button2.UseVisualStyleBackColor = false;
@@ -187,6 +188,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.name);
@@ -196,7 +198,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(565, 25);
+            this.panel1.Size = new System.Drawing.Size(561, 25);
             this.panel1.TabIndex = 5;
             // 
             // label3
@@ -234,7 +236,7 @@
             this.discount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.discount.AutoSize = true;
             this.discount.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discount.Location = new System.Drawing.Point(349, 0);
+            this.discount.Location = new System.Drawing.Point(346, 0);
             this.discount.Name = "discount";
             this.discount.Size = new System.Drawing.Size(54, 18);
             this.discount.TabIndex = 3;
@@ -247,7 +249,7 @@
             this.bunifuRating1.ForeColor = System.Drawing.Color.SeaGreen;
             this.bunifuRating1.Location = new System.Drawing.Point(0, 0);
             this.bunifuRating1.Name = "bunifuRating1";
-            this.bunifuRating1.Size = new System.Drawing.Size(107, 25);
+            this.bunifuRating1.Size = new System.Drawing.Size(107, 23);
             this.bunifuRating1.TabIndex = 0;
             this.bunifuRating1.Value = 1;
             // 
@@ -256,7 +258,7 @@
             this.price.AutoSize = true;
             this.price.Dock = System.Windows.Forms.DockStyle.Right;
             this.price.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.price.Location = new System.Drawing.Point(511, 0);
+            this.price.Location = new System.Drawing.Point(505, 0);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(54, 18);
             this.price.TabIndex = 2;
@@ -266,7 +268,7 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 202);
+            this.splitter1.Size = new System.Drawing.Size(3, 198);
             this.splitter1.TabIndex = 3;
             this.splitter1.TabStop = false;
             // 
@@ -274,10 +276,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.restimg);
             this.Controls.Add(this.splitter1);
+            this.Margin = new System.Windows.Forms.Padding(0, 5, 0, 20);
             this.Name = "resfooditem";
-            this.Size = new System.Drawing.Size(568, 202);
+            this.Size = new System.Drawing.Size(564, 198);
             ((System.ComponentModel.ISupportInitialize)(this.foodimg)).EndInit();
             this.restimg.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

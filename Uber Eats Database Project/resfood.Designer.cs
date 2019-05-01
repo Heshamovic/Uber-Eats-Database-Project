@@ -53,6 +53,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20, 50, 20, 20);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(730, 450);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.WrapContents = false;
@@ -148,7 +149,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "resfood";
             this.Text = "resfood";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.resfood_FormClosing);
             this.Load += new System.EventHandler(this.resfood_Load);
             this.header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
