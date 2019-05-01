@@ -99,6 +99,7 @@ namespace Uber_Eats_Database_Project
 
             if (z > 0)
             {
+               
                 OracleCommand cmd5 = new OracleCommand();
                 cmd5.Connection = con;
                 cmd5.CommandText = "Update_Order_Status_nc_to_pp";
@@ -110,6 +111,8 @@ namespace Uber_Eats_Database_Project
                 cmd.Parameters.Add("un", Helper.currentUserName);
                 cmd.ExecuteNonQuery();
                 CustomMsgBox.Show("Order Confirmed");
+                Helper.currentOrderId = Helper.getCartId();
+
             }
             this.Close();
         }
@@ -136,5 +139,21 @@ namespace Uber_Eats_Database_Project
             Helper.onHover((Button)sender, Color.Black);
         }
         #endregion
+
+        private void Cart_MouseMove(object sender, MouseEventArgs e)
+        { 
+            if (flowLayoutPanel1.Controls.Count == 0)
+            {
+                Confirm.Enabled = false;
+            }
+        }
+
+        private void flowLayoutPanel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (flowLayoutPanel1.Controls.Count == 0)
+            {
+                Confirm.Enabled = false;
+            }
+        }
     }
 }

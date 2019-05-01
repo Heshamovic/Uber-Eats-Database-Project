@@ -6,7 +6,9 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Oracle.DataAccess.Client;
+using Oracle.DataAccess.Types;
+using CrystalDecisions.Shared;
 namespace Uber_Eats_Database_Project
 {
     public static class Helper
@@ -80,6 +82,23 @@ namespace Uber_Eats_Database_Project
         public static void onHover(Button btn, Color c)
         {
             btn.BackColor = c;
+        }
+
+        public static int getCartId()
+        {
+            int id = -1;
+            OracleConnection con = new OracleConnection(Helper.constr);
+            con.Open();
+            OracleCommand cmd = new OracleCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "GetCartId";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add("username", Helper.currentUserName);
+            cmd.Parameters.Add("cartid", OracleDbType.Int32, System.Data.ParameterDirection.Output);
+            cmd.ExecuteNonQuery();
+            id = int.Parse(cmd.Parameters["cartid"].Value.ToString());
+            con.Close();
+            return id;
         }
     }
 }

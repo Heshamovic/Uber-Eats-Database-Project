@@ -45,6 +45,7 @@ namespace Uber_Eats_Database_Project
                 cmd3.ExecuteNonQuery();
                 con.Close();
                 this.Parent.Controls.Remove(this);
+              
 
             }
         }

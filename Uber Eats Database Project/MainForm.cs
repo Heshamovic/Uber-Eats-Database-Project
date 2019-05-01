@@ -71,7 +71,7 @@ namespace Uber_Eats_Database_Project
         private void MenusBtn_Click(object sender, EventArgs e)
         {
             Entities ent = new Entities();
-            Helper.currentOrderId = Convert.ToInt32(ent.ORDERS.Where(x => x.CUSTOMER_USERNAME == Helper.currentUserName && x.STATUS == "nc").First().ORDER_ID);
+            Helper.currentOrderId = Helper.getCartId();
             rest r = new rest();
             r.Show();
             this.Hide();
@@ -118,7 +118,7 @@ namespace Uber_Eats_Database_Project
         private void CartBtn_Click(object sender, EventArgs e)
         {
             Cart c = new Cart();
-            Helper.currentOrderId = getCartId();
+            Helper.currentOrderId = Helper.getCartId();
             c.Show();
             this.Hide();
             c.FormClosing += letsShow;
@@ -145,22 +145,7 @@ namespace Uber_Eats_Database_Project
             ToggleUser();
             this.Show();
         }
-        private int getCartId ()
-        {
-            int id = -1;
-            OracleConnection con = new OracleConnection(Helper.constr);         
-            con.Open();
-            OracleCommand cmd = new OracleCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "GetCartId";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("username",Helper.currentUserName);
-            cmd.Parameters.Add("cartid", OracleDbType.Int32, ParameterDirection.Output);
-            cmd.ExecuteNonQuery();
-            id = int.Parse(cmd.Parameters["cartid"].Value.ToString());
-            con.Close();
-            return id;
-        }
+    
         #region Buttons Hovers
         private void DAccountBtn_MouseEnter(object sender, EventArgs e)
         {
