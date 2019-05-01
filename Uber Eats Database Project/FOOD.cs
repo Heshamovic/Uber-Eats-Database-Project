@@ -23,9 +23,9 @@ namespace Uber_Eats_Database_Project
         public string FOOD_NAME { get; set; }
         public string RESTAURANT_NAME { get; set; }
         public string RESTAURANT_LOCATION { get; set; }
-        public Nullable<decimal> PRICE { get; set; }
-        public Nullable<decimal> DISCOUNT { get; set; }
-        public Nullable<decimal> RATING { get; set; }
+        public decimal PRICE { get; set; }
+        public int DISCOUNT { get; set; }
+        public int RATING { get; set; }
         public string INGREDIANTS { get; set; }
         public string TOP_DISH { get; set; }
         public string FOODIMAGE { get; set; }

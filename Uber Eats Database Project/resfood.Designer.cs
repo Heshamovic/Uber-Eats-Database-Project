@@ -123,6 +123,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Image = global::Uber_Eats_Database_Project.Properties.Resources.Checkout_32px;
             this.button1.Location = new System.Drawing.Point(3, 388);
             this.button1.Name = "button1";

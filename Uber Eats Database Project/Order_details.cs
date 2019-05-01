@@ -27,7 +27,6 @@ namespace Uber_Eats_Database_Project
         {
             con = new OracleConnection(Helper.constr);
             con.Open();
-            CustomMsgBox.Show(c_order.ToString());
             OracleCommand cmd9 = new OracleCommand();
             cmd9.Connection = con;
             cmd9.CommandText = "Count_GetCartItems";

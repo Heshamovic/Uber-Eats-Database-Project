@@ -93,7 +93,7 @@ namespace Uber_Eats_Database_Project
                         fo.NO_OF_ITEMS_PER_FOOD
                     });
 
-            decimal mealcost = o.FOOD_PRICE, deliverycost = t.DISTANCE_OF_TRIP.Value * dp.RATING.Value, applicationfees = 5, totalcost = 0;
+            decimal mealcost = o.FOOD_PRICE, deliverycost = t.DISTANCE_OF_TRIP * dp.RATING, applicationfees = 5, totalcost = 0;
             if (dp.VEHICLE == "car")
                 deliverycost *= 8;
             else if (dp.VEHICLE == "bike")
@@ -101,7 +101,7 @@ namespace Uber_Eats_Database_Project
             else
                 deliverycost *= 3;
             t.DELIVERYFEES = deliverycost;
-            dp.RATING = Math.Max(5, dp.RATING.Value + (decimal)(0.01));
+            dp.RATING = Math.Max(5, dp.RATING + (decimal)(0.01));
             totalcost = deliverycost + applicationfees + mealcost;
             CustomMsgBox.Show("Delivery Fees = " + deliverycost.ToString() + 
                               "\nMeal Cost = " + mealcost.ToString() + 
@@ -153,7 +153,7 @@ namespace Uber_Eats_Database_Project
                 DELIVERY_PARTNER dp = (from p in ent.DELIVERY_PARTNER
                                        where p.USERNAME == Helper.currentUserName
                                        select p).FirstOrDefault();
-                dp.RATING = Math.Min(0, dp.RATING.Value - (decimal)(0.2));
+                dp.RATING = Math.Min(0, dp.RATING - (decimal)(0.2));
                 ent.SaveChanges();
                 this.Close();
             }

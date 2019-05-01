@@ -66,7 +66,7 @@ namespace Uber_Eats_Database_Project
         private void RestaurantsNamesUpdate_SelectedValueChanged(object sender, EventArgs e)
         {
             RESTAURANT r = ent.RESTAURANTs.Where(re => re.RESTAURANT_NAME == RestaurantsNamesUpdate.Text).First();
-            RestaurantRatingUpdate.Text = Convert.ToInt32(r.RATING.Value).ToString();
+            RestaurantRatingUpdate.Text = r.RATING.ToString();
             RestaurantLocationUpdate.Text = r.RESTAURANT_LOCATION;
             CusineTypeUpdate.Text = r.CUISINE_TYPE;
         }
@@ -76,7 +76,7 @@ namespace Uber_Eats_Database_Project
             if (CustomMsgBox.Show("Are you sure you want to update this restaurant?", 2) == DialogResult.Yes)
             {
                 RESTAURANT r = ent.RESTAURANTs.Where(x => x.RESTAURANT_NAME == RestaurantsNamesUpdate.Text && x.RESTAURANT_LOCATION == RestaurantLocationUpdate.Text).First();
-                r.RATING = Convert.ToDecimal(RestaurantRatingUpdate.Text);
+                r.RATING = Convert.ToInt32(RestaurantRatingUpdate.Text);
                 r.CUISINE_TYPE = CusineTypeUpdate.Text;
                 ent.SaveChanges();
                 CustomMsgBox.Show("Restaurant Updated");
@@ -105,7 +105,7 @@ namespace Uber_Eats_Database_Project
             if (CustomMsgBox.Show("Are you sure You want to add this food to " + FoodRestNameAdd.Text + " located at " + FoodRestLocAdd.Text + "?", 2) == DialogResult.Yes)
             {
                 FOOD f = new FOOD();
-                f.DISCOUNT = Convert.ToDecimal(FoodDiscountAdd.Text);
+                f.DISCOUNT = Convert.ToInt32(FoodDiscountAdd.Text);
                 f.FOODIMAGE = Helper.getFileName(foodimgadd);
                 f.FOODTYPE = FoodTypeAdd.Text;
                 f.FOOD_NAME = FoodNameAdd.Text;
@@ -165,7 +165,7 @@ namespace Uber_Eats_Database_Project
             if (CustomMsgBox.Show("Are you sure You want to Update this food to " + FoodRestNameUpdate.Text + " located at " + FoodRestLocUpdate.Text + "?", 2) == DialogResult.Yes)
             {
                 FOOD f = new FOOD();
-                f.DISCOUNT = Convert.ToDecimal(FoodDiscountUpdate.Text);
+                f.DISCOUNT = Convert.ToInt32(FoodDiscountUpdate.Text);
                 f.FOODIMAGE = Helper.getFileName(foodimgupdate);
                 f.FOODTYPE = FoodTypeUpdate.Text;
                 f.FOOD_NAME = FoodNameUpdate.Text;

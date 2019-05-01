@@ -351,7 +351,9 @@
     <EmbeddedResource Include="UserOrders.resx">
       <DependentUpon>UserOrders.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="bin\Debug\Uber Eats Database Project.exe.config" />
+    <None Include="bin\Debug\Uber Eats Database Project.exe.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="obj\Release\Uber Eats Database Project.csproj.CoreCompileInputs.cache" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -372,7 +374,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\exit_delete_close_remove_door-512.png" />

@@ -15,7 +15,6 @@ namespace Uber_Eats_Database_Project
 {
     public partial class resfooditem : UserControl
     {
-        Entities ent = new Entities();
         public resfooditem( string name , string discount ,string price,double rating , string img,string top,string ing,string resn,string resl)
         { 
             InitializeComponent();
@@ -39,52 +38,28 @@ namespace Uber_Eats_Database_Project
         
         private void button2_Click(object sender, EventArgs e)
         {
+            Entities ent = new Entities();
+            ORDER_FOOD ordf = new ORDER_FOOD();
+            ordf.BOUGHT = "n";
+            ordf.FOOD_NAME = name.Text;
+            ordf.NO_OF_ITEMS_PER_FOOD = Convert.ToInt32(numericUpDown1.Value);
+            ordf.ORDER_ID = Helper.currentOrderId;
+            ordf.RESTAURANT_LOCATION = resl.Text;
+            ordf.RESTAURANT_NAME = resn.Text;
             int c = 0;
             if (ent.ORDER_FOOD.Where(x => x.ORDER_ID == Helper.currentOrderId && x.RESTAURANT_NAME == resn.Text &&
                 x.RESTAURANT_LOCATION == resl.Text && x.FOOD_NAME == this.name.Text).Count() > 0)
             {
-                c += ent.ORDER_FOOD.Where(x => x.ORDER_ID == Helper.currentOrderId && x.RESTAURANT_NAME == resn.Text &&
-                x.RESTAURANT_LOCATION == resl.Text && x.FOOD_NAME == this.name.Text).First().NO_OF_ITEMS_PER_FOOD.Value;
+                ordf.NO_OF_ITEMS_PER_FOOD += ent.ORDER_FOOD.Where(x => x.ORDER_ID == Helper.currentOrderId && x.RESTAURANT_NAME == resn.Text &&
+                x.RESTAURANT_LOCATION == resl.Text && x.FOOD_NAME == this.name.Text).First().NO_OF_ITEMS_PER_FOOD;
             }
-            OracleConnection con = new OracleConnection(Helper.constr);
-            con.Open();
-            OracleCommand cmd;
-            if (c > 0)
-            {
-                cmd = new OracleCommand("update order_food set NO_OF_ITEMS_PER_FOOD = :noi " +
-                    "where ORDER_ID = :id and RESTAURANT_NAME = :resn and RESTAURANT_LOCATION = :resl and FOOD_NAME = :foodn", con);
-                cmd.Parameters.Add("noi", this.numericUpDown1.Value + c);
-                cmd.Parameters.Add("id", Helper.currentOrderId);
-                cmd.Parameters.Add("resn", this.resn.Text);
-                cmd.Parameters.Add("resl", this.resl.Text);
-                cmd.Parameters.Add("foodn", this.name.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else
-            {
-                cmd = new OracleCommand("insert into order_food values(:id, :resn, :resl, :foodn, :noi, 'n')", con);
-                cmd.Parameters.Add("id", Helper.currentOrderId);
-                cmd.Parameters.Add("resn", this.resn.Text);
-                cmd.Parameters.Add("resl", this.resl.Text);
-                cmd.Parameters.Add("foodn", this.name.Text);
-                cmd.Parameters.Add("noi", this.numericUpDown1.Value + c);
-                cmd.ExecuteNonQuery();
-            }
-            con.Close();
+            ent.ORDER_FOOD.AddOrUpdate(ordf);
+            ent.SaveChanges();
         }
 
         private void foodimg_Click(object sender, EventArgs e)
         {
-            /*OracleConnection con = new OracleConnection(Helper.constr);
-            con.Open();
-            OracleCommand cmd = new OracleCommand("insert into order_food values(:id, :resn, :resl, :foodn, :noi, 'N')", con);
-            cmd.Parameters.Add("id", Helper.currentOrderId);
-            cmd.Parameters.Add("resn", this.resn.Text);
-            cmd.Parameters.Add("resl", this.resl.Text);
-            cmd.Parameters.Add("foodn", this.name.Text);
-            cmd.Parameters.Add("noi",this.numericUpDown1.Value );
-            cmd.ExecuteNonQuery();
-            con.Close();*/
+            
         }
     }
 }
