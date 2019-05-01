@@ -101,7 +101,7 @@ namespace Uber_Eats_Database_Project
             {
                 OracleCommand cmd5 = new OracleCommand();
                 cmd5.Connection = con;
-                cmd5.CommandText = "Update_Order_Status_nc_to_pd";
+                cmd5.CommandText = "Update_Order_Status_nc_to_pp";
                 cmd5.CommandType = CommandType.StoredProcedure;
                 cmd5.Parameters.Add("id", Helper.currentOrderId);
                 cmd5.ExecuteNonQuery();

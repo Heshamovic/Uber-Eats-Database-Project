@@ -33,7 +33,6 @@ namespace Uber_Eats_Database_Project
             {
                 con = new OracleConnection(Helper.constr);
                 con.Open();
-               
 
                 OracleCommand cmd3 = new OracleCommand();
                 cmd3.Connection = con;

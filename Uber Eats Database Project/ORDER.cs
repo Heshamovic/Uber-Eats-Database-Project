@@ -20,9 +20,9 @@ namespace Uber_Eats_Database_Project
             this.ORDER_FOOD = new HashSet<ORDER_FOOD>();
         }
     
-        public decimal ORDER_ID { get; set; }
-        public string TIP { get; set; }
-        public Nullable<System.DateTime> ORDER_DATE { get; set; }
+        public int ORDER_ID { get; set; }
+        public decimal TIP { get; set; }
+        public System.DateTime ORDER_DATE { get; set; }
         public string PAYMENT_TYPE { get; set; }
         public string STATUS { get; set; }
         public string CUSTOMER_USERNAME { get; set; }

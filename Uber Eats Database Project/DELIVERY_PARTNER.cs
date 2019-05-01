@@ -23,7 +23,7 @@ namespace Uber_Eats_Database_Project
         public string USERNAME { get; set; }
         public string VEHICLE { get; set; }
         public string PASSWORD { get; set; }
-        public Nullable<decimal> RATING { get; set; }
+        public decimal RATING { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TRIP> TRIPs { get; set; }

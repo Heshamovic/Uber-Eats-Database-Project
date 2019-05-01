@@ -58,13 +58,19 @@ namespace Uber_Eats_Database_Project
                     con.Open();
                     OracleCommand cmd = new OracleCommand(@"insert into trip 
                                                         (order_id, deliverypartner_username, distance_of_trip, deliveryfees) 
-                                                        values (1, '" + Helper.currentUserName + "', ROUND(DBMS_RANDOM.VALUE(0,999999),2), 0)", con);
+                                                        values (" + id.ToString() + ", '" + Helper.currentUserName + "', " +
+                                                        "ROUND(DBMS_RANDOM.VALUE(0,999999),2), 0)", con);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     builder = new OracleCommandBuilder(adapter1);
                     adapter1.UpdateCommand = new OracleCommand("update Orders set status = 'pd' where order_id = " + id.ToString());
                     adapter1.Update(ds.Tables[0]);
                     this.Close();
+
+                    Entities ent = new Entities();
+                    ORDER oRDER = ent.ORDERS.Where(x => x.ORDER_ID == id).First();
+                    oRDER.STATUS = "pd";
+                    ent.SaveChanges();
                 }
             }
         }
@@ -75,8 +81,8 @@ namespace Uber_Eats_Database_Project
             {
                 try
                 {
-                    adapter1 = new OracleDataAdapter("select o.* from orders where status = 'pp'", new OracleConnection(Helper.constr));
-                    adapter2 = new OracleDataAdapter("select o.ORDER_ID, f.* from food f, order_food offf, orders o, trip t where o.ORDER_ID = offf.ORDER_ID and t.order_id = o.order_id and offf.RESTAURANT_NAME = f.RESTAURANT_NAME and offf.RESTAURANT_LOCATION = f.RESTAURANT_LOCATION and offf.FOOD_NAME= f.FOOD_NAME and t.deliverypartner_username is null", new OracleConnection(Helper.constr));
+                    adapter1 = new OracleDataAdapter("select o.* from orders o where status = 'pp'", new OracleConnection(Helper.constr));
+                    adapter2 = new OracleDataAdapter("select o.ORDER_ID, f.* from food f, order_food offf, orders o where o.ORDER_ID = offf.ORDER_ID and offf.RESTAURANT_NAME = f.RESTAURANT_NAME and offf.RESTAURANT_LOCATION = f.RESTAURANT_LOCATION and offf.FOOD_NAME= f.FOOD_NAME and o.status = 'pp'", new OracleConnection(Helper.constr));
                     ds = new DataSet();
                     adapter1.Fill(ds, "order");
                     adapter2.Fill(ds, "food");

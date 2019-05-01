@@ -24,7 +24,7 @@ namespace Uber_Eats_Database_Project
     
         public string RESTAURANT_NAME { get; set; }
         public string RESTAURANT_LOCATION { get; set; }
-        public Nullable<decimal> RATING { get; set; }
+        public int RATING { get; set; }
         public string CUISINE_TYPE { get; set; }
         public string RESTAURANT_IMAGE { get; set; }
     

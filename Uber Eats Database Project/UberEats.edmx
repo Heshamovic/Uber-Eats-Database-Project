@@ -9,9 +9,9 @@
           <Key>
             <PropertyRef Name="USERNAME" />
           </Key>
-          <Property Name="USERNAME" Type="varchar2" MaxLength="20" Nullable="false" />
-          <Property Name="FNAME" Type="varchar2" MaxLength="20" />
-          <Property Name="LNAME" Type="varchar2" MaxLength="20" />
+          <Property Name="USERNAME" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="FNAME" Type="varchar2" MaxLength="25" />
+          <Property Name="LNAME" Type="varchar2" MaxLength="25" />
           <Property Name="LOCATION" Type="varchar2" MaxLength="200" />
           <Property Name="CREDIT_NO" Type="varchar2" MaxLength="100" />
           <Property Name="PASSWORD" Type="varchar2" MaxLength="100" Nullable="false" />
@@ -20,10 +20,10 @@
           <Key>
             <PropertyRef Name="USERNAME" />
           </Key>
-          <Property Name="USERNAME" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar2" MaxLength="30" Nullable="false" />
           <Property Name="VEHICLE" Type="varchar2" MaxLength="50" />
           <Property Name="PASSWORD" Type="varchar2" MaxLength="100" Nullable="false" />
-          <Property Name="RATING" Type="float" Precision="126" Scale="0" />
+          <Property Name="RATING" Type="float" Precision="126" Scale="0" Nullable="false" />
         </EntityType>
         <EntityType Name="FOOD">
           <Key>
@@ -34,16 +34,14 @@
           <Property Name="FOOD_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
           <Property Name="RESTAURANT_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
           <Property Name="RESTAURANT_LOCATION" Type="varchar2" MaxLength="200" Nullable="false" />
-          <Property Name="PRICE" Type="number" Precision="38" Scale="0" />
-          <Property Name="DISCOUNT" Type="number" Precision="38" Scale="0" />
-          <Property Name="RATING" Type="number" Precision="38" Scale="0" />
+          <Property Name="PRICE" Type="float" Precision="126" Scale="0" Nullable="false" />
+          <Property Name="DISCOUNT" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="RATING" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="INGREDIANTS" Type="varchar2" MaxLength="500" />
-          <Property Name="TOP_DISH" Type="varchar2" MaxLength="5" />
-          <Property Name="FOODIMAGE" Type="varchar2" MaxLength="200" />
+          <Property Name="TOP_DISH" Type="varchar2" MaxLength="3" Nullable="false" />
+          <Property Name="FOODIMAGE" Type="varchar2" MaxLength="300" />
           <Property Name="FOODTYPE" Type="varchar2" MaxLength="30" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="ORDER_FOOD">
           <Key>
             <PropertyRef Name="ORDER_ID" />
@@ -55,7 +53,7 @@ warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defi
           <Property Name="RESTAURANT_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
           <Property Name="RESTAURANT_LOCATION" Type="varchar2" MaxLength="200" Nullable="false" />
           <Property Name="FOOD_NAME" Type="varchar2" MaxLength="50" Nullable="false" />
-          <Property Name="NO_OF_ITEMS_PER_FOOD" Type="number" Precision="38" Scale="0" />
+          <Property Name="NO_OF_ITEMS_PER_FOOD" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="BOUGHT" Type="varchar2" MaxLength="2" Nullable="false" />
         </EntityType>
         <EntityType Name="ORDERS">
@@ -63,10 +61,10 @@ warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defi
             <PropertyRef Name="ORDER_ID" />
           </Key>
           <Property Name="ORDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="TIP" Type="varchar2" MaxLength="20" />
-          <Property Name="ORDER_DATE" Type="date" />
-          <Property Name="PAYMENT_TYPE" Type="varchar2" MaxLength="20" />
-          <Property Name="STATUS" Type="varchar2" MaxLength="20" />
+          <Property Name="TIP" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="ORDER_DATE" Type="date" Nullable="false" />
+          <Property Name="PAYMENT_TYPE" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="STATUS" Type="varchar2" MaxLength="20" Nullable="false" />
           <Property Name="CUSTOMER_USERNAME" Type="varchar2" MaxLength="20" />
           <Property Name="FOOD_PRICE" Type="float" Precision="126" Scale="0" Nullable="false" />
         </EntityType>
@@ -87,7 +85,7 @@ warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defi
           </Key>
           <Property Name="RESTAURANT_NAME" Type="varchar2" MaxLength="30" Nullable="false" />
           <Property Name="RESTAURANT_LOCATION" Type="varchar2" MaxLength="200" Nullable="false" />
-          <Property Name="RATING" Type="number" Precision="38" Scale="0" />
+          <Property Name="RATING" Type="number" Precision="38" Scale="0" Nullable="false" />
           <Property Name="CUISINE_TYPE" Type="varchar2" MaxLength="50" />
           <Property Name="RESTAURANT_IMAGE" Type="varchar2" MaxLength="200" />
         </EntityType>
@@ -96,7 +94,7 @@ warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defi
             <PropertyRef Name="ORDER_ID" />
           </Key>
           <Property Name="ORDER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="DISTANCE_OF_TRIP" Type="number" Precision="38" Scale="0" />
+          <Property Name="DISTANCE_OF_TRIP" Type="float" Precision="126" Scale="0" Nullable="false" />
           <Property Name="DELIVERYPARTNER_USERNAME" Type="varchar2" MaxLength="20" Nullable="false" />
           <Property Name="DELIVERYFEES" Type="float" Precision="126" Scale="0" Nullable="false" />
         </EntityType>
@@ -222,21 +220,12 @@ warning 6002: The table/view 'SCOTT.ORDER_FOOD' does not have a primary key defi
           <EntitySet Name="CUSTOMER" EntityType="Self.CUSTOMER" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="DELIVERY_PARTNER" EntityType="Self.DELIVERY_PARTNER" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="FOOD" EntityType="Self.FOOD" Schema="SCOTT" store:Type="Tables" />
+          <EntitySet Name="ORDER_FOOD" EntityType="Self.ORDER_FOOD" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="ORDERS" EntityType="Self.ORDERS" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="REST_NUMBERS" EntityType="Self.REST_NUMBERS" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="RESTAURANT" EntityType="Self.RESTAURANT" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="TRIP" EntityType="Self.TRIP" Schema="SCOTT" store:Type="Tables" />
           <EntitySet Name="WORKING_TIME" EntityType="Self.WORKING_TIME" Schema="SCOTT" store:Type="Tables" />
-          <EntitySet Name="ORDER_FOOD" EntityType="Self.ORDER_FOOD" store:Type="Tables" store:Schema="SCOTT">
-            <DefiningQuery>SELECT 
-"ORDER_FOOD"."ORDER_ID" AS "ORDER_ID", 
-"ORDER_FOOD"."RESTAURANT_NAME" AS "RESTAURANT_NAME", 
-"ORDER_FOOD"."RESTAURANT_LOCATION" AS "RESTAURANT_LOCATION", 
-"ORDER_FOOD"."FOOD_NAME" AS "FOOD_NAME", 
-"ORDER_FOOD"."NO_OF_ITEMS_PER_FOOD" AS "NO_OF_ITEMS_PER_FOOD", 
-"ORDER_FOOD"."BOUGHT" AS "BOUGHT"
-FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="FOOD_RESTAURANT_FK1" Association="Self.FOOD_RESTAURANT_FK1">
             <End Role="RESTAURANT" EntitySet="RESTAURANT" />
             <End Role="FOOD" EntitySet="FOOD" />
@@ -279,9 +268,9 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <Key>
             <PropertyRef Name="USERNAME" />
           </Key>
-          <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="LNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FNAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="LNAME" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
           <Property Name="LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="CREDIT_NO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
@@ -291,10 +280,10 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <Key>
             <PropertyRef Name="USERNAME" />
           </Key>
-          <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="VEHICLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PASSWORD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <NavigationProperty Name="TRIPs" Relationship="Self.TRIP_DELIVERY_PARTNER_FK1" FromRole="DELIVERY_PARTNER" ToRole="TRIP" />
         </EntityType>
         <EntityType Name="FOOD">
@@ -306,25 +295,41 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <Property Name="FOOD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RESTAURANT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RESTAURANT_LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="PRICE" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="DISCOUNT" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PRICE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="DISCOUNT" Type="Int32" Nullable="false" />
+          <Property Name="RATING" Type="Int32" Nullable="false" />
           <Property Name="INGREDIANTS" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="TOP_DISH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="FOODIMAGE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="TOP_DISH" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FOODIMAGE" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="FOODTYPE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="RESTAURANT" Relationship="Self.FOOD_RESTAURANT_FK1" FromRole="FOOD" ToRole="RESTAURANT" />
           <NavigationProperty Name="ORDER_FOOD" Relationship="Self.ORDER_FOOD_FOOD_FK1" FromRole="FOOD" ToRole="ORDER_FOOD" />
+        </EntityType>
+        <EntityType Name="ORDER_FOOD">
+          <Key>
+            <PropertyRef Name="ORDER_ID" />
+            <PropertyRef Name="RESTAURANT_NAME" />
+            <PropertyRef Name="RESTAURANT_LOCATION" />
+            <PropertyRef Name="FOOD_NAME" />
+          </Key>
+          <Property Name="ORDER_ID" Type="Int32" Nullable="false" />
+          <Property Name="RESTAURANT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RESTAURANT_LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FOOD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NO_OF_ITEMS_PER_FOOD" Type="Int32" Nullable="false" />
+          <Property Name="BOUGHT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="FOOD" Relationship="Self.ORDER_FOOD_FOOD_FK1" FromRole="ORDER_FOOD" ToRole="FOOD" />
+          <NavigationProperty Name="ORDER" Relationship="Self.ORDER_FOOD_ORDER_FK1" FromRole="ORDER_FOOD" ToRole="ORDERS" />
         </EntityType>
         <EntityType Name="ORDER">
           <Key>
             <PropertyRef Name="ORDER_ID" />
           </Key>
-          <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="TIP" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ORDER_DATE" Type="DateTime" />
-          <Property Name="PAYMENT_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ORDER_ID" Type="Int32" Nullable="false" />
+          <Property Name="TIP" Type="Decimal" Nullable="false" />
+          <Property Name="ORDER_DATE" Type="DateTime" Nullable="false" />
+          <Property Name="PAYMENT_TYPE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="CUSTOMER_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="FOOD_PRICE" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <NavigationProperty Name="CUSTOMER" Relationship="Self.ORDERS_CUSTOMER_FK1" FromRole="ORDERS" ToRole="CUSTOMER" />
@@ -349,7 +354,7 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           </Key>
           <Property Name="RESTAURANT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RESTAURANT_LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="RATING" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="RATING" Type="Int32" Nullable="false" />
           <Property Name="CUISINE_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="RESTAURANT_IMAGE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="FOODs" Relationship="Self.FOOD_RESTAURANT_FK1" FromRole="RESTAURANT" ToRole="FOOD" />
@@ -360,8 +365,8 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <Key>
             <PropertyRef Name="ORDER_ID" />
           </Key>
-          <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="DISTANCE_OF_TRIP" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="ORDER_ID" Type="Int32" Nullable="false" />
+          <Property Name="DISTANCE_OF_TRIP" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <Property Name="DELIVERYPARTNER_USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DELIVERYFEES" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
           <NavigationProperty Name="DELIVERY_PARTNER" Relationship="Self.TRIP_DELIVERY_PARTNER_FK1" FromRole="TRIP" ToRole="DELIVERY_PARTNER" />
@@ -379,22 +384,6 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <Property Name="START_TIME" Type="Decimal" Precision="38" Scale="0" />
           <Property Name="END_TIME" Type="Decimal" Precision="38" Scale="0" />
           <NavigationProperty Name="RESTAURANT" Relationship="Self.WORKING_TIME_RESTAURANT_FK1" FromRole="WORKING_TIME" ToRole="RESTAURANT" />
-        </EntityType>
-        <EntityType Name="ORDER_FOOD">
-          <Key>
-            <PropertyRef Name="ORDER_ID" />
-            <PropertyRef Name="RESTAURANT_NAME" />
-            <PropertyRef Name="RESTAURANT_LOCATION" />
-            <PropertyRef Name="FOOD_NAME" />
-          </Key>
-          <Property Name="ORDER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
-          <Property Name="RESTAURANT_NAME" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="RESTAURANT_LOCATION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="FOOD_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="NO_OF_ITEMS_PER_FOOD" Type="Decimal" Precision="38" Scale="0" />
-          <Property Name="BOUGHT" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="FOOD" Relationship="Self.ORDER_FOOD_FOOD_FK1" FromRole="ORDER_FOOD" ToRole="FOOD" />
-          <NavigationProperty Name="ORDER" Relationship="Self.ORDER_FOOD_ORDER_FK1" FromRole="ORDER_FOOD" ToRole="ORDERS" />
         </EntityType>
         <Association Name="ORDERS_CUSTOMER_FK1">
           <End Role="CUSTOMER" Type="Self.CUSTOMER" Multiplicity="0..1" />
@@ -506,12 +495,12 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
           <EntitySet Name="CUSTOMERs" EntityType="Self.CUSTOMER" />
           <EntitySet Name="DELIVERY_PARTNER" EntityType="Self.DELIVERY_PARTNER" />
           <EntitySet Name="FOODs" EntityType="Self.FOOD" />
+          <EntitySet Name="ORDER_FOOD" EntityType="Self.ORDER_FOOD" />
           <EntitySet Name="ORDERS" EntityType="Self.ORDER" />
           <EntitySet Name="REST_NUMBERS" EntityType="Self.REST_NUMBERS" />
           <EntitySet Name="RESTAURANTs" EntityType="Self.RESTAURANT" />
           <EntitySet Name="TRIPs" EntityType="Self.TRIP" />
           <EntitySet Name="WORKING_TIME" EntityType="Self.WORKING_TIME" />
-          <EntitySet Name="ORDER_FOOD" EntityType="Self.ORDER_FOOD" />
           <AssociationSet Name="ORDERS_CUSTOMER_FK1" Association="Self.ORDERS_CUSTOMER_FK1">
             <End Role="CUSTOMER" EntitySet="CUSTOMERs" />
             <End Role="ORDERS" EntitySet="ORDERS" />
@@ -589,6 +578,18 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ORDER_FOOD">
+            <EntityTypeMapping TypeName="Model.ORDER_FOOD">
+              <MappingFragment StoreEntitySet="ORDER_FOOD">
+                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
+                <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
+                <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />
+                <ScalarProperty Name="FOOD_NAME" ColumnName="FOOD_NAME" />
+                <ScalarProperty Name="NO_OF_ITEMS_PER_FOOD" ColumnName="NO_OF_ITEMS_PER_FOOD" />
+                <ScalarProperty Name="BOUGHT" ColumnName="BOUGHT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ORDERS">
             <EntityTypeMapping TypeName="Model.ORDER">
               <MappingFragment StoreEntitySet="ORDERS">
@@ -640,18 +641,6 @@ FROM "SCOTT"."ORDER_FOOD" "ORDER_FOOD"</DefiningQuery>
                 <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />
                 <ScalarProperty Name="START_TIME" ColumnName="START_TIME" />
                 <ScalarProperty Name="END_TIME" ColumnName="END_TIME" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ORDER_FOOD">
-            <EntityTypeMapping TypeName="Model.ORDER_FOOD">
-              <MappingFragment StoreEntitySet="ORDER_FOOD">
-                <ScalarProperty Name="ORDER_ID" ColumnName="ORDER_ID" />
-                <ScalarProperty Name="RESTAURANT_NAME" ColumnName="RESTAURANT_NAME" />
-                <ScalarProperty Name="RESTAURANT_LOCATION" ColumnName="RESTAURANT_LOCATION" />
-                <ScalarProperty Name="FOOD_NAME" ColumnName="FOOD_NAME" />
-                <ScalarProperty Name="NO_OF_ITEMS_PER_FOOD" ColumnName="NO_OF_ITEMS_PER_FOOD" />
-                <ScalarProperty Name="BOUGHT" ColumnName="BOUGHT" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
