@@ -56,6 +56,10 @@ namespace Uber_Eats_Database_Project
             RestNameRpt.DataSource = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
             FoodRestNameAdd.DataSource = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
             FoodRestNameUpdate.DataSource = ent.RESTAURANTs.Select(x => x.RESTAURANT_NAME).Distinct().ToList();
+            RestaurantsNamesUpdate.Refresh();
+            RestNameRpt.Refresh();
+            FoodRestNameAdd.Refresh();
+            FoodRestNameUpdate.Refresh();
         }
 
         private void adminForm_Load(object sender, EventArgs e)
@@ -86,7 +90,7 @@ namespace Uber_Eats_Database_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ReportsForm rf = new ReportsForm(FromDatePicker.Value, ToDatePicker.Value, RestNameRpt.Text);
+            ReportsForm rf = new ReportsForm(FromDatePicker.Value, ToDatePicker.Value, RestNameRpt.Text, RestLocRpt.Text);
             rf.Show();
             this.Hide();
             rf.FormClosing += letsShow;
@@ -98,6 +102,7 @@ namespace Uber_Eats_Database_Project
         private void FoodRestNameAdd_SelectedValueChanged(object sender, EventArgs e)
         {
             FoodRestLocAdd.DataSource = ent.RESTAURANTs.Where(re => re.RESTAURANT_NAME == FoodRestNameAdd.Text).Select(x => x.RESTAURANT_LOCATION).ToList();
+            FoodRestLocAdd.Refresh();
         }
 
         private void FoodAddBtn_Click(object sender, EventArgs e)
@@ -132,6 +137,12 @@ namespace Uber_Eats_Database_Project
         {
             FoodRestLocUpdate.DataSource = ent.RESTAURANTs.Where(re => re.RESTAURANT_NAME == FoodRestNameUpdate.Text).Select(x => x.RESTAURANT_LOCATION).ToList();
             FoodRestLocUpdate.Refresh();
+        }
+
+        private void RestNameRpt_SelectedValueChanged(object sender, EventArgs e)
+        {
+            RestLocRpt.DataSource = ent.RESTAURANTs.Where(re => re.RESTAURANT_NAME == RestNameRpt.Text).Select(x => x.RESTAURANT_LOCATION).ToList();
+            RestLocRpt.Refresh();
         }
 
         private void FoodImageUpdate_Click(object sender, EventArgs e)
@@ -308,15 +319,6 @@ namespace Uber_Eats_Database_Project
             Helper.AddPlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Food Price");
         }
         #endregion
-
-        private void header_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FromDatePicker_onValueChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

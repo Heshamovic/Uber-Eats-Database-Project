@@ -122,7 +122,7 @@ namespace Uber_Eats_Database_Project {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_RestaurantName {
+        public CrystalDecisions.Shared.IParameterField Parameter_RestName {
             get {
                 return this.DataDefinition.ParameterFields[0];
             }
@@ -130,7 +130,7 @@ namespace Uber_Eats_Database_Project {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_FromDate {
+        public CrystalDecisions.Shared.IParameterField Parameter_RestLocation {
             get {
                 return this.DataDefinition.ParameterFields[1];
             }
@@ -138,9 +138,17 @@ namespace Uber_Eats_Database_Project {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_ToDate {
+        public CrystalDecisions.Shared.IParameterField Parameter_FromDate {
             get {
                 return this.DataDefinition.ParameterFields[2];
+            }
+        }
+        
+        [Browsable(false)]
+        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public CrystalDecisions.Shared.IParameterField Parameter_ToDate {
+            get {
+                return this.DataDefinition.ParameterFields[3];
             }
         }
     }

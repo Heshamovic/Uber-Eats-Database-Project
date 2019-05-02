@@ -17,12 +17,12 @@ namespace Uber_Eats_Database_Project
         ResaturantFoodReport roe;
         int choice = 0;
         DateTime fromDate, toDate;
-        string restName = "";
+        string restName = "", restLocation = "";
         public ReportsForm()
         {
             InitializeComponent();
         }
-        public ReportsForm(DateTime fDate = new DateTime(), DateTime tDate = new DateTime(), string rest = "")
+        public ReportsForm(DateTime fDate = new DateTime(), DateTime tDate = new DateTime(), string rest = "", string loc = "")
         {
             InitializeComponent();
             if (rest != "")
@@ -30,6 +30,7 @@ namespace Uber_Eats_Database_Project
             fromDate = fDate;
             toDate = tDate;
             restName = rest;
+            restLocation = loc;
         }
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
@@ -49,8 +50,9 @@ namespace Uber_Eats_Database_Project
             {
                 roe = new ResaturantFoodReport();
                 roe.SetParameterValue(0, restName);
-                roe.SetParameterValue(1, fromDate);
-                roe.SetParameterValue(2, toDate);
+                roe.SetParameterValue(1, restLocation);
+                roe.SetParameterValue(2, fromDate);
+                roe.SetParameterValue(3, toDate);
                 crystalReportViewer1.ReportSource = roe;
             }
             crystalReportViewer1.ReuseParameterValuesOnRefresh = true;
