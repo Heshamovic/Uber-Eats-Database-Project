@@ -232,7 +232,16 @@ namespace Uber_Eats_Database_Project
         {
             Helper.onHover((Button)sender, Color.Green);
         }
+        
+        private void FoodUpdateBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
 
+        private void FoodUpdateBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
         private void FoodImageAdd_MouseLeave(object sender, EventArgs e)
         {
             Helper.onHover((Button)sender, Color.Black);
@@ -319,6 +328,19 @@ namespace Uber_Eats_Database_Project
             Helper.AddPlaceHolderB((Bunifu.Framework.UI.BunifuMetroTextbox)sender, "Food Price");
         }
         #endregion
-        
+
+        private void FoodNameUpdate_SelectedValueChanged(object sender, EventArgs e)
+        {
+            FOOD f = ent.FOODs.Where(x => x.FOOD_NAME == FoodNameUpdate.Text && x.RESTAURANT_NAME == FoodRestNameUpdate.Text
+            && x.RESTAURANT_LOCATION == FoodRestLocUpdate.Text).First();
+            FoodRatingUpdate.Value = f.RATING;
+            FoodIngUpdate.Text = f.INGREDIANTS;
+            FoodTopDishUpdate.Checked = (f.TOP_DISH.ToLower() == "y");
+            FoodTypeUpdate.Text = f.FOODTYPE;
+            FoodPriceUpdate.Value = f.PRICE;
+            FoodDiscountUpdate.Value = f.DISCOUNT;
+            string imgPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\") + f.FOODIMAGE;
+            FoodImgUpdate.Image = Image.FromFile(imgPath);
+        }
     }
 }
