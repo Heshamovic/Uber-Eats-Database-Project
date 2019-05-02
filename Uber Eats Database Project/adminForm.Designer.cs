@@ -120,7 +120,7 @@
             this.FoodTypeUpdate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.splitContainer32 = new System.Windows.Forms.SplitContainer();
             this.splitContainer33 = new System.Windows.Forms.SplitContainer();
-            this.FoodImageUpdate = new System.Windows.Forms.Button();
+            this.FoodImageUpdateBtn = new System.Windows.Forms.Button();
             this.FoodImgUpdate = new System.Windows.Forms.PictureBox();
             this.splitContainer34 = new System.Windows.Forms.SplitContainer();
             this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -826,7 +826,7 @@
             // FromDatePicker
             // 
             this.FromDatePicker.BackColor = System.Drawing.Color.Green;
-            this.FromDatePicker.BorderRadius = 0;
+            this.FromDatePicker.BorderRadius = 50;
             this.FromDatePicker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FromDatePicker.ForeColor = System.Drawing.Color.White;
             this.FromDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -861,7 +861,7 @@
             // ToDatePicker
             // 
             this.ToDatePicker.BackColor = System.Drawing.Color.Green;
-            this.ToDatePicker.BorderRadius = 0;
+            this.ToDatePicker.BorderRadius = 50;
             this.ToDatePicker.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ToDatePicker.ForeColor = System.Drawing.Color.White;
             this.ToDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
@@ -1344,6 +1344,7 @@
             // 
             // FoodPriceAdd
             // 
+            this.FoodPriceAdd.DecimalPlaces = 2;
             this.FoodPriceAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoodPriceAdd.Location = new System.Drawing.Point(0, 2);
             this.FoodPriceAdd.Margin = new System.Windows.Forms.Padding(2, 5, 2, 2);
@@ -1610,6 +1611,7 @@
             this.FoodNameUpdate.Size = new System.Drawing.Size(394, 29);
             this.FoodNameUpdate.TabIndex = 2;
             this.FoodNameUpdate.UseSelectable = true;
+            this.FoodNameUpdate.SelectedValueChanged += new System.EventHandler(this.FoodNameUpdate_SelectedValueChanged);
             // 
             // splitContainer26
             // 
@@ -1685,7 +1687,7 @@
             this.FoodIngUpdate.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.FoodIngUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoodIngUpdate.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.FoodIngUpdate.ForeColor = System.Drawing.Color.DarkGray;
+            this.FoodIngUpdate.ForeColor = System.Drawing.Color.Black;
             this.FoodIngUpdate.isPassword = false;
             this.FoodIngUpdate.Location = new System.Drawing.Point(0, 0);
             this.FoodIngUpdate.Margin = new System.Windows.Forms.Padding(0);
@@ -1789,7 +1791,7 @@
             this.FoodTypeUpdate.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.FoodTypeUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoodTypeUpdate.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.FoodTypeUpdate.ForeColor = System.Drawing.Color.DarkGray;
+            this.FoodTypeUpdate.ForeColor = System.Drawing.Color.Black;
             this.FoodTypeUpdate.isPassword = false;
             this.FoodTypeUpdate.Location = new System.Drawing.Point(0, 0);
             this.FoodTypeUpdate.Margin = new System.Windows.Forms.Padding(0);
@@ -1828,7 +1830,7 @@
             // 
             // splitContainer33.Panel1
             // 
-            this.splitContainer33.Panel1.Controls.Add(this.FoodImageUpdate);
+            this.splitContainer33.Panel1.Controls.Add(this.FoodImageUpdateBtn);
             this.splitContainer33.Panel1.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
             // 
             // splitContainer33.Panel2
@@ -1839,22 +1841,22 @@
             this.splitContainer33.SplitterWidth = 2;
             this.splitContainer33.TabIndex = 0;
             // 
-            // FoodImageUpdate
+            // FoodImageUpdateBtn
             // 
-            this.FoodImageUpdate.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.FoodImageUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FoodImageUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FoodImageUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.FoodImageUpdate.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.FoodImageUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FoodImageUpdate.Location = new System.Drawing.Point(7, 6);
-            this.FoodImageUpdate.Margin = new System.Windows.Forms.Padding(0);
-            this.FoodImageUpdate.Name = "FoodImageUpdate";
-            this.FoodImageUpdate.Size = new System.Drawing.Size(115, 88);
-            this.FoodImageUpdate.TabIndex = 3;
-            this.FoodImageUpdate.Text = "Add Image";
-            this.FoodImageUpdate.UseVisualStyleBackColor = false;
-            this.FoodImageUpdate.Click += new System.EventHandler(this.FoodImageUpdate_Click);
+            this.FoodImageUpdateBtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FoodImageUpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FoodImageUpdateBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FoodImageUpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FoodImageUpdateBtn.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.FoodImageUpdateBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.FoodImageUpdateBtn.Location = new System.Drawing.Point(7, 6);
+            this.FoodImageUpdateBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.FoodImageUpdateBtn.Name = "FoodImageUpdateBtn";
+            this.FoodImageUpdateBtn.Size = new System.Drawing.Size(115, 88);
+            this.FoodImageUpdateBtn.TabIndex = 3;
+            this.FoodImageUpdateBtn.Text = "Update Image";
+            this.FoodImageUpdateBtn.UseVisualStyleBackColor = false;
+            this.FoodImageUpdateBtn.Click += new System.EventHandler(this.FoodImageUpdate_Click);
             // 
             // FoodImgUpdate
             // 
@@ -1902,6 +1904,7 @@
             // 
             // FoodPriceUpdate
             // 
+            this.FoodPriceUpdate.DecimalPlaces = 2;
             this.FoodPriceUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoodPriceUpdate.Location = new System.Drawing.Point(0, 1);
             this.FoodPriceUpdate.Margin = new System.Windows.Forms.Padding(2, 5, 2, 2);
@@ -2001,9 +2004,11 @@
             this.FoodUpdateBtn.Name = "FoodUpdateBtn";
             this.FoodUpdateBtn.Size = new System.Drawing.Size(376, 131);
             this.FoodUpdateBtn.TabIndex = 4;
-            this.FoodUpdateBtn.Text = "Add Food";
+            this.FoodUpdateBtn.Text = "Update Food";
             this.FoodUpdateBtn.UseVisualStyleBackColor = false;
             this.FoodUpdateBtn.Click += new System.EventHandler(this.FoodUpdateBtn_Click);
+            this.FoodUpdateBtn.MouseEnter += new System.EventHandler(this.FoodUpdateBtn_MouseEnter);
+            this.FoodUpdateBtn.MouseLeave += new System.EventHandler(this.FoodUpdateBtn_MouseLeave);
             // 
             // bunifuDragControl1
             // 
@@ -2308,7 +2313,7 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox FoodTypeUpdate;
         private System.Windows.Forms.SplitContainer splitContainer32;
         private System.Windows.Forms.SplitContainer splitContainer33;
-        private System.Windows.Forms.Button FoodImageUpdate;
+        private System.Windows.Forms.Button FoodImageUpdateBtn;
         private System.Windows.Forms.PictureBox FoodImgUpdate;
         private System.Windows.Forms.SplitContainer splitContainer34;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel14;
