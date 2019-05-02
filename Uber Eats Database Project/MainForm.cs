@@ -32,8 +32,7 @@ namespace Uber_Eats_Database_Project
         }
         private void ToggleUser()
         {
-            UsernameLabel.Text = "Welcome, ";
-            UsernameLabel.Text += Helper.currentUserName;
+            UsernameLabel.Text = "Welcome, " + Helper.currentUserName;
             bool UserEnable = true; // User unless
             if (Helper.currentUserRole == 2) // Delivery Partner
                 UserEnable = false;
@@ -61,6 +60,7 @@ namespace Uber_Eats_Database_Project
             CartBtn.Visible = UserEnable;
             MenusBtn.Enabled = UserEnable;
             MenusBtn.Visible = UserEnable;
+            oid = 0;
         }
         
         private void CloseBtn_Click(object sender, EventArgs e)

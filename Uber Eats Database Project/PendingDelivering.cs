@@ -72,31 +72,15 @@ namespace Uber_Eats_Database_Project
         private void OrderDeliveredBtn_Click(object sender, EventArgs e)
         {
             Entities ent = new Entities();
-            ORDER o = (from x in ent.ORDERS
-                       where x.ORDER_ID == ordID
-                       select x).FirstOrDefault();
+            ORDER o = ent.ORDERS.Where(x => x.ORDER_ID == ordID).FirstOrDefault();
             o.STATUS = "d";
-            DELIVERY_PARTNER dp = (from p in ent.DELIVERY_PARTNER
-                                   where p.USERNAME == Helper.currentUserName
-                                   select p).FirstOrDefault();
-            TRIP t = (from tr in ent.TRIPs
-                      where tr.ORDER_ID == o.ORDER_ID
-                      select tr).FirstOrDefault();
-
-            var l = (from fo in ent.ORDER_FOOD
-                    join f in ent.FOODs on new { k1 = fo.RESTAURANT_LOCATION, k2 = fo.RESTAURANT_NAME, k3 = fo.FOOD_NAME} 
-                                    equals new { k1 = f.RESTAURANT_LOCATION, k2 = f.RESTAURANT_NAME, k3 = f.FOOD_NAME }
-                    select new
-                    {
-                        f.PRICE,
-                        f.DISCOUNT,
-                        fo.NO_OF_ITEMS_PER_FOOD
-                    });
-
-            decimal mealcost = o.FOOD_PRICE, deliverycost = t.DISTANCE_OF_TRIP * dp.RATING, applicationfees = 5, totalcost = 0;
-            if (dp.VEHICLE == "car")
+            DELIVERY_PARTNER dp = ent.DELIVERY_PARTNER.Where(p => p.USERNAME == Helper.currentUserName).FirstOrDefault();
+            TRIP t = ent.TRIPs.Where(tr => tr.ORDER_ID == o.ORDER_ID).FirstOrDefault();
+            decimal mealcost = o.FOOD_PRICE, applicationfees = 5, totalcost;
+            decimal deliverycost = t.DISTANCE_OF_TRIP * Math.Max(dp.RATING, 1);
+            if (dp.VEHICLE.ToLower() == "car")
                 deliverycost *= 8;
-            else if (dp.VEHICLE == "bike")
+            else if (dp.VEHICLE.ToLower() == "bike" || dp.VEHICLE.ToLower() == "scooter")
                 deliverycost *= 5;
             else
                 deliverycost *= 3;
@@ -154,6 +138,7 @@ namespace Uber_Eats_Database_Project
                                        where p.USERNAME == Helper.currentUserName
                                        select p).FirstOrDefault();
                 dp.RATING = Math.Min(0, dp.RATING - (decimal)(0.2));
+                ent.TRIPs.Remove(ent.TRIPs.Where(te => te.ORDER_ID == ordID).First());
                 ent.SaveChanges();
                 this.Close();
             }

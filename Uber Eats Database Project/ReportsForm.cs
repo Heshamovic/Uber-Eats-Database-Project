@@ -42,14 +42,7 @@ namespace Uber_Eats_Database_Project
             if (choice == 0) // delivered orders report
             {
                 doe = new DeliveredOrders();
-                Entities ent = new Entities();
-                int numberofT = (from d in ent.DELIVERY_PARTNER
-                                 join t in ent.TRIPs on d.USERNAME equals t.DELIVERYPARTNER_USERNAME
-                                 join o in ent.ORDERS on t.ORDER_ID equals o.ORDER_ID
-                                 where o.STATUS == "d"
-                                 select o.ORDER_ID).Count();
                 doe.SetParameterValue(0, Helper.currentUserName);
-                doe.SetParameterValue(1, numberofT);
                 crystalReportViewer1.ReportSource = doe;
             }
             else // restaurants report
@@ -60,6 +53,8 @@ namespace Uber_Eats_Database_Project
                 roe.SetParameterValue(2, toDate);
                 crystalReportViewer1.ReportSource = roe;
             }
+            crystalReportViewer1.ReuseParameterValuesOnRefresh = true;
+            crystalReportViewer1.RefreshReport();
         }
 
         private void exit_Click(object sender, EventArgs e)

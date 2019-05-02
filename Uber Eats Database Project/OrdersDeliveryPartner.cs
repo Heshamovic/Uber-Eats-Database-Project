@@ -59,18 +59,13 @@ namespace Uber_Eats_Database_Project
                     OracleCommand cmd = new OracleCommand(@"insert into trip 
                                                         (order_id, deliverypartner_username, distance_of_trip, deliveryfees) 
                                                         values (" + id.ToString() + ", '" + Helper.currentUserName + "', " +
-                                                        "ROUND(DBMS_RANDOM.VALUE(0,999999),2), 0)", con);
+                                                        "ROUND(DBMS_RANDOM.VALUE(0,200),2), 0)", con);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     builder = new OracleCommandBuilder(adapter1);
                     adapter1.UpdateCommand = new OracleCommand("update Orders set status = 'pd' where order_id = " + id.ToString());
                     adapter1.Update(ds.Tables[0]);
                     this.Close();
-
-                    Entities ent = new Entities();
-                    ORDER oRDER = ent.ORDERS.Where(x => x.ORDER_ID == id).First();
-                    oRDER.STATUS = "pd";
-                    ent.SaveChanges();
                 }
             }
         }
