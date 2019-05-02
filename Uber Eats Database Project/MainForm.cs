@@ -104,13 +104,13 @@ namespace Uber_Eats_Database_Project
 
         private void PendingOrdersBtn_Click(object sender, EventArgs e)
         {
-            ToggleUser();
             if (oid == 0)
             {
                 OrdersDeliveryPartner p = new OrdersDeliveryPartner(1);
                 p.Show();
                 this.Hide();
                 p.FormClosing += letsShow;
+                ToggleUser();
             }
             else
                 CustomMsgBox.Show("Please Finish your Current Order before you take any other order.");
