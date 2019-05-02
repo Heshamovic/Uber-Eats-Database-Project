@@ -83,5 +83,10 @@ namespace Uber_Eats_Database_Project
         {
             con.Dispose();
         }
+
+        private void User_Order_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

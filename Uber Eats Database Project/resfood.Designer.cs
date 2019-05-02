@@ -52,11 +52,13 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(20, 50, 20, 20);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(730, 450);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.WrapContents = false;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // header
             // 
@@ -64,10 +66,9 @@
             this.header.Controls.Add(this.exit);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
-            this.header.Margin = new System.Windows.Forms.Padding(2);
             this.header.Name = "header";
-            this.header.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.header.Size = new System.Drawing.Size(800, 29);
+            this.header.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.header.Size = new System.Drawing.Size(1200, 45);
             this.header.TabIndex = 37;
             // 
             // exit
@@ -76,10 +77,9 @@
             this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
             this.exit.ImageActive = null;
-            this.exit.Location = new System.Drawing.Point(772, 0);
-            this.exit.Margin = new System.Windows.Forms.Padding(2);
+            this.exit.Location = new System.Drawing.Point(1158, 0);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(20, 29);
+            this.exit.Size = new System.Drawing.Size(30, 45);
             this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.exit.TabIndex = 17;
             this.exit.TabStop = false;
@@ -102,6 +102,7 @@
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -114,8 +115,9 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel2.Controls.Add(this.button1);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 730;
+            this.splitContainer1.Size = new System.Drawing.Size(1200, 692);
+            this.splitContainer1.SplitterDistance = 1095;
+            this.splitContainer1.SplitterWidth = 6;
             this.splitContainer1.TabIndex = 38;
             // 
             // button1
@@ -126,9 +128,10 @@
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Image = global::Uber_Eats_Database_Project.Properties.Resources.Checkout_32px;
-            this.button1.Location = new System.Drawing.Point(3, 388);
+            this.button1.Location = new System.Drawing.Point(4, 597);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(54, 50);
+            this.button1.Size = new System.Drawing.Size(81, 77);
             this.button1.TabIndex = 0;
             this.button1.Text = "\r\n";
             this.button1.UseVisualStyleBackColor = false;
@@ -141,12 +144,13 @@
             // 
             // resfood
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.header);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "resfood";
             this.Text = "resfood";
             this.Load += new System.EventHandler(this.resfood_Load);

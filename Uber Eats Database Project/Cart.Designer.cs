@@ -45,11 +45,13 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Control;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 29);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 45);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(551, 351);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(826, 540);
             this.flowLayoutPanel1.TabIndex = 33;
             this.flowLayoutPanel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.flowLayoutPanel1_MouseMove);
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // bunifuElipse1
             // 
@@ -62,9 +64,8 @@
             this.header.Controls.Add(this.bunifuImageButton1);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
-            this.header.Margin = new System.Windows.Forms.Padding(2);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(754, 29);
+            this.header.Size = new System.Drawing.Size(1131, 45);
             this.header.TabIndex = 32;
             // 
             // bunifuImageButton1
@@ -73,10 +74,9 @@
             this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(725, 0);
-            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(2);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(1088, 0);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(26, 27);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(39, 42);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 29;
             this.bunifuImageButton1.TabStop = false;
@@ -97,9 +97,10 @@
             this.Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Confirm.Font = new System.Drawing.Font("Century Gothic", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Confirm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Confirm.Location = new System.Drawing.Point(578, 282);
+            this.Confirm.Location = new System.Drawing.Point(867, 434);
+            this.Confirm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Confirm.Name = "Confirm";
-            this.Confirm.Size = new System.Drawing.Size(124, 55);
+            this.Confirm.Size = new System.Drawing.Size(186, 85);
             this.Confirm.TabIndex = 34;
             this.Confirm.Text = "Confirm";
             this.Confirm.UseVisualStyleBackColor = false;
@@ -109,14 +110,15 @@
             // 
             // Cart
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(754, 380);
+            this.ClientSize = new System.Drawing.Size(1131, 585);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.header);
             this.Controls.Add(this.Confirm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Cart";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cart";

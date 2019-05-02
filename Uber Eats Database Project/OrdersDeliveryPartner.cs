@@ -46,6 +46,16 @@ namespace Uber_Eats_Database_Project
                 this.Close();
         }
 
+        private void orders_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void food_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void orders_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (type == 1)
