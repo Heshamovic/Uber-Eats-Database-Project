@@ -305,9 +305,10 @@
             this.header.Controls.Add(this.CloseBtn);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
+            this.header.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.header.Name = "header";
-            this.header.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.header.Size = new System.Drawing.Size(924, 35);
+            this.header.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.header.Size = new System.Drawing.Size(1386, 54);
             this.header.TabIndex = 0;
             this.header.Paint += new System.Windows.Forms.PaintEventHandler(this.header_Paint);
             // 
@@ -317,9 +318,10 @@
             this.label2.BackColor = System.Drawing.SystemColors.ControlText;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(6, 5);
+            this.label2.Location = new System.Drawing.Point(9, 8);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 21);
+            this.label2.Size = new System.Drawing.Size(154, 30);
             this.label2.TabIndex = 39;
             this.label2.Text = "Admin Tools";
             // 
@@ -330,10 +332,9 @@
             this.CloseBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.CloseBtn.Image = ((System.Drawing.Image)(resources.GetObject("CloseBtn.Image")));
             this.CloseBtn.ImageActive = null;
-            this.CloseBtn.Location = new System.Drawing.Point(887, 0);
-            this.CloseBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CloseBtn.Location = new System.Drawing.Point(1331, 0);
             this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(27, 35);
+            this.CloseBtn.Size = new System.Drawing.Size(40, 54);
             this.CloseBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CloseBtn.TabIndex = 27;
             this.CloseBtn.TabStop = false;
@@ -358,13 +359,14 @@
             this.tableLayoutPanel1.Controls.Add(this.splitContainer35, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 35);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 54);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(924, 477);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1386, 734);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel3
@@ -378,15 +380,16 @@
             this.tableLayoutPanel3.Controls.Add(this.splitContainer2, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.splitContainer4, 0, 2);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 171);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(7, 263);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 5;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.60396F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.39604F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(298, 156);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(450, 242);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // updateRatingBtn
@@ -397,10 +400,10 @@
             this.updateRatingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateRatingBtn.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.updateRatingBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.updateRatingBtn.Location = new System.Drawing.Point(28, 129);
-            this.updateRatingBtn.Margin = new System.Windows.Forms.Padding(25, 3, 25, 3);
+            this.updateRatingBtn.Location = new System.Drawing.Point(41, 203);
+            this.updateRatingBtn.Margin = new System.Windows.Forms.Padding(38, 5, 38, 5);
             this.updateRatingBtn.Name = "updateRatingBtn";
-            this.updateRatingBtn.Size = new System.Drawing.Size(242, 21);
+            this.updateRatingBtn.Size = new System.Drawing.Size(368, 31);
             this.updateRatingBtn.TabIndex = 1;
             this.updateRatingBtn.Text = "Update Restaurant";
             this.updateRatingBtn.UseVisualStyleBackColor = false;
@@ -413,10 +416,10 @@
             this.RestaurantsNamesUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RestaurantsNamesUpdate.FormattingEnabled = true;
             this.RestaurantsNamesUpdate.ItemHeight = 23;
-            this.RestaurantsNamesUpdate.Location = new System.Drawing.Point(18, 3);
-            this.RestaurantsNamesUpdate.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.RestaurantsNamesUpdate.Location = new System.Drawing.Point(25, 3);
+            this.RestaurantsNamesUpdate.Margin = new System.Windows.Forms.Padding(22, 0, 22, 0);
             this.RestaurantsNamesUpdate.Name = "RestaurantsNamesUpdate";
-            this.RestaurantsNamesUpdate.Size = new System.Drawing.Size(262, 29);
+            this.RestaurantsNamesUpdate.Size = new System.Drawing.Size(400, 29);
             this.RestaurantsNamesUpdate.TabIndex = 3;
             this.RestaurantsNamesUpdate.UseSelectable = true;
             this.RestaurantsNamesUpdate.SelectedValueChanged += new System.EventHandler(this.RestaurantsNamesUpdate_SelectedValueChanged);
@@ -424,29 +427,30 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(6, 100);
+            this.splitContainer1.Location = new System.Drawing.Point(7, 160);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.bunifuCustomLabel1);
-            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(20, 5, 0, 0);
+            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(30, 8, 0, 0);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.CusineTypeUpdate);
-            this.splitContainer1.Size = new System.Drawing.Size(286, 20);
-            this.splitContainer1.SplitterDistance = 145;
-            this.splitContainer1.SplitterWidth = 3;
+            this.splitContainer1.Size = new System.Drawing.Size(436, 30);
+            this.splitContainer1.SplitterDistance = 221;
             this.splitContainer1.TabIndex = 5;
             // 
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(20, 5);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(30, 8);
+            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(107, 21);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(165, 30);
             this.bunifuCustomLabel1.TabIndex = 0;
             this.bunifuCustomLabel1.Text = "Cusine Type:";
             // 
@@ -462,38 +466,39 @@
             this.CusineTypeUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.CusineTypeUpdate.isPassword = false;
             this.CusineTypeUpdate.Location = new System.Drawing.Point(0, 0);
-            this.CusineTypeUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CusineTypeUpdate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.CusineTypeUpdate.Name = "CusineTypeUpdate";
-            this.CusineTypeUpdate.Size = new System.Drawing.Size(138, 25);
+            this.CusineTypeUpdate.Size = new System.Drawing.Size(211, 30);
             this.CusineTypeUpdate.TabIndex = 0;
             this.CusineTypeUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(6, 32);
+            this.splitContainer2.Location = new System.Drawing.Point(7, 51);
+            this.splitContainer2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.Controls.Add(this.bunifuCustomLabel2);
-            this.splitContainer2.Panel1.Padding = new System.Windows.Forms.Padding(20, 5, 0, 0);
+            this.splitContainer2.Panel1.Padding = new System.Windows.Forms.Padding(30, 8, 0, 0);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.RestaurantLocationUpdate);
-            this.splitContainer2.Size = new System.Drawing.Size(286, 29);
-            this.splitContainer2.SplitterDistance = 144;
-            this.splitContainer2.SplitterWidth = 3;
+            this.splitContainer2.Size = new System.Drawing.Size(436, 51);
+            this.splitContainer2.SplitterDistance = 219;
             this.splitContainer2.TabIndex = 6;
             // 
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(20, 5);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(30, 8);
+            this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(173, 21);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(257, 30);
             this.bunifuCustomLabel2.TabIndex = 1;
             this.bunifuCustomLabel2.Text = "Restaurant Location:";
             // 
@@ -510,47 +515,48 @@
             this.RestaurantLocationUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.RestaurantLocationUpdate.isPassword = false;
             this.RestaurantLocationUpdate.Location = new System.Drawing.Point(0, 0);
-            this.RestaurantLocationUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RestaurantLocationUpdate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.RestaurantLocationUpdate.Name = "RestaurantLocationUpdate";
-            this.RestaurantLocationUpdate.Size = new System.Drawing.Size(139, 29);
+            this.RestaurantLocationUpdate.Size = new System.Drawing.Size(213, 51);
             this.RestaurantLocationUpdate.TabIndex = 1;
             this.RestaurantLocationUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // splitContainer4
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer4.Location = new System.Drawing.Point(6, 70);
+            this.splitContainer4.Location = new System.Drawing.Point(7, 115);
+            this.splitContainer4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer4.Name = "splitContainer4";
             // 
             // splitContainer4.Panel1
             // 
             this.splitContainer4.Panel1.Controls.Add(this.bunifuCustomLabel4);
-            this.splitContainer4.Panel1.Padding = new System.Windows.Forms.Padding(20, 5, 0, 0);
+            this.splitContainer4.Panel1.Padding = new System.Windows.Forms.Padding(30, 8, 0, 0);
             // 
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.RestaurantRatingUpdate);
-            this.splitContainer4.Panel2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.splitContainer4.Size = new System.Drawing.Size(286, 21);
-            this.splitContainer4.SplitterDistance = 145;
-            this.splitContainer4.SplitterWidth = 3;
+            this.splitContainer4.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.splitContainer4.Size = new System.Drawing.Size(436, 32);
+            this.splitContainer4.SplitterDistance = 221;
             this.splitContainer4.TabIndex = 7;
             // 
             // bunifuCustomLabel4
             // 
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(20, 5);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(30, 8);
+            this.bunifuCustomLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(62, 21);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(89, 30);
             this.bunifuCustomLabel4.TabIndex = 2;
             this.bunifuCustomLabel4.Text = "Rating";
             // 
             // RestaurantRatingUpdate
             // 
             this.RestaurantRatingUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RestaurantRatingUpdate.Location = new System.Drawing.Point(0, 2);
-            this.RestaurantRatingUpdate.Margin = new System.Windows.Forms.Padding(2, 5, 2, 2);
+            this.RestaurantRatingUpdate.Location = new System.Drawing.Point(0, 3);
+            this.RestaurantRatingUpdate.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.RestaurantRatingUpdate.Maximum = new decimal(new int[] {
             5,
             0,
@@ -562,7 +568,7 @@
             0,
             0});
             this.RestaurantRatingUpdate.Name = "RestaurantRatingUpdate";
-            this.RestaurantRatingUpdate.Size = new System.Drawing.Size(138, 27);
+            this.RestaurantRatingUpdate.Size = new System.Drawing.Size(211, 37);
             this.RestaurantRatingUpdate.TabIndex = 3;
             this.RestaurantRatingUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.RestaurantRatingUpdate.Value = new decimal(new int[] {
@@ -582,15 +588,16 @@
             this.tableLayoutPanel2.Controls.Add(this.addResBtn, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.splitContainer3, 0, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 6);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(7, 8);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 5;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.93258F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.06742F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(298, 156);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(450, 242);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // CusineTypeAdd
@@ -604,10 +611,10 @@
             this.CusineTypeAdd.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.CusineTypeAdd.ForeColor = System.Drawing.Color.DarkGray;
             this.CusineTypeAdd.isPassword = false;
-            this.CusineTypeAdd.Location = new System.Drawing.Point(3, 99);
+            this.CusineTypeAdd.Location = new System.Drawing.Point(3, 159);
             this.CusineTypeAdd.Margin = new System.Windows.Forms.Padding(0);
             this.CusineTypeAdd.Name = "CusineTypeAdd";
-            this.CusineTypeAdd.Size = new System.Drawing.Size(292, 25);
+            this.CusineTypeAdd.Size = new System.Drawing.Size(444, 38);
             this.CusineTypeAdd.TabIndex = 5;
             this.CusineTypeAdd.Text = "Cusine Type";
             this.CusineTypeAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -625,10 +632,10 @@
             this.RestaurantLocationAdd.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.RestaurantLocationAdd.ForeColor = System.Drawing.Color.DarkGray;
             this.RestaurantLocationAdd.isPassword = false;
-            this.RestaurantLocationAdd.Location = new System.Drawing.Point(3, 38);
+            this.RestaurantLocationAdd.Location = new System.Drawing.Point(3, 63);
             this.RestaurantLocationAdd.Margin = new System.Windows.Forms.Padding(0);
             this.RestaurantLocationAdd.Name = "RestaurantLocationAdd";
-            this.RestaurantLocationAdd.Size = new System.Drawing.Size(292, 28);
+            this.RestaurantLocationAdd.Size = new System.Drawing.Size(444, 48);
             this.RestaurantLocationAdd.TabIndex = 4;
             this.RestaurantLocationAdd.Text = "Location";
             this.RestaurantLocationAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -649,7 +656,7 @@
             this.RestaurantsNamesAdd.Location = new System.Drawing.Point(3, 3);
             this.RestaurantsNamesAdd.Margin = new System.Windows.Forms.Padding(0);
             this.RestaurantsNamesAdd.Name = "RestaurantsNamesAdd";
-            this.RestaurantsNamesAdd.Size = new System.Drawing.Size(292, 32);
+            this.RestaurantsNamesAdd.Size = new System.Drawing.Size(444, 57);
             this.RestaurantsNamesAdd.TabIndex = 3;
             this.RestaurantsNamesAdd.Text = "Restaurant Name";
             this.RestaurantsNamesAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -664,10 +671,10 @@
             this.addResBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addResBtn.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.addResBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addResBtn.Location = new System.Drawing.Point(28, 130);
-            this.addResBtn.Margin = new System.Windows.Forms.Padding(25, 3, 25, 3);
+            this.addResBtn.Location = new System.Drawing.Point(41, 205);
+            this.addResBtn.Margin = new System.Windows.Forms.Padding(38, 5, 38, 5);
             this.addResBtn.Name = "addResBtn";
-            this.addResBtn.Size = new System.Drawing.Size(242, 20);
+            this.addResBtn.Size = new System.Drawing.Size(368, 29);
             this.addResBtn.TabIndex = 1;
             this.addResBtn.Text = "Add Restaurant";
             this.addResBtn.UseVisualStyleBackColor = false;
@@ -678,38 +685,39 @@
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer3.Location = new System.Drawing.Point(6, 72);
+            this.splitContainer3.Location = new System.Drawing.Point(7, 119);
+            this.splitContainer3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer3.Name = "splitContainer3";
             // 
             // splitContainer3.Panel1
             // 
             this.splitContainer3.Panel1.Controls.Add(this.bunifuCustomLabel3);
-            this.splitContainer3.Panel1.Padding = new System.Windows.Forms.Padding(20, 5, 0, 0);
+            this.splitContainer3.Panel1.Padding = new System.Windows.Forms.Padding(30, 8, 0, 0);
             // 
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.ratingRest);
-            this.splitContainer3.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.splitContainer3.Size = new System.Drawing.Size(286, 21);
-            this.splitContainer3.SplitterDistance = 140;
-            this.splitContainer3.SplitterWidth = 3;
+            this.splitContainer3.Panel2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.splitContainer3.Size = new System.Drawing.Size(436, 32);
+            this.splitContainer3.SplitterDistance = 213;
             this.splitContainer3.TabIndex = 2;
             // 
             // bunifuCustomLabel3
             // 
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(20, 5);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(30, 8);
+            this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(66, 21);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(96, 30);
             this.bunifuCustomLabel3.TabIndex = 2;
             this.bunifuCustomLabel3.Text = "Rating:";
             // 
             // ratingRest
             // 
             this.ratingRest.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ratingRest.Location = new System.Drawing.Point(0, 3);
-            this.ratingRest.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.ratingRest.Location = new System.Drawing.Point(0, 5);
+            this.ratingRest.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.ratingRest.Maximum = new decimal(new int[] {
             5,
             0,
@@ -721,7 +729,7 @@
             0,
             0});
             this.ratingRest.Name = "ratingRest";
-            this.ratingRest.Size = new System.Drawing.Size(143, 27);
+            this.ratingRest.Size = new System.Drawing.Size(219, 37);
             this.ratingRest.TabIndex = 2;
             this.ratingRest.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ratingRest.Value = new decimal(new int[] {
@@ -734,7 +742,8 @@
             // 
             this.splitContainer5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer5.Location = new System.Drawing.Point(6, 336);
+            this.splitContainer5.Location = new System.Drawing.Point(7, 518);
+            this.splitContainer5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer5.Name = "splitContainer5";
             this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -745,29 +754,30 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer7);
-            this.splitContainer5.Size = new System.Drawing.Size(298, 135);
-            this.splitContainer5.SplitterDistance = 61;
-            this.splitContainer5.SplitterWidth = 3;
+            this.splitContainer5.Size = new System.Drawing.Size(450, 208);
+            this.splitContainer5.SplitterDistance = 93;
+            this.splitContainer5.SplitterWidth = 5;
             this.splitContainer5.TabIndex = 2;
             // 
             // splitContainer6
             // 
             this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer6.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer6.Name = "splitContainer6";
             this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer6.Panel1
             // 
             this.splitContainer6.Panel1.Controls.Add(this.RestNameRpt);
-            this.splitContainer6.Panel1.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.splitContainer6.Panel1.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
             // 
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.FromDatePicker);
-            this.splitContainer6.Size = new System.Drawing.Size(296, 59);
-            this.splitContainer6.SplitterDistance = 25;
-            this.splitContainer6.SplitterWidth = 3;
+            this.splitContainer6.Size = new System.Drawing.Size(448, 91);
+            this.splitContainer6.SplitterDistance = 38;
+            this.splitContainer6.SplitterWidth = 5;
             this.splitContainer6.TabIndex = 0;
             // 
             // RestNameRpt
@@ -775,10 +785,10 @@
             this.RestNameRpt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.RestNameRpt.FormattingEnabled = true;
             this.RestNameRpt.ItemHeight = 23;
-            this.RestNameRpt.Location = new System.Drawing.Point(20, 0);
-            this.RestNameRpt.Margin = new System.Windows.Forms.Padding(15, 5, 15, 0);
+            this.RestNameRpt.Location = new System.Drawing.Point(30, 0);
+            this.RestNameRpt.Margin = new System.Windows.Forms.Padding(22, 8, 22, 0);
             this.RestNameRpt.Name = "RestNameRpt";
-            this.RestNameRpt.Size = new System.Drawing.Size(256, 29);
+            this.RestNameRpt.Size = new System.Drawing.Size(388, 29);
             this.RestNameRpt.TabIndex = 4;
             this.RestNameRpt.UseSelectable = true;
             // 
@@ -791,16 +801,18 @@
             this.FromDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.FromDatePicker.FormatCustom = null;
             this.FromDatePicker.Location = new System.Drawing.Point(0, 0);
-            this.FromDatePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FromDatePicker.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.FromDatePicker.Name = "FromDatePicker";
-            this.FromDatePicker.Size = new System.Drawing.Size(296, 31);
+            this.FromDatePicker.Size = new System.Drawing.Size(448, 48);
             this.FromDatePicker.TabIndex = 0;
             this.FromDatePicker.Value = new System.DateTime(2019, 4, 29, 3, 54, 22, 876);
+            this.FromDatePicker.onValueChanged += new System.EventHandler(this.FromDatePicker_onValueChanged);
             // 
             // splitContainer7
             // 
             this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer7.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer7.Name = "splitContainer7";
             this.splitContainer7.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -811,10 +823,9 @@
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.button1);
-            this.splitContainer7.Panel2.Padding = new System.Windows.Forms.Padding(17, 3, 17, 3);
-            this.splitContainer7.Size = new System.Drawing.Size(296, 69);
-            this.splitContainer7.SplitterDistance = 32;
-            this.splitContainer7.SplitterWidth = 3;
+            this.splitContainer7.Panel2.Padding = new System.Windows.Forms.Padding(26, 5, 26, 5);
+            this.splitContainer7.Size = new System.Drawing.Size(448, 108);
+            this.splitContainer7.SplitterWidth = 5;
             this.splitContainer7.TabIndex = 0;
             // 
             // ToDatePicker
@@ -826,9 +837,9 @@
             this.ToDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.ToDatePicker.FormatCustom = null;
             this.ToDatePicker.Location = new System.Drawing.Point(0, 0);
-            this.ToDatePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ToDatePicker.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.ToDatePicker.Name = "ToDatePicker";
-            this.ToDatePicker.Size = new System.Drawing.Size(296, 32);
+            this.ToDatePicker.Size = new System.Drawing.Size(448, 50);
             this.ToDatePicker.TabIndex = 1;
             this.ToDatePicker.Value = new System.DateTime(2019, 4, 29, 3, 54, 22, 876);
             // 
@@ -840,10 +851,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(17, 3);
-            this.button1.Margin = new System.Windows.Forms.Padding(25, 3, 25, 3);
+            this.button1.Location = new System.Drawing.Point(26, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(38, 5, 38, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(262, 28);
+            this.button1.Size = new System.Drawing.Size(396, 43);
             this.button1.TabIndex = 2;
             this.button1.Text = "Show Food Selling Report";
             this.button1.UseVisualStyleBackColor = false;
@@ -854,8 +865,7 @@
             // splitContainer8
             // 
             this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer8.Location = new System.Drawing.Point(312, 5);
-            this.splitContainer8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer8.Location = new System.Drawing.Point(467, 6);
             this.splitContainer8.Name = "splitContainer8";
             this.splitContainer8.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -866,15 +876,16 @@
             // splitContainer8.Panel2
             // 
             this.splitContainer8.Panel2.Controls.Add(this.splitContainer12);
-            this.splitContainer8.Size = new System.Drawing.Size(300, 158);
-            this.splitContainer8.SplitterDistance = 61;
-            this.splitContainer8.SplitterWidth = 3;
+            this.splitContainer8.Size = new System.Drawing.Size(452, 246);
+            this.splitContainer8.SplitterDistance = 94;
+            this.splitContainer8.SplitterWidth = 5;
             this.splitContainer8.TabIndex = 3;
             // 
             // splitContainer9
             // 
             this.splitContainer9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer9.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer9.Name = "splitContainer9";
             // 
             // splitContainer9.Panel1
@@ -884,39 +895,40 @@
             // splitContainer9.Panel2
             // 
             this.splitContainer9.Panel2.Controls.Add(this.splitContainer11);
-            this.splitContainer9.Size = new System.Drawing.Size(300, 61);
-            this.splitContainer9.SplitterDistance = 147;
-            this.splitContainer9.SplitterWidth = 3;
+            this.splitContainer9.Size = new System.Drawing.Size(452, 94);
+            this.splitContainer9.SplitterDistance = 221;
             this.splitContainer9.TabIndex = 0;
             // 
             // splitContainer10
             // 
             this.splitContainer10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer10.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer10.Name = "splitContainer10";
             this.splitContainer10.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer10.Panel1
             // 
             this.splitContainer10.Panel1.Controls.Add(this.bunifuCustomLabel5);
-            this.splitContainer10.Panel1.Padding = new System.Windows.Forms.Padding(30, 5, 0, 0);
+            this.splitContainer10.Panel1.Padding = new System.Windows.Forms.Padding(45, 8, 0, 0);
             // 
             // splitContainer10.Panel2
             // 
             this.splitContainer10.Panel2.Controls.Add(this.FoodRestNameAdd);
-            this.splitContainer10.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.splitContainer10.Size = new System.Drawing.Size(147, 61);
-            this.splitContainer10.SplitterDistance = 25;
-            this.splitContainer10.SplitterWidth = 3;
+            this.splitContainer10.Panel2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.splitContainer10.Size = new System.Drawing.Size(221, 94);
+            this.splitContainer10.SplitterDistance = 38;
+            this.splitContainer10.SplitterWidth = 5;
             this.splitContainer10.TabIndex = 0;
             // 
             // bunifuCustomLabel5
             // 
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(30, 5);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(45, 8);
+            this.bunifuCustomLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(149, 21);
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(220, 30);
             this.bunifuCustomLabel5.TabIndex = 3;
             this.bunifuCustomLabel5.Text = "Restaurant Name";
             // 
@@ -925,9 +937,10 @@
             this.FoodRestNameAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoodRestNameAdd.FormattingEnabled = true;
             this.FoodRestNameAdd.ItemHeight = 23;
-            this.FoodRestNameAdd.Location = new System.Drawing.Point(0, 3);
+            this.FoodRestNameAdd.Location = new System.Drawing.Point(0, 5);
+            this.FoodRestNameAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FoodRestNameAdd.Name = "FoodRestNameAdd";
-            this.FoodRestNameAdd.Size = new System.Drawing.Size(147, 29);
+            this.FoodRestNameAdd.Size = new System.Drawing.Size(221, 29);
             this.FoodRestNameAdd.TabIndex = 0;
             this.FoodRestNameAdd.UseSelectable = true;
             this.FoodRestNameAdd.SelectedValueChanged += new System.EventHandler(this.FoodRestNameAdd_SelectedValueChanged);
@@ -936,30 +949,32 @@
             // 
             this.splitContainer11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer11.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer11.Name = "splitContainer11";
             this.splitContainer11.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer11.Panel1
             // 
             this.splitContainer11.Panel1.Controls.Add(this.bunifuCustomLabel6);
-            this.splitContainer11.Panel1.Padding = new System.Windows.Forms.Padding(30, 5, 0, 0);
+            this.splitContainer11.Panel1.Padding = new System.Windows.Forms.Padding(45, 8, 0, 0);
             // 
             // splitContainer11.Panel2
             // 
             this.splitContainer11.Panel2.Controls.Add(this.FoodRestLocAdd);
-            this.splitContainer11.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.splitContainer11.Size = new System.Drawing.Size(150, 61);
-            this.splitContainer11.SplitterDistance = 25;
-            this.splitContainer11.SplitterWidth = 3;
+            this.splitContainer11.Panel2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.splitContainer11.Size = new System.Drawing.Size(227, 94);
+            this.splitContainer11.SplitterDistance = 38;
+            this.splitContainer11.SplitterWidth = 5;
             this.splitContainer11.TabIndex = 0;
             // 
             // bunifuCustomLabel6
             // 
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(30, 5);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(45, 8);
+            this.bunifuCustomLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(169, 21);
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(250, 30);
             this.bunifuCustomLabel6.TabIndex = 4;
             this.bunifuCustomLabel6.Text = "Restaurant Location";
             // 
@@ -968,9 +983,10 @@
             this.FoodRestLocAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoodRestLocAdd.FormattingEnabled = true;
             this.FoodRestLocAdd.ItemHeight = 23;
-            this.FoodRestLocAdd.Location = new System.Drawing.Point(0, 3);
+            this.FoodRestLocAdd.Location = new System.Drawing.Point(0, 5);
+            this.FoodRestLocAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FoodRestLocAdd.Name = "FoodRestLocAdd";
-            this.FoodRestLocAdd.Size = new System.Drawing.Size(150, 29);
+            this.FoodRestLocAdd.Size = new System.Drawing.Size(227, 29);
             this.FoodRestLocAdd.TabIndex = 1;
             this.FoodRestLocAdd.UseSelectable = true;
             // 
@@ -978,6 +994,7 @@
             // 
             this.splitContainer12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer12.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer12.Name = "splitContainer12";
             this.splitContainer12.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -988,9 +1005,9 @@
             // splitContainer12.Panel2
             // 
             this.splitContainer12.Panel2.Controls.Add(this.splitContainer13);
-            this.splitContainer12.Size = new System.Drawing.Size(300, 94);
-            this.splitContainer12.SplitterDistance = 34;
-            this.splitContainer12.SplitterWidth = 3;
+            this.splitContainer12.Size = new System.Drawing.Size(452, 147);
+            this.splitContainer12.SplitterDistance = 53;
+            this.splitContainer12.SplitterWidth = 5;
             this.splitContainer12.TabIndex = 0;
             // 
             // FoodNameAdd
@@ -1007,7 +1024,7 @@
             this.FoodNameAdd.Location = new System.Drawing.Point(0, 0);
             this.FoodNameAdd.Margin = new System.Windows.Forms.Padding(0);
             this.FoodNameAdd.Name = "FoodNameAdd";
-            this.FoodNameAdd.Size = new System.Drawing.Size(300, 34);
+            this.FoodNameAdd.Size = new System.Drawing.Size(452, 53);
             this.FoodNameAdd.TabIndex = 7;
             this.FoodNameAdd.Text = "Food Name";
             this.FoodNameAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1018,6 +1035,7 @@
             // 
             this.splitContainer13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer13.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer13.Name = "splitContainer13";
             this.splitContainer13.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1028,37 +1046,38 @@
             // splitContainer13.Panel2
             // 
             this.splitContainer13.Panel2.Controls.Add(this.FoodIngAdd);
-            this.splitContainer13.Size = new System.Drawing.Size(300, 57);
-            this.splitContainer13.SplitterDistance = 25;
-            this.splitContainer13.SplitterWidth = 3;
+            this.splitContainer13.Size = new System.Drawing.Size(452, 89);
+            this.splitContainer13.SplitterDistance = 39;
+            this.splitContainer13.SplitterWidth = 5;
             this.splitContainer13.TabIndex = 0;
             // 
             // splitContainer14
             // 
             this.splitContainer14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer14.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer14.Name = "splitContainer14";
             // 
             // splitContainer14.Panel1
             // 
             this.splitContainer14.Panel1.Controls.Add(this.bunifuCustomLabel7);
-            this.splitContainer14.Panel1.Padding = new System.Windows.Forms.Padding(25, 5, 0, 0);
+            this.splitContainer14.Panel1.Padding = new System.Windows.Forms.Padding(38, 8, 0, 0);
             // 
             // splitContainer14.Panel2
             // 
             this.splitContainer14.Panel2.Controls.Add(this.FoodRatingAdd);
-            this.splitContainer14.Size = new System.Drawing.Size(300, 25);
-            this.splitContainer14.SplitterDistance = 99;
-            this.splitContainer14.SplitterWidth = 3;
+            this.splitContainer14.Size = new System.Drawing.Size(452, 39);
+            this.splitContainer14.SplitterDistance = 149;
             this.splitContainer14.TabIndex = 0;
             // 
             // bunifuCustomLabel7
             // 
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(25, 5);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(38, 8);
+            this.bunifuCustomLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(66, 21);
+            this.bunifuCustomLabel7.Size = new System.Drawing.Size(96, 30);
             this.bunifuCustomLabel7.TabIndex = 3;
             this.bunifuCustomLabel7.Text = "Rating:";
             // 
@@ -1069,9 +1088,9 @@
             this.FoodRatingAdd.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FoodRatingAdd.ForeColor = System.Drawing.Color.Green;
             this.FoodRatingAdd.Location = new System.Drawing.Point(0, 0);
-            this.FoodRatingAdd.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.FoodRatingAdd.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
             this.FoodRatingAdd.Name = "FoodRatingAdd";
-            this.FoodRatingAdd.Size = new System.Drawing.Size(198, 25);
+            this.FoodRatingAdd.Size = new System.Drawing.Size(299, 39);
             this.FoodRatingAdd.TabIndex = 7;
             this.FoodRatingAdd.Value = 0;
             // 
@@ -1090,7 +1109,7 @@
             this.FoodIngAdd.Location = new System.Drawing.Point(0, 0);
             this.FoodIngAdd.Margin = new System.Windows.Forms.Padding(0);
             this.FoodIngAdd.Name = "FoodIngAdd";
-            this.FoodIngAdd.Size = new System.Drawing.Size(300, 29);
+            this.FoodIngAdd.Size = new System.Drawing.Size(452, 45);
             this.FoodIngAdd.TabIndex = 8;
             this.FoodIngAdd.Text = "Ingrediants";
             this.FoodIngAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1100,8 +1119,7 @@
             // splitContainer15
             // 
             this.splitContainer15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer15.Location = new System.Drawing.Point(312, 170);
-            this.splitContainer15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer15.Location = new System.Drawing.Point(467, 261);
             this.splitContainer15.Name = "splitContainer15";
             this.splitContainer15.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1112,15 +1130,16 @@
             // splitContainer15.Panel2
             // 
             this.splitContainer15.Panel2.Controls.Add(this.splitContainer22);
-            this.splitContainer15.Size = new System.Drawing.Size(300, 158);
-            this.splitContainer15.SplitterDistance = 126;
-            this.splitContainer15.SplitterWidth = 3;
+            this.splitContainer15.Size = new System.Drawing.Size(452, 246);
+            this.splitContainer15.SplitterDistance = 196;
+            this.splitContainer15.SplitterWidth = 5;
             this.splitContainer15.TabIndex = 4;
             // 
             // splitContainer16
             // 
             this.splitContainer16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer16.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer16.Name = "splitContainer16";
             this.splitContainer16.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1131,38 +1150,39 @@
             // splitContainer16.Panel2
             // 
             this.splitContainer16.Panel2.Controls.Add(this.splitContainer17);
-            this.splitContainer16.Size = new System.Drawing.Size(300, 126);
-            this.splitContainer16.SplitterDistance = 25;
-            this.splitContainer16.SplitterWidth = 3;
+            this.splitContainer16.Size = new System.Drawing.Size(452, 196);
+            this.splitContainer16.SplitterDistance = 38;
+            this.splitContainer16.SplitterWidth = 5;
             this.splitContainer16.TabIndex = 0;
             // 
             // splitContainer18
             // 
             this.splitContainer18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer18.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer18.Name = "splitContainer18";
             // 
             // splitContainer18.Panel1
             // 
             this.splitContainer18.Panel1.Controls.Add(this.bunifuCustomLabel8);
-            this.splitContainer18.Panel1.Padding = new System.Windows.Forms.Padding(25, 5, 0, 0);
+            this.splitContainer18.Panel1.Padding = new System.Windows.Forms.Padding(38, 8, 0, 0);
             // 
             // splitContainer18.Panel2
             // 
             this.splitContainer18.Panel2.Controls.Add(this.FoodTopDishAdd);
-            this.splitContainer18.Panel2.Padding = new System.Windows.Forms.Padding(87, 5, 0, 0);
-            this.splitContainer18.Size = new System.Drawing.Size(300, 25);
-            this.splitContainer18.SplitterDistance = 99;
-            this.splitContainer18.SplitterWidth = 3;
+            this.splitContainer18.Panel2.Padding = new System.Windows.Forms.Padding(130, 8, 0, 0);
+            this.splitContainer18.Size = new System.Drawing.Size(452, 38);
+            this.splitContainer18.SplitterDistance = 149;
             this.splitContainer18.TabIndex = 0;
             // 
             // bunifuCustomLabel8
             // 
             this.bunifuCustomLabel8.AutoSize = true;
             this.bunifuCustomLabel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(25, 5);
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(38, 8);
+            this.bunifuCustomLabel8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(78, 21);
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(119, 30);
             this.bunifuCustomLabel8.TabIndex = 4;
             this.bunifuCustomLabel8.Text = "Top Dish:";
             // 
@@ -1174,8 +1194,8 @@
             this.FoodTopDishAdd.CheckedOnColor = System.Drawing.Color.Green;
             this.FoodTopDishAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoodTopDishAdd.ForeColor = System.Drawing.Color.White;
-            this.FoodTopDishAdd.Location = new System.Drawing.Point(87, 5);
-            this.FoodTopDishAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FoodTopDishAdd.Location = new System.Drawing.Point(130, 8);
+            this.FoodTopDishAdd.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.FoodTopDishAdd.Name = "FoodTopDishAdd";
             this.FoodTopDishAdd.Size = new System.Drawing.Size(20, 20);
             this.FoodTopDishAdd.TabIndex = 0;
@@ -1184,6 +1204,7 @@
             // 
             this.splitContainer17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer17.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer17.Name = "splitContainer17";
             this.splitContainer17.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1194,9 +1215,9 @@
             // splitContainer17.Panel2
             // 
             this.splitContainer17.Panel2.Controls.Add(this.splitContainer19);
-            this.splitContainer17.Size = new System.Drawing.Size(300, 98);
-            this.splitContainer17.SplitterDistance = 25;
-            this.splitContainer17.SplitterWidth = 3;
+            this.splitContainer17.Size = new System.Drawing.Size(452, 153);
+            this.splitContainer17.SplitterDistance = 39;
+            this.splitContainer17.SplitterWidth = 5;
             this.splitContainer17.TabIndex = 0;
             // 
             // FoodTypeAdd
@@ -1214,7 +1235,7 @@
             this.FoodTypeAdd.Location = new System.Drawing.Point(0, 0);
             this.FoodTypeAdd.Margin = new System.Windows.Forms.Padding(0);
             this.FoodTypeAdd.Name = "FoodTypeAdd";
-            this.FoodTypeAdd.Size = new System.Drawing.Size(300, 25);
+            this.FoodTypeAdd.Size = new System.Drawing.Size(452, 39);
             this.FoodTypeAdd.TabIndex = 9;
             this.FoodTypeAdd.Text = "Food Type";
             this.FoodTypeAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1225,19 +1246,19 @@
             // 
             this.splitContainer19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer19.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer19.Name = "splitContainer19";
             // 
             // splitContainer19.Panel1
             // 
             this.splitContainer19.Panel1.Controls.Add(this.FoodImageAdd);
-            this.splitContainer19.Panel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.splitContainer19.Panel1.Padding = new System.Windows.Forms.Padding(15, 15, 15, 15);
             // 
             // splitContainer19.Panel2
             // 
             this.splitContainer19.Panel2.Controls.Add(this.FoodImgAdd);
-            this.splitContainer19.Size = new System.Drawing.Size(300, 70);
-            this.splitContainer19.SplitterDistance = 99;
-            this.splitContainer19.SplitterWidth = 3;
+            this.splitContainer19.Size = new System.Drawing.Size(452, 109);
+            this.splitContainer19.SplitterDistance = 149;
             this.splitContainer19.TabIndex = 0;
             // 
             // FoodImageAdd
@@ -1248,10 +1269,10 @@
             this.FoodImageAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FoodImageAdd.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.FoodImageAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FoodImageAdd.Location = new System.Drawing.Point(10, 10);
+            this.FoodImageAdd.Location = new System.Drawing.Point(15, 15);
             this.FoodImageAdd.Margin = new System.Windows.Forms.Padding(0);
             this.FoodImageAdd.Name = "FoodImageAdd";
-            this.FoodImageAdd.Size = new System.Drawing.Size(79, 50);
+            this.FoodImageAdd.Size = new System.Drawing.Size(119, 79);
             this.FoodImageAdd.TabIndex = 2;
             this.FoodImageAdd.Text = "Add Image";
             this.FoodImageAdd.UseVisualStyleBackColor = false;
@@ -1265,8 +1286,9 @@
             this.FoodImgAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoodImgAdd.Image = ((System.Drawing.Image)(resources.GetObject("FoodImgAdd.Image")));
             this.FoodImgAdd.Location = new System.Drawing.Point(0, 0);
+            this.FoodImgAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FoodImgAdd.Name = "FoodImgAdd";
-            this.FoodImgAdd.Size = new System.Drawing.Size(198, 70);
+            this.FoodImgAdd.Size = new System.Drawing.Size(299, 109);
             this.FoodImgAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodImgAdd.TabIndex = 1;
             this.FoodImgAdd.TabStop = false;
@@ -1275,44 +1297,45 @@
             // 
             this.splitContainer22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer22.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer22.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer22.Name = "splitContainer22";
             // 
             // splitContainer22.Panel1
             // 
             this.splitContainer22.Panel1.Controls.Add(this.bunifuCustomLabel10);
-            this.splitContainer22.Panel1.Padding = new System.Windows.Forms.Padding(30, 5, 0, 0);
+            this.splitContainer22.Panel1.Padding = new System.Windows.Forms.Padding(45, 8, 0, 0);
             // 
             // splitContainer22.Panel2
             // 
             this.splitContainer22.Panel2.Controls.Add(this.FoodPriceAdd);
-            this.splitContainer22.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.splitContainer22.Size = new System.Drawing.Size(300, 29);
-            this.splitContainer22.SplitterDistance = 99;
-            this.splitContainer22.SplitterWidth = 3;
+            this.splitContainer22.Panel2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.splitContainer22.Size = new System.Drawing.Size(452, 45);
+            this.splitContainer22.SplitterDistance = 149;
             this.splitContainer22.TabIndex = 0;
             // 
             // bunifuCustomLabel10
             // 
             this.bunifuCustomLabel10.AutoSize = true;
             this.bunifuCustomLabel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel10.Location = new System.Drawing.Point(30, 5);
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(45, 8);
+            this.bunifuCustomLabel10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
-            this.bunifuCustomLabel10.Size = new System.Drawing.Size(51, 21);
+            this.bunifuCustomLabel10.Size = new System.Drawing.Size(79, 30);
             this.bunifuCustomLabel10.TabIndex = 6;
             this.bunifuCustomLabel10.Text = "Price:";
             // 
             // FoodPriceAdd
             // 
             this.FoodPriceAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FoodPriceAdd.Location = new System.Drawing.Point(0, 3);
-            this.FoodPriceAdd.Margin = new System.Windows.Forms.Padding(2, 5, 2, 2);
+            this.FoodPriceAdd.Location = new System.Drawing.Point(0, 5);
+            this.FoodPriceAdd.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.FoodPriceAdd.Maximum = new decimal(new int[] {
             123456789,
             0,
             0,
             0});
             this.FoodPriceAdd.Name = "FoodPriceAdd";
-            this.FoodPriceAdd.Size = new System.Drawing.Size(198, 27);
+            this.FoodPriceAdd.Size = new System.Drawing.Size(299, 37);
             this.FoodPriceAdd.TabIndex = 5;
             this.FoodPriceAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.FoodPriceAdd.Value = new decimal(new int[] {
@@ -1324,8 +1347,7 @@
             // splitContainer20
             // 
             this.splitContainer20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer20.Location = new System.Drawing.Point(312, 335);
-            this.splitContainer20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer20.Location = new System.Drawing.Point(467, 516);
             this.splitContainer20.Name = "splitContainer20";
             this.splitContainer20.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1336,51 +1358,48 @@
             // splitContainer20.Panel2
             // 
             this.splitContainer20.Panel2.Controls.Add(this.FoodAddBtn);
-            this.splitContainer20.Panel2.Padding = new System.Windows.Forms.Padding(13, 13, 13, 13);
-            this.splitContainer20.Size = new System.Drawing.Size(300, 137);
-            this.splitContainer20.SplitterDistance = 28;
-            this.splitContainer20.SplitterWidth = 3;
+            this.splitContainer20.Panel2.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.splitContainer20.Size = new System.Drawing.Size(452, 212);
+            this.splitContainer20.SplitterDistance = 43;
+            this.splitContainer20.SplitterWidth = 5;
             this.splitContainer20.TabIndex = 5;
             // 
             // splitContainer21
             // 
             this.splitContainer21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer21.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer21.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer21.Name = "splitContainer21";
             // 
             // splitContainer21.Panel1
             // 
             this.splitContainer21.Panel1.Controls.Add(this.bunifuCustomLabel9);
-            this.splitContainer21.Panel1.Padding = new System.Windows.Forms.Padding(20, 3, 0, 0);
+            this.splitContainer21.Panel1.Padding = new System.Windows.Forms.Padding(30, 5, 0, 0);
             // 
             // splitContainer21.Panel2
             // 
             this.splitContainer21.Panel2.Controls.Add(this.FoodDiscountAdd);
-            this.splitContainer21.Panel2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.splitContainer21.Size = new System.Drawing.Size(300, 28);
-            this.splitContainer21.SplitterDistance = 99;
-            this.splitContainer21.SplitterWidth = 3;
+            this.splitContainer21.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.splitContainer21.Size = new System.Drawing.Size(452, 43);
+            this.splitContainer21.SplitterDistance = 149;
             this.splitContainer21.TabIndex = 0;
             // 
             // bunifuCustomLabel9
             // 
             this.bunifuCustomLabel9.AutoSize = true;
             this.bunifuCustomLabel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(20, 3);
-            this.bunifuCustomLabel9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(30, 5);
             this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
-            this.bunifuCustomLabel9.Size = new System.Drawing.Size(82, 21);
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(124, 30);
             this.bunifuCustomLabel9.TabIndex = 5;
             this.bunifuCustomLabel9.Text = "Discount:";
             // 
             // FoodDiscountAdd
             // 
             this.FoodDiscountAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FoodDiscountAdd.Location = new System.Drawing.Point(0, 2);
-            this.FoodDiscountAdd.Margin = new System.Windows.Forms.Padding(1, 3, 1, 1);
+            this.FoodDiscountAdd.Location = new System.Drawing.Point(0, 3);
+            this.FoodDiscountAdd.Margin = new System.Windows.Forms.Padding(2, 5, 2, 2);
             this.FoodDiscountAdd.Name = "FoodDiscountAdd";
-            this.FoodDiscountAdd.Size = new System.Drawing.Size(198, 27);
+            this.FoodDiscountAdd.Size = new System.Drawing.Size(299, 37);
             this.FoodDiscountAdd.TabIndex = 4;
             this.FoodDiscountAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.FoodDiscountAdd.Value = new decimal(new int[] {
@@ -1397,10 +1416,10 @@
             this.FoodAddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FoodAddBtn.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.FoodAddBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FoodAddBtn.Location = new System.Drawing.Point(13, 13);
-            this.FoodAddBtn.Margin = new System.Windows.Forms.Padding(17, 2, 17, 2);
+            this.FoodAddBtn.Location = new System.Drawing.Point(20, 20);
+            this.FoodAddBtn.Margin = new System.Windows.Forms.Padding(26, 3, 26, 3);
             this.FoodAddBtn.Name = "FoodAddBtn";
-            this.FoodAddBtn.Size = new System.Drawing.Size(274, 80);
+            this.FoodAddBtn.Size = new System.Drawing.Size(412, 124);
             this.FoodAddBtn.TabIndex = 3;
             this.FoodAddBtn.Text = "Add Food";
             this.FoodAddBtn.UseVisualStyleBackColor = false;
@@ -1411,8 +1430,7 @@
             // splitContainer23
             // 
             this.splitContainer23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer23.Location = new System.Drawing.Point(619, 5);
-            this.splitContainer23.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer23.Location = new System.Drawing.Point(928, 6);
             this.splitContainer23.Name = "splitContainer23";
             this.splitContainer23.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1423,39 +1441,38 @@
             // splitContainer23.Panel2
             // 
             this.splitContainer23.Panel2.Controls.Add(this.splitContainer24);
-            this.splitContainer23.Size = new System.Drawing.Size(300, 158);
-            this.splitContainer23.SplitterDistance = 25;
-            this.splitContainer23.SplitterWidth = 3;
+            this.splitContainer23.Size = new System.Drawing.Size(452, 246);
+            this.splitContainer23.SplitterDistance = 38;
+            this.splitContainer23.SplitterWidth = 5;
             this.splitContainer23.TabIndex = 6;
             // 
             // splitContainer27
             // 
             this.splitContainer27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer27.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer27.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer27.Name = "splitContainer27";
             // 
             // splitContainer27.Panel1
             // 
             this.splitContainer27.Panel1.Controls.Add(this.bunifuCustomLabel11);
-            this.splitContainer27.Panel1.Padding = new System.Windows.Forms.Padding(30, 5, 0, 0);
+            this.splitContainer27.Panel1.Padding = new System.Windows.Forms.Padding(45, 8, 0, 0);
             // 
             // splitContainer27.Panel2
             // 
             this.splitContainer27.Panel2.Controls.Add(this.bunifuCustomLabel12);
-            this.splitContainer27.Panel2.Padding = new System.Windows.Forms.Padding(20, 3, 0, 0);
-            this.splitContainer27.Size = new System.Drawing.Size(300, 25);
-            this.splitContainer27.SplitterDistance = 146;
-            this.splitContainer27.SplitterWidth = 3;
+            this.splitContainer27.Panel2.Padding = new System.Windows.Forms.Padding(30, 5, 0, 0);
+            this.splitContainer27.Size = new System.Drawing.Size(452, 38);
+            this.splitContainer27.SplitterDistance = 219;
             this.splitContainer27.TabIndex = 0;
             // 
             // bunifuCustomLabel11
             // 
             this.bunifuCustomLabel11.AutoSize = true;
             this.bunifuCustomLabel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel11.Location = new System.Drawing.Point(30, 5);
-            this.bunifuCustomLabel11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(45, 8);
             this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
-            this.bunifuCustomLabel11.Size = new System.Drawing.Size(149, 21);
+            this.bunifuCustomLabel11.Size = new System.Drawing.Size(220, 30);
             this.bunifuCustomLabel11.TabIndex = 4;
             this.bunifuCustomLabel11.Text = "Restaurant Name";
             // 
@@ -1463,10 +1480,9 @@
             // 
             this.bunifuCustomLabel12.AutoSize = true;
             this.bunifuCustomLabel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel12.Location = new System.Drawing.Point(20, 3);
-            this.bunifuCustomLabel12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(30, 5);
             this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
-            this.bunifuCustomLabel12.Size = new System.Drawing.Size(169, 21);
+            this.bunifuCustomLabel12.Size = new System.Drawing.Size(250, 30);
             this.bunifuCustomLabel12.TabIndex = 5;
             this.bunifuCustomLabel12.Text = "Restaurant Location";
             // 
@@ -1474,7 +1490,6 @@
             // 
             this.splitContainer24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer24.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer24.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer24.Name = "splitContainer24";
             this.splitContainer24.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1485,30 +1500,28 @@
             // splitContainer24.Panel2
             // 
             this.splitContainer24.Panel2.Controls.Add(this.splitContainer25);
-            this.splitContainer24.Size = new System.Drawing.Size(300, 130);
-            this.splitContainer24.SplitterDistance = 33;
-            this.splitContainer24.SplitterWidth = 3;
+            this.splitContainer24.Size = new System.Drawing.Size(452, 203);
+            this.splitContainer24.SplitterDistance = 51;
+            this.splitContainer24.SplitterWidth = 5;
             this.splitContainer24.TabIndex = 0;
             // 
             // splitContainer28
             // 
             this.splitContainer28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer28.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer28.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer28.Name = "splitContainer28";
             // 
             // splitContainer28.Panel1
             // 
             this.splitContainer28.Panel1.Controls.Add(this.FoodRestNameUpdate);
-            this.splitContainer28.Panel1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.splitContainer28.Panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             // 
             // splitContainer28.Panel2
             // 
             this.splitContainer28.Panel2.Controls.Add(this.FoodRestLocUpdate);
-            this.splitContainer28.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
-            this.splitContainer28.Size = new System.Drawing.Size(300, 33);
-            this.splitContainer28.SplitterDistance = 146;
-            this.splitContainer28.SplitterWidth = 3;
+            this.splitContainer28.Panel2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.splitContainer28.Size = new System.Drawing.Size(452, 51);
+            this.splitContainer28.SplitterDistance = 219;
             this.splitContainer28.TabIndex = 0;
             // 
             // FoodRestNameUpdate
@@ -1516,10 +1529,9 @@
             this.FoodRestNameUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoodRestNameUpdate.FormattingEnabled = true;
             this.FoodRestNameUpdate.ItemHeight = 23;
-            this.FoodRestNameUpdate.Location = new System.Drawing.Point(0, 3);
-            this.FoodRestNameUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FoodRestNameUpdate.Location = new System.Drawing.Point(0, 5);
             this.FoodRestNameUpdate.Name = "FoodRestNameUpdate";
-            this.FoodRestNameUpdate.Size = new System.Drawing.Size(146, 29);
+            this.FoodRestNameUpdate.Size = new System.Drawing.Size(219, 29);
             this.FoodRestNameUpdate.TabIndex = 1;
             this.FoodRestNameUpdate.UseSelectable = true;
             this.FoodRestNameUpdate.SelectedValueChanged += new System.EventHandler(this.FoodRestNameUpdate_SelectedValueChanged);
@@ -1529,10 +1541,9 @@
             this.FoodRestLocUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoodRestLocUpdate.FormattingEnabled = true;
             this.FoodRestLocUpdate.ItemHeight = 23;
-            this.FoodRestLocUpdate.Location = new System.Drawing.Point(0, 3);
-            this.FoodRestLocUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FoodRestLocUpdate.Location = new System.Drawing.Point(0, 5);
             this.FoodRestLocUpdate.Name = "FoodRestLocUpdate";
-            this.FoodRestLocUpdate.Size = new System.Drawing.Size(151, 29);
+            this.FoodRestLocUpdate.Size = new System.Drawing.Size(229, 29);
             this.FoodRestLocUpdate.TabIndex = 2;
             this.FoodRestLocUpdate.UseSelectable = true;
             this.FoodRestLocUpdate.SelectedValueChanged += new System.EventHandler(this.FoodRestLocUpdate_SelectedValueChanged);
@@ -1541,21 +1552,20 @@
             // 
             this.splitContainer25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer25.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer25.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer25.Name = "splitContainer25";
             this.splitContainer25.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer25.Panel1
             // 
             this.splitContainer25.Panel1.Controls.Add(this.FoodNameUpdate);
-            this.splitContainer25.Panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.splitContainer25.Panel1.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             // 
             // splitContainer25.Panel2
             // 
             this.splitContainer25.Panel2.Controls.Add(this.splitContainer26);
-            this.splitContainer25.Size = new System.Drawing.Size(300, 94);
-            this.splitContainer25.SplitterDistance = 34;
-            this.splitContainer25.SplitterWidth = 3;
+            this.splitContainer25.Size = new System.Drawing.Size(452, 147);
+            this.splitContainer25.SplitterDistance = 53;
+            this.splitContainer25.SplitterWidth = 5;
             this.splitContainer25.TabIndex = 0;
             // 
             // FoodNameUpdate
@@ -1563,10 +1573,9 @@
             this.FoodNameUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoodNameUpdate.FormattingEnabled = true;
             this.FoodNameUpdate.ItemHeight = 23;
-            this.FoodNameUpdate.Location = new System.Drawing.Point(0, 5);
-            this.FoodNameUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FoodNameUpdate.Location = new System.Drawing.Point(0, 8);
             this.FoodNameUpdate.Name = "FoodNameUpdate";
-            this.FoodNameUpdate.Size = new System.Drawing.Size(300, 29);
+            this.FoodNameUpdate.Size = new System.Drawing.Size(452, 29);
             this.FoodNameUpdate.TabIndex = 2;
             this.FoodNameUpdate.UseSelectable = true;
             // 
@@ -1574,7 +1583,6 @@
             // 
             this.splitContainer26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer26.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer26.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer26.Name = "splitContainer26";
             this.splitContainer26.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1585,39 +1593,36 @@
             // splitContainer26.Panel2
             // 
             this.splitContainer26.Panel2.Controls.Add(this.FoodIngUpdate);
-            this.splitContainer26.Size = new System.Drawing.Size(300, 57);
-            this.splitContainer26.SplitterDistance = 25;
-            this.splitContainer26.SplitterWidth = 3;
+            this.splitContainer26.Size = new System.Drawing.Size(452, 89);
+            this.splitContainer26.SplitterDistance = 39;
+            this.splitContainer26.SplitterWidth = 5;
             this.splitContainer26.TabIndex = 0;
             // 
             // splitContainer29
             // 
             this.splitContainer29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer29.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer29.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer29.Name = "splitContainer29";
             // 
             // splitContainer29.Panel1
             // 
             this.splitContainer29.Panel1.Controls.Add(this.bunifuCustomLabel16);
-            this.splitContainer29.Panel1.Padding = new System.Windows.Forms.Padding(20, 3, 0, 0);
+            this.splitContainer29.Panel1.Padding = new System.Windows.Forms.Padding(30, 5, 0, 0);
             // 
             // splitContainer29.Panel2
             // 
             this.splitContainer29.Panel2.Controls.Add(this.FoodRatingUpdate);
-            this.splitContainer29.Size = new System.Drawing.Size(300, 25);
-            this.splitContainer29.SplitterDistance = 99;
-            this.splitContainer29.SplitterWidth = 3;
+            this.splitContainer29.Size = new System.Drawing.Size(452, 39);
+            this.splitContainer29.SplitterDistance = 149;
             this.splitContainer29.TabIndex = 0;
             // 
             // bunifuCustomLabel16
             // 
             this.bunifuCustomLabel16.AutoSize = true;
             this.bunifuCustomLabel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel16.Location = new System.Drawing.Point(20, 3);
-            this.bunifuCustomLabel16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel16.Location = new System.Drawing.Point(30, 5);
             this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
-            this.bunifuCustomLabel16.Size = new System.Drawing.Size(66, 21);
+            this.bunifuCustomLabel16.Size = new System.Drawing.Size(96, 30);
             this.bunifuCustomLabel16.TabIndex = 4;
             this.bunifuCustomLabel16.Text = "Rating:";
             // 
@@ -1628,9 +1633,9 @@
             this.FoodRatingUpdate.Font = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FoodRatingUpdate.ForeColor = System.Drawing.Color.Green;
             this.FoodRatingUpdate.Location = new System.Drawing.Point(0, 0);
-            this.FoodRatingUpdate.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.FoodRatingUpdate.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
             this.FoodRatingUpdate.Name = "FoodRatingUpdate";
-            this.FoodRatingUpdate.Size = new System.Drawing.Size(198, 25);
+            this.FoodRatingUpdate.Size = new System.Drawing.Size(299, 39);
             this.FoodRatingUpdate.TabIndex = 8;
             this.FoodRatingUpdate.Value = 0;
             // 
@@ -1649,7 +1654,7 @@
             this.FoodIngUpdate.Location = new System.Drawing.Point(0, 0);
             this.FoodIngUpdate.Margin = new System.Windows.Forms.Padding(0);
             this.FoodIngUpdate.Name = "FoodIngUpdate";
-            this.FoodIngUpdate.Size = new System.Drawing.Size(300, 29);
+            this.FoodIngUpdate.Size = new System.Drawing.Size(452, 45);
             this.FoodIngUpdate.TabIndex = 9;
             this.FoodIngUpdate.Text = "Ingrediants";
             this.FoodIngUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1657,8 +1662,7 @@
             // splitContainer30
             // 
             this.splitContainer30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer30.Location = new System.Drawing.Point(619, 170);
-            this.splitContainer30.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer30.Location = new System.Drawing.Point(928, 261);
             this.splitContainer30.Name = "splitContainer30";
             this.splitContainer30.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1669,38 +1673,39 @@
             // splitContainer30.Panel2
             // 
             this.splitContainer30.Panel2.Controls.Add(this.splitContainer31);
-            this.splitContainer30.Size = new System.Drawing.Size(300, 158);
-            this.splitContainer30.SplitterDistance = 25;
-            this.splitContainer30.SplitterWidth = 3;
+            this.splitContainer30.Size = new System.Drawing.Size(452, 246);
+            this.splitContainer30.SplitterDistance = 38;
+            this.splitContainer30.SplitterWidth = 5;
             this.splitContainer30.TabIndex = 7;
             // 
             // splitContainer37
             // 
             this.splitContainer37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer37.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer37.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitContainer37.Name = "splitContainer37";
             // 
             // splitContainer37.Panel1
             // 
             this.splitContainer37.Panel1.Controls.Add(this.bunifuCustomLabel13);
-            this.splitContainer37.Panel1.Padding = new System.Windows.Forms.Padding(30, 3, 0, 0);
+            this.splitContainer37.Panel1.Padding = new System.Windows.Forms.Padding(45, 5, 0, 0);
             // 
             // splitContainer37.Panel2
             // 
             this.splitContainer37.Panel2.Controls.Add(this.FoodTopDishUpdate);
-            this.splitContainer37.Panel2.Padding = new System.Windows.Forms.Padding(87, 3, 0, 0);
-            this.splitContainer37.Size = new System.Drawing.Size(300, 25);
-            this.splitContainer37.SplitterDistance = 99;
-            this.splitContainer37.SplitterWidth = 3;
+            this.splitContainer37.Panel2.Padding = new System.Windows.Forms.Padding(130, 5, 0, 0);
+            this.splitContainer37.Size = new System.Drawing.Size(452, 38);
+            this.splitContainer37.SplitterDistance = 149;
             this.splitContainer37.TabIndex = 0;
             // 
             // bunifuCustomLabel13
             // 
             this.bunifuCustomLabel13.AutoSize = true;
             this.bunifuCustomLabel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel13.Location = new System.Drawing.Point(30, 3);
+            this.bunifuCustomLabel13.Location = new System.Drawing.Point(45, 5);
+            this.bunifuCustomLabel13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
-            this.bunifuCustomLabel13.Size = new System.Drawing.Size(78, 21);
+            this.bunifuCustomLabel13.Size = new System.Drawing.Size(119, 30);
             this.bunifuCustomLabel13.TabIndex = 5;
             this.bunifuCustomLabel13.Text = "Top Dish:";
             // 
@@ -1712,8 +1717,8 @@
             this.FoodTopDishUpdate.CheckedOnColor = System.Drawing.Color.Green;
             this.FoodTopDishUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoodTopDishUpdate.ForeColor = System.Drawing.Color.White;
-            this.FoodTopDishUpdate.Location = new System.Drawing.Point(87, 3);
-            this.FoodTopDishUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FoodTopDishUpdate.Location = new System.Drawing.Point(130, 5);
+            this.FoodTopDishUpdate.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.FoodTopDishUpdate.Name = "FoodTopDishUpdate";
             this.FoodTopDishUpdate.Size = new System.Drawing.Size(20, 20);
             this.FoodTopDishUpdate.TabIndex = 1;
@@ -1722,7 +1727,6 @@
             // 
             this.splitContainer31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer31.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer31.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer31.Name = "splitContainer31";
             this.splitContainer31.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1733,9 +1737,9 @@
             // splitContainer31.Panel2
             // 
             this.splitContainer31.Panel2.Controls.Add(this.splitContainer32);
-            this.splitContainer31.Size = new System.Drawing.Size(300, 130);
-            this.splitContainer31.SplitterDistance = 25;
-            this.splitContainer31.SplitterWidth = 3;
+            this.splitContainer31.Size = new System.Drawing.Size(452, 203);
+            this.splitContainer31.SplitterDistance = 39;
+            this.splitContainer31.SplitterWidth = 5;
             this.splitContainer31.TabIndex = 0;
             // 
             // FoodTypeUpdate
@@ -1753,7 +1757,7 @@
             this.FoodTypeUpdate.Location = new System.Drawing.Point(0, 0);
             this.FoodTypeUpdate.Margin = new System.Windows.Forms.Padding(0);
             this.FoodTypeUpdate.Name = "FoodTypeUpdate";
-            this.FoodTypeUpdate.Size = new System.Drawing.Size(300, 25);
+            this.FoodTypeUpdate.Size = new System.Drawing.Size(452, 39);
             this.FoodTypeUpdate.TabIndex = 10;
             this.FoodTypeUpdate.Text = "Food Type";
             this.FoodTypeUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1762,7 +1766,6 @@
             // 
             this.splitContainer32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer32.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer32.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer32.Name = "splitContainer32";
             this.splitContainer32.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1773,29 +1776,27 @@
             // splitContainer32.Panel2
             // 
             this.splitContainer32.Panel2.Controls.Add(this.splitContainer34);
-            this.splitContainer32.Size = new System.Drawing.Size(300, 102);
-            this.splitContainer32.SplitterDistance = 72;
-            this.splitContainer32.SplitterWidth = 3;
+            this.splitContainer32.Size = new System.Drawing.Size(452, 159);
+            this.splitContainer32.SplitterDistance = 112;
+            this.splitContainer32.SplitterWidth = 5;
             this.splitContainer32.TabIndex = 0;
             // 
             // splitContainer33
             // 
             this.splitContainer33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer33.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer33.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer33.Name = "splitContainer33";
             // 
             // splitContainer33.Panel1
             // 
             this.splitContainer33.Panel1.Controls.Add(this.FoodImageUpdate);
-            this.splitContainer33.Panel1.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.splitContainer33.Panel1.Padding = new System.Windows.Forms.Padding(10, 9, 10, 9);
             // 
             // splitContainer33.Panel2
             // 
             this.splitContainer33.Panel2.Controls.Add(this.FoodImgUpdate);
-            this.splitContainer33.Size = new System.Drawing.Size(300, 72);
-            this.splitContainer33.SplitterDistance = 99;
-            this.splitContainer33.SplitterWidth = 3;
+            this.splitContainer33.Size = new System.Drawing.Size(452, 112);
+            this.splitContainer33.SplitterDistance = 149;
             this.splitContainer33.TabIndex = 0;
             // 
             // FoodImageUpdate
@@ -1806,10 +1807,10 @@
             this.FoodImageUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FoodImageUpdate.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.FoodImageUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FoodImageUpdate.Location = new System.Drawing.Point(7, 6);
+            this.FoodImageUpdate.Location = new System.Drawing.Point(10, 9);
             this.FoodImageUpdate.Margin = new System.Windows.Forms.Padding(0);
             this.FoodImageUpdate.Name = "FoodImageUpdate";
-            this.FoodImageUpdate.Size = new System.Drawing.Size(85, 60);
+            this.FoodImageUpdate.Size = new System.Drawing.Size(129, 94);
             this.FoodImageUpdate.TabIndex = 3;
             this.FoodImageUpdate.Text = "Add Image";
             this.FoodImageUpdate.UseVisualStyleBackColor = false;
@@ -1821,9 +1822,8 @@
             this.FoodImgUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FoodImgUpdate.Image = ((System.Drawing.Image)(resources.GetObject("FoodImgUpdate.Image")));
             this.FoodImgUpdate.Location = new System.Drawing.Point(0, 0);
-            this.FoodImgUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FoodImgUpdate.Name = "FoodImgUpdate";
-            this.FoodImgUpdate.Size = new System.Drawing.Size(198, 72);
+            this.FoodImgUpdate.Size = new System.Drawing.Size(299, 112);
             this.FoodImgUpdate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FoodImgUpdate.TabIndex = 2;
             this.FoodImgUpdate.TabStop = false;
@@ -1832,45 +1832,44 @@
             // 
             this.splitContainer34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer34.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer34.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer34.Name = "splitContainer34";
             // 
             // splitContainer34.Panel1
             // 
             this.splitContainer34.Panel1.Controls.Add(this.bunifuCustomLabel14);
-            this.splitContainer34.Panel1.Padding = new System.Windows.Forms.Padding(20, 3, 0, 0);
+            this.splitContainer34.Panel1.Padding = new System.Windows.Forms.Padding(30, 5, 0, 0);
             // 
             // splitContainer34.Panel2
             // 
             this.splitContainer34.Panel2.Controls.Add(this.FoodPriceUpdate);
-            this.splitContainer34.Panel2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.splitContainer34.Size = new System.Drawing.Size(300, 27);
-            this.splitContainer34.SplitterDistance = 99;
-            this.splitContainer34.SplitterWidth = 3;
+            this.splitContainer34.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.splitContainer34.Size = new System.Drawing.Size(452, 42);
+            this.splitContainer34.SplitterDistance = 149;
             this.splitContainer34.TabIndex = 0;
             // 
             // bunifuCustomLabel14
             // 
             this.bunifuCustomLabel14.AutoSize = true;
             this.bunifuCustomLabel14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel14.Location = new System.Drawing.Point(20, 3);
+            this.bunifuCustomLabel14.Location = new System.Drawing.Point(30, 5);
+            this.bunifuCustomLabel14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
-            this.bunifuCustomLabel14.Size = new System.Drawing.Size(51, 21);
+            this.bunifuCustomLabel14.Size = new System.Drawing.Size(79, 30);
             this.bunifuCustomLabel14.TabIndex = 7;
             this.bunifuCustomLabel14.Text = "Price:";
             // 
             // FoodPriceUpdate
             // 
             this.FoodPriceUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FoodPriceUpdate.Location = new System.Drawing.Point(0, 2);
-            this.FoodPriceUpdate.Margin = new System.Windows.Forms.Padding(2, 5, 2, 2);
+            this.FoodPriceUpdate.Location = new System.Drawing.Point(0, 3);
+            this.FoodPriceUpdate.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.FoodPriceUpdate.Maximum = new decimal(new int[] {
             123456789,
             0,
             0,
             0});
             this.FoodPriceUpdate.Name = "FoodPriceUpdate";
-            this.FoodPriceUpdate.Size = new System.Drawing.Size(198, 27);
+            this.FoodPriceUpdate.Size = new System.Drawing.Size(299, 37);
             this.FoodPriceUpdate.TabIndex = 6;
             this.FoodPriceUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.FoodPriceUpdate.Value = new decimal(new int[] {
@@ -1882,8 +1881,7 @@
             // splitContainer35
             // 
             this.splitContainer35.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer35.Location = new System.Drawing.Point(619, 335);
-            this.splitContainer35.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer35.Location = new System.Drawing.Point(928, 516);
             this.splitContainer35.Name = "splitContainer35";
             this.splitContainer35.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1894,51 +1892,48 @@
             // splitContainer35.Panel2
             // 
             this.splitContainer35.Panel2.Controls.Add(this.FoodUpdateBtn);
-            this.splitContainer35.Panel2.Padding = new System.Windows.Forms.Padding(13, 13, 13, 13);
-            this.splitContainer35.Size = new System.Drawing.Size(300, 137);
-            this.splitContainer35.SplitterDistance = 26;
-            this.splitContainer35.SplitterWidth = 3;
+            this.splitContainer35.Panel2.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+            this.splitContainer35.Size = new System.Drawing.Size(452, 212);
+            this.splitContainer35.SplitterDistance = 40;
+            this.splitContainer35.SplitterWidth = 5;
             this.splitContainer35.TabIndex = 8;
             // 
             // splitContainer36
             // 
             this.splitContainer36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer36.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer36.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitContainer36.Name = "splitContainer36";
             // 
             // splitContainer36.Panel1
             // 
             this.splitContainer36.Panel1.Controls.Add(this.bunifuCustomLabel15);
-            this.splitContainer36.Panel1.Padding = new System.Windows.Forms.Padding(20, 3, 0, 0);
+            this.splitContainer36.Panel1.Padding = new System.Windows.Forms.Padding(30, 5, 0, 0);
             // 
             // splitContainer36.Panel2
             // 
             this.splitContainer36.Panel2.Controls.Add(this.FoodDiscountUpdate);
-            this.splitContainer36.Panel2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.splitContainer36.Size = new System.Drawing.Size(300, 26);
-            this.splitContainer36.SplitterDistance = 99;
-            this.splitContainer36.SplitterWidth = 3;
+            this.splitContainer36.Panel2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.splitContainer36.Size = new System.Drawing.Size(452, 40);
+            this.splitContainer36.SplitterDistance = 149;
             this.splitContainer36.TabIndex = 0;
             // 
             // bunifuCustomLabel15
             // 
             this.bunifuCustomLabel15.AutoSize = true;
             this.bunifuCustomLabel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuCustomLabel15.Location = new System.Drawing.Point(20, 3);
-            this.bunifuCustomLabel15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bunifuCustomLabel15.Location = new System.Drawing.Point(30, 5);
             this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
-            this.bunifuCustomLabel15.Size = new System.Drawing.Size(82, 21);
+            this.bunifuCustomLabel15.Size = new System.Drawing.Size(124, 30);
             this.bunifuCustomLabel15.TabIndex = 6;
             this.bunifuCustomLabel15.Text = "Discount:";
             // 
             // FoodDiscountUpdate
             // 
             this.FoodDiscountUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FoodDiscountUpdate.Location = new System.Drawing.Point(0, 2);
-            this.FoodDiscountUpdate.Margin = new System.Windows.Forms.Padding(2, 5, 2, 2);
+            this.FoodDiscountUpdate.Location = new System.Drawing.Point(0, 3);
+            this.FoodDiscountUpdate.Margin = new System.Windows.Forms.Padding(3, 8, 3, 3);
             this.FoodDiscountUpdate.Name = "FoodDiscountUpdate";
-            this.FoodDiscountUpdate.Size = new System.Drawing.Size(198, 27);
+            this.FoodDiscountUpdate.Size = new System.Drawing.Size(299, 37);
             this.FoodDiscountUpdate.TabIndex = 5;
             this.FoodDiscountUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.FoodDiscountUpdate.Value = new decimal(new int[] {
@@ -1955,10 +1950,10 @@
             this.FoodUpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FoodUpdateBtn.Font = new System.Drawing.Font("Century Gothic", 10F);
             this.FoodUpdateBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FoodUpdateBtn.Location = new System.Drawing.Point(13, 13);
-            this.FoodUpdateBtn.Margin = new System.Windows.Forms.Padding(25, 3, 25, 3);
+            this.FoodUpdateBtn.Location = new System.Drawing.Point(20, 20);
+            this.FoodUpdateBtn.Margin = new System.Windows.Forms.Padding(38, 5, 38, 5);
             this.FoodUpdateBtn.Name = "FoodUpdateBtn";
-            this.FoodUpdateBtn.Size = new System.Drawing.Size(274, 82);
+            this.FoodUpdateBtn.Size = new System.Drawing.Size(412, 127);
             this.FoodUpdateBtn.TabIndex = 4;
             this.FoodUpdateBtn.Text = "Add Food";
             this.FoodUpdateBtn.UseVisualStyleBackColor = false;
@@ -1973,18 +1968,20 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // adminForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(924, 512);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "adminForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "adminForm";

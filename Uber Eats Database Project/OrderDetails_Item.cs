@@ -16,5 +16,10 @@ namespace Uber_Eats_Database_Project
         {
             InitializeComponent();
         }
+
+        private void OrderDetails_Item_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

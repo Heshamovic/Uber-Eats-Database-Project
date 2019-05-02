@@ -70,5 +70,10 @@ namespace Uber_Eats_Database_Project
         {
             Conn.Dispose();
         }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -50,9 +50,8 @@
             this.header.Controls.Add(this.Order_detail_close);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
-            this.header.Margin = new System.Windows.Forms.Padding(2);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(800, 29);
+            this.header.Size = new System.Drawing.Size(1200, 45);
             this.header.TabIndex = 35;
             // 
             // Order_detail_close
@@ -61,10 +60,9 @@
             this.Order_detail_close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Order_detail_close.Image = ((System.Drawing.Image)(resources.GetObject("Order_detail_close.Image")));
             this.Order_detail_close.ImageActive = null;
-            this.Order_detail_close.Location = new System.Drawing.Point(763, 2);
-            this.Order_detail_close.Margin = new System.Windows.Forms.Padding(2);
+            this.Order_detail_close.Location = new System.Drawing.Point(1144, 3);
             this.Order_detail_close.Name = "Order_detail_close";
-            this.Order_detail_close.Size = new System.Drawing.Size(26, 27);
+            this.Order_detail_close.Size = new System.Drawing.Size(39, 42);
             this.Order_detail_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Order_detail_close.TabIndex = 30;
             this.Order_detail_close.TabStop = false;
@@ -83,19 +81,22 @@
             this.Order_Details_Panel.AutoScroll = true;
             this.Order_Details_Panel.BackColor = System.Drawing.Color.SteelBlue;
             this.Order_Details_Panel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Order_Details_Panel.Location = new System.Drawing.Point(0, 29);
+            this.Order_Details_Panel.Location = new System.Drawing.Point(0, 45);
+            this.Order_Details_Panel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Order_Details_Panel.Name = "Order_Details_Panel";
-            this.Order_Details_Panel.Size = new System.Drawing.Size(541, 421);
+            this.Order_Details_Panel.Size = new System.Drawing.Size(812, 647);
             this.Order_Details_Panel.TabIndex = 37;
+            this.Order_Details_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.Order_Details_Panel_Paint);
             // 
             // Order_details
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.Order_Details_Panel);
             this.Controls.Add(this.header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Order_details";
             this.Text = "Order_details";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Order_details_FormClosing);

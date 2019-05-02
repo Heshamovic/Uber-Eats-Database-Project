@@ -61,5 +61,10 @@ namespace Uber_Eats_Database_Project
         {
             
         }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -136,5 +136,10 @@ namespace Uber_Eats_Database_Project
             Helper.onHover((Button)sender, Color.Black);
         }
         #endregion
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
