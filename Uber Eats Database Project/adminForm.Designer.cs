@@ -43,7 +43,6 @@
             this.CusineTypeUpdate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.RestaurantLocationUpdate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.RestaurantRatingUpdate = new System.Windows.Forms.NumericUpDown();
@@ -132,6 +131,7 @@
             this.FoodUpdateBtn = new System.Windows.Forms.Button();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.RestaurantLocationUpdate = new MetroFramework.Controls.MetroComboBox();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -504,25 +504,6 @@
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(173, 21);
             this.bunifuCustomLabel2.TabIndex = 1;
             this.bunifuCustomLabel2.Text = "Restaurant Location:";
-            // 
-            // RestaurantLocationUpdate
-            // 
-            this.RestaurantLocationUpdate.BorderColorFocused = System.Drawing.Color.Blue;
-            this.RestaurantLocationUpdate.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RestaurantLocationUpdate.BorderColorMouseHover = System.Drawing.Color.Blue;
-            this.RestaurantLocationUpdate.BorderThickness = 3;
-            this.RestaurantLocationUpdate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.RestaurantLocationUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RestaurantLocationUpdate.Enabled = false;
-            this.RestaurantLocationUpdate.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.RestaurantLocationUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.RestaurantLocationUpdate.isPassword = false;
-            this.RestaurantLocationUpdate.Location = new System.Drawing.Point(0, 0);
-            this.RestaurantLocationUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.RestaurantLocationUpdate.Name = "RestaurantLocationUpdate";
-            this.RestaurantLocationUpdate.Size = new System.Drawing.Size(188, 32);
-            this.RestaurantLocationUpdate.TabIndex = 1;
-            this.RestaurantLocationUpdate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // splitContainer4
             // 
@@ -2023,6 +2004,18 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // RestaurantLocationUpdate
+            // 
+            this.RestaurantLocationUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RestaurantLocationUpdate.FormattingEnabled = true;
+            this.RestaurantLocationUpdate.ItemHeight = 23;
+            this.RestaurantLocationUpdate.Location = new System.Drawing.Point(0, 0);
+            this.RestaurantLocationUpdate.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.RestaurantLocationUpdate.Name = "RestaurantLocationUpdate";
+            this.RestaurantLocationUpdate.Size = new System.Drawing.Size(188, 29);
+            this.RestaurantLocationUpdate.TabIndex = 4;
+            this.RestaurantLocationUpdate.UseSelectable = true;
+            // 
             // adminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2246,7 +2239,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private System.Windows.Forms.NumericUpDown RestaurantRatingUpdate;
         private Bunifu.Framework.UI.BunifuMetroTextbox CusineTypeUpdate;
-        private Bunifu.Framework.UI.BunifuMetroTextbox RestaurantLocationUpdate;
         private Bunifu.Framework.UI.BunifuMetroTextbox RestaurantsNamesAdd;
         private Bunifu.Framework.UI.BunifuMetroTextbox CusineTypeAdd;
         private Bunifu.Framework.UI.BunifuMetroTextbox RestaurantLocationAdd;
@@ -2326,5 +2318,6 @@
         private System.Windows.Forms.SplitContainer splitContainer38;
         private MetroFramework.Controls.MetroComboBox RestNameRpt;
         private MetroFramework.Controls.MetroComboBox RestLocRpt;
+        private MetroFramework.Controls.MetroComboBox RestaurantLocationUpdate;
     }
 }

@@ -71,7 +71,7 @@ namespace Uber_Eats_Database_Project
         {
             RESTAURANT r = ent.RESTAURANTs.Where(re => re.RESTAURANT_NAME == RestaurantsNamesUpdate.Text).First();
             RestaurantRatingUpdate.Text = r.RATING.ToString();
-            RestaurantLocationUpdate.Text = r.RESTAURANT_LOCATION;
+            RestaurantLocationUpdate.DataSource = ent.RESTAURANTs.Where(re => re.RESTAURANT_NAME == RestaurantsNamesUpdate.Text).Select(ree => ree.RESTAURANT_LOCATION).ToList();
             CusineTypeUpdate.Text = r.CUISINE_TYPE;
         }
 
@@ -120,7 +120,7 @@ namespace Uber_Eats_Database_Project
                 f.RESTAURANT_LOCATION = FoodRestLocAdd.Text;
                 f.RESTAURANT_NAME = FoodRestNameAdd.Text;
                 f.TOP_DISH = (FoodTopDishAdd.Checked ? "y" : "n");
-                ent.FOODs.Add(f);
+                ent.FOODs.AddOrUpdate(f);
                 ent.SaveChanges();
                 CustomMsgBox.Show(FoodNameAdd.Text + " Added");
             }
