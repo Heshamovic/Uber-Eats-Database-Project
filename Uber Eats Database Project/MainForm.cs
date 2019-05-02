@@ -110,7 +110,6 @@ namespace Uber_Eats_Database_Project
                 p.Show();
                 this.Hide();
                 p.FormClosing += letsShow;
-                ToggleUser();
             }
             else
                 CustomMsgBox.Show("Please Finish your Current Order before you take any other order.");
