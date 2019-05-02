@@ -75,7 +75,6 @@ namespace Uber_Eats_Database_Project
                                                         "ROUND(DBMS_RANDOM.VALUE(0,200),2), 0)", con);
                     cmd.ExecuteNonQuery();
                     con.Close();
-                   // adapter1.UpdateCommand = new OracleCommand("update Orders set status = 'pd' where order_id = " + id.ToString());
                     this.Close();
                 }
             }

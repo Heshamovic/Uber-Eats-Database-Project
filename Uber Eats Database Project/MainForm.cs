@@ -32,6 +32,7 @@ namespace Uber_Eats_Database_Project
         }
         private void ToggleUser()
         {
+            oid = 0;
             UsernameLabel.Text = "Welcome, " + Helper.currentUserName;
             bool UserEnable = true; // User unless
             if (Helper.currentUserRole == 2) // Delivery Partner
@@ -60,7 +61,6 @@ namespace Uber_Eats_Database_Project
             CartBtn.Visible = UserEnable;
             MenusBtn.Enabled = UserEnable;
             MenusBtn.Visible = UserEnable;
-            oid = 0;
         }
         
         private void CloseBtn_Click(object sender, EventArgs e)
@@ -104,6 +104,7 @@ namespace Uber_Eats_Database_Project
 
         private void PendingOrdersBtn_Click(object sender, EventArgs e)
         {
+            ToggleUser();
             if (oid == 0)
             {
                 OrdersDeliveryPartner p = new OrdersDeliveryPartner(1);
