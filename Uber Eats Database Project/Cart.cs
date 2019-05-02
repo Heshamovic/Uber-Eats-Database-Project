@@ -14,6 +14,7 @@ namespace Uber_Eats_Database_Project
     public partial class Cart : Form
     {
         public int x;
+       
         public cartItem[] cartItems;
         OracleConnection con;
 
@@ -61,6 +62,7 @@ namespace Uber_Eats_Database_Project
             {
                 Confirm.Enabled = false;
             }
+        
         }
         
 
@@ -80,6 +82,7 @@ namespace Uber_Eats_Database_Project
                 cmd4.Parameters.Add("no_of_items", cartItems[i].NoOfItems.Text);
                 cmd4.ExecuteNonQuery();
             }
+           
             decimal totalprice = 0;
             OracleCommand cmd8 = new OracleCommand();
             cmd8.Connection = con;
@@ -115,11 +118,27 @@ namespace Uber_Eats_Database_Project
 
             }
             this.Close();
+           
         }
 
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
+
+            int h = flowLayoutPanel1.Controls.Count;
+            for (int i = 0; i < h; i++)
+            {
+                OracleCommand cmd33 = new OracleCommand();
+                cmd33.Connection = con;
+                cmd33.CommandText = "Update_Cart_Items";
+                cmd33.CommandType = CommandType.StoredProcedure;
+                cmd33.Parameters.Add("id", Helper.currentOrderId);
+                cmd33.Parameters.Add("rest_name", cartItems[i].RestName.Text);
+                cmd33.Parameters.Add("rest_loc", cartItems[i].RestLoc.Text);
+                cmd33.Parameters.Add("food_name", cartItems[i].FoodName.Text);
+                cmd33.Parameters.Add("no_of_items", cartItems[i].NoOfItems.Text);
+                cmd33.ExecuteNonQuery();
+            }
             this.Close();
         }
 
@@ -146,6 +165,7 @@ namespace Uber_Eats_Database_Project
             {
                 Confirm.Enabled = false;
             }
+         
         }
 
         private void flowLayoutPanel1_MouseMove(object sender, MouseEventArgs e)
@@ -160,6 +180,12 @@ namespace Uber_Eats_Database_Project
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+         
         }
     }
 }
