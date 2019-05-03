@@ -221,11 +221,6 @@ namespace Uber_Eats_Database_Project
 
         public int trips;
 
-        private void PartnerAccount_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //con.Dispose();
-        }
-
         private void PartnerAccount_Load(object sender, EventArgs e)
         {
             bunifuRating1.Enabled = false;
@@ -260,7 +255,6 @@ namespace Uber_Eats_Database_Project
 
             cmdstr = "select * from trip";
             adapter1 = new OracleDataAdapter(cmdstr,Helper.constr);
-            //DataSet ds1 = new DataSet();
             adapter1.Fill(ds,"trip");
             int tmp = 0;
             trips = 0;
@@ -273,7 +267,6 @@ namespace Uber_Eats_Database_Project
                 tmp++;
             }
             label4.Text = trips.ToString();
-            
         }
         public void letsShow(object sender, FormClosingEventArgs e)
         {

@@ -371,7 +371,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PartnerAccount";
             this.Text = "PartnerAccount";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PartnerAccount_FormClosing);
             this.Load += new System.EventHandler(this.PartnerAccount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.header.ResumeLayout(false);
