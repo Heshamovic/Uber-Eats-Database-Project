@@ -37,11 +37,6 @@ namespace Uber_Eats_Database_Project
         {
             con = new OracleConnection(Helper.constr);
             con.Open();
-            userName.Enabled = false;
-            fName.Enabled = false;
-            lName.Enabled = false;
-            location.Enabled = false;
-            creditCard.Enabled = false;
             oldPassword.Hide();
             newPassword.Hide();
             confirmPassword.Hide();
@@ -51,7 +46,7 @@ namespace Uber_Eats_Database_Project
             userName.Text = Helper.currentUserName;
             OracleCommand cmd = new OracleCommand();
             cmd.Connection = con;
-            cmd.CommandText = "select * from customer where username=:uname";
+            cmd.CommandText = "select * from customer where username = :uname";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add("uname", Helper.currentUserName);
             OracleDataReader rdr = cmd.ExecuteReader();
@@ -63,25 +58,32 @@ namespace Uber_Eats_Database_Project
                 cust_lname = rdr[2].ToString();
                 location.Text = rdr[3].ToString();
                 cust_loc = rdr[3].ToString();
-                creditCard.Text = rdr[4].ToString();
-                cust_credit = rdr[4].ToString();
+                if (rdr[4] != null)
+                {
+                    creditCard.Text = rdr[4].ToString();
+                    cust_credit = rdr[4].ToString();
+                }
                 cust_pass = rdr[5].ToString();
             }
+            userName.Enabled = false;
+            fName.Enabled = false;
+            lName.Enabled = false;
+            location.Enabled = false;
+            creditCard.Enabled = false;
             OracleCommand cmd2 = new OracleCommand();
             cmd2.Connection = con;
-            cmd2.CommandText = "select count(*) from orders where customer_username=:uname";
+            cmd2.CommandText = "select count(*) from orders where customer_username = :uname and status = 'd'";
             cmd2.CommandType = CommandType.Text;
             cmd2.Parameters.Add("uname", Helper.currentUserName);
             int order_cnt = 0;
             OracleDataReader rdr2 = cmd2.ExecuteReader();
             if (rdr2.Read())
-            {
                 order_cnt = int.Parse(rdr2[0].ToString());
-            }
-            int voucher = (int)order_cnt / 10;
-            voucher = voucher * 10;
-            string perc = voucher.ToString() + '%';
-            label5.Text = perc;
+
+            int voucher = 0;
+            if (order_cnt > 20)
+                voucher = Math.Min(50, order_cnt / 2);
+            label5.Text = voucher.ToString() + '%'; ;
         }
 
         private void changePasswordBtn_Click(object sender, EventArgs e)
