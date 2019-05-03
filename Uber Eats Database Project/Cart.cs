@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +18,7 @@ namespace Uber_Eats_Database_Project
        
         public cartItem[] cartItems;
         OracleConnection con;
-
+        
         public Cart()
         {
             InitializeComponent();
@@ -54,10 +55,28 @@ namespace Uber_Eats_Database_Project
                 cartItems[i].Discount.Text = (dr[4]).ToString();
                 cartItems[i].NoOfItems.Text = (dr[5]).ToString();
                 cartItems[i].cart_id = i;
+
+                OracleCommand cmd10 = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select foodimage from food where food_name =:nam";
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("nam", dr[0].ToString());
+                OracleDataReader dr10 = cmd10.ExecuteReader();
+                string im = dr10[0].ToString();
+                if (im!=null)
+                cartItems[i].bunifuImageButton1.ImageLocation = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\") + im;
+                else
+                    cartItems[i].bunifuImageButton1.ImageLocation = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\\\NO Image Available.jpg") ;
+
+
                 flowLayoutPanel1.Controls.Add(cartItems[i]);
+
+
                 i++;
             }
             dr.Close();
+
+
             if(x == 0)
             {
                 Confirm.Enabled = false;
