@@ -67,15 +67,11 @@ namespace Uber_Eats_Database_Project
                 cartItems[i].bunifuImageButton1.ImageLocation = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\") + im;
                 else
                     cartItems[i].bunifuImageButton1.ImageLocation = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\\\NO Image Available.jpg") ;
-
-
+                
                 flowLayoutPanel1.Controls.Add(cartItems[i]);
-
-
                 i++;
             }
             dr.Close();
-
 
             if(x == 0)
             {
@@ -166,13 +162,11 @@ namespace Uber_Eats_Database_Project
                 CustomMsgBox.Show("Order Confirmed\nOrder Food Total Price = " + ord.FOOD_PRICE.ToString());
             }
             this.Close();
-           
         }
 
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-
             int h = flowLayoutPanel1.Controls.Count;
             for (int i = 0; i < h; i++)
             {
@@ -224,16 +218,5 @@ namespace Uber_Eats_Database_Project
             }
         }
         #endregion
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-         
-        }
     }
 }
