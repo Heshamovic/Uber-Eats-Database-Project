@@ -130,7 +130,7 @@ namespace Uber_Eats_Database_Project
             if (cc == "Credit Card")
                 cc = null;
             if (vehicle == "Vehicle")
-                vehicle = null;
+                vehicle = "no vehicle";
             OracleCommand cmd = new OracleCommand("sign_up", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("nusername", userNameSignUp.Text);

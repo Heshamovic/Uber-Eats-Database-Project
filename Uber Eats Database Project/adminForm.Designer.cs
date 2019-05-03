@@ -43,6 +43,7 @@
             this.CusineTypeUpdate = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.RestaurantLocationUpdate = new MetroFramework.Controls.MetroComboBox();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.RestaurantRatingUpdate = new System.Windows.Forms.NumericUpDown();
@@ -131,7 +132,6 @@
             this.FoodUpdateBtn = new System.Windows.Forms.Button();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.RestaurantLocationUpdate = new MetroFramework.Controls.MetroComboBox();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -504,6 +504,19 @@
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(173, 21);
             this.bunifuCustomLabel2.TabIndex = 1;
             this.bunifuCustomLabel2.Text = "Restaurant Location:";
+            // 
+            // RestaurantLocationUpdate
+            // 
+            this.RestaurantLocationUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.RestaurantLocationUpdate.FormattingEnabled = true;
+            this.RestaurantLocationUpdate.ItemHeight = 23;
+            this.RestaurantLocationUpdate.Location = new System.Drawing.Point(0, 0);
+            this.RestaurantLocationUpdate.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.RestaurantLocationUpdate.Name = "RestaurantLocationUpdate";
+            this.RestaurantLocationUpdate.Size = new System.Drawing.Size(188, 29);
+            this.RestaurantLocationUpdate.TabIndex = 4;
+            this.RestaurantLocationUpdate.UseSelectable = true;
+            this.RestaurantLocationUpdate.SelectedValueChanged += new System.EventHandler(this.RestaurantLocationUpdate_SelectedValueChanged);
             // 
             // splitContainer4
             // 
@@ -2003,19 +2016,6 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // RestaurantLocationUpdate
-            // 
-            this.RestaurantLocationUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RestaurantLocationUpdate.FormattingEnabled = true;
-            this.RestaurantLocationUpdate.ItemHeight = 23;
-            this.RestaurantLocationUpdate.Location = new System.Drawing.Point(0, 0);
-            this.RestaurantLocationUpdate.Margin = new System.Windows.Forms.Padding(15, 0, 15, 0);
-            this.RestaurantLocationUpdate.Name = "RestaurantLocationUpdate";
-            this.RestaurantLocationUpdate.Size = new System.Drawing.Size(188, 29);
-            this.RestaurantLocationUpdate.TabIndex = 4;
-            this.RestaurantLocationUpdate.UseSelectable = true;
-            this.RestaurantLocationUpdate.SelectedValueChanged += new System.EventHandler(this.RestaurantLocationUpdate_SelectedValueChanged);
             // 
             // adminForm
             // 

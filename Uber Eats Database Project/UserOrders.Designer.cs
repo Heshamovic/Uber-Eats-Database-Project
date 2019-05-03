@@ -52,8 +52,9 @@
             this.header.Controls.Add(this.bunifuImageButton2);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
+            this.header.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(1200, 45);
+            this.header.Size = new System.Drawing.Size(800, 29);
             this.header.TabIndex = 35;
             // 
             // bunifuImageButton2
@@ -62,9 +63,10 @@
             this.bunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuImageButton2.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton2.Image")));
             this.bunifuImageButton2.ImageActive = null;
-            this.bunifuImageButton2.Location = new System.Drawing.Point(1158, 3);
+            this.bunifuImageButton2.Location = new System.Drawing.Point(772, 2);
+            this.bunifuImageButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bunifuImageButton2.Name = "bunifuImageButton2";
-            this.bunifuImageButton2.Size = new System.Drawing.Size(39, 42);
+            this.bunifuImageButton2.Size = new System.Drawing.Size(26, 27);
             this.bunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton2.TabIndex = 30;
             this.bunifuImageButton2.TabStop = false;
@@ -79,23 +81,21 @@
             // User_Order_Panel
             // 
             this.User_Order_Panel.AutoScroll = true;
-            this.User_Order_Panel.BackColor = System.Drawing.Color.SteelBlue;
-            this.User_Order_Panel.Location = new System.Drawing.Point(0, 45);
-            this.User_Order_Panel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.User_Order_Panel.BackColor = System.Drawing.SystemColors.Control;
+            this.User_Order_Panel.Location = new System.Drawing.Point(0, 29);
             this.User_Order_Panel.Name = "User_Order_Panel";
-            this.User_Order_Panel.Size = new System.Drawing.Size(1012, 648);
+            this.User_Order_Panel.Size = new System.Drawing.Size(675, 421);
             this.User_Order_Panel.TabIndex = 36;
             this.User_Order_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.User_Order_Panel_Paint);
             // 
             // UserOrders
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.User_Order_Panel);
             this.Controls.Add(this.header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "UserOrders";
             this.Text = "UserCart";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserOrders_FormClosing);
