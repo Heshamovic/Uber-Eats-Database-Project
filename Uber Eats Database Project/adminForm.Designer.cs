@@ -60,9 +60,7 @@
             this.splitContainer38 = new System.Windows.Forms.SplitContainer();
             this.RestNameRpt = new MetroFramework.Controls.MetroComboBox();
             this.RestLocRpt = new MetroFramework.Controls.MetroComboBox();
-            this.FromDatePicker = new Bunifu.Framework.UI.BunifuDatepicker();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
-            this.ToDatePicker = new Bunifu.Framework.UI.BunifuDatepicker();
             this.button1 = new System.Windows.Forms.Button();
             this.splitContainer8 = new System.Windows.Forms.SplitContainer();
             this.splitContainer9 = new System.Windows.Forms.SplitContainer();
@@ -132,6 +130,8 @@
             this.FoodUpdateBtn = new System.Windows.Forms.Button();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.FromDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.ToDatePicker = new System.Windows.Forms.DateTimePicker();
             this.header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CloseBtn)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -770,6 +770,7 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.FromDatePicker);
+            this.splitContainer6.Panel2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
             this.splitContainer6.Size = new System.Drawing.Size(390, 79);
             this.splitContainer6.SplitterDistance = 32;
             this.splitContainer6.SplitterWidth = 2;
@@ -817,21 +818,6 @@
             this.RestLocRpt.TabIndex = 5;
             this.RestLocRpt.UseSelectable = true;
             // 
-            // FromDatePicker
-            // 
-            this.FromDatePicker.BackColor = System.Drawing.Color.Green;
-            this.FromDatePicker.BorderRadius = 50;
-            this.FromDatePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FromDatePicker.ForeColor = System.Drawing.Color.White;
-            this.FromDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.FromDatePicker.FormatCustom = null;
-            this.FromDatePicker.Location = new System.Drawing.Point(0, 0);
-            this.FromDatePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.FromDatePicker.Name = "FromDatePicker";
-            this.FromDatePicker.Size = new System.Drawing.Size(390, 45);
-            this.FromDatePicker.TabIndex = 0;
-            this.FromDatePicker.Value = new System.DateTime(2019, 4, 29, 3, 54, 22, 876);
-            // 
             // splitContainer7
             // 
             this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -842,6 +828,7 @@
             // splitContainer7.Panel1
             // 
             this.splitContainer7.Panel1.Controls.Add(this.ToDatePicker);
+            this.splitContainer7.Panel1.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
             // 
             // splitContainer7.Panel2
             // 
@@ -851,21 +838,6 @@
             this.splitContainer7.SplitterDistance = 44;
             this.splitContainer7.SplitterWidth = 2;
             this.splitContainer7.TabIndex = 0;
-            // 
-            // ToDatePicker
-            // 
-            this.ToDatePicker.BackColor = System.Drawing.Color.Green;
-            this.ToDatePicker.BorderRadius = 50;
-            this.ToDatePicker.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ToDatePicker.ForeColor = System.Drawing.Color.White;
-            this.ToDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.ToDatePicker.FormatCustom = null;
-            this.ToDatePicker.Location = new System.Drawing.Point(0, 0);
-            this.ToDatePicker.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ToDatePicker.Name = "ToDatePicker";
-            this.ToDatePicker.Size = new System.Drawing.Size(390, 44);
-            this.ToDatePicker.TabIndex = 1;
-            this.ToDatePicker.Value = new System.DateTime(2019, 4, 29, 3, 54, 22, 876);
             // 
             // button1
             // 
@@ -2017,6 +1989,24 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // FromDatePicker
+            // 
+            this.FromDatePicker.CalendarFont = new System.Drawing.Font("Century Schoolbook", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FromDatePicker.CalendarForeColor = System.Drawing.Color.White;
+            this.FromDatePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FromDatePicker.Location = new System.Drawing.Point(0, 7);
+            this.FromDatePicker.Name = "FromDatePicker";
+            this.FromDatePicker.Size = new System.Drawing.Size(390, 27);
+            this.FromDatePicker.TabIndex = 0;
+            // 
+            // ToDatePicker
+            // 
+            this.ToDatePicker.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ToDatePicker.Location = new System.Drawing.Point(0, 7);
+            this.ToDatePicker.Name = "ToDatePicker";
+            this.ToDatePicker.Size = new System.Drawing.Size(390, 27);
+            this.ToDatePicker.TabIndex = 0;
+            // 
             // adminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2246,8 +2236,6 @@
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.SplitContainer splitContainer6;
         private System.Windows.Forms.SplitContainer splitContainer7;
-        private Bunifu.Framework.UI.BunifuDatepicker FromDatePicker;
-        private Bunifu.Framework.UI.BunifuDatepicker ToDatePicker;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.SplitContainer splitContainer8;
         private System.Windows.Forms.SplitContainer splitContainer9;
@@ -2320,5 +2308,7 @@
         private MetroFramework.Controls.MetroComboBox RestNameRpt;
         private MetroFramework.Controls.MetroComboBox RestLocRpt;
         private MetroFramework.Controls.MetroComboBox RestaurantLocationUpdate;
+        private System.Windows.Forms.DateTimePicker FromDatePicker;
+        private System.Windows.Forms.DateTimePicker ToDatePicker;
     }
 }

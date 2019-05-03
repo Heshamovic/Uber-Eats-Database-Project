@@ -65,6 +65,10 @@ namespace Uber_Eats_Database_Project
         private void adminForm_Load(object sender, EventArgs e)
         {
             updateRest();
+            FromDatePicker.Format = DateTimePickerFormat.Custom;
+            FromDatePicker.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
+            ToDatePicker.Format = DateTimePickerFormat.Custom;
+            ToDatePicker.CustomFormat = "MM/dd/yyyy hh:mm:ss tt";
         }
         
         private void RestaurantsNamesUpdate_SelectedValueChanged(object sender, EventArgs e)
