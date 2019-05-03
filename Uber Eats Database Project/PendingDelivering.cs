@@ -129,7 +129,7 @@ namespace Uber_Eats_Database_Project
                          where fo.ORDER_ID == ordID
                          select fo);
                 foreach (var i in l)
-                    i.BOUGHT = "f";
+                    i.BOUGHT = "n";
                 var ord = (from o in ent.ORDERS
                            where o.ORDER_ID == ordID
                            select o).First();
