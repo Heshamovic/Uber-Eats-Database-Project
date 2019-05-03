@@ -15,9 +15,11 @@ namespace Uber_Eats_Database_Project
 {
     public partial class resfooditem : UserControl
     {
-        public resfooditem( string name , string discount ,string price,double rating , string img,string top,string ing,string resn,string resl)
+        string ingrediants = "Secret Ingrediants", type = "";
+        public resfooditem(string name , string discount ,string price, int rating , string img,string top,string ing, string resn, string resl, string typ)
         { 
             InitializeComponent();
+            this.type = typ;
             this.name.Text = name;
             this.discount.Text = discount;
             this.price.Text = price;
@@ -25,15 +27,11 @@ namespace Uber_Eats_Database_Project
             {
                 topdish.Hide();
             }
-
-            double x = Math.Round(rating);
-
-            this.bunifuRating1.Value = Convert.ToInt32(x);
+            bunifuRating1.Value = rating;
             this.resn.Text = resn;
             this.resl.Text = resl;
-            this.resl.Hide();
-            this.resn.Hide();
-            this.ing.Text = ing;
+            if (ing != "")
+                ingrediants = ing;
         }
         
         private void button2_Click(object sender, EventArgs e)
@@ -46,7 +44,6 @@ namespace Uber_Eats_Database_Project
             ordf.ORDER_ID = Helper.currentOrderId;
             ordf.RESTAURANT_LOCATION = resl.Text;
             ordf.RESTAURANT_NAME = resn.Text;
-            int c = 0;
             if (ent.ORDER_FOOD.Where(x => x.ORDER_ID == Helper.currentOrderId && x.RESTAURANT_NAME == resn.Text &&
                 x.RESTAURANT_LOCATION == resl.Text && x.FOOD_NAME == this.name.Text).Count() > 0)
             {
@@ -57,14 +54,9 @@ namespace Uber_Eats_Database_Project
             ent.SaveChanges();
         }
 
-        private void foodimg_Click(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-
+            CustomMsgBox.Show("Type: " + type + "\nIngerdiants: " + ingrediants);
         }
     }
 }

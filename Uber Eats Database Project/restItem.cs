@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.IO;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -12,19 +13,23 @@ namespace Uber_Eats_Database_Project
 {
     public partial class restItem : UserControl
     {
-        public restItem(string img, string name, double rating, string type)
+        public restItem(string img, string name, string loc, int rating, string type)
         {
             InitializeComponent();
-           
-            //this.foodimg.Image = Image.FromFile(img);
-           
+            img = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\") + img;
+            try
+            {
+                this.foodimg.Image = Image.FromFile(img);
+            }
+            catch
+            {
+                img = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\NO Image Available.jpg");
+                this.foodimg.Image = Image.FromFile(img);
+            }
             this.name.Text = name;
-           
+            this.location.Text = loc;
             this.type.Text = type;
-
-            double x = Math.Round(rating);
-            
-            this.bunifuRating1.Value =  Convert.ToInt32(x);
+            this.bunifuRating1.Value = rating;
         }
         public void letsShow(object sender, FormClosingEventArgs e)
         {
@@ -32,15 +37,10 @@ namespace Uber_Eats_Database_Project
         }
         private void button2_Click_1(object sender, EventArgs e)
         {
-            resfood r = new resfood(this.name.Text);
+            resfood r = new resfood(name.Text, location.Text);
             r.Show();
             this.Parent.Parent.Parent.Parent.Hide();
             r.FormClosing += letsShow;
-        }
-
-        private void foodimg_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

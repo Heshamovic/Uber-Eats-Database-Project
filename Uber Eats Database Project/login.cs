@@ -31,6 +31,8 @@ namespace Uber_Eats_Database_Project
             InitializeComponent();
         }
 
+        #region Buttons Hovers
+
         private void textBox1_Enter(object sender, EventArgs e)
         {
             Helper.RemovePlaceHolder((TextBox)sender, "Username*");
@@ -90,6 +92,16 @@ namespace Uber_Eats_Database_Project
         {
             Helper.AddPlaceHolder((TextBox)sender, "Credit Card");
         }
+        private void vehicleTB_Enter(object sender, EventArgs e)
+        {
+            Helper.RemovePlaceHolder((TextBox)sender, "Vehicle");
+        }
+
+        private void vehicleTB_Leave(object sender, EventArgs e)
+        {
+            Helper.AddPlaceHolder((TextBox)sender, "Vehicle");
+        }
+        #endregion
 
         private void signUpBtn_Click(object sender, EventArgs e)
         {
@@ -233,15 +245,6 @@ namespace Uber_Eats_Database_Project
                     mainform.Show();
                     this.Hide();
                     mainform.FormClosing += letsShow;
-                    
-                    OracleCommand cmd6 = new OracleCommand();
-                    cmd6.Connection = con;
-                    cmd6.CommandText = "Count_GetPoints";
-                    cmd6.CommandType = CommandType.StoredProcedure;
-                    cmd6.Parameters.Add("username", Helper.currentUserName);
-                    cmd6.Parameters.Add("cnt", OracleDbType.Int32, ParameterDirection.Output);
-                    cmd6.ExecuteNonQuery();
-                    Helper.points = int.Parse(cmd6.Parameters["cnt"].Value.ToString());
                 }
                 else
                     CustomMsgBox.Show("check your username and password!");
@@ -273,15 +276,6 @@ namespace Uber_Eats_Database_Project
             this.Show();
         }
 
-        private void vehicleTB_Enter(object sender, EventArgs e)
-        {
-            Helper.RemovePlaceHolder((TextBox)sender, "Vehicle");
-        }
-
-        private void vehicleTB_Leave(object sender, EventArgs e)
-        {
-            Helper.AddPlaceHolder((TextBox)sender, "Vehicle");
-        }
 
         private void partnerChkBx_CheckedChanged(object sender, EventArgs e)
         {

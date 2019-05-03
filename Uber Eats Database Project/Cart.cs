@@ -83,7 +83,7 @@ namespace Uber_Eats_Database_Project
                 cmd4.ExecuteNonQuery();
             }
            
-            decimal totalprice = 0;
+            decimal totalprice = 0, totaldiscount = 0;
             OracleCommand cmd8 = new OracleCommand();
             cmd8.Connection = con;
             cmd8.CommandText = "Order_Total_Price";
@@ -95,25 +95,22 @@ namespace Uber_Eats_Database_Project
             {
                 totalprice += (Convert.ToDecimal(dr1[1]) * Convert.ToDecimal(dr1[2]));
             }
-            Entities ent = new Entities();
-            ORDER ord = ent.ORDERS.Where(h => h.ORDER_ID == Helper.currentOrderId).First();
-            ord.FOOD_PRICE = totalprice;
-            ent.SaveChanges();
-
+            
             if (z > 0)
             {
-               
                 OracleCommand cmd5 = new OracleCommand();
                 cmd5.Connection = con;
                 cmd5.CommandText = "Update_Order_Status_nc_to_pp";
                 cmd5.CommandType = CommandType.StoredProcedure;
                 cmd5.Parameters.Add("id", Helper.currentOrderId);
                 cmd5.ExecuteNonQuery();
+
                 OracleCommand cmd = new OracleCommand("Create_Cart", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.Add("un", Helper.currentUserName);
                 cmd.ExecuteNonQuery();
-                CustomMsgBox.Show("Order Confirmed");
+                Entities ent = new Entities();
+                ORDER ord = ent.ORDERS.Where(h => h.ORDER_ID == Helper.currentOrderId).First();
                 Helper.currentOrderId = Helper.getCartId();
 
                 OracleCommand cmd6 = new OracleCommand();
@@ -126,19 +123,22 @@ namespace Uber_Eats_Database_Project
                 Helper.points = int.Parse(cmd6.Parameters["cnt"].Value.ToString());
                 if (Helper.points > 20)
                 {
-                    int tmp= (int)(Helper.points / 2);
                     
+                    decimal tmp = Math.Min(50, Helper.points / 2);
                     if (CustomMsgBox.Show("You have a " + tmp.ToString() + "% voucher.\n Do you want to use it?", 2) == DialogResult.Yes)
                     {
-                        Helper.voucher = tmp;
                         OracleCommand cmd7 = new OracleCommand();
                         cmd7.Connection = con;
                         cmd7.CommandText = "UPDATE_ORDER_STATUS_TO_DV";
                         cmd7.CommandType = CommandType.StoredProcedure;
-                        cmd7.Parameters.Add("id", Helper.currentOrderId);
+                        cmd7.Parameters.Add("un", Helper.currentUserName);
                         cmd7.ExecuteNonQuery();
+                        totaldiscount = (tmp / 100) * totalprice;
                     }
                 }
+                ord.FOOD_PRICE = totalprice - totaldiscount;
+                ent.SaveChanges();
+                CustomMsgBox.Show("Order Confirmed");
             }
             this.Close();
            

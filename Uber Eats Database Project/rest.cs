@@ -30,7 +30,6 @@ namespace Uber_Eats_Database_Project
             Conn = new OracleConnection(Helper.constr);
             Conn.Open();
             FolderBrowserDialog b = new FolderBrowserDialog();
-            string img = "NoCamera_32px.png";
             OracleCommand cmd = new OracleCommand();
             cmd.CommandText = "select * from restaurant";
             cmd.Connection = Conn;
@@ -38,11 +37,7 @@ namespace Uber_Eats_Database_Project
             OracleDataReader red = cmd.ExecuteReader();
             while (red.Read())
             {
-                //if (red[4] != null)
-                //{
-                //    img = red[4].ToString();
-                //}
-                restItem x = new restItem(img, red[0].ToString(), Convert.ToDouble(red[2].ToString()), red[3].ToString());
+                restItem x = new restItem(red[4].ToString(), red[0].ToString(), red[1].ToString(), Convert.ToInt32(red[2]), red[3].ToString());
                 x.Margin = new Padding(0, 15, 0, 0);
                 flowLayoutPanel1.Controls.Add(x);
             }

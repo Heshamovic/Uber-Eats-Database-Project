@@ -14,36 +14,35 @@ namespace Uber_Eats_Database_Project
 {
     public partial class resfood : Form
     {
-        string img, resn;
-        public resfood(string id )
+        string img, resn, resl;
+        public resfood(string resname, string resloc)
         {
             InitializeComponent();
-            this.resn = id;
+            resn = resname;
+            resl = resloc;
         }
 
         private void resfood_Load(object sender, EventArgs e)
         {
             OracleDataAdapter oda = new OracleDataAdapter(
-                "select * from food where food.restaurant_name = :resn", Helper.constr);
+                "select * from food where food.restaurant_name = :resn and food.restaurant_location = :resl", Helper.constr);
             OracleCommandBuilder ocb = new OracleCommandBuilder(oda);
             DataSet ds = new DataSet();
             oda.SelectCommand.Parameters.Add("resn", resn);
+            oda.SelectCommand.Parameters.Add("resl", resl);
             oda.Fill(ds);
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-                if (ds.Tables[0].Rows[i][8] != null)
-                    img = ds.Tables[0].Rows[i][8].ToString();
-                else
-                    img = "NoCamera_32px.png";
                 resfooditem r = new resfooditem(ds.Tables[0].Rows[i][0].ToString(),
                     ds.Tables[0].Rows[i][4].ToString(),
                     ds.Tables[0].Rows[i][3].ToString(),
                     Convert.ToInt32(ds.Tables[0].Rows[i][5]),
-                    img,
+                    ds.Tables[0].Rows[i][8].ToString(),
                     ds.Tables[0].Rows[i][7].ToString(),
                     ds.Tables[0].Rows[i][6].ToString(),
                     ds.Tables[0].Rows[i][1].ToString(),
-                    ds.Tables[0].Rows[i][2].ToString());
+                    ds.Tables[0].Rows[i][2].ToString(),
+                    ds.Tables[0].Rows[i][9].ToString());
                 flowLayoutPanel1.Controls.Add(r);
             }
         }
