@@ -144,12 +144,6 @@
     <Compile Include="DELIVERY_PARTNER.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
-    <Compile Include="DPartnerAccountcs.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DPartnerAccountcs.Designer.cs">
-      <DependentUpon>DPartnerAccountcs.cs</DependentUpon>
-    </Compile>
     <Compile Include="FOOD.cs">
       <DependentUpon>UberEats.tt</DependentUpon>
     </Compile>
@@ -303,9 +297,6 @@
     <EmbeddedResource Include="DeliveredOrders.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DeliveredOrders.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DPartnerAccountcs.resx">
-      <DependentUpon>DPartnerAccountcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

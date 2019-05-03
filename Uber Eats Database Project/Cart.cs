@@ -116,6 +116,29 @@ namespace Uber_Eats_Database_Project
                 CustomMsgBox.Show("Order Confirmed");
                 Helper.currentOrderId = Helper.getCartId();
 
+                OracleCommand cmd6 = new OracleCommand();
+                cmd6.Connection = con;
+                cmd6.CommandText = "Count_GetPoints";
+                cmd6.CommandType = CommandType.StoredProcedure;
+                cmd6.Parameters.Add("username", Helper.currentUserName);
+                cmd6.Parameters.Add("cnt", OracleDbType.Int32, ParameterDirection.Output);
+                cmd6.ExecuteNonQuery();
+                Helper.points = int.Parse(cmd6.Parameters["cnt"].Value.ToString());
+                if (Helper.points > 20)
+                {
+                    int tmp= (int)(Helper.points / 2);
+                    
+                    if (CustomMsgBox.Show("You have a " + tmp.ToString() + "% voucher.\n Do you want to use it?", 2) == DialogResult.Yes)
+                    {
+                        Helper.voucher = tmp;
+                        OracleCommand cmd7 = new OracleCommand();
+                        cmd7.Connection = con;
+                        cmd7.CommandText = "UPDATE_ORDER_STATUS_TO_DV";
+                        cmd7.CommandType = CommandType.StoredProcedure;
+                        cmd7.Parameters.Add("id", Helper.currentOrderId);
+                        cmd7.ExecuteNonQuery();
+                    }
+                }
             }
             this.Close();
            

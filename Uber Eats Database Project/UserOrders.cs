@@ -70,7 +70,10 @@ namespace Uber_Eats_Database_Project
                 {
                     totalprice += (Convert.ToDecimal(dr1[1]) * Convert.ToDecimal(dr1[2]));
                 }
-
+                if(Helper.voucher>0)
+                {
+                    totalprice = totalprice - ((Helper.voucher/100)*totalprice);
+                }
                 userOrderItems[i].Price_integer.Text = ( totalprice.ToString()+ "LE");
                 totalprice = 0;
                 User_Order_Panel.Controls.Add(userOrderItems[i]);

@@ -37,5 +37,10 @@ namespace Uber_Eats_Database_Project
             this.Parent.Parent.Parent.Parent.Hide();
             r.FormClosing += letsShow;
         }
+
+        private void foodimg_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

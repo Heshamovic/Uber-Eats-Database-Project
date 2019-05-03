@@ -233,6 +233,15 @@ namespace Uber_Eats_Database_Project
                     mainform.Show();
                     this.Hide();
                     mainform.FormClosing += letsShow;
+                    
+                    OracleCommand cmd6 = new OracleCommand();
+                    cmd6.Connection = con;
+                    cmd6.CommandText = "Count_GetPoints";
+                    cmd6.CommandType = CommandType.StoredProcedure;
+                    cmd6.Parameters.Add("username", Helper.currentUserName);
+                    cmd6.Parameters.Add("cnt", OracleDbType.Int32, ParameterDirection.Output);
+                    cmd6.ExecuteNonQuery();
+                    Helper.points = int.Parse(cmd6.Parameters["cnt"].Value.ToString());
                 }
                 else
                     CustomMsgBox.Show("check your username and password!");

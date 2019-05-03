@@ -49,8 +49,9 @@
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 256);
+            this.splitter1.Size = new System.Drawing.Size(4, 394);
             this.splitter1.TabIndex = 1;
             this.splitter1.TabStop = false;
             // 
@@ -65,40 +66,45 @@
             this.restimg.Controls.Add(this.panel1);
             this.restimg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.restimg.LeftSahddow = false;
-            this.restimg.Location = new System.Drawing.Point(3, 0);
+            this.restimg.Location = new System.Drawing.Point(4, 0);
+            this.restimg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.restimg.Name = "restimg";
             this.restimg.RightSahddow = true;
             this.restimg.ShadowDepth = 20;
-            this.restimg.Size = new System.Drawing.Size(547, 256);
+            this.restimg.Size = new System.Drawing.Size(821, 394);
             this.restimg.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.foodimg);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 25);
+            this.panel3.Location = new System.Drawing.Point(0, 38);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(547, 200);
+            this.panel3.Size = new System.Drawing.Size(821, 308);
             this.panel3.TabIndex = 7;
             // 
             // foodimg
             // 
             this.foodimg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.foodimg.Location = new System.Drawing.Point(0, 0);
+            this.foodimg.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.foodimg.Name = "foodimg";
-            this.foodimg.Size = new System.Drawing.Size(547, 200);
+            this.foodimg.Size = new System.Drawing.Size(821, 308);
             this.foodimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.foodimg.TabIndex = 4;
             this.foodimg.TabStop = false;
+            this.foodimg.Click += new System.EventHandler(this.foodimg_Click);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.name);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 225);
+            this.panel2.Location = new System.Drawing.Point(0, 346);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(547, 31);
+            this.panel2.Size = new System.Drawing.Size(821, 48);
             this.panel2.TabIndex = 6;
             // 
             // button2
@@ -109,9 +115,10 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(495, 3);
+            this.button2.Location = new System.Drawing.Point(742, 5);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 27);
+            this.button2.Size = new System.Drawing.Size(76, 42);
             this.button2.TabIndex = 4;
             this.button2.Text = "\r\n";
             this.button2.UseVisualStyleBackColor = false;
@@ -121,9 +128,10 @@
             // 
             this.name.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.name.AutoSize = true;
-            this.name.Location = new System.Drawing.Point(154, 10);
+            this.name.Location = new System.Drawing.Point(231, 15);
+            this.name.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(35, 13);
+            this.name.Size = new System.Drawing.Size(51, 20);
             this.name.TabIndex = 3;
             this.name.Text = "label1";
             // 
@@ -133,8 +141,9 @@
             this.panel1.Controls.Add(this.type);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(547, 25);
+            this.panel1.Size = new System.Drawing.Size(821, 38);
             this.panel1.TabIndex = 5;
             // 
             // bunifuRating1
@@ -143,9 +152,9 @@
             this.bunifuRating1.Dock = System.Windows.Forms.DockStyle.Left;
             this.bunifuRating1.ForeColor = System.Drawing.Color.SeaGreen;
             this.bunifuRating1.Location = new System.Drawing.Point(0, 0);
-            this.bunifuRating1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.bunifuRating1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.bunifuRating1.Name = "bunifuRating1";
-            this.bunifuRating1.Size = new System.Drawing.Size(200, 25);
+            this.bunifuRating1.Size = new System.Drawing.Size(300, 38);
             this.bunifuRating1.TabIndex = 0;
             this.bunifuRating1.Value = 1;
             // 
@@ -154,20 +163,22 @@
             this.type.AutoSize = true;
             this.type.Dock = System.Windows.Forms.DockStyle.Right;
             this.type.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.type.Location = new System.Drawing.Point(496, 0);
+            this.type.Location = new System.Drawing.Point(746, 0);
+            this.type.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(51, 19);
+            this.type.Size = new System.Drawing.Size(75, 29);
             this.type.TabIndex = 2;
             this.type.Text = "label1";
             // 
             // restItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.restimg);
             this.Controls.Add(this.splitter1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "restItem";
-            this.Size = new System.Drawing.Size(550, 256);
+            this.Size = new System.Drawing.Size(825, 394);
             this.restimg.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.foodimg)).EndInit();
