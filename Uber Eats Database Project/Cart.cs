@@ -131,9 +131,9 @@ namespace Uber_Eats_Database_Project
                 ORDER ord = ent.ORDERS.Where(h => h.ORDER_ID == Helper.currentOrderId).First();
                 var creditcard = ent.CUSTOMERs.Where(c => c.USERNAME == Helper.currentUserName).First().CREDIT_NO;
                 if (creditcard != null && CustomMsgBox.Show("Do you want to pay with credit card?", 2) == DialogResult.Yes)
-                {
-                    ord.PAYMENT_TYPE = "Visa";
-                }
+                    ord.PAYMENT_TYPE = "visa";
+                else
+                    ord.PAYMENT_TYPE = "cash";
                 Helper.currentOrderId = Helper.getCartId();
 
                 OracleCommand cmd6 = new OracleCommand();
