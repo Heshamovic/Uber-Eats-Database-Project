@@ -22,7 +22,7 @@ The projcet may not run from visual studio due to different versions of .Net Fra
 
 6- Right click on Uber Eats Database Project.exe the open it with any xml viewer
 
-7- Remove the section tag which has oracle.managedDataAccess
+7- Remove the section tag which has oracle.managedDataAccess you'll find this section inside configSections tag inside configuration tag
 
 8- Save the file
 
