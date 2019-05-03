@@ -51,7 +51,7 @@ namespace Uber_Eats_Database_Project
         {
             this.Close();
         }
-
+        #region Buttons Hovers
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             Helper.onHover((Button)sender, Color.Green);
@@ -59,9 +59,9 @@ namespace Uber_Eats_Database_Project
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            Helper.onHover((Button)sender, Color.Black);
+            Helper.onHover((Button)sender, Color.White);
         }
-
+        #endregion
         public void letsShow(object sender, FormClosingEventArgs e)
         {
             this.Show();
