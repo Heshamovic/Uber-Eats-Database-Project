@@ -75,10 +75,10 @@
             this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
             this.exit.ImageActive = null;
-            this.exit.Location = new System.Drawing.Point(772, 0);
+            this.exit.Location = new System.Drawing.Point(768, 0);
             this.exit.Margin = new System.Windows.Forms.Padding(2);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(20, 29);
+            this.exit.Size = new System.Drawing.Size(24, 29);
             this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.exit.TabIndex = 17;
             this.exit.TabStop = false;

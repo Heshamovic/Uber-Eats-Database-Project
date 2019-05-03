@@ -183,12 +183,14 @@
             // customerChkBx
             // 
             this.customerChkBx.AutoSize = true;
+            this.customerChkBx.Checked = true;
             this.customerChkBx.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerChkBx.Location = new System.Drawing.Point(108, 157);
             this.customerChkBx.Margin = new System.Windows.Forms.Padding(4);
             this.customerChkBx.Name = "customerChkBx";
             this.customerChkBx.Size = new System.Drawing.Size(97, 24);
             this.customerChkBx.TabIndex = 7;
+            this.customerChkBx.TabStop = true;
             this.customerChkBx.Text = "Customer";
             this.customerChkBx.UseVisualStyleBackColor = true;
             this.customerChkBx.CheckedChanged += new System.EventHandler(this.customerChkBx_CheckedChanged);
