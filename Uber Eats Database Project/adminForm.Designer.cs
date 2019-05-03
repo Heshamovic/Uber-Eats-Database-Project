@@ -2015,6 +2015,7 @@
             this.RestaurantLocationUpdate.Size = new System.Drawing.Size(188, 29);
             this.RestaurantLocationUpdate.TabIndex = 4;
             this.RestaurantLocationUpdate.UseSelectable = true;
+            this.RestaurantLocationUpdate.SelectedValueChanged += new System.EventHandler(this.RestaurantLocationUpdate_SelectedValueChanged);
             // 
             // adminForm
             // 

@@ -342,5 +342,12 @@ namespace Uber_Eats_Database_Project
             string imgPath = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\") + f.FOODIMAGE;
             FoodImgUpdate.Image = Image.FromFile(imgPath);
         }
+
+        private void RestaurantLocationUpdate_SelectedValueChanged(object sender, EventArgs e)
+        {
+            RESTAURANT r = ent.RESTAURANTs.Where(re => re.RESTAURANT_NAME == RestaurantsNamesUpdate.Text && re.RESTAURANT_LOCATION == RestaurantLocationUpdate.Text).First();
+            RestaurantRatingUpdate.Value = r.RATING;
+            CusineTypeUpdate.Text = r.CUISINE_TYPE;
+        }
     }
 }
