@@ -86,9 +86,9 @@ end;
 CREATE OR REPLACE PROCEDURE "SCOTT"."ORDER_TOTAL_PRICE" 
   (Orderid INTEGER ,  CID out sys_refcursor)
 as
-  begin
+begin
   open  CID  for
-  select Order_ID,NO_OF_ITEMS_PER_FOOD,Price
+  select Order_ID,NO_OF_ITEMS_PER_FOOD,Price, food.Discount
   from   order_food, food
   where order_food.order_id= orderid and order_food.RESTAURANT_NAME=food.RESTAURANT_NAME 
   and order_food.RESTAURANT_LOCATION = food.RESTAURANT_LOCATION

@@ -111,7 +111,8 @@ namespace Uber_Eats_Database_Project
             OracleDataReader dr1 = cmd8.ExecuteReader();
             while (dr1.Read())
             {
-                totalprice += (Convert.ToDecimal(dr1[1]) * Convert.ToDecimal(dr1[2]));
+                decimal tmp = Convert.ToDecimal(dr1[1]) * Convert.ToDecimal(dr1[2]);
+                totalprice += tmp - (tmp * (Convert.ToDecimal(dr1[3]) / 100));
             }
             
             if (z > 0)
@@ -157,11 +158,12 @@ namespace Uber_Eats_Database_Project
                         cmd7.Parameters.Add("un", Helper.currentUserName);
                         cmd7.ExecuteNonQuery();
                         totaldiscount = (tmp / 100) * totalprice;
+                        CustomMsgBox.Show("Voucher is used");
                     }
                 }
                 ord.FOOD_PRICE = totalprice - totaldiscount;
                 ent.SaveChanges();
-                CustomMsgBox.Show("Order Confirmed");
+                CustomMsgBox.Show("Order Confirmed\nOrder Food Total Price = " + ord.FOOD_PRICE.ToString());
             }
             this.Close();
            
