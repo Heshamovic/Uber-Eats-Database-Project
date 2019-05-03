@@ -42,5 +42,15 @@ namespace Uber_Eats_Database_Project
             this.Parent.Parent.Parent.Parent.Hide();
             r.FormClosing += letsShow;
         }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.White);
+        }
     }
 }

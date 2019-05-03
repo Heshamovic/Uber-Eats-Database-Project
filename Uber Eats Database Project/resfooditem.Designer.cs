@@ -34,12 +34,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.button2 = new System.Windows.Forms.Button();
             this.resl = new System.Windows.Forms.Label();
             this.topdish = new System.Windows.Forms.Label();
             this.resn = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.price = new System.Windows.Forms.Label();
@@ -64,7 +64,7 @@
             this.foodimg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.foodimg.Location = new System.Drawing.Point(0, 0);
             this.foodimg.Name = "foodimg";
-            this.foodimg.Size = new System.Drawing.Size(599, 149);
+            this.foodimg.Size = new System.Drawing.Size(599, 144);
             this.foodimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.foodimg.TabIndex = 4;
             this.foodimg.TabStop = false;
@@ -93,7 +93,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 32);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(599, 149);
+            this.panel3.Size = new System.Drawing.Size(599, 144);
             this.panel3.TabIndex = 7;
             // 
             // panel2
@@ -101,11 +101,11 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.tableLayoutPanel2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 181);
+            this.panel2.Location = new System.Drawing.Point(0, 176);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(10, 3, 10, 3);
-            this.panel2.Size = new System.Drawing.Size(599, 45);
+            this.panel2.Size = new System.Drawing.Size(599, 50);
             this.panel2.TabIndex = 6;
             // 
             // tableLayoutPanel2
@@ -117,49 +117,21 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Controls.Add(this.label4, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.button2, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.resl, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.topdish, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.resn, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.numericUpDown1, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button1, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(10, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(577, 37);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(577, 42);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(375, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 34);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "INGREDIANTS AND TYPE";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDown1.Location = new System.Drawing.Point(480, 8);
-            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(49, 20);
-            this.numericUpDown1.TabIndex = 5;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // button2
             // 
@@ -167,24 +139,26 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(539, 0);
+            this.button2.Location = new System.Drawing.Point(524, 3);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(38, 37);
+            this.button2.Size = new System.Drawing.Size(50, 36);
             this.button2.TabIndex = 4;
             this.button2.Text = "\r\n";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
+            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
             // resl
             // 
             this.resl.AutoSize = true;
             this.resl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resl.Location = new System.Drawing.Point(225, 5);
+            this.resl.Location = new System.Drawing.Point(201, 8);
             this.resl.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.resl.Name = "resl";
-            this.resl.Size = new System.Drawing.Size(150, 27);
+            this.resl.Size = new System.Drawing.Size(150, 26);
             this.resl.TabIndex = 7;
             this.resl.Text = "resl";
             this.resl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -192,11 +166,11 @@
             // topdish
             // 
             this.topdish.AutoSize = true;
-            this.topdish.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.topdish.Location = new System.Drawing.Point(0, 8);
+            this.topdish.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topdish.Location = new System.Drawing.Point(3, 11);
             this.topdish.Margin = new System.Windows.Forms.Padding(0, 8, 0, 7);
             this.topdish.Name = "topdish";
-            this.topdish.Size = new System.Drawing.Size(69, 18);
+            this.topdish.Size = new System.Drawing.Size(38, 21);
             this.topdish.TabIndex = 2;
             this.topdish.Text = "Top Dish";
             // 
@@ -205,13 +179,45 @@
             this.resn.AutoSize = true;
             this.resn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resn.Location = new System.Drawing.Point(69, 5);
+            this.resn.Location = new System.Drawing.Point(65, 8);
             this.resn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.resn.Name = "resn";
-            this.resn.Size = new System.Drawing.Size(156, 27);
+            this.resn.Size = new System.Drawing.Size(133, 26);
             this.resn.TabIndex = 6;
             this.resn.Text = "resn";
             this.resn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDown1.Location = new System.Drawing.Point(461, 10);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(0, 7, 0, 0);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(60, 20);
+            this.numericUpDown1.TabIndex = 5;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(354, 3);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 36);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Ingrediants and Type";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
             // panel1
             // 
@@ -264,10 +270,11 @@
             // 
             this.bunifuRating1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuRating1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuRating1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuRating1.Location = new System.Drawing.Point(6, 6);
+            this.bunifuRating1.ForeColor = System.Drawing.Color.Green;
+            this.bunifuRating1.Location = new System.Drawing.Point(3, 3);
+            this.bunifuRating1.Margin = new System.Windows.Forms.Padding(0);
             this.bunifuRating1.Name = "bunifuRating1";
-            this.bunifuRating1.Size = new System.Drawing.Size(111, 12);
+            this.bunifuRating1.Size = new System.Drawing.Size(117, 18);
             this.bunifuRating1.TabIndex = 0;
             this.bunifuRating1.Value = 1;
             // 
@@ -275,7 +282,7 @@
             // 
             this.name.AutoSize = true;
             this.name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.name.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name.Location = new System.Drawing.Point(123, 3);
             this.name.Margin = new System.Windows.Forms.Padding(0);
             this.name.Name = "name";
@@ -366,12 +373,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label topdish;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label resl;
         private System.Windows.Forms.Label resn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button button1;
     }
 }

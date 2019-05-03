@@ -94,7 +94,7 @@ namespace Uber_Eats_Database_Project
             Helper.AddPlaceHolder(newPassword, "New Password");
             Helper.AddPlaceHolder(confirmPassword, "Confirm Password");
         }
-
+        #region Text place Holders
         private void oldPassword_Enter(object sender, EventArgs e)
         {
             Helper.RemovePlaceHolder((TextBox)sender, "Password");
@@ -124,6 +124,7 @@ namespace Uber_Eats_Database_Project
         {
             Helper.AddPlaceHolder((TextBox)sender, "Confirm Password");
         }
+        #endregion
 
         private void exit_Click(object sender, EventArgs e)
         {
@@ -139,6 +140,67 @@ namespace Uber_Eats_Database_Project
         {
             this.Close();
         }
+        #region Buttons Hovers
+        private void saveBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void editBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void editUsernameBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void saveUserNameBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void changePasswordBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void savePasswordBtn_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void editUsernameBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
+        private void saveUserNameBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
+        private void changePasswordBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
+        private void savePasswordBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
+        private void saveBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
+        private void editBtn_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+        #endregion
 
         private void savePasswordBtn_Click(object sender, EventArgs e)
         {

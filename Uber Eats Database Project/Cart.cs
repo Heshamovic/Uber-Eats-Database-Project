@@ -62,7 +62,6 @@ namespace Uber_Eats_Database_Project
             {
                 Confirm.Enabled = false;
             }
-        
         }
         
 

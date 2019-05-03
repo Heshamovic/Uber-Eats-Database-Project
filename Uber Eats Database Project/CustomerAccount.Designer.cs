@@ -50,6 +50,7 @@
             this.creditCard = new System.Windows.Forms.TextBox();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.header = new System.Windows.Forms.Panel();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.exit = new Bunifu.Framework.UI.BunifuImageButton();
             this.label2 = new System.Windows.Forms.Label();
             this.editBtn = new System.Windows.Forms.Button();
@@ -57,10 +58,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.header.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.SuspendLayout();
             // 
             // saveUserNameBtn
@@ -70,14 +70,16 @@
             this.saveUserNameBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveUserNameBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveUserNameBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.saveUserNameBtn.Location = new System.Drawing.Point(122, 183);
-            this.saveUserNameBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.saveUserNameBtn.Location = new System.Drawing.Point(92, 149);
+            this.saveUserNameBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.saveUserNameBtn.Name = "saveUserNameBtn";
-            this.saveUserNameBtn.Size = new System.Drawing.Size(186, 44);
+            this.saveUserNameBtn.Size = new System.Drawing.Size(140, 36);
             this.saveUserNameBtn.TabIndex = 51;
             this.saveUserNameBtn.Text = "Save Username";
             this.saveUserNameBtn.UseVisualStyleBackColor = false;
             this.saveUserNameBtn.Click += new System.EventHandler(this.saveUserNameBtn_Click);
+            this.saveUserNameBtn.MouseEnter += new System.EventHandler(this.saveUserNameBtn_MouseEnter);
+            this.saveUserNameBtn.MouseLeave += new System.EventHandler(this.saveUserNameBtn_MouseLeave);
             // 
             // editUsernameBtn
             // 
@@ -86,23 +88,25 @@
             this.editUsernameBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editUsernameBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editUsernameBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.editUsernameBtn.Location = new System.Drawing.Point(58, 139);
-            this.editUsernameBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.editUsernameBtn.Location = new System.Drawing.Point(44, 113);
+            this.editUsernameBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.editUsernameBtn.Name = "editUsernameBtn";
-            this.editUsernameBtn.Size = new System.Drawing.Size(327, 41);
+            this.editUsernameBtn.Size = new System.Drawing.Size(245, 33);
             this.editUsernameBtn.TabIndex = 49;
             this.editUsernameBtn.Text = "Change Username";
             this.editUsernameBtn.UseVisualStyleBackColor = false;
             this.editUsernameBtn.Click += new System.EventHandler(this.editUsernameBtn_Click);
+            this.editUsernameBtn.MouseEnter += new System.EventHandler(this.editUsernameBtn_MouseEnter);
+            this.editUsernameBtn.MouseLeave += new System.EventHandler(this.editUsernameBtn_MouseLeave);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label9.Location = new System.Drawing.Point(513, 266);
-            this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label9.Location = new System.Drawing.Point(385, 216);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 25);
+            this.label9.Size = new System.Drawing.Size(99, 21);
             this.label9.TabIndex = 48;
             this.label9.Text = "Credit No.";
             // 
@@ -110,10 +114,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label8.Location = new System.Drawing.Point(513, 202);
-            this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label8.Location = new System.Drawing.Point(385, 164);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 25);
+            this.label8.Size = new System.Drawing.Size(87, 21);
             this.label8.TabIndex = 47;
             this.label8.Text = "Location";
             // 
@@ -121,10 +125,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label7.Location = new System.Drawing.Point(513, 142);
-            this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label7.Location = new System.Drawing.Point(385, 115);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 25);
+            this.label7.Size = new System.Drawing.Size(103, 21);
             this.label7.TabIndex = 46;
             this.label7.Text = "Last Name";
             // 
@@ -132,10 +136,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label6.Location = new System.Drawing.Point(513, 81);
-            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Location = new System.Drawing.Point(385, 66);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 25);
+            this.label6.Size = new System.Drawing.Size(100, 21);
             this.label6.TabIndex = 45;
             this.label6.Text = "First Name";
             // 
@@ -143,10 +147,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label3.Location = new System.Drawing.Point(53, 66);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Location = new System.Drawing.Point(40, 54);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 25);
+            this.label3.Size = new System.Drawing.Size(98, 21);
             this.label3.TabIndex = 42;
             this.label3.Text = "Username";
             // 
@@ -157,23 +161,25 @@
             this.savePasswordBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savePasswordBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.savePasswordBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.savePasswordBtn.Location = new System.Drawing.Point(122, 440);
-            this.savePasswordBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.savePasswordBtn.Location = new System.Drawing.Point(92, 358);
+            this.savePasswordBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.savePasswordBtn.Name = "savePasswordBtn";
-            this.savePasswordBtn.Size = new System.Drawing.Size(186, 53);
+            this.savePasswordBtn.Size = new System.Drawing.Size(140, 43);
             this.savePasswordBtn.TabIndex = 41;
             this.savePasswordBtn.Text = "Save Password";
             this.savePasswordBtn.UseVisualStyleBackColor = false;
             this.savePasswordBtn.Click += new System.EventHandler(this.savePasswordBtn_Click);
+            this.savePasswordBtn.MouseEnter += new System.EventHandler(this.savePasswordBtn_MouseEnter);
+            this.savePasswordBtn.MouseLeave += new System.EventHandler(this.savePasswordBtn_MouseLeave);
             // 
             // confirmPassword
             // 
             this.confirmPassword.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.confirmPassword.ForeColor = System.Drawing.Color.DarkGray;
-            this.confirmPassword.Location = new System.Drawing.Point(58, 384);
-            this.confirmPassword.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.confirmPassword.Location = new System.Drawing.Point(44, 312);
+            this.confirmPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.confirmPassword.Name = "confirmPassword";
-            this.confirmPassword.Size = new System.Drawing.Size(327, 30);
+            this.confirmPassword.Size = new System.Drawing.Size(246, 25);
             this.confirmPassword.TabIndex = 40;
             this.confirmPassword.Text = "Confirm Password";
             this.confirmPassword.Enter += new System.EventHandler(this.confirmPassword_Enter);
@@ -183,10 +189,10 @@
             // 
             this.newPassword.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.newPassword.ForeColor = System.Drawing.Color.DarkGray;
-            this.newPassword.Location = new System.Drawing.Point(58, 342);
-            this.newPassword.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.newPassword.Location = new System.Drawing.Point(44, 278);
+            this.newPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.newPassword.Name = "newPassword";
-            this.newPassword.Size = new System.Drawing.Size(327, 30);
+            this.newPassword.Size = new System.Drawing.Size(246, 25);
             this.newPassword.TabIndex = 39;
             this.newPassword.Text = "New Password";
             this.newPassword.Enter += new System.EventHandler(this.newPassword_Enter);
@@ -196,10 +202,10 @@
             // 
             this.oldPassword.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.oldPassword.ForeColor = System.Drawing.Color.DarkGray;
-            this.oldPassword.Location = new System.Drawing.Point(58, 300);
-            this.oldPassword.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.oldPassword.Location = new System.Drawing.Point(44, 244);
+            this.oldPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.oldPassword.Name = "oldPassword";
-            this.oldPassword.Size = new System.Drawing.Size(327, 30);
+            this.oldPassword.Size = new System.Drawing.Size(246, 25);
             this.oldPassword.TabIndex = 38;
             this.oldPassword.Text = "Password";
             this.oldPassword.Enter += new System.EventHandler(this.oldPassword_Enter);
@@ -212,14 +218,16 @@
             this.changePasswordBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.changePasswordBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.changePasswordBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.changePasswordBtn.Location = new System.Drawing.Point(58, 249);
-            this.changePasswordBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.changePasswordBtn.Location = new System.Drawing.Point(44, 202);
+            this.changePasswordBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.changePasswordBtn.Name = "changePasswordBtn";
-            this.changePasswordBtn.Size = new System.Drawing.Size(327, 37);
+            this.changePasswordBtn.Size = new System.Drawing.Size(245, 30);
             this.changePasswordBtn.TabIndex = 37;
             this.changePasswordBtn.Text = "Change Password";
             this.changePasswordBtn.UseVisualStyleBackColor = false;
             this.changePasswordBtn.Click += new System.EventHandler(this.changePasswordBtn_Click);
+            this.changePasswordBtn.MouseEnter += new System.EventHandler(this.changePasswordBtn_MouseEnter);
+            this.changePasswordBtn.MouseLeave += new System.EventHandler(this.changePasswordBtn_MouseLeave);
             // 
             // saveBtn
             // 
@@ -228,23 +236,25 @@
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.saveBtn.Location = new System.Drawing.Point(808, 320);
-            this.saveBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.saveBtn.Location = new System.Drawing.Point(606, 260);
+            this.saveBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(149, 52);
+            this.saveBtn.Size = new System.Drawing.Size(112, 42);
             this.saveBtn.TabIndex = 36;
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            this.saveBtn.MouseEnter += new System.EventHandler(this.saveBtn_MouseEnter);
+            this.saveBtn.MouseLeave += new System.EventHandler(this.saveBtn_MouseLeave);
             // 
             // userName
             // 
             this.userName.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userName.ForeColor = System.Drawing.Color.DarkGray;
-            this.userName.Location = new System.Drawing.Point(58, 97);
-            this.userName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.userName.Location = new System.Drawing.Point(44, 79);
+            this.userName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(327, 30);
+            this.userName.Size = new System.Drawing.Size(246, 25);
             this.userName.TabIndex = 20;
             this.userName.Text = "Username";
             // 
@@ -253,10 +263,10 @@
             this.fName.Enabled = false;
             this.fName.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fName.ForeColor = System.Drawing.Color.DarkGray;
-            this.fName.Location = new System.Drawing.Point(719, 79);
-            this.fName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.fName.Location = new System.Drawing.Point(539, 64);
+            this.fName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fName.Name = "fName";
-            this.fName.Size = new System.Drawing.Size(327, 30);
+            this.fName.Size = new System.Drawing.Size(246, 25);
             this.fName.TabIndex = 22;
             this.fName.Text = "First Name";
             // 
@@ -265,10 +275,10 @@
             this.lName.Enabled = false;
             this.lName.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lName.ForeColor = System.Drawing.Color.DarkGray;
-            this.lName.Location = new System.Drawing.Point(719, 139);
-            this.lName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.lName.Location = new System.Drawing.Point(539, 113);
+            this.lName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lName.Name = "lName";
-            this.lName.Size = new System.Drawing.Size(327, 30);
+            this.lName.Size = new System.Drawing.Size(246, 25);
             this.lName.TabIndex = 23;
             this.lName.Text = "Last Name";
             // 
@@ -277,10 +287,10 @@
             this.location.Enabled = false;
             this.location.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.location.ForeColor = System.Drawing.Color.DarkGray;
-            this.location.Location = new System.Drawing.Point(719, 199);
-            this.location.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.location.Location = new System.Drawing.Point(539, 162);
+            this.location.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.location.Name = "location";
-            this.location.Size = new System.Drawing.Size(327, 30);
+            this.location.Size = new System.Drawing.Size(246, 25);
             this.location.TabIndex = 25;
             this.location.Text = "Location";
             // 
@@ -289,10 +299,10 @@
             this.creditCard.Enabled = false;
             this.creditCard.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.creditCard.ForeColor = System.Drawing.Color.DarkGray;
-            this.creditCard.Location = new System.Drawing.Point(719, 266);
-            this.creditCard.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.creditCard.Location = new System.Drawing.Point(539, 216);
+            this.creditCard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.creditCard.Name = "creditCard";
-            this.creditCard.Size = new System.Drawing.Size(327, 30);
+            this.creditCard.Size = new System.Drawing.Size(246, 25);
             this.creditCard.TabIndex = 26;
             this.creditCard.Text = "Credit Card";
             // 
@@ -311,10 +321,25 @@
             this.header.Controls.Add(this.label2);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
-            this.header.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(1073, 38);
+            this.header.Size = new System.Drawing.Size(805, 31);
             this.header.TabIndex = 35;
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(770, 2);
+            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(26, 27);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 39;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 20;
+            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // exit
             // 
@@ -322,10 +347,9 @@
             this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
             this.exit.ImageActive = null;
-            this.exit.Location = new System.Drawing.Point(1416, 4);
-            this.exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.exit.Location = new System.Drawing.Point(1062, 3);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(52, 52);
+            this.exit.Size = new System.Drawing.Size(39, 42);
             this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.exit.TabIndex = 17;
             this.exit.TabStop = false;
@@ -338,10 +362,10 @@
             this.label2.BackColor = System.Drawing.SystemColors.ControlText;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14F);
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(5, 4);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Location = new System.Drawing.Point(4, 3);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 30);
+            this.label2.Size = new System.Drawing.Size(132, 22);
             this.label2.TabIndex = 38;
             this.label2.Text = "Account Info";
             // 
@@ -352,14 +376,16 @@
             this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editBtn.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.editBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.editBtn.Location = new System.Drawing.Point(637, 320);
-            this.editBtn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.editBtn.Location = new System.Drawing.Point(478, 260);
+            this.editBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(149, 52);
+            this.editBtn.Size = new System.Drawing.Size(112, 42);
             this.editBtn.TabIndex = 29;
             this.editBtn.Text = "Edit";
             this.editBtn.UseVisualStyleBackColor = false;
             this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            this.editBtn.MouseEnter += new System.EventHandler(this.editBtn_MouseEnter);
+            this.editBtn.MouseLeave += new System.EventHandler(this.editBtn_MouseLeave);
             // 
             // bunifuElipse1
             // 
@@ -370,10 +396,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 13F);
-            this.label4.Location = new System.Drawing.Point(633, 446);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Location = new System.Drawing.Point(475, 362);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 25);
+            this.label4.Size = new System.Drawing.Size(88, 21);
             this.label4.TabIndex = 52;
             this.label4.Text = "Voucher";
             // 
@@ -381,43 +407,26 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(893, 453);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(670, 368);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 25);
+            this.label5.Size = new System.Drawing.Size(51, 20);
             this.label5.TabIndex = 53;
             this.label5.Text = "label5";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(478, 80);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(358, 65);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 372);
+            this.panel2.Size = new System.Drawing.Size(1, 302);
             this.panel2.TabIndex = 73;
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(1026, 3);
-            this.bunifuImageButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(35, 33);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 39;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 20;
-            this.bunifuImageButton1.Click += new System.EventHandler(this.bunifuImageButton1_Click);
             // 
             // CustomerAccount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1073, 511);
+            this.ClientSize = new System.Drawing.Size(805, 415);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -449,8 +458,8 @@
             this.Load += new System.EventHandler(this.CustomerAccount_Load);
             this.header.ResumeLayout(false);
             this.header.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

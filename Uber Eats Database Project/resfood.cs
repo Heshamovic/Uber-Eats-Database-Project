@@ -51,6 +51,17 @@ namespace Uber_Eats_Database_Project
         {
             this.Close();
         }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+
         public void letsShow(object sender, FormClosingEventArgs e)
         {
             this.Show();

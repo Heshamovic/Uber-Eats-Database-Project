@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Data;
 using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,7 @@ namespace Uber_Eats_Database_Project
     public partial class resfooditem : UserControl
     {
         string ingrediants = "Secret Ingrediants", type = "";
-        public resfooditem(string name , string discount ,string price, int rating , string img,string top,string ing, string resn, string resl, string typ)
+        public resfooditem(string name, string discount, string price, int rating, string img, string top, string ing, string resn, string resl, string typ)
         { 
             InitializeComponent();
             this.type = typ;
@@ -32,6 +33,16 @@ namespace Uber_Eats_Database_Project
             this.resl.Text = resl;
             if (ing != "")
                 ingrediants = ing;
+            img = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\") + img;
+            try
+            {
+                this.foodimg.Image = Image.FromFile(img);
+            }
+            catch
+            {
+                img = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\NO Image Available.jpg");
+                this.foodimg.Image = Image.FromFile(img);
+            }
         }
         
         private void button2_Click(object sender, EventArgs e)
@@ -53,10 +64,31 @@ namespace Uber_Eats_Database_Project
             ent.ORDER_FOOD.AddOrUpdate(ordf);
             ent.SaveChanges();
         }
+        #region Buttons Hovers
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.White);
+        }
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+        #endregion
+
+        private void button1_Click(object sender, EventArgs e)
         {
             CustomMsgBox.Show("Type: " + type + "\nIngerdiants: " + ingrediants);
         }
+        
     }
 }
