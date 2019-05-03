@@ -61,7 +61,7 @@
             this.foodimg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.foodimg.Location = new System.Drawing.Point(0, 0);
             this.foodimg.Name = "foodimg";
-            this.foodimg.Size = new System.Drawing.Size(599, 91);
+            this.foodimg.Size = new System.Drawing.Size(374, 91);
             this.foodimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.foodimg.TabIndex = 4;
             this.foodimg.TabStop = false;
@@ -82,7 +82,7 @@
             this.restimg.Name = "restimg";
             this.restimg.RightSahddow = true;
             this.restimg.ShadowDepth = 20;
-            this.restimg.Size = new System.Drawing.Size(599, 129);
+            this.restimg.Size = new System.Drawing.Size(374, 129);
             this.restimg.TabIndex = 2;
             // 
             // panel3
@@ -91,7 +91,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 17);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(599, 91);
+            this.panel3.Size = new System.Drawing.Size(374, 91);
             this.panel3.TabIndex = 7;
             // 
             // panel2
@@ -106,9 +106,9 @@
             this.panel2.Controls.Add(this.ing);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 108);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(599, 21);
+            this.panel2.Size = new System.Drawing.Size(374, 21);
             this.panel2.TabIndex = 6;
             // 
             // resl
@@ -125,7 +125,7 @@
             this.resn.AutoSize = true;
             this.resn.Location = new System.Drawing.Point(96, 8);
             this.resn.Name = "resn";
-            this.resn.Size = new System.Drawing.Size(27, 13);
+            this.resn.Size = new System.Drawing.Size(28, 13);
             this.resn.TabIndex = 6;
             this.resn.Text = "resn";
             // 
@@ -152,7 +152,7 @@
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(510, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 19);
+            this.button2.Size = new System.Drawing.Size(30, 19);
             this.button2.TabIndex = 4;
             this.button2.Text = "\r\n";
             this.button2.UseVisualStyleBackColor = false;
@@ -200,14 +200,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(599, 17);
+            this.panel1.Size = new System.Drawing.Size(374, 17);
             this.panel1.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(260, 0);
+            this.label3.Location = new System.Drawing.Point(154, -2);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 18);
             this.label3.TabIndex = 5;
@@ -227,7 +227,7 @@
             // 
             this.name.AutoSize = true;
             this.name.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.Location = new System.Drawing.Point(135, 0);
+            this.name.Location = new System.Drawing.Point(78, 0);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(54, 18);
             this.name.TabIndex = 1;
@@ -238,7 +238,7 @@
             this.discount.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.discount.AutoSize = true;
             this.discount.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discount.Location = new System.Drawing.Point(343, 0);
+            this.discount.Location = new System.Drawing.Point(232, -3);
             this.discount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.discount.Name = "discount";
             this.discount.Size = new System.Drawing.Size(54, 18);
@@ -262,7 +262,7 @@
             this.price.AutoSize = true;
             this.price.Dock = System.Windows.Forms.DockStyle.Right;
             this.price.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.price.Location = new System.Drawing.Point(543, 0);
+            this.price.Location = new System.Drawing.Point(318, 0);
             this.price.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.price.Name = "price";
             this.price.Size = new System.Drawing.Size(54, 18);
@@ -286,7 +286,7 @@
             this.Controls.Add(this.splitter1);
             this.Margin = new System.Windows.Forms.Padding(0, 3, 0, 13);
             this.Name = "resfooditem";
-            this.Size = new System.Drawing.Size(601, 129);
+            this.Size = new System.Drawing.Size(376, 129);
             ((System.ComponentModel.ISupportInitialize)(this.foodimg)).EndInit();
             this.restimg.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

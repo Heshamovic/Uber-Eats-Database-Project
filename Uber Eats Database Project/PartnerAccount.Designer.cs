@@ -370,6 +370,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PartnerAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PartnerAccount";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PartnerAccount_FormClosing);
             this.Load += new System.EventHandler(this.PartnerAccount_Load);
