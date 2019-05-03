@@ -48,33 +48,16 @@ namespace Uber_Eats_Database_Project
             OracleDataReader dr = cmd7.ExecuteReader();
             
             userOrderItems = new UserOrderItem[userorders_count];
-
             int i = 0;
-            decimal totalprice = 0;
             while (dr.Read())
             {
                 userOrderItems[i] = new UserOrderItem();
+                userOrderItems[i].cur_order = Convert.ToInt32(dr[0]);
                 userOrderItems[i].Order_Number.Text = ("Order Number: "+dr[0].ToString());
                 userOrderItems[i].Order_Time.Text = ("Order Date: " + dr[1].ToString());
                 userOrderItems[i].Order_Status.Text = ("Order Status: " + dr[2].ToString());
-                userOrderItems[i].cur_order = Convert.ToInt32(dr[0]);
-
-                OracleCommand cmd8 = new OracleCommand();
-                cmd8.Connection = con;
-                cmd8.CommandText = "Order_Total_Price";
-                cmd8.CommandType = CommandType.StoredProcedure;
-                cmd8.Parameters.Add("orderno", Convert.ToInt32(dr[0]));
-                cmd8.Parameters.Add("r", OracleDbType.RefCursor, ParameterDirection.Output);
-                OracleDataReader dr1 = cmd8.ExecuteReader();
-                while(dr1.Read())
-                {
-                    totalprice += (Convert.ToDecimal(dr1[1]) * Convert.ToDecimal(dr1[2]));
-                }
-
-                userOrderItems[i].Price_integer.Text = ( totalprice.ToString()+ "LE");
-                totalprice = 0;
-                User_Order_Panel.Controls.Add(userOrderItems[i]);
-                i++;
+                userOrderItems[i].Price_integer.Text = (dr[3].ToString() + "LE");
+                User_Order_Panel.Controls.Add(userOrderItems[i++]);
             }
             dr.Close();
         }

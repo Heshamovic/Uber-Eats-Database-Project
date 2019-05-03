@@ -48,12 +48,13 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 30);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(13, 32, 13, 13);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(730, 450);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(75, 5, 50, 5);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(730, 420);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // header
@@ -62,7 +63,7 @@
             this.header.Controls.Add(this.exit);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
-            this.header.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.header.Margin = new System.Windows.Forms.Padding(2);
             this.header.Name = "header";
             this.header.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.header.Size = new System.Drawing.Size(800, 29);
@@ -75,7 +76,7 @@
             this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
             this.exit.ImageActive = null;
             this.exit.Location = new System.Drawing.Point(772, 0);
-            this.exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exit.Margin = new System.Windows.Forms.Padding(2);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(20, 29);
             this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -107,6 +108,7 @@
             this.splitContainer1.Panel1.AutoScroll = true;
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.White;
             this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanel1);
+            this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(0, 30, 0, 0);
             // 
             // splitContainer1.Panel2
             // 
@@ -151,6 +153,7 @@
             this.header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);

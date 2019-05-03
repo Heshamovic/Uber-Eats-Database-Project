@@ -37,6 +37,7 @@ namespace Uber_Eats_Database_Project
             bool UserEnable = true; // User unless
             if (Helper.currentUserRole == 2) // Delivery Partner
                 UserEnable = false;
+            oid = 0;
             //Enable Partner Controls
             Entities ent = new Entities();
             oid = (from o in ent.ORDERS
@@ -70,7 +71,6 @@ namespace Uber_Eats_Database_Project
 
         private void MenusBtn_Click(object sender, EventArgs e)
         {
-            Entities ent = new Entities();
             Helper.currentOrderId = Helper.getCartId();
             rest r = new rest();
             r.Show();
