@@ -112,7 +112,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel2.Controls.Add(this.name, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.button2, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.location, 1, 0);
@@ -132,7 +132,7 @@
             this.name.Location = new System.Drawing.Point(4, 4);
             this.name.Margin = new System.Windows.Forms.Padding(1);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(223, 27);
+            this.name.Size = new System.Drawing.Size(221, 27);
             this.name.TabIndex = 3;
             this.name.Text = "label1";
             this.name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -143,24 +143,26 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(460, 4);
+            this.button2.Location = new System.Drawing.Point(456, 4);
             this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(59, 27);
+            this.button2.Size = new System.Drawing.Size(63, 27);
             this.button2.TabIndex = 4;
             this.button2.Text = "\r\n";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
+            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
             // location
             // 
             this.location.AutoSize = true;
             this.location.Dock = System.Windows.Forms.DockStyle.Fill;
             this.location.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.location.Location = new System.Drawing.Point(232, 4);
+            this.location.Location = new System.Drawing.Point(230, 4);
             this.location.Margin = new System.Windows.Forms.Padding(1);
             this.location.Name = "location";
-            this.location.Size = new System.Drawing.Size(223, 27);
+            this.location.Size = new System.Drawing.Size(221, 27);
             this.location.TabIndex = 5;
             this.location.Text = "label1";
             this.location.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -179,8 +181,8 @@
             // 
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble;
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.73077F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.26923F));
             this.tableLayoutPanel1.Controls.Add(this.type, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.bunifuRating1, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -198,9 +200,9 @@
             this.type.AutoSize = true;
             this.type.Dock = System.Windows.Forms.DockStyle.Fill;
             this.type.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.type.Location = new System.Drawing.Point(266, 3);
+            this.type.Location = new System.Drawing.Point(172, 3);
             this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(251, 26);
+            this.type.Size = new System.Drawing.Size(345, 26);
             this.type.TabIndex = 2;
             this.type.Text = "label1";
             this.type.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -209,11 +211,11 @@
             // 
             this.bunifuRating1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuRating1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuRating1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuRating1.ForeColor = System.Drawing.Color.Green;
             this.bunifuRating1.Location = new System.Drawing.Point(3, 3);
             this.bunifuRating1.Margin = new System.Windows.Forms.Padding(0);
             this.bunifuRating1.Name = "bunifuRating1";
-            this.bunifuRating1.Size = new System.Drawing.Size(257, 26);
+            this.bunifuRating1.Size = new System.Drawing.Size(163, 26);
             this.bunifuRating1.TabIndex = 0;
             this.bunifuRating1.Value = 1;
             // 

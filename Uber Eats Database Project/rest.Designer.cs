@@ -111,7 +111,7 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(100, 5, 50, 5);
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(90, 5, 50, 5);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(730, 421);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
@@ -121,6 +121,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Image = global::Uber_Eats_Database_Project.Properties.Resources.Checkout_32px;
             this.button1.Location = new System.Drawing.Point(3, 358);
             this.button1.Name = "button1";
@@ -129,6 +130,8 @@
             this.button1.Text = "\r\n";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
             // bunifuElipse2
             // 

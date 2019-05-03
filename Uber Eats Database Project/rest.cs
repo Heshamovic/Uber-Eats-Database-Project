@@ -59,5 +59,16 @@ namespace Uber_Eats_Database_Project
         {
             Conn.Dispose();
         }
+        #region Buttons Hovers
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Green);
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            Helper.onHover((Button)sender, Color.Black);
+        }
+        #endregion
     }
 }
