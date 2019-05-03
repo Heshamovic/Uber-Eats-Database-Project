@@ -40,8 +40,6 @@ namespace Uber_Eats_Database_Project
         {
             int tmp_ind = 0;
             bool found = false;
-            
-
             while (tmp_ind < ds.Tables["partner"].Rows.Count)
             {
                 if (ds.Tables["partner"].Rows[tmp_ind][0].ToString() == userName.Text && tmp_ind != index)
@@ -59,7 +57,7 @@ namespace Uber_Eats_Database_Project
             {
                 if (userName.Text != Helper.currentUserName)
                 {
-                    
+
                     DataRow r = ds.Tables["partner"].NewRow();
                     r[0] = userName.Text;
                     r[1] = part_vehicle;
@@ -94,7 +92,7 @@ namespace Uber_Eats_Database_Project
                         }
                         tmp++;
                     }
-                    
+
                     Helper.currentUserName = userName.Text;
                     index = 0;
                     while (index < ds.Tables["partner"].Rows.Count)
@@ -107,6 +105,8 @@ namespace Uber_Eats_Database_Project
                     }
                     CustomMsgBox.Show("Username is changed successfully.");
                 }
+                else
+                    CustomMsgBox.Show("This is your old username. So nothing has changed");
             }
             
             saveUserNameBtn.Hide();
@@ -123,7 +123,7 @@ namespace Uber_Eats_Database_Project
             Helper.AddPlaceHolder(newPassword, "New Password");
             Helper.AddPlaceHolder(confirmPassword, "Confirm Password");
         }
-
+        #region Buttons hovers
         private void oldPassword_Enter(object sender, EventArgs e)
         {
             Helper.RemovePlaceHolder((TextBox)sender, "Password");
@@ -153,7 +153,7 @@ namespace Uber_Eats_Database_Project
         {
             Helper.AddPlaceHolder((TextBox)sender, "Confirm Password");
         }
-
+        #endregion
         private void editBtn_Click(object sender, EventArgs e)
         {
             vehicleType.Enabled = true;

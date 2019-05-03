@@ -55,6 +55,7 @@ namespace Uber_Eats_Database_Project
                 roe.SetParameterValue(3, toDate);
                 crystalReportViewer1.ReportSource = roe;
             }
+            crystalReportViewer1.VerticalScroll.Enabled = true;
             crystalReportViewer1.ReuseParameterValuesOnRefresh = true;
             crystalReportViewer1.RefreshReport();
         }
