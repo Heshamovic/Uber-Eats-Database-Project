@@ -56,6 +56,12 @@ namespace Uber_Eats_Database_Project
         {
             this.Show();
         }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Cart r = new Cart();

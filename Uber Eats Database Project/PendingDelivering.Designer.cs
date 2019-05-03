@@ -97,12 +97,13 @@
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.OrdersGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.OrdersGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.OrdersGV.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.OrdersGV.BackgroundColor = System.Drawing.Color.White;
             this.OrdersGV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.OrdersGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MintCream;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Schoolbook", 13.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Green;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -127,14 +128,14 @@
             this.OrdersGV.Dock = System.Windows.Forms.DockStyle.Top;
             this.OrdersGV.DoubleBuffered = true;
             this.OrdersGV.EnableHeadersVisualStyles = false;
-            this.OrdersGV.HeaderBgColor = System.Drawing.Color.SeaGreen;
+            this.OrdersGV.HeaderBgColor = System.Drawing.Color.MintCream;
             this.OrdersGV.HeaderForeColor = System.Drawing.Color.SeaGreen;
             this.OrdersGV.Location = new System.Drawing.Point(0, 29);
             this.OrdersGV.MinimumSize = new System.Drawing.Size(800, 0);
             this.OrdersGV.Name = "OrdersGV";
             this.OrdersGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.OrdersGV.RowHeadersVisible = false;
-            this.OrdersGV.Size = new System.Drawing.Size(800, 336);
+            this.OrdersGV.Size = new System.Drawing.Size(800, 357);
             this.OrdersGV.TabIndex = 29;
             this.OrdersGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrdersGV_CellContentClick);
             // 
@@ -186,9 +187,9 @@
             this.CancelDeliveryBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.CancelDeliveryBtn.Image = global::Uber_Eats_Database_Project.Properties.Resources.cancel__1_;
             this.CancelDeliveryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CancelDeliveryBtn.Location = new System.Drawing.Point(400, 365);
+            this.CancelDeliveryBtn.Location = new System.Drawing.Point(400, 383);
             this.CancelDeliveryBtn.Name = "CancelDeliveryBtn";
-            this.CancelDeliveryBtn.Size = new System.Drawing.Size(400, 85);
+            this.CancelDeliveryBtn.Size = new System.Drawing.Size(400, 67);
             this.CancelDeliveryBtn.TabIndex = 33;
             this.CancelDeliveryBtn.Text = "       Cancel Delivrey     ";
             this.CancelDeliveryBtn.UseCompatibleTextRendering = true;
@@ -207,9 +208,9 @@
             this.OrderDeliveredBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.OrderDeliveredBtn.Image = global::Uber_Eats_Database_Project.Properties.Resources.check;
             this.OrderDeliveredBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.OrderDeliveredBtn.Location = new System.Drawing.Point(0, 365);
+            this.OrderDeliveredBtn.Location = new System.Drawing.Point(0, 383);
             this.OrderDeliveredBtn.Name = "OrderDeliveredBtn";
-            this.OrderDeliveredBtn.Size = new System.Drawing.Size(400, 85);
+            this.OrderDeliveredBtn.Size = new System.Drawing.Size(394, 67);
             this.OrderDeliveredBtn.TabIndex = 32;
             this.OrderDeliveredBtn.Text = "        Order Delivered";
             this.OrderDeliveredBtn.UseCompatibleTextRendering = true;
@@ -222,6 +223,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.CancelDeliveryBtn);
             this.Controls.Add(this.OrderDeliveredBtn);
@@ -229,6 +231,7 @@
             this.Controls.Add(this.header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PendingDelivering";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PendingDelivering";
             this.Load += new System.EventHandler(this.PendingDelivering_Load);
             this.header.ResumeLayout(false);
