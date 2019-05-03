@@ -29,6 +29,11 @@ namespace Uber_Eats_Database_Project
             lName.Enabled = true;
             location.Enabled = true;
             creditCard.Enabled = true;
+            userName.ForeColor = Color.Black;
+            fName.ForeColor = Color.Black;
+            lName.ForeColor = Color.Black;
+            location.ForeColor = Color.Black;
+            creditCard.ForeColor = Color.Black;
             editBtn.Hide();
             saveBtn.Show();
         }
@@ -293,6 +298,11 @@ namespace Uber_Eats_Database_Project
             lName.Enabled = false;
             location.Enabled = false;
             creditCard.Enabled = false;
+            userName.ForeColor = Color.DarkGray;
+            fName.ForeColor = Color.DarkGray;
+            lName.ForeColor = Color.DarkGray;
+            location.ForeColor = Color.DarkGray;
+            creditCard.ForeColor = Color.DarkGray;
         }
 
         private void editUsernameBtn_Click(object sender, EventArgs e)
