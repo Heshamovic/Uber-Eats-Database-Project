@@ -55,7 +55,6 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(13, 32, 13, 13);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(730, 450);
             this.flowLayoutPanel1.TabIndex = 0;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // header
             // 
@@ -63,7 +62,7 @@
             this.header.Controls.Add(this.exit);
             this.header.Dock = System.Windows.Forms.DockStyle.Top;
             this.header.Location = new System.Drawing.Point(0, 0);
-            this.header.Margin = new System.Windows.Forms.Padding(2);
+            this.header.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.header.Name = "header";
             this.header.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.header.Size = new System.Drawing.Size(800, 29);
@@ -76,7 +75,7 @@
             this.exit.Image = ((System.Drawing.Image)(resources.GetObject("exit.Image")));
             this.exit.ImageActive = null;
             this.exit.Location = new System.Drawing.Point(772, 0);
-            this.exit.Margin = new System.Windows.Forms.Padding(2);
+            this.exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(20, 29);
             this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

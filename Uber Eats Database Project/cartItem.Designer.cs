@@ -56,7 +56,7 @@
             this.RestName.AutoSize = true;
             this.RestName.Location = new System.Drawing.Point(122, 42);
             this.RestName.Name = "RestName";
-            this.RestName.Size = new System.Drawing.Size(56, 13);
+            this.RestName.Size = new System.Drawing.Size(57, 13);
             this.RestName.TabIndex = 1;
             this.RestName.Text = "RestName";
             // 
@@ -73,14 +73,13 @@
             // 
             // bunifuImageButton1
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.SeaGreen;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.InitialImage = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.InitialImage")));
             this.bunifuImageButton1.Location = new System.Drawing.Point(16, 16);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
             this.bunifuImageButton1.Size = new System.Drawing.Size(71, 71);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 3;
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
@@ -123,7 +122,7 @@
             this.RestLoc.AutoSize = true;
             this.RestLoc.Location = new System.Drawing.Point(215, 43);
             this.RestLoc.Name = "RestLoc";
-            this.RestLoc.Size = new System.Drawing.Size(45, 13);
+            this.RestLoc.Size = new System.Drawing.Size(47, 13);
             this.RestLoc.TabIndex = 37;
             this.RestLoc.Text = "RestLoc";
             // 
