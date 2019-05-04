@@ -68,6 +68,7 @@
             this.foodimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.foodimg.TabIndex = 4;
             this.foodimg.TabStop = false;
+            this.foodimg.Click += new System.EventHandler(this.foodimg_Click);
             // 
             // restimg
             // 
@@ -117,7 +118,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.button2, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.resl, 2, 0);
@@ -139,10 +140,10 @@
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(524, 3);
+            this.button2.Location = new System.Drawing.Point(520, 3);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(50, 36);
+            this.button2.Size = new System.Drawing.Size(54, 36);
             this.button2.TabIndex = 4;
             this.button2.Text = "\r\n";
             this.button2.UseVisualStyleBackColor = false;
@@ -155,7 +156,7 @@
             this.resl.AutoSize = true;
             this.resl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resl.Location = new System.Drawing.Point(201, 8);
+            this.resl.Location = new System.Drawing.Point(197, 8);
             this.resl.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.resl.Name = "resl";
             this.resl.Size = new System.Drawing.Size(150, 26);
@@ -179,10 +180,10 @@
             this.resn.AutoSize = true;
             this.resn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resn.Location = new System.Drawing.Point(65, 8);
+            this.resn.Location = new System.Drawing.Point(64, 8);
             this.resn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.resn.Name = "resn";
-            this.resn.Size = new System.Drawing.Size(133, 26);
+            this.resn.Size = new System.Drawing.Size(130, 26);
             this.resn.TabIndex = 6;
             this.resn.Text = "resn";
             this.resn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -191,7 +192,7 @@
             // 
             this.numericUpDown1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(461, 10);
+            this.numericUpDown1.Location = new System.Drawing.Point(457, 10);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(0, 7, 0, 0);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(60, 22);
@@ -210,7 +211,7 @@
             this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(354, 3);
+            this.button1.Location = new System.Drawing.Point(350, 3);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 36);

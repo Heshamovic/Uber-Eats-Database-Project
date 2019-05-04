@@ -12,7 +12,7 @@ namespace Uber_Eats_Database_Project
 {
     public partial class UserOrderItem : UserControl
     {
-       public int cur_order;
+        public int cur_order;
         public UserOrderItem()
         {
             InitializeComponent();

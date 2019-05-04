@@ -53,7 +53,7 @@ namespace Uber_Eats_Database_Project
             {
                 userOrderItems[i] = new UserOrderItem();
                 userOrderItems[i].cur_order = Convert.ToInt32(dr[0]);
-                userOrderItems[i].Order_Number.Text = ("Order Number: "+dr[0].ToString());
+                userOrderItems[i].Order_Number.Text = ("Order Number: " + dr[0].ToString());
                 userOrderItems[i].Order_Time.Text = ("Order Date: " + dr[1].ToString());
                 userOrderItems[i].Order_Status.Text = ("Order Status: " + dr[2].ToString());
                 userOrderItems[i].Price_integer.Text = (dr[3].ToString() + "LE");
@@ -65,11 +65,6 @@ namespace Uber_Eats_Database_Project
         private void UserOrders_FormClosing(object sender, FormClosingEventArgs e)
         {
             con.Dispose();
-        }
-
-        private void User_Order_Panel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

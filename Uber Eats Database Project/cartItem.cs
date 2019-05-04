@@ -21,11 +21,6 @@ namespace Uber_Eats_Database_Project
         {
             InitializeComponent();
         }
-
-        private void cartItem_Load(object sender, EventArgs e)
-        {
-            RestLoc.Visible = false;
-        }
         
         private void Remove_Click(object sender, EventArgs e)
         {
@@ -33,20 +28,17 @@ namespace Uber_Eats_Database_Project
             {
                 con = new OracleConnection(Helper.constr);
                 con.Open();
-
-                OracleCommand cmd3 = new OracleCommand();
-                cmd3.Connection = con;
-                cmd3.CommandText = "Delete_Cart_Item";
-                cmd3.CommandType = CommandType.StoredProcedure;
-                cmd3.Parameters.Add("id", Helper.currentOrderId);
-                cmd3.Parameters.Add("rest_name", RestName.Text);
-                cmd3.Parameters.Add("rest_loc", RestLoc.Text);
-                cmd3.Parameters.Add("food_name", FoodName.Text);
-                cmd3.ExecuteNonQuery();
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "Delete_Cart_Item";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("id", Helper.currentOrderId);
+                cmd.Parameters.Add("rest_name", RestName.Text);
+                cmd.Parameters.Add("rest_loc", RestLoc.Text);
+                cmd.Parameters.Add("food_name", FoodName.Text);
+                cmd.ExecuteNonQuery();
                 con.Close();
                 this.Parent.Controls.Remove(this);
-              
-
             }
         }
     }

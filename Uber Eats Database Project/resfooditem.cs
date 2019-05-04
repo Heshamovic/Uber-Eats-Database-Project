@@ -85,6 +85,11 @@ namespace Uber_Eats_Database_Project
         }
         #endregion
 
+        private void foodimg_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             CustomMsgBox.Show("Type: " + type + "\nIngerdiants: " + ingrediants);

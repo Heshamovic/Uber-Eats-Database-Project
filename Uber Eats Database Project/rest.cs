@@ -67,7 +67,7 @@ namespace Uber_Eats_Database_Project
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            Helper.onHover((Button)sender, Color.Black);
+            Helper.onHover((Button)sender, Color.White);
         }
         #endregion
     }

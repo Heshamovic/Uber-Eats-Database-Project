@@ -106,6 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.Order_Time);
             this.Controls.Add(this.Price_integer);
             this.Controls.Add(this.Total_Price);
@@ -113,7 +114,7 @@
             this.Controls.Add(this.Order_Status);
             this.Controls.Add(this.Order_Number);
             this.Name = "UserOrderItem";
-            this.Size = new System.Drawing.Size(484, 112);
+            this.Size = new System.Drawing.Size(480, 108);
             this.Load += new System.EventHandler(this.UserOrderItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

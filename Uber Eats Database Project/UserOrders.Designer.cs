@@ -86,7 +86,6 @@
             this.User_Order_Panel.Name = "User_Order_Panel";
             this.User_Order_Panel.Size = new System.Drawing.Size(675, 421);
             this.User_Order_Panel.TabIndex = 36;
-            this.User_Order_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.User_Order_Panel_Paint);
             // 
             // UserOrders
             // 

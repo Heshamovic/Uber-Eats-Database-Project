@@ -14,7 +14,7 @@ namespace Uber_Eats_Database_Project
 {
     public partial class resfood : Form
     {
-        string img, resn, resl;
+        string resn, resl;
         public resfood(string resname, string resloc)
         {
             InitializeComponent();
@@ -66,6 +66,12 @@ namespace Uber_Eats_Database_Project
         {
             this.Show();
         }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Cart r = new Cart();

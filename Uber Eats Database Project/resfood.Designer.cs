@@ -56,6 +56,7 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(75, 5, 50, 5);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(730, 420);
             this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // header
             // 

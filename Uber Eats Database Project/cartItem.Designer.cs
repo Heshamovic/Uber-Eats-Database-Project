@@ -28,17 +28,16 @@
         /// </summary>
         public void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cartItem));
             this.FoodName = new System.Windows.Forms.Label();
             this.RestName = new System.Windows.Forms.Label();
             this.Price = new System.Windows.Forms.Label();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.Discount = new System.Windows.Forms.Label();
             this.NoOfItems = new System.Windows.Forms.NumericUpDown();
             this.Remove = new System.Windows.Forms.Button();
             this.RestLoc = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.FoodImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.NoOfItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodImage)).BeginInit();
             this.SuspendLayout();
             // 
             // FoodName
@@ -65,31 +64,18 @@
             this.Price.AutoSize = true;
             this.Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Price.ForeColor = System.Drawing.Color.Firebrick;
-            this.Price.Location = new System.Drawing.Point(129, 68);
+            this.Price.Location = new System.Drawing.Point(122, 68);
             this.Price.Name = "Price";
             this.Price.Size = new System.Drawing.Size(36, 13);
             this.Price.TabIndex = 2;
             this.Price.Text = "Price";
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(16, 16);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(71, 71);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 3;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
             // 
             // Discount
             // 
             this.Discount.AutoSize = true;
             this.Discount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Discount.ForeColor = System.Drawing.Color.Firebrick;
-            this.Discount.Location = new System.Drawing.Point(210, 68);
+            this.Discount.Location = new System.Drawing.Point(233, 68);
             this.Discount.Name = "Discount";
             this.Discount.Size = new System.Drawing.Size(57, 13);
             this.Discount.TabIndex = 5;
@@ -97,10 +83,11 @@
             // 
             // NoOfItems
             // 
-            this.NoOfItems.Location = new System.Drawing.Point(333, 19);
+            this.NoOfItems.Location = new System.Drawing.Point(363, 19);
             this.NoOfItems.Name = "NoOfItems";
-            this.NoOfItems.Size = new System.Drawing.Size(118, 20);
+            this.NoOfItems.Size = new System.Drawing.Size(105, 20);
             this.NoOfItems.TabIndex = 8;
+            this.NoOfItems.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Remove
             // 
@@ -109,7 +96,7 @@
             this.Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Remove.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Remove.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Remove.Location = new System.Drawing.Point(340, 52);
+            this.Remove.Location = new System.Drawing.Point(363, 52);
             this.Remove.Name = "Remove";
             this.Remove.Size = new System.Drawing.Size(105, 29);
             this.Remove.TabIndex = 36;
@@ -120,30 +107,38 @@
             // RestLoc
             // 
             this.RestLoc.AutoSize = true;
-            this.RestLoc.Location = new System.Drawing.Point(215, 43);
+            this.RestLoc.Location = new System.Drawing.Point(233, 42);
             this.RestLoc.Name = "RestLoc";
             this.RestLoc.Size = new System.Drawing.Size(47, 13);
             this.RestLoc.TabIndex = 37;
             this.RestLoc.Text = "RestLoc";
+            // 
+            // FoodImage
+            // 
+            this.FoodImage.Location = new System.Drawing.Point(14, 17);
+            this.FoodImage.Name = "FoodImage";
+            this.FoodImage.Size = new System.Drawing.Size(71, 71);
+            this.FoodImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.FoodImage.TabIndex = 38;
+            this.FoodImage.TabStop = false;
             // 
             // cartItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.FoodImage);
             this.Controls.Add(this.RestLoc);
             this.Controls.Add(this.Remove);
             this.Controls.Add(this.NoOfItems);
             this.Controls.Add(this.Discount);
-            this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.Price);
             this.Controls.Add(this.RestName);
             this.Controls.Add(this.FoodName);
             this.Name = "cartItem";
             this.Size = new System.Drawing.Size(494, 102);
-            this.Load += new System.EventHandler(this.cartItem_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoOfItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FoodImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,10 +149,10 @@
         public System.Windows.Forms.Label FoodName;
         public System.Windows.Forms.Label RestName;
         public System.Windows.Forms.Label Price;
-        public Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         public System.Windows.Forms.Label Discount;
         public System.Windows.Forms.NumericUpDown NoOfItems;
         public System.Windows.Forms.Button Remove;
         public System.Windows.Forms.Label RestLoc;
+        public System.Windows.Forms.PictureBox FoodImage;
     }
 }

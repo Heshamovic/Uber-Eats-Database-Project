@@ -162,16 +162,23 @@ namespace Uber_Eats_Database_Project
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            ds.Tables["partner"].Rows[index][1] = vehicleType.Text;
-            builder = new OracleCommandBuilder(adapter);
-            adapter.Update(ds.Tables["partner"]);
-            CustomMsgBox.Show("Vehicle is updated successfully.");
-            part_vehicle = vehicleType.Text;
-            
-            saveBtn.Hide();
-            editBtn.Show();
-            userName.Enabled = false;
-            vehicleType.Enabled = false;
+            if (vehicleType.Text == "" || vehicleType.Text.ToLower() == "car" || vehicleType.Text.ToLower() == "bike" || vehicleType.Text.ToLower() == "scooter" || vehicleType.Text.ToLower() == "no vehicle")
+            {
+                if (vehicleType.Text == "")
+                    vehicleType.Text = "no vehicle";
+                ds.Tables["partner"].Rows[index][1] = vehicleType.Text;
+                builder = new OracleCommandBuilder(adapter);
+                adapter.Update(ds.Tables["partner"]);
+                CustomMsgBox.Show("Vehicle is updated successfully.");
+                part_vehicle = vehicleType.Text;
+
+                saveBtn.Hide();
+                editBtn.Show();
+                userName.Enabled = false;
+                vehicleType.Enabled = false;
+            }
+            else
+                CustomMsgBox.Show("Please Enter A valid vehicle\n (car, bike, scooter)");
         }
 
         private void savePasswordBtn_Click(object sender, EventArgs e)

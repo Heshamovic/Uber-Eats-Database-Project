@@ -48,28 +48,33 @@ namespace Uber_Eats_Database_Project
             while (dr.Read())
             {
                 cartItems[i] = new cartItem();
-                cartItems[i].FoodName.Text = dr[0].ToString();
-                cartItems[i].RestName.Text = dr[1].ToString();
-                cartItems[i].RestLoc.Text = dr[2].ToString();
-                cartItems[i].Price.Text = dr[3].ToString();
-                cartItems[i].Discount.Text = (dr[4]).ToString();
+                string fname = cartItems[i].FoodName.Text = dr[0].ToString();
+                string rname = cartItems[i].RestName.Text = dr[1].ToString();
+                string rloc = cartItems[i].RestLoc.Text = dr[2].ToString();
+                cartItems[i].Price.Text = "Price: " + dr[3].ToString();
+                cartItems[i].Discount.Text = "Discount: " + (dr[4]).ToString() + '%';
                 cartItems[i].NoOfItems.Text = (dr[5]).ToString();
                 cartItems[i].cart_id = i;
 
                 OracleCommand cmd10 = new OracleCommand();
-                cmd.Connection = con;
-                cmd.CommandText = "select foodimage from food where food_name =:nam";
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add("nam", dr[0].ToString());
+                cmd10.Connection = con;
+                cmd10.CommandType = CommandType.Text;
+                cmd10.CommandText = "select foodimage from food where food_name = :nam";
+                cmd10.Parameters.Add("nam", fname);
                 OracleDataReader dr10 = cmd10.ExecuteReader();
-                string im = dr10[0].ToString();
-                if (im!=null)
-                cartItems[i].bunifuImageButton1.ImageLocation = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\") + im;
-                else
-                    cartItems[i].bunifuImageButton1.ImageLocation = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\\\NO Image Available.jpg") ;
-                
-                flowLayoutPanel1.Controls.Add(cartItems[i]);
-                i++;
+                Entities ent = new Entities();
+                string img = ent.FOODs.Where(x => x.FOOD_NAME == fname && x.RESTAURANT_NAME == rname && x.RESTAURANT_LOCATION == rloc).First().FOODIMAGE;
+                img = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\") + img;
+                try
+                {
+                    this.cartItems[i].FoodImage.Image = Image.FromFile(img);
+                }
+                catch
+                {
+                    img = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName, "resources\\NO Image Available.jpg");
+                    this.cartItems[i].FoodImage.Image = Image.FromFile(img);
+                }
+                flowLayoutPanel1.Controls.Add(cartItems[i++]);
             }
             dr.Close();
 
@@ -163,7 +168,6 @@ namespace Uber_Eats_Database_Project
             }
             this.Close();
         }
-
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
